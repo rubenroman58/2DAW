@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h2>Ejercicio 1 y 2</h2>
+    <script>
+        const personajes = new Map();
+        personajes.set("Homer Simpson", "Trabajo en la planta nuclear");
+        personajes.set("Marge Simpson", "Ama de casa");
+        personajes.set("Bart Simpson", "Estudiante");
+        personajes.set("Ruben", "Ama de casa");
+
+
+        document.write(personajes.get("Homer Simpson") + "<br>");
+        document.write(personajes.get("Marge Simpson") + "<br>");
+        document.write(personajes.get("Bart Simpson") + "<br>");
+        document.write(personajes.get("Ruben") + "<br>");
+        <h2>Ejercicio 3</h2>
+        function encontrarPorOcupacion(map, ocupacionBuscada) {
+            let personajesConOcupacion = [];
+
+
+            map.forEach((ocupacion, nombre) => {
+                if (ocupacion === ocupacionBuscada) {
+                    personajesConOcupacion.push(nombre);
+                }
+            });
+
+            return personajesConOcupacion;
+        }
+        const ocupacion = 'Ama de casa'
+        const personajesEncontrados = encontrarPorOcupacion(personajes, ocupacion);
+        document.write(personajesEncontrados);
+
+        <h2>Ejercicio 4</h2>
+        function modificarOcupacion(map, nombrePersonaje, nuevaOcupacion) {
+            map.forEach((nombre, ocupacion)=> {
+                if (nombre === nombrePersonaje) {
+                    map.set(nombrePersonaje, nuevaOcupacion);
+                }else{
+                    document.write('No esta ese nombre')
+                }
+
+            });
+
+        }
+       const nombre4='Ruben'
+       const ocupacion4='Futbolista'
+       const ejercicio4 = modificarOcupacion(personajes, nombre4,ocupacion4);
+       document.write(ejercicio4);
+
+    </script>
+</body>
+
+</html>

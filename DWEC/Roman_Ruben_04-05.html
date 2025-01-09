@@ -1,0 +1,271 @@
+
+04-05 JS Objetos ECMA2015 o ES6
+Alfonso Ballesteros González
+•
+13 dic 2024
+100 puntos
+
+04-05 JS Objetos ECMA2015 o ES6 .odt
+OpenOffice Writer
+
+objetos2.htm
+HTML
+Comentarios de la clase
+Tu trabajo
+Entregado
+
+Roman_Ruben_04-05.html
+HTML
+Comentarios privados
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class User {
+            constructor(nombre) {
+                this.name = name;
+            }
+        }
+
+        class UserMetodos extends User {
+            hola() {
+                document.write('hola')
+            }
+            adios() {
+                document.write('adios')
+            }
+        }
+        const prueba = new UserMetodos();
+        document.write('Ejercicio 1')
+        prueba.hola()
+        prueba.adios()
+    </script>
+
+    <h2>Ejercicio 2</h2>
+    <script>
+
+        class Persona {
+            constructor(nombre, apellidos, id) {
+                this.nombre = nombre;
+                this.apellidos = apellidos;
+                this.id = id;
+            }
+
+            getNombre() {
+                return this.nombre;
+            }
+
+            setNombre(nombre) {
+                this.nombre = nombre;
+            }
+
+            getApellidos() {
+                return this.apellidos;
+            }
+
+            setApellidos(apellidos) {
+                this.apellidos = apellidos;
+            }
+
+            getId() {
+                return this.id;
+            }
+
+            setId(id) {
+                this.id = id;
+            }
+        }
+
+
+        class Alumno extends Persona {
+            constructor(nombre, apellidos, id, nombreModulos = [], notasModulos = []) {
+                super(nombre, apellidos, id);
+                this.nombreModulos = nombreModulos;
+                this.notasModulos = notasModulos;
+            }
+
+
+            mostrarModulos() {
+                return this.nombreModulos.join(', ');
+            }
+
+
+            nota(nombremodulo) {
+                let index = this.nombreModulos.indexOf(nombremodulo);
+                if (index !== -1) {
+                    return `La nota de ${nombremodulo} es: ${this.notasModulos[index]}`;
+                } else {
+                    return 'Modulo no encontrado';
+                }
+            }
+
+
+            media() {
+                let sumaNotas = this.notasModulos.reduce((acc, nota) => acc + nota, 0);
+                return sumaNotas / this.notasModulos.length;
+            }
+
+            suspensas() {
+                let suspensas = this.notasModulos.filter(nota => nota <= 5);
+                return suspensas.length > 0 ? `Notas suspensas: ${suspensas.join(', ')}` : 'No hay notas suspensas';
+            }
+
+
+            aprobadas() {
+                let aprobadas = this.notasModulos.filter(nota => nota > 5);
+                return aprobadas.length > 0 ? `Notas aprobadas: ${aprobadas.join(', ')}` : 'No hay notas aprobadas';
+            }
+        }
+
+
+        const alumno1 = new Alumno('Juan', 'Pérez', 12345, ['Matemáticas', 'Física', 'Química'], [8, 4, 6, 3]);
+
+
+        document.write(`Nombre del alumno: ${alumno1.getNombre()}<br>`);
+        document.write(`Módulos: ${alumno1.mostrarModulos()}<br>`);
+        document.write(alumno1.nota('Física') + '<br>');
+        document.write(`Media de las notas: ${alumno1.media()}<br>`);
+        document.write(alumno1.suspensas() + '<br>');
+        document.write(alumno1.aprobadas() + '<br>');
+    </script>
+    <h2>Ejercicio 3</h2>
+    <script>
+        class Alumnos {
+            constructor(nombre, id) {
+                this.nombre = nombre;
+                this.id = id;
+            }
+
+            getId() {
+                return this.id;
+            }
+
+            getNombre() {
+                return this.nombre;
+            }
+        }
+
+        class ArrayAlumnos {
+            constructor() {
+                this.alumnos = [];
+            }
+
+            matricular(nombre, id) {
+                let alumno = new Alumnos(nombre, id);
+                this.alumnos.push(alumno);
+            }
+
+            mostrar(id) {
+                for (let i = 0; i < this.alumnos.length; i++) {
+                    if (id === this.alumnos[i].getId()) {
+                        document.write('Id: ' + this.alumnos[i].getId() + ' - Nombre: ' + this.alumnos[i].getNombre() + '<br>');
+                        return;
+                    }
+                }
+                document.write('Alumno no encontrado<br>');
+            }
+
+            eliminar(id) {
+                for (let i = 0; i < this.alumnos.length; i++) {
+                    if (id === this.alumnos[i].getId()) {
+                        this.alumnos.splice(i, 1);
+                        document.write('Alumno con ID ' + id + ' ha sido eliminado<br>');
+                        return;
+                    }
+                }
+                document.write('Alumno no encontrado para eliminar<br>');
+            }
+
+            numero() {
+                document.write('El número de alumnos es: ' + this.alumnos.length + '<br>');
+            }
+        }
+
+        let lista = new ArrayAlumnos();
+
+        lista.matricular('Ruben', 1);
+        lista.matricular('Alba', 2);
+        lista.matricular('Alberto', 3);
+        lista.matricular('Belen', 4);
+
+        lista.numero();
+
+        lista.mostrar(2);
+
+        lista.eliminar(1);
+
+        lista.numero();
+
+        lista.mostrar(1);
+    </script>
+
+    <h2>Ejercicio 4 y 5</h2>
+    <script>
+        class Alumnos4 {
+            constructor(nombre, id) {
+                this.nombre = nombre;
+                this.id = id;
+            }
+
+            getId() {
+                return this.id;
+            }
+
+            getNombre() {
+                return this.nombre;
+            }
+        }
+        class alumnofp extends Alumnos4 {
+            constructor(nombre, apellidos, id, empresaFct) {
+                super(nombre, apellidos, id);
+                this.empresaFct = empresaFct;
+            }
+
+            hacerFCT(empresa) {
+                document.write('El alumnos hará las practicas en la empresa: ' + empresa)
+
+            }
+        }
+        class alumnofpDual extends alumnofp {
+            constructor(nombre, apellidos, id, empresaFct, empresaFctDual) {
+                super(nombre, apellidos, id, empresaFct);
+                this.empresaFctDual = empresaFctDual;
+            }
+            hacerFCTDual(seraDual) {
+                if (seraDual) {
+                    document.write('El alumno hará las prácticas duales.');
+                } else {
+                    document.write('El alumno NO hará las prácticas duales.');
+                }
+            }
+
+        }
+        const matricular = {
+            matricula() {
+                document.write(this.nombre + ' se ha matriculado correctamente.<br>');
+            }
+        };
+        Object.assign(alumnofp.prototype, matricular);
+        Object.assign(alumnofpDual.prototype, matricular);
+        
+        let ruben = new alumnofpDual('ruben', 'roman', 1, 'empresa 1', true)
+
+        ruben.hacerFCT(ruben.empresaFct);
+        ruben.hacerFCTDual(ruben.empresaFctDual);
+        ruben.matricula(); 
+    </script>
+
+
+
+
+
+</body>
+
+</html>
