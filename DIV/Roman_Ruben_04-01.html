@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <style>
+        h2 {
+            color: rgb(54, 177, 30); 
+        }
+
+        div h1 {
+            color: blue; 
+        }
+
+    
+        p {
+            color: yellow !important; 
+        }
+
+       
+        
+     
+      div.uno {
+        border: 7px solid grey;            
+    
+      }
+      div.dos {
+        border: 3px solid rgb(245, 1, 1);  
+      }
+      div.tres {
+        border: 3px solid rgb(245, 1, 1);        
+        border-style:  dashed;
+        background-color: lightblue;        
+      
+      }
+      div.cuatro {
+        border: 3px solid rgb(56, 140, 179);        
+        border-style:  ridge;
+        background-color: lightblue;  
+      }
+      div.seis {
+        border: 3px solid rgb(235, 32, 32);        
+        border-style:  dotted;
+        background-color: rgb(9, 31, 233);  
+      }
+      div.siete {
+        border: 3px solid rgb(17, 17, 17);        
+        border-style:  dashed;
+        background-color: rgb(157, 163, 214);  
+      }
+      div.ocho {
+        border: 7px ;        
+        border-style:  outset;        
+        border-color: #FfFF00 #571b14 #e94c24 forestgreen;
+        background-color: lightblue;
+        color: #0000FF ;  
+      }
+      div.nueve {
+        border: 7px ;        
+        border-style:  inset;        
+        border-color: #FfFF00 #FF00fF #00fFff forestgreen;
+        background-color: #ffffff;
+        color: #0000FF ;
+      }
+
+      div.diez {
+        border: 10px ;        
+        border-style:  groove;        
+        border-color: #ce0707 #2d06dd #11d151 rgb(10, 216, 223);
+        background-color: #ffffff;
+        color: #0000FF ; 
+      }
+
+      div.uno {
+            border: 7px solid grey;
+            margin: auto; 
+        }
+        div.dos {
+            border: 3px solid rgb(245, 1, 1);
+            margin-left: auto; 
+            margin-right: 0;
+        }
+        div.tres {
+            border: 3px solid rgb(245, 1, 1);
+            border-style: dashed;
+            background-color: lightblue;
+            margin-right: auto; 
+            margin-left: 0;
+        }
+        div.cuatro {
+            border: 3px solid rgb(56, 140, 179);
+            border-style: ridge;
+            background-color: lightblue;
+            margin-left: 100px; 
+        }
+
+
+        /* Ejercicio 8 */
+        div.uno {
+            padding: 20px; 
+        }
+        div.dos {
+            padding: 40px 100px; 
+        }
+        div.tres {
+            padding: 10px 20px 30px 40px; 
+        }
+        div.cuatro {
+            padding: 20px; 
+        }
+
+
+
+
+
+    </style>
+    <link rel="stylesheet" href="estilos.css">
+
+    <style>
+        @import url('estilos_externos.css');
+    </style>
+</head>
+<body>
+<h2  style="color: black;">Ejercicio 1</h2>
+    <h1 style="color: red;">Este es un título h1 en rojo</h1>
+    <h2>Este es un título h2 en verde</h2>
+    <p >Este es un párrafo en azul</p>
+<h2 style="color: black;">Ejercicio 2</h2>
+<div>
+    <h1>Este h1 dentro de un div se verá azul</h1> 
+</div>
+
+
+<p>Este párrafo se verá amarillo debido a !important</p>
+
+<h3>Este h3 se verá rosa debido al orden de las reglas CSS</h3> 
+
+<h2 style="color: black;">Ejercicio 6</h2>
+<div  class="uno"> <br><h3>Bordes 1. .</h3><br></div><br/>
+<div  class="dos"> <br><h3>Bordes 2. .</h3><br></div><br/>
+<div  class="tres"> <br><h3>Bordes 3.  </h3><br></div><br/>
+<div  class="cuatro"> <br><h3>Bordes 4. </h3><br></div><br/>
+<div  class="seis"> <br><h3>Bordes 6.   .</h3><br></div><br/>
+<div  class="siete"> <br><h3>Bordes 7.   .</h3><br></div><br/>
+<div  class="ocho"> <br><h3>Bordes 8.   .</h3><br></div><br/>
+<div  class="nueve"> <br><h3>Bordes 9.  .</h3><br></div><br/>
+<div  class="diez"> <br><h3>Bordes 10.   .</h3><br></div><br/>
+
+<h2 style="color: black;">Ejercicio 7</h2>
+    <div class="uno"> <br><h3>Bordes 5. .</h3><br></div><br/>
+    <div class="dos"> <br><h3>Bordes 6. .</h3><br></div><br/>
+    <div class="tres"> <br><h3>Bordes 7.  </h3><br></div><br/>
+    <div class="cuatro"> <br><h3>Bordes 8. </h3><br></div><br/>
+
+</body>
+</html>

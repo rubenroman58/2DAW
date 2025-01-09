@@ -1,0 +1,186 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Ejercicio de cambio de apariencia a tablas con CSS</title>
+    <style type="text/css">
+        table {
+            border: 3px solid #345ff0;
+            border-collapse: separate;
+            font: normal 9px verdana, arial, helvetica, sans-serif;
+            color: #363636;
+            background:#345ff0;
+            border-radius: 20px;
+          
+        }
+
+        caption {
+            text-align: center;
+            font: bold 14px arial, helvetica, sans-serif;
+            background: transparent;
+            padding: 6px 4px 8px 0px;
+            color: #03476F;
+            text-transform: uppercase;
+            caption-side: bottom;
+        }
+
+        td,
+        th {
+            border: 1px solid #345ff0;
+            padding: .4em;
+            color: #363636;
+        }
+
+        thead th {
+            font: bold 11px verdana, arial, helvetica, sans-serif;
+            border: 4px solid #345ff0;
+            text-align: center;
+            background: red;
+            color: #FFFFFF;
+            padding-top: 3px;
+            border-radius: 20px;
+            
+        }
+
+        tfoot td {
+            border: 1px solid #03476F;
+            text-align: center;
+            background: red;
+            color: #FFFFFF;
+            padding-top: 3px;
+            border-radius: 10px;
+            
+        }
+
+        tbody td {
+            vertical-align: top;
+            text-align: left;
+        }
+
+        tr.fimpar {
+            background: #1cdbdb;
+        }
+        .trRosa{
+            background-color: lightcoral;
+        }
+
+        tbody tr:hover {
+            background: #FFD800;
+            border: 1px solid #03476F;
+            color: #FFF;
+        }
+
+        tbody td a:link,
+        tbody td a:visited {
+            background: transparent;
+            text-decoration: none;
+            color: #363636;
+        }
+
+        tbody td a:hover,
+        tbody td a:active {
+            background: #C2F64D;
+            color: #363636;
+        }
+
+        #contenido {
+            width: 800px;
+            margin: auto;
+            height: 600px;
+            border: solid 1px black;
+            background-color: #CCCCCC;
+        }
+
+        .cajaredonda {
+            width: 100px;
+            height: 100px;
+            background-color: #FF0000;
+            margin: 10px;
+            float: right;
+            text-align: center;
+            vertical-align: middle;
+            border-radius: 50px 50px 50px 50px;
+        }
+
+        .cajaporesquinas {
+            text-align: center;
+            vertical-align: middle;
+            width: 130px;
+            height: 130px;
+            background-color: #2a27ee;
+            margin: 10px;
+            float: right;
+            border-radius: 30px 0px;
+        }
+
+        .cajaporlados {
+            text-align: center;
+            vertical-align: middle;
+            width: 160px;
+            height: 160px;
+            background-color: #3bd42d;
+            margin: 10px;
+            float: right;
+            border-radius: 0px 0px 40px 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Ejercicio 2 y 2b</h2>
+    <table>
+        <caption>Distancias planetarias</caption>
+        <thead>
+            <tr>
+                <th>Planeta</th>
+                <th>Distancia desde la Tierra</th>
+                <th>Web</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="3">Astronom&iacute;a Gobierno de Espa&ntilde;a</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr class="fimpar">
+                <td>Venus</td>
+                <td>108 Millones de Kil&oacute;metros</td>
+                <td><a href="http://es.wikipedia.org/wiki/Venus_(planeta)">Web Venus</a></td>
+            </tr>
+            <tr class="trRosa">
+                <td>Saturno</td>
+                <td>1.281 Millones de Kil&oacute;metros</td>
+                <td><a href="http://es.wikipedia.org/wiki/Saturno_(planeta)">Web
+                        Saturno</a></td>
+            </tr>
+            <tr class="fimpar">
+                <td>Urano</td>
+                <td>2.720 Millones de Kil&oacute;metros</td>
+                <td><a href="http://es.wikipedia.org/wiki/Urano_(planeta)">Web Urano</a></td>
+            </tr>
+            <tr class="trRosa">
+                <td>Neptuno</td>
+                <td>4.504 Millones de Kil&oacute;metros</td>
+                <td><a href="http://es.wikipedia.org/wiki/Neptuno_(planeta)">Web
+                        Neptuno</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Ejercicio3 y 4</h2>
+    <div id="contenido">
+        <h1> Ejercicio 3</h1>
+        <div id="c1" onclick="cambio(this)" class="cajaredonda"> </br>Caja </br> redonda</br> 50 px </br> </div>
+        <div id="c2" onclick="cambio(this)" class="cajaporlados"> </br>Caja redonda </br> abajo 40px </div>
+        <div id="c3" onclick="cambio(this)" class="cajaporesquinas"> </br> Caja esquinas </br> 30px</div>
+    </div>
+    <script>
+        function cambio(elemento) { 
+            c1.className="cajaporesquinas";
+            c2.className="cajaredonda";
+            c3.className="cajaporlados";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <script>
+      
+        window.onload = function () {
+            // Mostrar el contenido de los anchors[] (deprecated)
+            document.write("<h3>Anchors:</h3>");
+            for (let i = 0; i < document.anchors.length; i++) {
+                document.write("<p>" + document.anchors[i].href + "</p>");
+            }
+
+            // Mostrar el contenido de los applets[] (deprecated)
+            document.write("<h3>Applets (deprecated):</h3>");
+            for (let i = 0; i < document.applets.length; i++) {
+                document.write("<p>" + document.applets[i] + "</p>");
+            }
+
+            // Mostrar el contenido de los links[] (todas las etiquetas <a>)
+            document.write("<h3>Links:</h3>");
+            for (let i = 0; i < document.links.length; i++) {
+                document.write("<p>" + document.links[i].href + "</p>");
+            }
+
+            // Mostrar el contenido de los forms[] (todos los formularios en el documento)
+            document.write("<h3>Forms:</h3>");
+            for (let i = 0; i < document.forms.length; i++) {
+                document.write("<p>" + document.forms[i].name + "</p>");
+            }
+
+            // Mostrar el contenido de los images[] (todas las imágenes en el documento)
+            document.write("<h3>Images:</h3>");
+            for (let i = 0; i < document.images.length; i++) {
+                document.write("<p>" + document.images[i].src + "</p>");
+            }
+
+            // Mostrar el contenido de Document.scripts[]
+            document.write("<h3>Scripts:</h3>");
+            for (let i = 0; i < document.scripts.length; i++) {
+                document.write("<p>" + document.scripts[i].src + "</p>");
+            }
+
+            // Mostrar el contenido de Document.styleSheets[]
+            document.write("<h3>StyleSheets:</h3>");
+            for (let i = 0; i < document.styleSheets.length; i++) {
+                document.write("<p>" + document.styleSheets[i].href + "</p>");
+            }
+
+            // Mostrar las cookies (si hay)
+            document.write("<h3>Cookies:</h3>");
+            document.write("<p>" + document.cookie + "</p>");
+        };
+       
+    </script>
+    <h2>Ejercicio 2</h2>
+    <script>
+      
+        window.onload = function () {
+            // Mostrar la propiedad domain
+            document.write("<h3>Domain:</h3>");
+            document.write("<p>" + document.domain + "</p>");
+
+            // Mostrar la propiedad lastModified
+            document.write("<h3>Last Modified:</h3>");
+            document.write("<p>" + document.lastModified + "</p>");
+
+            // Mostrar la propiedad readyState
+            document.write("<h3>Ready State:</h3>");
+            document.write("<p>" + document.readyState + "</p>");
+
+            // Mostrar la propiedad referrer
+            document.write("<h3>Referrer:</h3>");
+            document.write("<p>" + document.referrer + "</p>");
+
+            // Mostrar la propiedad title
+            document.write("<h3>Title:</h3>");
+            document.write("<p>" + document.title + "</p>");
+
+            // Mostrar la propiedad URL
+            document.write("<h3>URL:</h3>");
+            document.write("<p>" + document.URL + "</p>");
+        };
+    
+    </script>
+    <h2>Ejercicio 3</h2>
+
+    <script language="JavaScript">
+        
+        nombre = prompt('Ingrese su nombre:', '');
+        alert("Titulo antiguo " + document.title); 
+        document.title = nombre;
+
+
+    </script>
+
+    <h2>Ejercicio 4</h2>
+
+    <div id="etiquetatituloviejo"> </div>
+    <div id="etiquetatitulonuevo"> </div>
+    <script language="JavaScript">
+
+        nombre4 = prompt('Ingrese nuevo titulo:', '');
+        document.getElementById("etiquetatituloviejo").innerHTML = "Titulo antiguo " + document.title
+
+        document.title = nombre4;
+        document.getElementById("etiquetatitulonuevo").innerHTML = "Titulo nuevo " + document.title
+
+    </script>
+
+    <h2>Ejercicio 5</h2>
+    <div id="etiquetaARellenar"> </div>
+    <script language="JavaScript">
+
+
+        var nombre5 = prompt('Ingrese su nombre:', '');
+
+        document.getElementById('etiquetaARellenar').innerHTML = "Hola, " + nombre5 + " Bienvenido a la página.";
+
+    </script>
+
+    <h2>Ejercicio 6</h2>
+    <input type="text" name="etiquetaARellenar1">
+    <input type="text" name="etiquetaARellenar2">
+
+    <script language="JavaScript">
+       
+        var nombre = prompt('Ingrese su nombre:', '');
+
+        
+        document.getElementsByName('etiquetaARellenar1')[0].value = 'Hola, ' + nombre + '!'; // Asignar al primer input
+        document.getElementsByName('etiquetaARellenar2')[0].value = 'Bienvenido, ' + nombre + '!'; // Asignar al segundo input
+  
+    </script>
+
+
+    <h2>Ejercicio 7</h2>
+
+    <p> Una Lista ordenada:</p>
+    <ol>
+        <li>Torremolinos</li>
+        <li>Málaga</li>
+        <li>Granada</li>
+
+        <li>Sevilla</li>
+        <li>Alhaurin</li>
+        <li>Churriana</li>
+    </ol>
+    <p id="indice"></p>
+    <h2 id="lista"></h2>
+    <script>
+       
+        numero = prompt('Ingrese el numero que deseas selecionar:', '');
+        indice_string = "El " + numero + " o elemento de la lista es";
+        const collection = document.getElementsByTagName("li");
+        document.getElementById("lista").innerHTML = collection[numero - 1].innerHTML;
+        document.getElementById("indice").innerHTML = indice_string
+  
+    </script>
+
+    <h2>Ejercicio 8</h2>
+    <h1> una cabecera h1</h1>
+    <h2> una cabecera h2</h2>
+    <p> Un parrafo </p>
+    <span>Torremolinos</span>
+    <p id="explica"></p>
+    <h4 id="elemento"></h4>
+    <script>
+       
+        etiqueta = prompt('Ingrese el contenido que deseas conocer (p,h1,h2,span) que deseas seleccionar:', '');
+
+        const collection8 = document.getElementsByTagName(etiqueta);
+        document.getElementById("explica").innerHTML = "El contenido de la etiqueta " + etiqueta + " es: ";
+        document.getElementById("elemento").innerHTML = collection8[0].innerHTML;
+
+    </script>
+
+    <h2>Ejercicio 9</h2>
+    <p> etiqueta1 <input type="text" name="etiqueta1" value="Guadalajara"> </p>
+    <p> etiqueta2 <input type="text" name="etiqueta2" value="Toledo"> </p>
+    <p> etiqueta3 <input type="text" name="etiqueta3" value="Cuenca"> </p>
+    <hr>
+    <p id="explica"></p>
+    <h2 id="elemento"></h2>
+    <script language="JavaScript">
+        numero9 = prompt('Ingresa el numero de la etiqueta:', '');
+        
+        elements = document.getElementsByName("etiqueta" + numero9);
+        valorDeEtiqueta = elements[0].value;
+        document.getElementById("explica").innerHTML = "El contenido de la etiqueta " + numero9 + " es: ";
+        document.getElementById("elemento").innerHTML = valorDeEtiqueta;
+
+        
+    </script>
+</body>
+
+</html>

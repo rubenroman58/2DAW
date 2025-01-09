@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <script>
+     
+        const PI = 3.14
+        let radio1 = parseInt(prompt('Introduza el radio ejer 1'))
+        let circunferencia1 = (2 * PI * radio1)
+        let area1 = (PI * (radio1 * radio1))
+        document.write('Circunferencia: ' + circunferencia1 + ' Area: ' + area1)
+       
+    </script>
+    <h2>Ejercicio 2</h2>
+    <script>
+     
+        let cateto1 = parseInt(prompt('Introduza el cateto1 ejer 2'))
+        let cateto2 = parseInt(prompt('Introduza el cateto2 ejer 2'))
+        let hipotenusa2 = Math.sqrt((cateto1 * cateto1) + (cateto2 * cateto2))
+        document.write(hipotenusa2)
+       
+    </script>
+    <h2>Ejercicio 3</h2>
+    <script>
+        document.write(Math.E + "\n" + Math.LN2 + "\n" + Math.LN10 + "\n" + Math.LOG2E + "\n" + Math.LOG10E)
+    </script>
+
+    <h2>Ejercicio 4</h2>
+    <script>
+     
+        let numero4 = parseInt(prompt('Introduza el numero ejer 4'))
+        document.write(Math.log(numero4) + '<br>')
+
+        document.write(Math.log2(numero4) + '<br>')
+
+        document.write(Math.log10(numero4))
+       
+
+    </script>
+
+    <h2>Ejercicio 5</h2>
+    <script>
+        
+                let numero5 = parseInt(prompt('Introduza el numero ejer 5'))
+                let radianes5=(numero5/180)*3.14
+                if(radianes5<=360 && radianes5>=0){
+                    document.write('El numero en radianes es: '+radianes5)
+                }else{
+                    document.write('Error')
+                }
+                
+    </script>
+    <h2>Ejercicio 6</h2>
+    <script>
+        
+                let numero6 = parseInt(prompt('Introduza el numero ejer 6'))
+                let radianes6=(numero6/180)*3.14
+                if(radianes6<=360 && radianes6>=0){
+                    document.write('El numero en radianes es: '+radianes6+'<br>')
+                    document.write('Cos: '+Math.cos(radianes6)+'<br>')
+                    document.write('Sin: '+Math.sin(radianes6)+'<br>')
+                    document.write('tan: '+Math.tan(radianes6)+'<br>')
+                }else{
+                    document.write('Error')
+                }
+                 
+
+    </script>
+
+    <h2>Ejercicio 7</h2>
+    <script>
+        
+                let x = parseFloat(window.prompt("Ingresa un valor entre 0 y 1:"));
+        
+        
+                if (x >= 0 && x <= 1) {
+        
+                    let arcCoseno = Math.acos(x);
+                    let arcSeno = Math.asin(x);
+                    let arcTangente = Math.atan(x);
+        
+        
+                    document.write("Resultado de acos(x): " + arcCoseno + "<br>");
+                    document.write("Resultado de asin(x): " + arcSeno + "<br>");
+                    document.write("Resultado de atan(x): " + arcTangente + "<br>");
+                } else {
+        
+                    document.write("Error: El valor debe estar entre 0 y 1.");
+                }
+        
+        
+    </script>
+
+    <h2>Ejercicio 8</h2>
+    <script>
+        
+                num_string = window.prompt("pon un numero");
+                num_num = parseFloat(num_string);
+                if (isNaN(num_num)) {
+                    document.write('Es una cadena')
+                }
+                else {
+                    document.write('Redondeo bajo: ' + Math.floor(num_num) + '<br>')
+                    document.write('Redonde alto: ' + Math.ceil(num_num) + '<br>')
+                    document.write('Redondeo: ' + Math.round(num_num) + '<br>')
+                }
+        
+
+    </script>
+
+    <h2>Ejercicio 9</h2>
+    <script>
+        
+        
+            num_string9 = window.prompt("pon un numero");
+            num_num9 = parseFloat(num_string9);
+            if (isNaN(num_num9)) {
+                document.write('Es una cadena')
+            }
+            else {
+                let Redondeo1Decimal = Math.round(num_num9 * 10) / 10;
+                document.write('Redondeo un decimal: ' + Redondeo1Decimal)
+            
+            }
+        
+
+    </script>
+    <h2>Ejercicio 10</h2>
+    <script>
+        
+        salida = false
+        let lista1 = []
+        let numero10 =parseFloat( prompt('Introduzca un numero'))
+
+        lista1.push(numero10)
+
+        while (!salida) {
+
+            let numero102 = parseFloat(prompt('Introduzca un número:'));
+
+
+            if (numero102 === 0) {
+                salida = true;
+            } else {
+
+                lista1.push(numero102);
+            }
+        }
+        document.write('Max: ' + Math.max(...lista1)+'<br>')
+        document.write('Min: ' + Math.min(...lista1))
+        
+
+    </script>
+    <h2>Ejercicio 11</h2>
+    <script>
+        
+       let numeroAleatorio=parseFloat(prompt('Introduzca un numero ejer 11'))
+       let nuAleatorioMaxB= Math.round(Math.random()*numeroAleatorio)
+       
+       document.write(nuAleatorioMaxB)
+       
+
+    </script>
+    <h2>Ejercicio 12</h2>
+    <script>
+        
+     
+        let numero = parseFloat(prompt('Introduzca un número:'));
+    
+        // 1. Mostrar en bases 2, 8 y 16
+        let binario = numero.toString(2);   // Convertir a base 2
+        let octal = numero.toString(8);     // Convertir a base 8
+        let hexadecimal = numero.toString(16);  // Convertir a base 16
+    
+        // 2. Notación exponencial
+        let notacionExponencial = numero.toExponential();
+    
+        // 3. Mostrar con 10 dígitos decimales
+        let conDecimales = numero.toFixed(10);
+    
+        // 4. Número con longitud 8 (rellenar con ceros a la izquierda)
+        let longitud8 = numero.toFixed(10).padStart(8, '0');
+    
+        // Mostrar los resultados
+        document.write('Número original: ' + numero + '<br>');
+        document.write('En base 2: ' + binario + '<br>');
+        document.write('En base 8: ' + octal + '<br>');
+        document.write('En base 16: ' + hexadecimal + '<br>');
+        document.write('En notación exponencial: ' + notacionExponencial + '<br>');
+        document.write('Con 10 dígitos decimales: ' + conDecimales + '<br>');
+        document.write('Con longitud 8 (relleno de ceros): ' + longitud8 + '<br>');
+        
+    </script>
+    <h2>Ejercicio 13</h2>
+    <script>
+
+        let cantidad13 = parseFloat(prompt("Introduzca una cantidad13 en Euros"));
+
+
+        if (isNaN(cantidad13) || cantidad13 <= 0) {
+            alert("Por favor, ingrese un número válido.");
+        } else {
+
+            let euros = cantidad13.toFixed(2);
+            document.write("Cantidad en Euros: " + euros + " €<br>");
+
+
+            let yenes = (cantidad13 * 140).toFixed(2);
+            document.write("Cantidad en Yenes: " + yenes + " ¥<br>");
+
+            // 3. Mostrar con 3 decimales mínimos (usando .toFixed() para asegurar 3 decimales)
+            let tresDecimalesMin = cantidad13.toFixed(3);
+            document.write("Cantidad con 3 decimales mínimo: " + tresDecimalesMin + " €<br>");
+
+            // 4. Mostrar con 3 decimales mínimo y máximo (sin redondear, sin el uso de .toFixed())
+            let tresDecimalesExactos = cantidad13.toPrecision(6);  // Asegura que al menos 3 decimales se muestren
+            document.write("Cantidad con 3 decimales mínimo y máximo: " + tresDecimalesExactos + " €<br>");
+        }
+    </script>
+    <h2>Ejercicio 14</h2>
+    <script>
+
+        let a = parseFloat(prompt("Introduce el valor de a (coeficiente de x^2):"));
+        let b = parseFloat(prompt("Introduce el valor de b (coeficiente de x):"));
+        let c = parseFloat(prompt("Introduce el valor de c (constante):"));
+
+        if (a === 0) {
+            alert("El valor de 'a' no puede ser 0. La ecuación no es de segundo grado.");
+        } else {
+
+            let discriminante = b * b - 4 * a * c;
+
+
+            if (discriminante > 0) {
+
+                let x1 = (-b + Math.sqrt(discriminante)) / (2 * a);
+                let x2 = (-b - Math.sqrt(discriminante)) / (2 * a);
+                document.write("Las soluciones reales son: x1 = " + x1.toFixed(3) + " y x2 = " + x2.toFixed(3));
+            } else if (discriminante === 0) {
+
+                let x = -b / (2 * a);
+                document.write("La solución real doble es: x = " + x.toFixed(3));
+            } else {
+
+                document.write("La ecuación no tiene soluciones reales (soluciones complejas).");
+            }
+        }
+    </script>
+
+</body>
+
+
+</html>

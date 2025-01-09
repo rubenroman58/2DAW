@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+        }
+
+        #contenido {
+            width: 700px;
+            margin: auto;
+            border: solid 1px black;
+            background-color: #CCCCCC;
+        }
+
+
+        #contenido2 {
+            width: 700px;
+            height: 150px;
+            margin: auto;
+            border: solid 1px black;
+            background-color: #CCCCCC;
+        }
+
+        #caja1 {
+            width: 130px;
+            height: 130px;
+            background-color: #FFFF00;
+            border: solid 1px black;
+            margin: 10px;
+            float: left;
+        }
+
+        #caja2 {
+            width: 130px;
+            height: 130px;
+            background-color: #00FF00;
+            border: solid 1px black;
+            margin: 10px;
+            float: left;
+        }
+
+        #caja3 {
+            width: 160px;
+            height: 160px;
+            background-color: #0000FF;
+            border: solid 1px black;
+            margin: 10px;
+            float: left;
+        }
+
+        .clearboth {
+            clear: both;
+        }
+
+        #caja71 {
+            width: 100px;
+            height: 100px;
+            background-color: #FFFF00;
+            border: solid 1px black;
+            margin: 10px;
+            position: relative;
+            left: 20;
+            top:
+                20;
+        }
+
+        #caja72 {
+            width: 130px;
+            height: 130px;
+            background-color: #00FFFF;
+            border: solid 1px black;
+            margin: 10px;
+            position: relative;
+            left: 100px;
+            top: 20;
+        }
+
+        #caja73 {
+            width: 160px;
+            height: 160px;
+            background-color: #FF00FF;
+            border: solid 1px black;
+            margin: 10px;
+            position: relative;
+            left: 230px;
+            top: 20;
+        }
+
+        #caja91 {
+            width: 100px;
+            height: 100px;
+            background-color: #FFAAAA;
+            border: solid 1px black;
+            margin: 10px;
+            position: relative;
+            left: 0;
+            top: 10px;
+            z-index: 3;
+        }
+
+        #caja92 {
+            width: 130px;
+            height: 130px;
+            background-color: #AAAAFF;
+            border: solid 1px black;
+            margin: 10px;
+            position: relative;
+            left: 10px;
+            top: -90px;
+            z-index: 2;
+        }
+
+        #caja93 {
+            width: 160px;
+            height: 160px;
+            background-color: #AAFFAA;
+            border: solid 1px black;
+            margin: 10px;
+            position: relative;
+            left: 30px;
+            top: -220px;
+            z-index: 1;
+        }
+
+        #caja101 {
+            width: 100px;
+            height: 100px;
+            background-color: #FFAAAA;
+            border: solid 1px black;
+            margin: 10px;
+            position: relative;
+            left: 0;
+            top: 10px;
+            z-index: 3;
+        }
+
+        #caja102 {
+            width: 130px;
+            height: 130px;
+            background-color: #AAAAFF;
+            border: solid 1px black;
+            margin: 10px;
+            position: relative;
+            left: 10px;
+            top: -90px;
+            z-index: 2;
+        }
+
+        #caja103 {
+            width: 160px;
+            height: 160px;
+            background-color: #AAFFAA;
+            border: solid 1px black;
+            margin: 10px;
+            position: relative;
+            left: 30px;
+            top: -220px;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+
+
+    <img style="float:none " src="malaga.jfif" /> <br>
+    <img style="float:left " src="malaga.jfif" /><br>
+    <img style="float:right " src="malaga.jfif" /><br>
+    <br></br><br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <h2>Ejercicio 2</h2>
+    <div id="contenido">
+        <img style="float:right ;clear:both " src="malaga.jfif" />
+        <div style="float:right ;clear:both "> Imagen1</div>
+        <img style="float:left;clear:left" src="malaga.jfif" />
+        <div style="float:right ;clear:both "> Imagen2</div>
+        <img style="float:none;clear:both" src="malaga.jfif" />
+        <div style="float:right ;clear:both "> Imagen3</div>
+
+    </div>
+    <br></br><br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <h2>Ejercicio 3</h2>
+    <div id="contenido">
+        <div id="caja1" style="float: right;background-color: red;"> Caja 1 </div>
+        <div id="caja2" style="float: left"> Caja 2 </div>
+        <div id="caja3" style="float: none"> Caja 3 </div>
+        <br></br><br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br><br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div id="caja1" style="float: left;background-color: red;"> Caja 1 </div>
+        <div id="caja2" style="float: left"> Caja 2 </div>
+        <div id="caja3" style="float: left"> Caja 3 </div>
+        <br></br><br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br><br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div id="caja1" style="float: left;background-color: red; clear: right;"> Caja 1 </div>
+        <div id="caja2" style="float: left; clear: right;"> Caja 2 </div>
+        <div id="caja3" style="float: right; "> Caja 3 </div>
+    </div>
+    <br></br><br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br><br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+
+    <h2>Ejercicio 4</h2>
+    <div id="contenido">
+        <div id="caja1"> Caja 1 </div>
+        <div id="caja2">Caja 2 </div>
+        <div id="caja3"> Caja 3 </div>
+        <div class="clearboth"></div>
+    </div>
+    <br></br><br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+
+    <h2>Ejercicio 5</h2>
+    <div id="contenido">
+        <div id="caja1" style="float: left; "> Caja 1 </div>
+        <div id="caja1" style="float: right; "> Caja 1 </div>
+        <div id="caja2" style="float: left;clear: left; ">Caja 2 </div>
+        <div id="caja2" style="float: right; ">Caja 2 </div>
+        <div id="caja3" style="float: left;clear: left; "> Caja 3 </div>
+        <div id="caja3" style="float: right; "> Caja 3 </div>
+        <div class="clearboth"></div>
+    </div>
+    <br></br><br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <h2>Ejercicio 6</h2>
+    <div id="contenido2">
+        <h1> Ejercicio 6</h1>
+        <div style="display:none"> Esto es un div como linea que no se debe ver </div> continuacion de la linea
+        <p style="display:block;float:right"> Esto es un p como un bloque a la derecha </p> continuacion del bloque
+    </div>
+
+    <br></br><br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <div id="contenido">
+        <h1>Ejercicio 7 y 8</h1>
+        <div id="caja71" onclick="moverArriba()">Caja 71</div>
+        <div id="caja72" onclick="moverAbajo()">Caja 72</div>
+        <div id="caja73">Caja 73</div>
+    </div>
+
+    <script>
+        function moverArriba() {
+            document.getElementById('caja71').style.top = '0px';
+            document.getElementById('caja72').style.top = '100px';
+            document.getElementById('caja73').style.top = '200px';
+        }
+
+        function moverAbajo() {
+            document.getElementById('caja71').style.top = '40px';
+            document.getElementById('caja72').style.top = '160px';
+            document.getElementById('caja73').style.top = '280px';
+        }
+    </script>
+    <br></br><br></br>
+    <br></br>
+    <br></br>
+    <div id="contenido">
+        <h1> Ejercicio 9</h1>
+
+        <div id="caja91" onclick="moverz();"> Caja 91 </div>
+        <div id="caja92" onclick="moverz();"> Caja 92 </div>
+        <div id="caja93" onclick="moverz();"> Caja 93 </div>
+    </div>
+
+
+
+    <div id="contenido">
+        <h1> Ejercicio 10</h1>
+        <script>
+            var estado = 0; function moverz() {
+                if (estado == 0) { } else if (estado == 1) {
+                    document.getElementById("caja101").style.zIndex = 1;
+                    document.getElementById("caja102").style.zIndex = 2;
+                    document.getElementById("caja103").style.zIndex = 3;
+
+                }
+                estado = (estado + 1) % 2;
+            }      </script>
+
+        <div id="caja101" onclick="moverz();"> Caja 91 </div>
+        <div id="caja102" onclick="moverz();"> Caja 92 </div>
+        <div id="caja103" onclick="moverz();"> Caja 93 </div>
+    </div>
+</body>
+
+
+</html>

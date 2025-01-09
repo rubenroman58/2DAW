@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <div id="mostrar"></div>
+    <script>
+        function trigonometria(grados, funcion) {
+            var valor
+            grados = parseFloat(grados)
+            if (funcion == 'sen') valor = Math.sin((grados / 180) * Math.PI)
+            else if (funcion == 'cos') valor = Math.cos((grados / 180) * Math.PI)
+            else if (funcion == 'tan') valor = Math.tan((grados / 180) * Math.PI)
+            else valor = "Error : Funcion no reconocida"
+            return valor
+        }
+        document.getElementById('mostrar').innerHTML = 'funcion:' + trigonometria(90, 'sen')
+    </script>
+
+<script>
+    var trigonometria3=function (grados, funcion) {
+        var valor
+        grados = parseFloat(grados)
+        if (funcion == 'sen') valor = Math.sin((grados / 180) * Math.PI)
+        else if (funcion == 'cos') valor = Math.cos((grados / 180) * Math.PI)
+        else if (funcion == 'tan') valor = Math.tan((grados / 180) * Math.PI)
+        else valor = "Error : Funcion no reconocida"
+        return valor
+    }
+    document.getElementById('mostrar').innerHTML = 'funcion:' + trigonometria(90, 'sen')
+</script>
+
+<script>
+    var trigonometria4=(grados, funcion)=> (
+    
+
+    )
+      
+    
+    document.getElementById('mostrar').innerHTML = 'funcion:' + trigonometria(90, 'sen')
+</script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+print('Ingrese dos numeros:')
+a=int(input('Primero'))
+b=int(input('Segundo'))
+print('La suma es:', a+b)
+print('La resta es:',a-b)
+print('La multiplicaion es:',a*b)
+print('La division real es:',a/b)
+print('La division entera:',a//b)
+print('La division entera:',a%b)
+print('La division entera:',a**b)
+

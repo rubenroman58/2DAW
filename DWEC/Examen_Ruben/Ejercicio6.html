@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <form>
+        <label for="etiqueta1">R</label>
+        <input type="number" id="etiqueta1"> </p>
+        <label for="etiqueta2">G</label>
+        <input type="number" id="etiqueta2"> </p>
+        <label for="etiqueta3">B</label>
+        <input type="number" id="etiqueta3"> </p>
+        <button onclick="generar()">Generar color</button>
+    </form>
+
+    <script>
+        function generar() {
+            R = document.getElementById('etiqueta1').value
+            G = document.getElementById('etiqueta2').value
+            B = document.getElementById('etiqueta3').value
+            arrayColores = []
+            arrayColores.push(R)
+            arrayColores.push(G)
+            arrayColores.push(B)
+            numeroMaximo = Math.max(...arrayColores)
+            cyan = (1 - R - K) / (1 - K)
+            magenta = (1 - G - K) / (1 - K)
+            yellow = (1 - B - K) / (1 - K)
+
+            document.write('Cyan: ' + cyan + ' Magenta: ' + magenta + 'Yellow ' + yellow + 'Black ' + numeroMaximo)
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+
+    <!doctype html>
+    <html lang=”es”>
+
+    <head>
+        <meta charset=”UTF-8”>
+        <title>Subtablas</title>
+
+        <style>
+            table {
+                width: 50%;
+            }
+
+            table {
+                width: 100%;
+            }
+
+            td {
+                border: 2px solid black;
+            }
+
+            table table td {
+                background-color: yellow;
+            }
+
+            .table1 {
+
+                border-collapse: collapse;
+            }
+
+            .table1 td {
+                border: 2px solid rgb(117, 114, 114);
+            }
+        </style>
+
+
+    </head>
+
+    <body>
+        <h2>Ejercicio 0</h2>
+        <table>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+
+        <h2>Ejercicio 1</h2>
+        <h3>A)</h3>
+        <table class="table1">
+            <tr>
+                <td colspan="2">Esta celda tiene un colspan="2"</td>
+
+            </tr>
+            <td>Celda normal</td>
+            <td>Otra normal</td>
+            </tr>
+        </table>
+        <h3>B)</h3>
+        <table class="table1">
+            <tr>
+                <td rowspan="2">Esta celda tiene un rowspan="2"</td>
+                <td>Celda normal</td>
+            </tr>
+            <tr>
+
+                <td>Otra normal</td>
+            </tr>
+        </table>
+        <h3>C)</h3>
+
+        <table class="table1" style="background-color:blue; text-align: center;">
+            <tr>
+                <td colspan="2">Linea 1 Linea 2</td>
+
+            </tr>
+            <td>Linea3</td>
+            <td>Linea4</td>
+            </tr>
+            </tr>
+            <td>Linea5</td>
+            <td rowspan="2">Linea6Linea8</td>
+            </tr>
+            </tr>
+            <td>Linea7</td>
+
+            </tr>
+        </table>
+
+
+        <h3>D)</h3>
+
+        <table class="table1">
+            <tr>
+                <td style="background-color: rgb(195, 247, 195); text-align: center;">Linea 1</td>
+                <td style="background-color: rgb(216, 242, 86); text-align: center;">Linea 2</td>
+            </tr>
+            <td rowspan="2" style="background-color: green; text-align: center;">Linea3</td>
+            <td style="background-color: rgb(1, 211, 1); text-align: center;">Linea4</td>
+            </tr>
+            <tr>
+                <td style="background-color: rgb(1, 211, 1); text-align: center;">Linea6</td>
+            </tr>
+            <tr>
+
+                <td style="background-color: rgb(195, 126, 180); text-align: center;">Linea5</td>
+                <td rowspan="2" style="background-color: rgb(174, 156, 130); text-align: center;">Linea8</td>
+
+            </tr>
+            <tr>
+
+                <td rowspan="2" style="background-color: rgb(195, 126, 180); text-align: center;">Linea7</td>
+
+
+            </tr>
+        </table>
+
+        <h3>E)Primera</h3>
+
+        <table class="table1" style="text-align: center;">
+            <tr>
+                <td>A</td>
+                <td>B</td>
+                <td rowspan="3">C</td>
+                <td>D</td>
+            </tr>
+            <tr>
+                <td rowspan="2">E</td>
+                <td>F</td>
+                <td>H</td>
+            </tr>
+            <tr>
+                <td>J</td>
+                <td>L</td>
+            </tr>
+
+
+        </table>
+
+
+        <h3>E)Segunda</h3>
+
+        <table class="table1" style="text-align: center;">
+            <tr>
+                <td colspan="2">A</td>
+                <td>C</td>
+                <td>D</td>
+            </tr>
+            <tr>
+                <td colspan="3">E</td>
+
+                <td>H</td>
+            </tr>
+            <tr>
+                <td>I</td>
+                <td>J</td>
+                <td>K</td>
+                <td>L</td>
+            </tr>
+
+        </table>
+
+        <h2>Ejercicio 2</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <td style="background-color: #00ced1; width: 100px;">
+                    <img src="logo.png" alt="Logo" style="width: 100px; height: 100px;">
+                </td>
+                <td style="background-color: #00ced1; text-align: center; width: 400px;">
+                    <h1>Cabecera</h1>
+                </td>
+                <td style="background-color: #00ced1; width: 80%;">
+
+                </td>
+            </tr>
+
+            <tr>
+                <td style="background-color: #f0f8ff; width: 100px; vertical-align: top;">
+                    <ul>
+                        <li><a href="#">Enlace1</a></li>
+                        <li><a href="#">Enlace2</a></li>
+                        <li><a href="#">Enlace3</a></li>
+                        <li><a href="#">Enlace4</a></li>
+                    </ul>
+                </td>
+                <td colspan="2" style="background-color: #f0f8ff; padding: 20px;">
+                    <h2>Contenido</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin eu mi lectus rutrum
+                        varius.
+                        Donec eget finibus turpis. Vivamus feugiat sed sapien nec laoreet. Cras congue turpis eu posuere
+                        dolor.
+                        Sed eget justo massa. Curabitur vitae quam non sapien vehicula egestas vel non ligula.
+                    </p>
+                    <p>
+                        Nam ac dui non lorem tempor luctus. Ut egestas neque nec ligula bibendum, quis fermentum neque
+                        gravida.
+                        Ut ut ipsum vehicula, tincidunt urna nec, tincidunt libero. Aliquam fermentum arcu nec velit
+                        finibus.
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3" style="background-color: #ff7f50; text-align: left;">
+                    <h3>Pie</h3>
+                </td>
+            </tr>
+        </table>
+
+        <h2>Ejercicio 3</h2>
+        <table style="width: 50%; border: 2px solid black; margin: auto;">
+
+            <tr style="background-color: gray; text-align: center;">
+                <td colspan="2">Climas de América del Sur</td>
+            </tr>
+
+            <tr style="background-color: lightgray;">
+                <td style="width: 50%; text-align: left;">
+                    <img src="america.png" style="width: 100px; height: auto;">
+                    Parte de arriba de América del Sur.
+                </td>
+                <td style="width: 50%; text-align: right;">
+                    <img src="america2.png" style="width: 100px; height: auto;">
+                    Parte de abajo de América del Sur.
+                </td>
+            </tr>
+
+            <tr style="background-color: blue; color: white;text-align: right;">
+                <td style="padding: 10px;">
+                    <strong>Bosque tropical,</strong><br>
+                    clima de sabana,<br>
+                    clima marítimo con inviernos secos
+                </td>
+                <td style="padding: 10px;">
+                    Climas marítimos con veranos secos, <br>
+                    climas fríos, <br>
+                    clima de estepa, <br>
+                    clima desértico.
+                </td>
+            </tr>
+        </table>
+    </body>
+
+    </html>

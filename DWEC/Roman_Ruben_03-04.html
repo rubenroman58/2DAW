@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <script>
+    /*
+        var subVentana=window.open("nueva.html","nueva","height=800,width=600");
+     */
+    </script>
+    <h2>Ejercicio 2</h2>
+    <form>
+        <p>
+            <input type="button" value="Crear Nueva Ventana" onclick="crearVentana()">
+            <input type="button" value="Cerrar Nueva Ventana" onclick="cerrarVentana()">
+        </p>
+    </form>
+
+    <script>
+        /*
+         var subVentana = null;
+ 
+         function crearVentana() {
+             if (subVentana === null || subVentana.closed) {
+                 subVentana = window.open("nueva.html", "nueva", "height=800,width=600");
+             } else {
+                 alert("La ventana ya está abierta.");
+             }
+         }
+ 
+    
+         function cerrarVentana() {
+             if (subVentana !== null && !subVentana.closed) {
+                 subVentana.close();
+             } else {
+                 alert("No hay ninguna ventana abierta para cerrar.");
+             }
+         }
+            */ 
+    </script>
+
+
+    <h2>Ejercicio 3</h2>
+    <form>
+        <p>
+            <input type="button" value="Crear Nueva Ventana" onclick="crearVentana()">
+            <input type="button" value="Cerrar Nueva Ventana" onclick="cerrarVentana()">
+            <input type="button" value="Comprobar estado ventana" onclick="comprobarVentana()">
+        </p>
+    </form>
+    <script>
+        /*
+        var subVentana = null;
+
+        function crearVentana() {
+            if (subVentana === null || subVentana.closed) {
+                subVentana = window.open("nueva.html", "nueva", "height=800,width=600");
+            } else {
+                alert("La ventana ya está abierta.");
+            }
+        }
+
+
+        function cerrarVentana() {
+            if (subVentana !== null && !subVentana.closed) {
+                subVentana.close();
+            } else {
+                alert("No hay ninguna ventana abierta para cerrar.");
+            }
+        }
+
+        function comprobarVentana() {f
+            if ( subVentana === null || subVentana.closed === true ) {
+                alert("La  ventana no esta abierta");
+            } else {
+                alert("La ventana  esta abierta");
+            }
+
+        }
+            */
+    </script>
+
+    <h2>Ejercicio 4</h2>
+    <script>
+ /*
+        var url = prompt('Introduzca la url: ')
+        subVentana4 = window.open("https:\\"+url, "nueva", "height=800,width=600");
+        document.write('length:' + subVentana4.length + '<br>')
+        document.write('location:' + subVentana4.location + '<br>')
+        document.write('name:' + subVentana4.name + '<br>')
+        document.write('default:' + subVentana4.defaultStatus)
+*/
+    </script>
+    <h2>Ejercicio 5</h2>
+    <script>
+        /*
+        alert('Te estan robando en el banco')
+        respuesta = confirm('Estas de acuerdo?')
+        if (respuesta) {
+            alert('De acuerdo')
+        } else {
+            alert('No de acuerdo')
+        }
+            */
+    </script>
+    <h2>Ejercicio 6</h2>
+    <button type="button" onclick="parar()"> Parar</button>
+    <button type="button" onclick="iniciar()"> Iniciar</button>
+    <div id="holasID"> </div>
+    <script>
+        /*
+        var driverIntervalo = null;
+        function hola() {
+
+            document.getElementById("holasID").innerHTML += "Hola";
+        }
+        function iniciar() {
+            if (driverIntervalo == null)
+                driverIntervalo = setInterval(hola, 100);
+        }
+        function parar() {
+            clearInterval(driverIntervalo)
+            driverIntervalo = null;
+        }
+            */
+    </script>
+
+    <h2>Ejercicio 7</h2>
+    <button type="button" onclick="parar()"> Parar</button>
+    <button type="button" onclick="iniciar()"> Iniciar</button>
+    <div id="horaID"> </div>
+    <script>
+/*
+        var driverIntervalo = null;
+        function hora() {
+            const date = new Date();
+            document.getElementById("horaID").innerHTML += date.toLocaleTimeString()+'---'
+        }
+        function iniciar() {
+            if (driverIntervalo == null)
+                driverIntervalo = setInterval(hora, 100);
+        }
+        function parar() {
+            clearInterval(driverIntervalo)
+            driverIntervalo = null;
+        }
+*/
+    </script>
+
+</body>
+
+</html>

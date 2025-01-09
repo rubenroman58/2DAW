@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h2>Ejercicio 2</h2>
+    <svg viewBox="0 -100 300 300" xmlns="http://www.w3.org/2000/svg" width="200" height="200"
+        style="background-color: beige;">
+        <defs>
+            <style>
+                #rectEjer1:hover {
+                    stroke: #33b413;
+                    fill: #27b80b;
+                }
+
+                #polyEjer1:hover {
+                    stroke: #27b80b;
+                    fill: #27b80b
+                }
+
+                #circleEjer1:hover {
+                    stroke: #46d124;
+                    fill: #27b80b
+                }
+            </style>
+        </defs>
+        <rect x="60" y="10" width="50" height="50" id="rectEjer1" />
+        <polyline points="150 15 175 -40 200 15" fill="blue" stroke="6" id="polyEjer1" />
+        <circle cx="175" cy="60" r="30" fill="red" stroke="red" id="circleEjer1" />
+    </svg>
+
+    <h2>Ejercicio 3</h2>
+    <svg viewBox="0 -100 300 300" xmlns="http://www.w3.org/2000/svg" width="200" height="200"
+        style="background-color: beige;">
+        <defs>
+            <style>
+                #rectEjer3:hover {
+                    stroke: #565856;
+                    fill: #565856;
+                }
+
+                #polyEjer3:hover {
+                    stroke: lightblue;
+                    fill: lightblue
+                }
+
+                #circleEjer3:hover {
+                    stroke: lightcoral;
+                    fill: lightcoral
+                }
+            </style>
+        </defs>
+        <rect x="60" y="10" width="50" height="50" id="rectEjer3" />
+        <polyline points="150 15 175 -40 200 15" fill="blue" stroke="6" id="polyEjer3" />
+        <circle cx="175" cy="60" r="30" fill="red" stroke="red" id="circleEjer3" />
+    </svg>
+
+    <h2>Ejercicio 4</h2>
+
+
+    <svg width="350" height="60" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <style>
+                #texto {
+                    font: 25px georgia;
+
+                }
+            </style>
+        </defs>
+        <text id="texto" x="10" y="20">IESPLAYAMAR</text>
+    </svg>
+
+    <h2>Ejercicio 6</h2>
+
+    <svg width="350" height="60" xmlns="http://www.w3.org/2000/svg">
+
+        <rect width="27%" height="55%" fill="black" />
+        <text x="10" y="20">
+            <tspan fill="red">FR </tspan>
+            <tspan fill="white">AN </tspan>
+            <tspan fill="blue">CIA </tspan>
+        </text>
+
+    </svg>
+
+
+    <h3>Ejercicio 7</h3>
+    <p>
+        Haz como el anterior para que al pasar sobre el ratón se agrande el tamaño
+        de cada letra. Debes jugar con tspan y hover.
+    </p>
+
+    <svg viewBox="0 0 165 100" xmlns="http://www.w3.org/2000/svg" width="160" height="100">
+        <rect width="100%" height="100%" fill="#d3d3d3" />
+        <style>
+            .span-hover:hover {
+                font-size: 35px;
+            }
+        </style>
+        <text x="5" y="45" font-family="Georgia" font-size="25">
+            <tspan class="span-hover" fill="#DC2432">ES</tspan>
+            <tspan class="span-hover" fill="#000000">PA</tspan>
+            <tspan class="span-hover" fill="#0f2493">ÑA</tspan>
+        </text>
+    </svg>
+
+
+    <h3>Ejercicio 8</h3>
+    <p>
+        Crea un texto que tenga como estilo fuente Georgia y tamaño 25 que diga
+        “IES PLAYAMAR” usando un path curvo que crees con la herramienta
+        https://yqnn.github.io/svg-path-editor/
+    </p>
+
+    <svg width="1200" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200">
+        <rect width="100%" height="100%" fill="#d3d3d3" />
+        <path id="my_path1" d="M 50,150 C 150,50 250,150 350,50" fill="transparent" />
+
+        <text>
+            <textPath xlink:href="#my_path1">IES PLAYAMAR</textPath>
+        </text>
+
+        <style>
+            text {
+                font-family: Georgia;
+                font-size: 25px;
+            }
+        </style>
+    </svg>
+    <h3>Ejercicio 9</h3>
+
+    <p>
+        A partir del ejemplo intenta sacar los siguientes degradados un circulo
+        con degradado de rojo a morado pasando por verde en el centro un circulo
+        concentrico empezado por uno de color azul que contenga varios circulos
+        mas pequeños con el borde verde y el interior transparente
+    </p>
+
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+        <rect width="100%" height="100%" fill="#d3d3d3" />
+        <defs>
+            <linearGradient id="linearGradient2" gradientTransform="rotate(90)">
+                <stop offset="5%" stop-color="red" />
+                <stop offset="25%" stop-color="orange" />
+                <stop offset="50%" stop-color="green" />
+                <stop offset="75%" stop-color="blue" />
+                <stop offset="95%" stop-color="purple" />
+            </linearGradient>
+        </defs>
+        <circle cx="50" cy="50" r="40" fill="url('#linearGradient2')" />
+    </svg>
+
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+        <rect width="100%" height="100%" fill="#d3d3d3" />
+
+        <circle cx="50" cy="50" r="40" fill="blue" />
+        <circle cx="50" cy="50" r="40" fill="transparent" stroke="green" stroke-width="2" />
+        <circle cx="50" cy="50" r="30" fill="transparent" stroke="green" stroke-width="2" />
+        <circle cx="50" cy="50" r="20" fill="transparent" stroke="green" stroke-width="2" />
+        <circle cx="50" cy="50" r="10" fill="transparent" stroke="green" stroke-width="2" />
+    </svg>
+
+    <h3>Ejercicio 10</h3>
+    <p>
+        Modifica los textos de viva torremolinos para sacar algo parecido a esto
+    </p>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
+        <defs>
+            <radialGradient id="radialGradient3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                <stop offset="0%" style="stop-color: yellow; stop-opacity: 1" />
+                <stop offset="60%" style="stop-color: red; stop-opacity: 1" />
+                <stop offset="100%" style="stop-color: purple; stop-opacity: 1" />
+            </radialGradient>
+
+            <linearGradient id="linearGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color: blue; stop-opacity: 1" />
+                <stop offset="50%" style="stop-color: green; stop-opacity: 1" />
+                <stop offset="100%" style="stop-color: yellow; stop-opacity: 1" />
+            </linearGradient>
+        </defs>
+
+        <path id="my_path3" d="M 20,20 C 80,60 100,40 300,20" fill="transparent" stroke="none" stroke-width="2"
+            fill="url(#radialGradient3)" />
+
+        <text>
+            <textPath xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#my_path3" stroke="url(#linearGradient3)"
+                fill="url(#linearGradient3)">
+                Viva Torremolinos
+            </textPath>
+        </text>
+    </svg>
+
+
+
+</body>
+
+</html>

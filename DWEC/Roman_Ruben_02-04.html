@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Sintaxis</th>
+                <th>Nombre</th>
+                <th>Uso</th>
+                <th>Significado</th>
+                <th>Ejemplo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>=</td>
+                <td>Asignación</td>
+                <td>Asigna el valor de la derecha a la variable de la izquierda</td>
+                <td>a = 10 asigna el valor 10 a la variable `a`</td>
+                <td>var a = 10;</td>
+            </tr>
+            <tr>
+                <td>+=</td>
+                <td>Asignación con suma</td>
+                <td>Suma el valor de la derecha al valor de la izquierda y asigna el resultado</td>
+                <td>a += 5 es equivalente a a = a + 5</td>
+                <td>var a = 10; a += 5; // a = 15</td>
+            </tr>
+            <tr>
+                <td>-=</td>
+                <td>Asignación con resta</td>
+                <td>Resta el valor de la derecha al valor de la izquierda y asigna el resultado</td>
+                <td>a -= 3 es equivalente a a = a - 3</td>
+                <td>var a = 10; a -= 3; // a = 7</td>
+            </tr>
+            <tr>
+                <td>*=</td>
+                <td>Asignación con multiplicación</td>
+                <td>Multiplica el valor de la derecha por el de la izquierda y asigna el resultado</td>
+                <td>a *= 2 es equivalente a a = a * 2</td>
+                <td>var a = 10; a *= 2; // a = 20</td>
+            </tr>
+            <tr>
+                <td>/=</td>
+                <td>Asignación con división</td>
+                <td>Divide el valor de la izquierda por el valor de la derecha y asigna el resultado</td>
+                <td>a /= 2 es equivalente a a = a / 2</td>
+                <td>var a = 10; a /= 2; // a = 5</td>
+            </tr>
+            <tr>
+                <td>%=</td>
+                <td>Asignación con módulo</td>
+                <td>Divide el valor de la izquierda por el de la derecha y asigna el resto</td>
+                <td>a %= 3 es equivalente a a = a % 3</td>
+                <td>var a = 10; a %= 3; // a = 1</td>
+            </tr>
+            <tr>
+                <td>&lt;&lt;=</td>
+                <td>Asignación con desplazamiento a la izquierda</td>
+                <td>Desplaza los bits de la izquierda a la izquierda el número de posiciones indicado</td>
+                <td>a <<= 1 desplaza los bits de `a` una posición a la izquierda</td>
+                <td>var a = 10; a <<= 1; // a=20</td>
+            </tr>
+            <tr>
+                <td>&gt;=</td>
+                <td>Mayor o igual que</td>
+                <td>Compara si el valor de la izquierda es mayor o igual que el valor de la derecha</td>
+                <td>a >= 5 devuelve `true` si `a` es mayor o igual a 5</td>
+                <td>var a = 10; a >= 5; // true</td>
+            </tr>
+            <tr>
+                <td>&gt;&gt;=</td>
+                <td>Asignación con desplazamiento a la derecha</td>
+                <td>Desplaza los bits de la izquierda a la derecha el número de posiciones indicado</td>
+                <td>a >>= 1 desplaza los bits de `a` una posición a la derecha</td>
+                <td>var a = 10; a >>= 1; // a = 5</td>
+            </tr>
+            <tr>
+                <td>&gt;&gt;&gt;=</td>
+                <td>Asignación con desplazamiento lógico a la derecha</td>
+                <td>Desplaza los bits a la derecha rellenando con ceros, independientemente del signo</td>
+                <td>a >>>= 1 desplaza los bits de `a` una posición a la derecha rellenando con ceros</td>
+                <td>var a = -10; a >>>= 1; // resultado positivo</td>
+            </tr>
+            <tr>
+                <td>&amp;=</td>
+                <td>Asignación con AND</td>
+                <td>Realiza un AND bit a bit entre los dos operandos y asigna el resultado</td>
+                <td>a &= b realiza la operación AND bit a bit entre `a` y `b`</td>
+                <td>var a = 15; a &= 9; // a = 9</td>
+            </tr>
+            <tr>
+                <td>|=</td>
+                <td>Asignación con OR</td>
+                <td>Realiza un OR bit a bit entre los dos operandos y asigna el resultado</td>
+                <td>a |= b realiza la operación OR bit a bit entre `a` y `b`</td>
+                <td>var a = 15; a |= 9; // a = 15</td>
+            </tr>
+            <tr>
+                <td>^=</td>
+                <td>Asignación con XOR</td>
+                <td>Realiza un XOR bit a bit entre los dos operandos y asigna el resultado</td>
+                <td>a ^= b realiza la operación XOR bit a bit entre `a` y `b`</td>
+                <td>var a = 15; a ^= 9; // a = 6</td>
+            </tr>
+            <tr>
+                <td>[]</td>
+                <td>Asignación de acceso a arrays</td>
+                <td>Accede o asigna valores en un array usando su índice</td>
+                <td>a[0] accede al primer elemento de `a`</td>
+                <td>var a = [1, 2, 3]; a[0] = 10; // a = [10, 2, 3]</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Ejercicio2</h2>
+    <script>
+
+        var a = 10;
+        document.write("Operador =: El valor de a es " + a + "<br>");
+
+
+        a += 5;
+        document.write("Operador +=: El valor de a es " + a + "<br>");
+
+
+        a -= 3;
+        document.write("Operador -=: El valor de a es " + a + "<br>");
+
+
+        a *= 2;
+        document.write("Operador *=: El valor de a es " + a + "<br>");
+
+
+        a /= 2;
+        document.write("Operador /=: El valor de a es " + a + "<br>");
+
+
+        a %= 3;
+        document.write("Operador %=: El valor de a es " + a + "<br>");
+
+        a = 5;
+        a <<= 1;
+        document.write("Operador <<=: El valor de a es " + a + "<br>");
+
+
+        document.write("Operador >=: ¿Es a mayor o igual que 5? " + (a >= 5) + "<br>");
+
+
+        a = 10;
+        a >>= 1;
+        document.write("Operador >>=: El valor de a es " + a + "<br>");
+
+
+        a = -10;
+        a >>>= 1;
+        document.write("Operador >>>=: El valor de a es " + a + " (desplazamiento lógico)<br>");
+
+
+        a = 15;
+        a &= 9;
+        document.write("Operador &=: El valor de a es " + a + "<br>");
+
+
+        a = 15;
+        a |= 9;
+        document.write("Operador |=: El valor de a es " + a + "<br>");
+
+
+        a = 15;
+        a ^= 9;
+        document.write("Operador ^=: El valor de a es " + a + "<br>");
+
+        var arr = [1, 2, 3];
+        arr[0] = 10;
+        document.write("Operador []: El primer valor del array es " + arr[0] + "<br>");
+
+
+        document.write("Array completo: [" + arr.join(", ") + "]<br>");
+    </script>
+
+    <h2>Ejercicio 3</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>JavaScript</th>
+                <th>Sintaxis</th>
+                <th>Nombre</th>
+                <th>Ejemplo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&&</td>
+                <td>Expresión1 && Expresión2</td>
+                <td>Operador Lógico AND</td>
+                <td>var a = true && false; // a = false</td>
+            </tr>
+            <tr>
+                <td>||</td>
+                <td>Expresión1 || Expresión2</td>
+                <td>Operador Lógico OR</td>
+                <td>var b = true || false; // b = true</td>
+            </tr>
+            <tr>
+                <td>!</td>
+                <td>!Expresión</td>
+                <td>Operador Lógico NOT</td>
+                <td>var c = !true; // c = false</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Ejercicio 4</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>A</th>
+                <th>Operador</th>
+                <th>B</th>
+                <th>Resultado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>True</td>
+                <td>&&</td>
+                <td>True</td>
+                <td>True</td>
+            </tr>
+            <tr>
+                <td>True</td>
+                <td>&&</td>
+                <td>False</td>
+                <td>False</td>
+            </tr>
+            <tr>
+                <td>False</td>
+                <td>&&</td>
+                <td>True</td>
+                <td>False</td>
+            </tr>
+            <tr>
+                <td>False</td>
+                <td>&&</td>
+                <td>False</td>
+                <td>False</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Ejercicio 5</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>A</th>
+                <th>Operador</th>
+                <th>B</th>
+                <th>Resultado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>True</td>
+                <td>||</td>
+                <td>True</td>
+                <td>True</td>
+            </tr>
+            <tr>
+                <td>True</td>
+                <td>||</td>
+                <td>False</td>
+                <td>True</td>
+            </tr>
+            <tr>
+                <td>False</td>
+                <td>||</td>
+                <td>True</td>
+                <td>True</td>
+            </tr>
+            <tr>
+                <td>False</td>
+                <td>||</td>
+                <td>False</td>
+                <td>False</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Ejercicio 6</h2>
+    <script>
+
+        var and1 = true && true;
+        var and2 = true && false;
+        var and3 = false && true;
+        var and4 = false && false;
+
+        document.write("<h3>Operador AND (&&)</h3>");
+        document.write("true && true = " + and1 + "<br>");
+        document.write("true && false = " + and2 + "<br>");
+        document.write("false && true = " + and3 + "<br>");
+        document.write("false && false = " + and4 + "<br><br>");
+
+        var or1 = true || true;
+        var or2 = true || false;
+        var or3 = false || true;
+        var or4 = false || false;
+
+        document.write("<h3>Operador OR (||)</h3>");
+        document.write("true || true = " + or1 + "<br>");
+        document.write("true || false = " + or2 + "<br>");
+        document.write("false || true = " + or3 + "<br>");
+        document.write("false || false = " + or4 + "<br><br>");
+
+
+        var not1 = !true;
+        var not2 = !false;
+
+        document.write("<h3>Operador NOT (!)</h3>");
+        document.write("!true = " + not1 + "<br>");
+        document.write("!false = " + not2 + "<br>");
+    </script>
+    <h2>Ejercicio 7</h2>
+    <script>
+
+        var combinacion1 = (true && false) || (false && true);
+        document.write("<h3>Combinación de AND (&&) y OR (||)</h3>");
+        document.write("(true && false) || (false && true) = " + combinacion1 + "<br>");
+
+        var combinacion2 = (true || false) && (true || false);
+        document.write("(true || false) && (true || false) = " + combinacion2 + "<br><br>");
+
+
+        var combinacion3 = !(true && false);
+        document.write("<h3>Combinación de NOT (!) con AND (&&)</h3>");
+        document.write("!(true && false) = " + combinacion3 + "<br>");
+
+        var combinacion4 = !(false && false);
+        document.write("!(false && false) = " + combinacion4 + "<br><br>");
+
+
+        var combinacion5 = !(true || false);
+        document.write("<h3>Combinación de NOT (!) con OR (||)</h3>");
+        document.write("!(true || false) = " + combinacion5 + "<br>");
+
+        var combinacion6 = !(false || false);
+        document.write("!(false || false) = " + combinacion6 + "<br><br>");
+
+        var combinacion7 = !(true && (false || true));
+        document.write("<h3>Combinación de todos los operadores</h3>");
+        document.write("!(true && (false || true)) = " + combinacion7 + "<br>");
+
+        var combinacion8 = (false || (true && !false));
+        document.write("(false || (true && !false)) = " + combinacion8 + "<br>");
+    </script>
+    <h2>Ejercicio 8</h2>
+    <p>Los operadores bit a bit en JavaScript y otros lenguajes de programación permiten manipular <br>
+        los bits individuales que componen un número. En lugar de operar sobre valores completos (como <br>
+        números enteros o booleanos), estos operadores realizan sus operaciones a nivel binario, manipulando
+        directamente los bits de los números</p>
+    <h2>Ejercicio 9</h2>
+    <p>Los operadores bit a bit operan principalmente sobre números enteros.</p>
+    <h2>Ejercicio 10</h2>
+    <table>
+        <tr>
+            <th>Operador</th>
+            <th>Nombre</th>
+            <th>Operando izquierdo</th>
+            <th>Operando derecho</th>
+            <th>Ejemplo</th>
+        </tr>
+        <tr>
+            <td>&</td>
+            <td>AND bit a bit</td>
+            <td>00001000</td>
+            <td>00001100</td>
+            <td>00001000</td>
+        </tr>
+        <tr>
+            <td>|</td>
+            <td>OR bit a bit</td>
+            <td>00001000</td>
+            <td>00001100</td>
+            <td>00001100</td>
+        </tr>
+        <tr>
+            <td>^</td>
+            <td>XOR bit a bit</td>
+            <td>00001000</td>
+            <td>00001100</td>
+            <td>00000100</td>
+        </tr>
+        <tr>
+            <td>~</td>
+            <td>NOT bit a bit</td>
+            <td>00001000</td>
+            <td>-</td>
+            <td>11110111</td>
+        </tr>
+        <tr>
+            <td>&lt;&lt;</td>
+            <td>Desplazamiento a la izquierda</td>
+            <td>00001000</td>
+            <td>2</td>
+            <td>00100000</td>
+        </tr>
+        <tr>
+            <td>&gt;&gt;</td>
+            <td>Desplazamiento a la derecha con signo</td>
+            <td>11000</td>
+            <td>2</td>
+            <td>00110</td>
+        </tr>
+        <tr>
+            <td>&gt;&gt;&gt;</td>
+            <td>Desplazamiento a la derecha sin signo</td>
+            <td>11000</td>
+            <td>2</td>
+            <td>00110</td>
+        </tr>
+    </table>
+
+    <h2>Ejercicio 11</h2>
+    <script>
+        let binario = "10010111";
+        let num255 = "11111111";
+        let decimal = parseInt("10010111", 2);
+        alert("binario " + binario + " es " + decimal + " en decimal");
+
+        let DesplazamientoAND = decimal & 255
+        let DesplazamientoOR = decimal | 255
+        let DesplazamientoXOR = decimal ^ decimal
+        let DesplazamientoNOT = ~decimal
+        let Desplazamientoizquierda = decimal << 1
+        let Desplazamientoderecha = decimal >> 1
+        let Desplazamientoderecha0 = decimal >>> 2
+
+        alert("AND " + DesplazamientoAND);
+        alert("OR " + DesplazamientoOR);
+        alert(DesplazamientoXOR);
+        alert(DesplazamientoNOT);
+        alert(Desplazamientoizquierda);
+        alert(Desplazamientoderecha);
+        alert(Desplazamientoderecha0);
+
+    </script>
+    <h2>Ejercicio 12</h2>
+    <script>
+        let segundoparametroBinario = "11111111";
+        let segundoparametro = parseInt(segundoparametroBinario, 2);
+        let decimall = 1;
+
+
+        let DesplazamientoANDD = decimal & segundoparametro;
+        let DesplazamientoORR = decimal | segundoparametro;
+        let DesplazamientoXORR = decimal ^ segundoparametro;
+        let DesplazamientoNOTT = ~segundoparametro;
+        let Desplazamientoizquierdaa = segundoparametro << 1;
+        let Desplazamientoderechaa = segundoparametro >> 1;
+        let Desplazamientoderecha00 = decimal >>> 2;
+
+
+        alert("AND " + DesplazamientoAND);
+        alert("OR " + DesplazamientoOR);
+        alert("XOR " + DesplazamientoXOR);
+        alert("NOT " + DesplazamientoNOT);
+        alert("Desplazamiento Izquierda " + Desplazamientoizquierda);
+        alert("Desplazamiento Derecha " + Desplazamientoderecha);
+        alert("Desplazamiento Derecha sin signo " + Desplazamientoderecha0); 
+    </script>
+</body>
+
+</html>

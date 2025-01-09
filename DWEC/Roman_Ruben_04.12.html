@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ej04-12 Alumnos</title>
+    <style>
+        h3 {
+
+            color: #dd0000;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1> Ej04-12 Funcionales </h1>
+
+    <h1> Ejemplos </h1>
+    <div id="ejemplos"></div>
+
+    <script>
+        var array1 = [1, 2, 3, 4, 5, false, 6, 1, 7, 8, 9, 12, 18, 24, 25, 26];
+        var e = "1";
+
+        document.getElementById("ejemplos").innerHTML += "<br>" + (array1.includes(5, -6));
+        document.getElementById("ejemplos").innerHTML += "<br>" + (Array.isArray(array1));
+        document.getElementById("ejemplos").innerHTML += "<br>" + (Array.isArray(e));
+        document.getElementById("ejemplos").innerHTML += "<br>" + (array1.includes(5, -6));
+        document.getElementById("ejemplos").innerHTML += "<br>" + (array1.every(x => x % 2 == 1));
+        document.getElementById("ejemplos").innerHTML += "<br>" + (array1.some(x => x % 2 == 1));
+        document.getElementById("ejemplos").innerHTML += "<br>" + (array1.find(x => (x % 2 == 0) && (x % 3 == 0)))
+        document.getElementById("ejemplos").innerHTML += "<br>" + (array1.findLast(x => (x % 2 == 0) && (x % 3 == 0)))
+        document.getElementById("ejemplos").innerHTML += "<br>" + (array1.findIndex(x => (x % 2 == 0) && (x % 3 == 0)))
+        document.getElementById("ejemplos").innerHTML += "<br>" + (array1.findLastIndex(x => (x % 2 == 0) && (x % 3 == 0)))
+        document.getElementById("ejemplos").innerHTML += "<br>" + (array1.findLastIndex(x => (x % 2 == 0) && (x % 3 == 0)))
+
+
+        document.getElementById("ejemplos").innerHTML += "<br>" + (array1.lastIndexOf("3"))
+        document.getElementById("ejemplos").innerHTML += "<br>" + (array1.lastIndexOf(true))
+        document.getElementById("ejemplos").innerHTML += "<br>" + (array1.lastIndexOf(18))
+        document.getElementById("ejemplos").innerHTML += "<br>" + (array1.lastIndexOf(false))
+
+
+
+
+    </script>
+
+    <h3>Ejercicio 1: Verificación de productos en un inventario</h3>
+    <p> <strong> Contexto:</strong> Tienes un inventario de productos y quieres verificar si un producto específico está
+        en stock.
+    </p>
+    <p><strong> 1. Descripción:</strong> Tienes un array con los nombres de los productos [“manzana”, “naranja”,
+        “plátano”, “pera”].
+        Luego:
+        <br>◦ Usa Array.includes() para verificar si la "naranja" está en el inventario.
+        <br>◦ Usa Array.includes() nuevamente para comprobar si "mango" está en el inventario, pero empezando la
+        búsqueda
+        desde
+        el índice 2.
+    </p>
+    <p> <strong> 2. Resultado esperado:</strong> <br>
+        true // "naranja" está en el inventario
+        false // "mango" no está en el inventario desde el índice 2
+
+
+    <h3>Ejercicio 2: Verificar si una variable es un array</h3>
+    <p> <strong> Contexto:</strong> Estás procesando datos y necesitas asegurarte de que ciertas variables sean arrays.
+    </p>
+    <p><strong> 1. Descripción:</strong> Tienes una variable data que podría ser un array o no. Luego:
+        <br>◦ Usa Array.isArray() para verificar si la variable data es realmente un array o no.
+        <br>◦ Si es un array, debes recorrerlo y mostrar los elementos. Si no es un array, muestra un mensaje de error.
+    </p>
+    <p> <strong> 2. Resultado esperado:</strong> <br>
+
+
+        const data = [1, 2, 3];<br>
+        Array.isArray(data);<br> // true
+
+    <h3>Ejercicio 3: Validación de formularios</h3>
+    <p> <strong> Contexto:</strong> Estás validando un formulario en el que se espera que todos los campos estén
+        completados.
+    </p>
+    <p><strong> 1. Descripción:</strong> Tienes un array que representa el estado de varios campos en un formulario,
+        donde cada valor es
+        un
+        booleano indicando si el campo está lleno (true) o vacío (false): [true, true, false, true]. Luego:
+        <br>◦ Usa Array.every() para verificar si todos los campos están completos.
+        <br>◦ Si algún campo está vacío, muestra un mensaje de advertencia.
+    </p>
+    <p> <strong> 2. Resultado esperado:</strong> <br>
+
+
+        const campos = [true, true, false, true];<br>
+        campos.every(campo => campo);<br> // false, aún hay campos vacíos
+
+    <h3>Ejercicio 4: Verificación de permisos de usuarios</h3>
+    <p> <strong> Contexto:</strong> Estás verificando si al menos uno de los usuarios tiene permiso para realizar una
+        acción.
+    </p>
+    <p><strong> 1. Descripción:</strong> Tienes un array que indica si ciertos usuarios tienen permisos [false, false,
+        true, false].
+        Luego:
+        <br>◦ Usa Array.some() para verificar si al menos un usuario tiene permisos para realizar una acción específica.
+    </p>
+    <p> <strong> 2. Resultado esperado:</strong> <br>
+
+
+        const permisos = [false, false, true, false];<br>
+        permisos.some(permiso => permiso);<br> // true, al menos un usuario tiene permisos
+
+    <h3>Ejercicio 5: Encontrar el primer producto con stock bajo</h3>
+    <p> <strong> Contexto:</strong> Tienes un inventario de productos con sus cantidades y necesitas encontrar el primer
+        producto con un
+        stock
+        menor a 10 unidades.
+    </p>
+    <p><strong> 1. Descripción:</strong> Tienes un array con las cantidades de stock [15, 7, 25, 5]. Luego:
+        <br>◦ Usa Array.find() para encontrar el primer producto con stock menor a 10.
+    </p>
+    <p> <strong> 2. Resultado esperado:</strong> <br>
+
+
+        const stock = [15, 7, 25, 5];<br>
+        stock.find(cantidad => cantidad < 10);<br> // 7, es el primer producto con stock bajo <h3>Ejercicio 6: Encontrar
+                el
+                último pedido urgente</h3>
+            <p> <strong> Contexto:</strong> Estás gestionando pedidos y necesitas encontrar el último pedido con
+                prioridad alta.
+            </p>
+            <p><strong> 1. Descripción:</strong> Tienes un array con las prioridades de los pedidos [“baja”, “media”,
+                “alta”, “baja”].
+                Luego:
+                <br>◦ Usa Array.findLast() para encontrar el último pedido con prioridad "alta".
+            </p>
+            <p> <strong> 2. Resultado esperado:</strong> <br>
+
+
+                const prioridades = ["baja", "media", "alta", "baja"];<br>
+                prioridades.findLast(prioridad => prioridad === "alta");<br> // "alta", es el último pedido urgente
+
+            <h3>Ejercicio 7: Encontrar el índice del primer producto en oferta</h3>
+            <p> <strong> Contexto:</strong> En una tienda en línea, necesitas encontrar el índice del primer producto
+                que está en oferta.
+            </p>
+            <p><strong> 1. Descripción:</strong> Tienes un array que indica el precio de los productos [100, 50, 30,
+                150]. Luego:
+                <br>◦ Usa Array.findIndex() para encontrar el índice del primer producto cuyo precio es menor a 50
+                (producto
+                en
+                oferta).
+            </p>
+            <p> <strong> 2. Resultado esperado:</strong> <br>
+
+
+                const precios = [100, 50, 30, 150];<br>
+                precios.findIndex(precio => precio < 50);<br> // 2, es el índice del primer producto en oferta <h3>
+                        Ejercicio
+                        8:
+                        Encontrar el índice del último cliente VIP</h3>
+                    <p> <strong> Contexto:</strong> Tienes una lista de clientes y necesitas encontrar el índice del
+                        último cliente VIP.
+                    </p>
+                    <p><strong> 1. Descripción:</strong> Tienes un array con el estatus de los clientes [“regular”,
+                        “VIP”, “regular”,
+                        “VIP”]. Luego:
+                        <br>◦ Usa Array.findLastIndex() para encontrar el índice del último cliente con estatus "VIP".
+                    </p>
+                    <p> <strong> 2. Resultado esperado:</strong> <br>
+                        const clientes = ["regular", "VIP", "regular", "VIP"];<br>
+                        clientes.findLastIndex(cliente => cliente === "VIP");<br> // 3, es el índice del último cliente
+                        VIP
+
+                    <h3>Ejercicio 9: Búsqueda del índice de un producto específico</h3>
+                    <p> <strong> Contexto:</strong> Tienes una lista de productos y necesitas encontrar la posición de
+                        uno específico.
+                    </p>
+                    <p><strong> 1. Descripción:</strong> Tienes un array con los nombres de los productos [“manzana”,
+                        “naranja”,
+                        “plátano”]. Luego:
+                        <br>◦ Usa Array.indexOf() para encontrar el índice del producto "plátano".
+                        <br>◦ Usa Array.lastIndexOf() para buscar el último índice del producto "manzana", en caso de
+                        que
+                        esté
+                        duplicado.
+                    </p>
+                    <p> <strong> 2. Resultado esperado:</strong> <br>
+                        const productos = ["manzana", "naranja", "plátano"];<br>
+                        productos.indexOf("plátano");<br> // 2
+                        productos.lastIndexOf("manzana");<br> // 0, si es el único
+
+                    <h3>Ejercicio 10: Validación de usuarios con un tipo específico</h3>
+                    <p> <strong> Contexto:</strong> Estás verificando si en una lista de usuarios hay un tipo de usuario
+                        específico (por ejemplo,"administrador").
+                    </p>
+                    <p><strong> 1. Descripción:</strong> Tienes un array con los roles de los usuarios [“usuario”,
+                        “usuario”, “admin”,
+                        “moderador”].
+                        Luego:
+                        <br>◦ Usa Array.includes() para verificar si hay un administrador.
+                        <br>◦ Usa Array.some() para verificar si al menos uno de los usuarios es un administrador.
+                    </p>
+                    <p> <strong> 2. Resultado esperado:</strong> <br>
+
+
+                        const roles = ["usuario", "usuario", "admin", "moderador"];<br>
+                        roles.includes("admin");<br> // true
+                        roles.some(rol => rol === "admin");<br> // true
+
+</body>
+
+</html>

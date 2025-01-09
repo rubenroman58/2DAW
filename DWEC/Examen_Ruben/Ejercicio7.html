@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+
+    <div id="imagenes">
+
+    </div>
+
+
+    <button onclick="girarDerecha()">girar derecha</button>
+    <button onclick="girarIzquierda()">girar izquierda</button>
+
+    <script>
+
+        const imagenes = ['0.jpg','1.jpg','3.jpg','4.jpg','5.jpg'];
+
+        
+        let imagenesGeneradas = [];
+
+        function generarImagenes() {
+             cantidad = Math.floor(Math.random() * 7) + 4; 
+            const contenedor = document.getElementById('imagenes');
+            contenedor.innerHTML = ""; 
+
+            for (let i = 0; i < cantidad; i++) {
+                const indiceAleatorio = Math.floor(Math.random() * imagenes.length);
+                imagenesGeneradas.push(imagenes[indiceAleatorio]); 
+            }
+
+           
+            for (let i = 0; i < imagenesGeneradas.length; i++) {
+                const img = document.createElement('img');
+                img.src = imagenesGeneradas[i];
+                document.getElementById('imagenes').innerHTML += img.outerHTML;
+            }
+        }
+
+       
+        function girarDerecha() {
+            imagenesGeneradas.unshift(imagenesGeneradas.pop()); 
+            actualizarImagenes();
+        }
+
+       
+        function girarIzquierda() {
+            imagenesGeneradas.push(imagenesGeneradas.shift()); 
+            actualizarImagenes();
+        }
+
+    
+        function actualizarImagenes() {
+            const contenedor = document.getElementById('imagenes');
+            const imagenesHTML = contenedor.getElementsByTagName('img');
+
+           
+            for (let i = 0; i < imagenesHTML.length; i++) {
+                imagenesHTML[i].src = imagenesGeneradas[i];
+            }
+        }
+        generarImagenes();
+    </script>
+
+</body>
+
+</html>

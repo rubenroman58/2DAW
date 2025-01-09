@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> </h1>
+    <h3> Ejercicio 1: Filtrar productos con precios menores a un valor</h3>
+    <br><b> Contexto:</b> Tienes un catálogo de productos con sus precios y necesitas mostrar aquellos productos que
+    estén en oferta (precio menor a 50).
+    <br><b> 1. Descripción:</b> Tienes un array con los precios de los productos [100, 45, 30, 70, 25]. Luego:
+    <br> ◦ Usa Array.filter() para filtrar los productos que tengan un precio menor a 50.
+    <br><b> 2. Resultado esperado:</b><br></br>
+
+    <script>
+        productos = [100, 45, 30, 70, 25]
+        document.write('<strong>Ejercicio 1: ' + productos.filter(menor => menor < 50) + '</strong>')
+    </script>
+
+    <br>
+    <h3> Ejercicio 2: Desanidar listas de comentarios en un foro </h3>
+    <br><b> Contexto:</b> Tienes una lista de comentarios en un foro, pero algunos comentarios son respuestas a
+    otros (anidados) y deseas obtener una lista plana de todos los comentarios.
+    <br><b> 1. Descripción:</b> Tienes un array anidado con los comentarios:
+    const comentarios = [
+    ["Buen post", "Gracias"],
+    ["Interesante"],
+    ["No estoy de acuerdo", ["Muy cierto", "Concuerdo"]]
+    ];<br>
+    <br> ◦ Usa Array.flat() para crear un array plano con todos los comentarios, eliminando los niveles de
+    anidación.
+    <br><b> 2. Resultado esperado:</b>
+    const comentarios = [
+    ["Buen post", "Gracias"],
+    ["Interesante"],
+    ["No estoy de acuerdo", ["Muy cierto", "Concuerdo"]]
+    ];<br>
+    <script>
+        const comentarios = [
+            ["Buen post", "Gracias"],
+            ["Interesante"],
+            ["No estoy de acuerdo", ["Muy cierto", "Concuerdo"]]
+        ];
+        comentariosNuevo = comentarios.flat(2)
+        document.write('<strong>Ejercicio 2: ' + comentariosNuevo.join('--') + '</strong>')
+    </script>
+    <br>
+    <h3> Ejercicio 3: Procesamiento de datos de usuarios y asignación de etiquetas </h3>
+    <br><b> Contexto:</b> Tienes una lista de usuarios y quieres asignarles etiquetas dependiendo de su estatus y,
+    al mismo tiempo, crear un array plano con los estatus.
+    <br><b> 1. Descripción:</b> Tienes un array con objetos de usuarios con el formato { nombre: string, roles:
+    string[] }. Luego:
+    <br> ◦ Usa Array.flatMap() para descomponer los roles de cada usuario y obtener un array plano con todas las
+    etiquetas.
+    <br><b> 2. Resultado esperado:</b>
+
+    const usuarios = [
+    { nombre: "Juan", roles: ["admin", "editor"] },
+    { nombre: "María", roles: ["usuario"] },
+    { nombre: "Pedro", roles: ["moderador", "editor"] }
+    ];<br>
+
+    <script>
+        const usuarios = [
+            { nombre: "Juan", roles: ["admin", "editor"] },
+            { nombre: "María", roles: ["usuario"] },
+            { nombre: "Pedro", roles: ["moderador", "editor"] }
+        ];
+
+        usuariosNuevo = usuarios.flatMap(usuario => usuario.roles)
+        const etiquetasUnicas = [...new Set(usuariosNuevo)];
+        document.write('<strong>Ejercicio 3: ' + etiquetasUnicas.join('--') + '</strong>')
+    </script>
+
+    <br>
+    <h3> Ejercicio 4: Imprimir una lista de tareas pendientes </h3>
+    <br><b> Contexto:</b> Tienes una lista de tareas y quieres imprimirlas una por una en la consola.
+    <br><b> 1. Descripción:</b> Tienes un array con las tareas pendientes [“Lavar platos”, “Comprar comida”, “Hacer
+    ejercicio”]. Luego:
+    <br> ◦ Usa Array.forEach() para recorrer el array y mostrar cada tarea con su índice.
+    <br><b> 2. Resultado esperado:</b><br>
+    <script>
+        document.write('<strong>Ejercicio 4:</strong><br>')
+        tareas = ['Lavar platos', 'Comprar comida', 'Hacer ejercicio']
+        numeroTarea = 1
+        tareas.forEach(el => {
+            document.write('Tarea ' + numeroTarea + ':' + el + '<br>');
+            numeroTarea++;
+        })
+    </script>
+
+
+    <h3> Ejercicio 5: Generar una lista de precios con IVA aplicado </h3>
+    <br><b> Contexto:</b> Tienes una lista de precios de productos y quieres generar una nueva lista en la que
+    apliques el 21% de IVA (Impuesto sobre el Valor Añadido).
+    <br><b> 1. Descripción:</b> Tienes un array con los precios originales [100, 200, 300]. Luego:
+    <br> ◦ Usa Array.map() para crear un nuevo array en el que cada precio tenga el IVA incluido.
+    <br><b> 2. Resultado esperado:</b>
+
+    <script>
+       preciosOriginales=[100, 200, 300]
+    </script>
+
+
+    <br>
+    <h3> Ejercicio 6: Filtrar usuarios activos en un sistema </h3>
+    <br><b> Contexto:</b> Tienes una lista de usuarios y quieres filtrar aquellos que están activos.
+    <br><b> 1. Descripción:</b> Tienes un array de objetos que representan usuarios con el formato { nombre: string,
+    activo: boolean }. Luego:
+    <br> ◦ Usa Array.filter() para obtener una lista con solo los usuarios activos.
+    <br><b> 2. Resultado esperado:</b>
+
+
+    const usuarios = [
+    { nombre: "Juan", activo: true },
+    { nombre: "María", activo: false },
+    { nombre: "Pedro", activo: true }
+    ];<br>
+    const usuariosActivos = usuarios.filter(usuario => usuario.activo);<br>
+    console.log(usuariosActivos);<br>
+    // [{ nombre: "Juan", activo: true }, { nombre: "Pedro", activo: true }]
+
+    <br>
+    <h3> Ejercicio 7: Simplificación de listas de categorías de productos </h3>
+    <br><b> Contexto:</b> Tienes una lista con categorías de productos, algunas de las cuales están anidadas, y
+    necesitas obtener una lista plana con todas las categorías.
+    <br><b> 1. Descripción:</b> Tienes un array anidado con las categorías [“Electrónica”, [“Teléfonos”,
+    “Computadoras”], “Ropa”]. Luego:
+    <br> ◦ Usa Array.flat() para descomponer las categorías anidadas en una lista plana.
+    <br><b> 2. Resultado esperado:</b>
+
+
+    const categorias = ["Electrónica", ["Teléfonos", "Computadoras"], "Ropa"];<br>
+    const categoriasPlanas = categorias.flat();<br>
+    console.log(categoriasPlanas);<br>
+    // ["Electrónica", "Teléfonos", "Computadoras", "Ropa"]
+
+    <br>
+    <h3> Ejercicio 8: Crear una lista de nombres en mayúsculas </h3>
+    <br><b> Contexto:</b> Tienes una lista de nombres y quieres convertirlos todos a mayúsculas para mostrarlos en
+    un informe.
+    <br><b> 1. Descripción:</b> Tienes un array con los nombres [“juan”, “maría”, “pedro”]. Luego:
+    <br> ◦ Usa Array.map() para crear un nuevo array con todos los nombres en mayúsculas.
+    <br><b> 2. Resultado esperado:</b>
+
+
+    const nombres = ["juan", "maría", "pedro"];<br>
+    const nombresMayus = nombres.map(nombre => nombre.toUpperCase());<br>
+    console.log(nombresMayus);<br> // ["JUAN", "MARÍA", "PEDRO"]
+
+    <br>
+    <h3> Ejercicio 9: Imprimir las cantidades de productos vendidos </h3>
+    <br><b> Contexto:</b> Tienes una lista con las cantidades de productos vendidos y necesitas imprimirlas en la
+    consola para llevar un control.
+    <br><b> 1. Descripción:</b> Tienes un array con las cantidades [10, 20, 30, 40]. Luego:
+    <br> ◦ Usa Array.forEach() para recorrer el array y mostrar cada cantidad junto con un mensaje.
+    <br><b> 2. Resultado esperado:</b>
+
+
+    const cantidades = [10, 20, 30, 40];<br>
+    cantidades.forEach(cantidad => {
+    console.log(`Se vendieron ${cantidad} productos.`);<br>
+    });<br>
+    // Se vendieron 10 productos.
+    // Se vendieron 20 productos.
+    // Se vendieron 30 productos.
+    // Se vendieron 40 productos.
+
+    <br>
+    <h3> Ejercicio 10: Calcular el precio total de productos con descuento </h3>
+    <br><b> Contexto:</b> Tienes una lista de precios de productos y necesitas calcular el precio con un descuento
+    aplicado del 10%.
+    <br><b> 1. Descripción:</b> Tienes un array con los precios [50, 100, 150]. Luego:
+    <br> ◦ Usa Array.map() para crear un nuevo array donde cada precio tenga aplicado el descuento del 10%.
+    <br><b> 2. Resultado esperado:</b>
+
+
+    const precios = [50, 100, 150];<br>
+    const preciosConDescuento = precios.map(precio => precio * 0.9);<br>
+    console.log(preciosConDescuento);<br> // [45, 90, 135], precios con descuento aplicado
+
+
+</body>
+
+</html>

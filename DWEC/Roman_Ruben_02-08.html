@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+
+    <script>
+
+        const arr1 = ["Malaga", "Sevilla", "Cordoba", "Huelva", "Cadiz", "Almeria", "Granada"];
+        document.write('<ol>');
+        for (ciudades of arr1) {
+            document.write('<li style="color:green">' + ciudades + '</li>')
+        }
+        document.write('</ol>');
+
+    </script>
+    <h2>Ejercicio 2</h2>
+
+    <script>
+        // Lista de ciudades
+        const ciudades = ["Malaga", "Sevilla", "Cordoba", "Huelva", "Cadiz", "Almeria", "Granada"];
+
+        // Lista de colores en formato hexadecimal, para crear un degradado de verde.
+        const colores = ["#000000", "#003300", "#006600", "#009900", "#00cc00", "#00ff00", "#00ff33"];
+
+        // Crear la lista en HTML
+        document.write('<ol>');
+
+        // Usamos un for...of para recorrer las ciudades
+        let index = 0; // Esto se usa para llevar el control de los colores
+        for (const ciudad of ciudades) {
+            // Aplicar el color a la ciudad
+            document.write(`<li style="color:${colores[index]};">${ciudad}</li>`);
+            index++; // Aumentamos el índice para cambiar de color
+        }
+
+        document.write('</ol>');
+    </script>
+    <h3>Lista con un for in(ejercicio 2)</h3>
+    <script>
+
+        // Lista de ciudades
+        const ciudades2 = [
+            { nombre: "Malaga", color: "#000000" },
+            { nombre: "Sevilla", color: "#003300" },
+            { nombre: "Cordoba", color: "#006600" },
+            { nombre: "Huelva", color: "#009900" },
+            { nombre: "Cadiz", color: "#00cc00" },
+            { nombre: "Almeria", color: "#00ff00" },
+            { nombre: "Granada", color: "#00ff33" }
+        ];
+
+        document.write('<ol>');
+        for (let index in ciudades2) {
+            let ciudad = ciudades2[index].nombre; // Obtener el nombre de la ciudad
+            let color = ciudades2[index].color; // Obtener el color
+            document.write(`<li style="color:${color};">${ciudad}</li>`); // Usar el color en el estilo
+        }
+        document.write('</ol>');
+    </script>
+
+    <h2>Ejercicio 3</h2>
+    <script>
+        var Mis_notas = { mates: 9, Lengua: 6, Efisica: 5, Quimica: 9, fisica: 5, ingles: 5 };
+        for (let asignaturas in Mis_notas) {
+            document.write('<br>Las asignaturas son: ' + asignaturas)
+        }
+        for (let asignatura in Mis_notas) {
+            document.write('<br>La nota de ' + asignatura + ' es: ' + Mis_notas[asignatura]);
+        }
+    </script>
+
+    <h2>Ejercicio 4</h2>
+    <script>
+
+        const arr5 = ["Malaga", "Sevilla", "Cordoba", "Huelva", "Cadiz", "Almeria", "Granada"];
+        const arr6 = ["bonita", "Guapa", "Bella", "Pintoresca", "Hermosa"];
+
+        // Crear la tabla
+        document.write('<table border="1">');
+
+        // Iterar sobre cada adjetivo para crear las filas
+        for (let adj of arr6) {
+            document.write('<tr>'); // Iniciar una nueva fila para cada adjetivo
+
+            // Iterar sobre cada ciudad para mostrar las combinaciones
+            for (let arr5ciu of arr5) {
+                document.write(`<td>${arr5ciu} -- ${adj}</td>`); // Crear una celda por cada combinación
+            }
+
+            document.write('</tr>'); 
+        }
+
+
+        document.write('</table>'); 
+
+    </script>
+ 
+
+
+    <h2>Ejercicio 5</h2>
+
+
+    <script>
+        const arrEjer5 = ["Malaga", "Sevilla", "Cordoba", "Huelva", "Cadiz", "Almeria", "Granada"];
+
+        for (let ciudadesEjer5 of arrEjer5) {
+            document.write('<form method="POST">');
+            document.write(`<input type="button" value="${ciudadesEjer5}" onclick='alert("La ciudad más bonita es ${ciudadesEjer5}")'>`);
+            document.write('</form>');
+            document.write('<br>');
+        }
+    </script>F
+    <h2>Ejercicio 6</h2>
+
+    <script>
+
+        const tamano = ["10", "15", "20", "30", "40", "50", "60", "70", "80", "85"];
+
+        for (let numeroTamano of tamano) {
+            document.write(`<p style="font-size:${numeroTamano}px">Hola que tal<br></p>`)
+        }
+
+
+    </script>
+
+</body>
+
+</html>

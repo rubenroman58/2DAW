@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <form>
+        <label for="etiqueta1">Latitud</label>
+        <input type="number" id="etiqueta1"> </p>
+        <label for="etiqueta2">Longitud</label>
+        <input type="number" id="etiqueta2"> </p>
+        
+        <button onclick="generar()">Calcular la distancia</button>
+    </form>
+    
+    <script>
+        function generar() {
+            latitud1 = document.getElementById('etiqueta1').value
+            longitud1 = document.getElementById('etiqueta2').value
+            
+            var latitude2 = position.coords.latitude;
+            var longitude2 = position.coords.longitude;
+
+            distancia=Math.sqrt(((latitud1-longitude2)*(latitud1-longitude2))+(longitud1-longitude2)*(longitud1-longitude2))
+            distanciaFinal=distancia*111
+         
+            document.write('La distancia a la que se encuentr es(km): '+distanciaFinal.toFixed(2))
+           
+
+
+        }
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.write('hhh')
+        var fecha_nac4 = window.prompt('Introduzca tu fecha de nacimiento (formato: YYYY-MM-DD): ');
+        var pais4 = prompt('Introduzca su país:').toLowerCase();
+        var sexo4 = prompt('Introduzca el sexo (m, f):').toLowerCase();
+
+        var fechaNacimiento4 = new Date(fecha_nac4);
+
+        if (isNaN(fechaNacimiento4.getTime())) {
+            document.write("La fecha ingresada no es válida. Asegúrate de usar el formato correcto (YYYY-MM-DD).");
+        } else {
+            var esperanzaVida;
+
+
+            switch (pais4) {
+                case 'japon':
+                    esperanzaVida = (sexo4 === 'm') ? 86 : 81;
+                    break;
+                case 'suiza':
+                    esperanzaVida = (sexo4 === 'm') ? 82 : 84;
+                    break;
+                case 'españa':
+                    esperanzaVida = (sexo4 === 'm') ? 79 : 85;
+                    break;
+                case 'italia':
+                    esperanzaVida = (sexo4 === 'm') ? 80 : 85;
+                    break;
+                case 'irak':
+                    esperanzaVida = (sexo4 === 'm') ? 70 : 74;
+                    break;
+                case 'somalia':
+                    esperanzaVida = (sexo4 === 'm') ? 54 : 59;
+                    break;
+                case 'guinea ecuatorial':
+                    esperanzaVida = (sexo4 === 'm') ? 60 : 64;
+                    break;
+                default:
+                    document.write("No tenemos datos sobre la esperanza de vida para este país.");
+                    return;
+            }
+
+            var hoy4 = new Date();
+            var edad4 = hoy4.getFullYear() - fechaNacimiento4.getFullYear();
+            var mes4 = hoy4.getMonth() - fechaNacimiento4.getMonth();
+            if (mes4 < 0 || (mes4 === 0 && hoy4.getDate() < fechaNacimiento4.getDate())) {
+                edad4--;
+            }
+
+            var aniosRestantes = esperanzaVida - edad4;
+
+            if (aniosRestantes > 0) {
+                document.write(`Te quedan aproximadamente ${aniosRestantes} años de vida según la esperanza de vida en ${pais4}.`);
+            } else {
+                document.write(`¡Ya has superado la esperanza de vida promedio en ${pais4}!`);
+            }
+        }
+    </script>
+    <!--  Prueba intervalo -->
+    <h2>Intervalo</h2>
+    <button type="button" onclick="parar()"> Parar</button>
+    <button type="button" onclick="iniciar()"> Iniciar</button>
+    <div id="horaID"> </div>
+    <script>
+        /*
+               var driverIntervalo = null;
+                var contador=0
+                arrayNumeros = ['CERO', 'UNO', 'DOS', 'TRES', 'CUATRO', 'CINCO', 'SEIS', 'SIETE', 'OCHO', 'NUEVE', 'DIEZ',]
+                function hora() {
+                    
+                    if (contador < 10) {
+                        contador++
+                        document.getElementById("horaID").innerHTML = arrayNumeros[contador]
+                      
+                    } else {
+                        parar()
+                    }
+                }
+                function iniciar() {
+                    if (driverIntervalo == null)
+                        driverIntervalo = setInterval(hora, 100);
+                }
+                function parar() {
+                    clearInterval(driverIntervalo)
+                    driverIntervalo = null;
+                }
+         */
+    </script>
+
+    <h2>LOCATION</h2>
+
+    <script>
+       /*  try {
+            if (navigator.geolocation.getCurrentPosition(showPosition).GeolocationPositionError != PERMISSION_DENIED)
+                navigator.geolocation.getCurrentPosition(showPosition);
+        } catch (e) {
+            document.getElementById("demo").innerHTML =
+                "Geolocation is not supported by this browser2.";
+        }
+
+        function showPosition(position) {
+   var x=position
+
+            const X1 = 43.986713
+            const Y1 = -9.279045
+            const X2 = 36.753298
+            const Y2 = 2.645772
+            if ((x < XI) && (x < X2) && (y < Y1) && (y < Y2)) {
+                document.getElementById('demo').innerHTML = 'Estas en españa'
+            } else {
+                document.getElementById('demo').innerHTML = 'No estas en españa'
+            }
+        } */
+    </script>
+
+<br><br>
+Geolocation
+
+<h1>The Window Navigator Object</h1>
+<h2>The The geolocation Property</h2>
+<p id="demo"></p>
+<br>
+<p id="dentro"></p>
+
+
+<button onclick="verCoordenadas()">Ver coordenadas</button>
+
+<script>
+    text = ""
+
+
+    function verCoordenadas() {
+        try {
+            if (navigator.geolocation.getCurrentPosition(showPosition).GeolocationPositionError != PERMISSION_DENIED)
+
+/*                     if(navigator.location)
+*/                    navigator.geolocation.getCurrentPosition(showPosition);
+        } catch (e) {
+            document.getElementById("demo").innerHTML =
+            
+                "Geolocation is not supported by this browser2.";
+        }
+    }
+
+    function showPosition(position) {
+
+        var puntX1 = 44.0551;
+        var puntY1 = -9.4594;
+
+        var puntX2 = 36.7378;
+        var puntY2 = 2.4716;
+        dentroLatitud = false;
+        dentroLongitud = false;
+
+        /*             atitude: 36.6173 
+                    Longitude: -4.5108
+         */
+
+        calculo1 = puntX1 > 43.3553 && puntX2 > 40.4555
+            ? dentroLatitud = true : dentroLatitud = false;
+
+
+        calculo1 = puntY1 < position.coords.longitude && puntY2 > position.coords.longitude
+            ? dentroLongitud = true : dentroLongitud = false;
+
+
+        if (dentroLatitud == true && dentroLongitud == true) {
+            document.getElementById("dentro").innerHTML = "Está dentro de españa"
+
+        } else {
+            document.getElementById("dentro").innerHTML = "Está fuera  de españa"
+
+        }
+
+
+        document.getElementById("demo").innerHTML
+            = "Latitude: " + position.coords.latitude + "<br>" +
+            "Longitude: " + position.coords.longitude
+
+
+
+    }
+
+    /*
+                url = location.assign("https://www.google.es/maps/@" + position.coords.latitude + "," + position.coords.longitude + "15z") */
+
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

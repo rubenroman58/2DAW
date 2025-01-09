@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h2>Ejercicio 1 </h2>
+    <script language="JavaScript">
+        var nombre;
+        var edad;
+        nombre = prompt('Ingrese su nombre:', '');
+        edad = prompt('Ingrese su edad:', '');
+        document.write('Hola ');
+        document.write(nombre);
+        document.write(' asi que tienes ');
+        document.write(edad);
+        document.write('años');
+    </script>
+    <h2>Ejercicio 2</h2>
+    <script>
+        entrada = prompt('Escribe una entrada: ');
+        document.write('<h1>' + entrada + '</h1>');
+    </script>
+
+    <h2>Ejercicio 3</h2>
+    <script>
+        // Pedimos la fecha de nacimiento al usuario
+        let entrada = prompt('Escribe la fecha de nacimiento (yyyy-mm-dd):');
+
+        // Convertimos la entrada en un objeto Date
+        let fechaNacimiento = new Date(entrada);
+
+        // Obtenemos la fecha actual
+        let fechaActual = new Date();
+
+        // Calculamos la diferencia de años
+        let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+        // Ajustamos si la persona aún no ha cumplido años este año
+        let mesActual = fechaActual.getMonth();
+        let diaActual = fechaActual.getDate();
+        let mesNacimiento = fechaNacimiento.getMonth();
+        let diaNacimiento = fechaNacimiento.getDate();
+
+        if (mesNacimiento > mesActual || (mesNacimiento === mesActual && diaNacimiento > diaActual)) {
+            edad--;
+        }
+
+        // Verificamos si es mayor de edad
+        if (edad >= 18) {
+            document.write('Eres mayor de edad');
+        } else {
+            document.write('No eres mayor de edad');
+        }
+    </script>
+    <h2>Ejercicio 5</h2>
+    <script>
+        // Pedimos la fecha de nacimiento al usuario
+        let entrada5 = prompt('Escribe la fecha de nacimiento (yyyy-mm-dd):');
+
+        // Convertimos la entrada en un objeto Date
+        let fechaNacimiento5 = new Date(entrada5);
+
+        // Obtenemos la fecha actual
+        let fechaActual5 = new Date();
+
+        // Calculamos la diferencia de años
+        let edad5 = fechaActual5.getFullYear() - fechaNacimiento5.getFullYear();
+
+        // Ajustamos si la persona aún no ha cumplido años este año
+        let mesActual5 = fechaActual5.getMonth();
+        let diaActual5 = fechaActual5.getDate();
+        let mesNacimiento5 = fechaNacimiento5.getMonth();
+        let diaNacimiento5 = fechaNacimiento5.getDate();
+
+        if (mesNacimiento5 > mesActual5 || (mesNacimiento5 === mesActual5 && diaNacimiento5 > diaActual)) {
+            edad5--;
+        }
+
+        // Verificamos si es mayor de edad
+        if (edad5 >= 18 && edad5>67) {
+            document.write('Jubilado');
+        } else if (edad5 >= 18 && edad5<67){
+            document.write('Eres mayor de edad pero no jubilado');
+        }else{
+            document.write('Menor edad');
+        }
+    </script>
+</body>
+
+</html>

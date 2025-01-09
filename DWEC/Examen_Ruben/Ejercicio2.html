@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Ejercicio 7</h2>
+    <button type="button" onclick="parar()"> Parar</button>
+    <button type="button" onclick="iniciar()"> Iniciar</button>
+    <div id="horaID"> </div>
+    <div id="contadorMinutos"> </div>
+
+<script>
+    
+           var driverIntervalo = null;
+            var contador=0
+            var contadorMinutos=0
+         
+            function hora() {
+                
+                if (contador < 60) {
+                    contador++
+                    document.getElementById("horaID").innerHTML += contador+'-'
+                   contadorMinutos++
+                   document.getElememtById('contadorMinutos').innerHTML=contadorMinutos
+                } else {
+                    parar()
+                }
+            }
+            function iniciar() {
+                if (driverIntervalo == null)
+                    driverIntervalo = setInterval(hora, 100);
+            }
+            function parar() {
+                clearInterval(driverIntervalo)
+                driverIntervalo = null;
+            }
+     
+</script>
+
+
+</body>
+</html>

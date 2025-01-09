@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .contenedor {
+      border: 3px solid blue;
+      text-align: center;
+
+      padding: 40px;
+      width: fit-content;
+      margin: 30px auto;
+
+    }
+
+    .contenedor2 {
+      border: 3px solid rgb(187, 159, 159);
+      text-align: center;
+
+      padding: 40px;
+      width: fit-content;
+      margin: 30px;
+
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 40px;
+      color: rgb(0, 0, 0);
+    }
+
+    .label2 {
+      font-weight: bold;
+      font-size: 20px;
+      color: rgb(75, 196, 116);
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <h2>Ejercicio 1</h2>
+  <button onclick="alert(' Gracias por pulsarme');">Hazme <strong>click</strong></button>
+
+  <h2>Ejercicio 2</h2>
+  <button onclick="alert('Gracias por pulsarme');" style="font-size: 16px; vertical-align: middle;">
+    Hazme click
+    <img src="boton.jpg" width="100" height="100" style="vertical-align: middle;">
+  </button>
+
+  <h2>Ejercicio 3</h2>
+  <form action="servicio.php" method="get" class="contenedor">
+    <label for="provincia" id="provincia"> Seleccione su provincia </label><br>
+    <select name="provincia">
+      <option value="av">Ávila</option>
+      <option value="bu">Burgos</option>
+      <option value="l">León</option>
+      <option value="p">Palencia</option>
+      <option value="sg">Segovia</option>
+      <option value="so">Soria</option>
+      <option value="sa">Salamanza</option>
+      <option value="va">Valladolid</option>
+      <option value="za">Zamora</option>
+    </select>
+    <input type="submit" value="enviar">
+  </form>
+
+  <h2>Ejercicio 4</h2>
+  <form action="servicio.php" method="get" class="contenedor">
+    <label for="provincia" id="provincia"> Seleccione su pueblo </label><br>
+    <select name="provincia">
+      <optgroup label="Malaga">
+        <option value="av">Villanueva del tabuco</option>
+        <option value="bu">Malaga</option>
+        <option value="l">Villanueva del rosario</option>
+      </optgroup>
+      <optgroup label="Granada">
+        <option value="p">Granada</option>
+        <option value="so">Loja</option>
+      </optgroup>
+
+    </select>
+    <input type="submit" value="enviar">
+  </form>
+  <h3>Ejercicio 5</h3>
+<form action="servicio.php" method="get" class="contenedor2">
+  <label for="impresiones" class="label2">Escriba sus impresiones:</label><br>
+  <textarea id="impresiones" name="impresiones" rows="5" cols="10" placeholder="Escribe tus impresiones" maxlength="50" required autofocus></textarea>
+  <br>
+  <input type="submit" value="Enviar">
+</form>
+
+
+
+
+</body>
+
+</html>

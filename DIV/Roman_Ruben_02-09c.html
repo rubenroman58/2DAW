@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <form method="get"
+        style="width: 400px; margin-left:auto ;margin-right:auto;background-color: beige;border-color:brown;border: 1px solid red ;border-radius:6px;">
+        <h2>Formulario 1</h2>
+        <fieldset>
+            <legend>Datos personales</legend>
+            <label for="nombre"> Nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <br>
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" id="apellido">
+            <br>
+            <label for="edad">Edad</label>
+            <input type="number" name="edad" id="edad">
+            <br>
+            <label for="rango">Seleccione tu satisfaccion</label><br>
+            <input type="range" name="rango" id="rango">
+            <br>
+        </fieldset>
+        <button type="submit">Gracias por tu opnion</button>
+    </form>
+
+    <h2>Ejercicio 2</h2>
+    <form method="get"
+        style="width: 400px; margin-left:auto ;margin-right:auto;background-color: beige;border-color:brown;border: 1px solid red ;border-radius:6px;">
+        <h2>Formulario 2</h2>
+        <fieldset>
+            <legend>Datos personales</legend>
+            <label for="nombre"> Nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <br>
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" id="apellido">
+            <br>
+            <label for="edad">Apellido</label>
+            <input type="number" name="edad" id="edad">
+            <br>
+        </fieldset>
+        <fieldset>
+            <legend>Concierto</legend>
+            <label for="lista"> Concierto al que asistes</label>
+            <input type="text" name="lista" id="lista" list="listaConciertos">
+            <datalist id="listaConciertos">
+                <option value="Camela">
+                <option value="Falete">
+                <option value="Rafael">
+            </datalist>
+            <br>
+            <label for="texto">Que opinas del Concierto</label>
+            <br>
+            <textarea placeholder="Opina del concierto" name="texto" id="texto"></textarea>
+            <br>
+
+            <label for="valoracion"> Valoracion</label>
+            <input type="text" name="valoracion" id="valoracion" list="valoraciones">
+            <datalist id="valoraciones">
+                <option value="Bien">
+                <option value="Mal">
+                <option value="Regular">
+            </datalist>
+
+        </fieldset>
+        <button type="submit">Gracias por tu opnion</button>
+    </form>
+
+    <h2>Ejercicio 3</h2>
+    <form method="get"
+        style="width: 400px; margin-left:auto ;margin-right:auto;background-color: beige;border-color:brown;border: 1px solid red ;border-radius:6px;">
+        <h2>Formulario 3</h2>
+        <script>
+            function cambio() {
+
+                const velocidad = Math.random() * 100;
+                const fuerza = Math.random() * 100;
+                const persuasion = Math.random() * 100;
+                const espionaje = Math.random() * 100;
+
+
+                Velocidad.value = velocidad;
+                Fuerza.value = fuerza;
+                Persuasion.value = persuasion;
+                Espionaje.value = espionaje;
+            }
+        </script>
+        <fieldset>
+            <legend>Genera tu personaje para el juego</legend>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <br>
+            <label for="valoracion">Valoración</label>
+            <input type="text" name="valoracion" id="valoracion" list="valoraciones">
+            <datalist id="valoraciones">
+                <option value="Mago">
+                <option value="Ladron">
+                <option value="Guerrero">
+            </datalist>
+            <br>
+            <label for="edad">Escoge la edad</label>
+            <input type="range" name="edad" id="edad">
+            <button type="button" onclick="cambio()">Genera tu personaje</button>
+        </fieldset>
+        <fieldset>
+            <legend>Datos del personaje</legend>
+            <label for="velocidad">Velocidad</label>
+            <meter id="Velocidad" max="100" value="0"></meter>
+            <br>
+            <label for="fuerza">Fuerza</label>
+            <meter id="Fuerza" max="100" value="0"></meter>
+            <br>
+            <label for="persuasion">Persuasión</label>
+            <meter id="Persuasion" max="100" value="0"></meter>
+            <br>
+            <label for="espionaje">Espionaje</label>
+            <meter id="Espionaje" max="100" value="0"></meter>
+            <br>
+        </fieldset>
+    </form>
+    <h2>Ejercicio 4</h2>
+    <form method="get"
+        style="width: 400px; margin-left:auto ;margin-right:auto;background-color: beige;border-color:brown;border: 1px solid red ;border-radius:6px;">
+        <h2>Formulario 4</h2>
+        <script>
+            function cambio2() {
+
+            /*             Dependiendo del personaje que se escoga se varia los datos del personaje
+             */         if (Valoracion2.value == "Guerrero") fuerza4.value = 175;
+                if (Valoracion2.value == "Guerrero") persuasion4.value = 75;
+                if (Valoracion2.value == "Guerrero") velocidad4.value = 189;
+                if (Valoracion2.value == "Guerrero") espionaje4.value = 10;
+
+                if (Valoracion2.value == "Mago") fuerza4.value = 56;
+                if (Valoracion2.value == "Mago") persuasion4.value = 25;
+                if (Valoracion2.value == "Mago") velocidad4.value = 200;
+                if (Valoracion2.value == "Mago") espionaje4.value = 7;
+
+                if (Valoracion2.value == "Ladrón") fuerza4.value = 24;
+                if (Valoracion2.value == "Ladrón") persuasion4.value = 89;
+                if (Valoracion2.value == "Ladrón") velocidad4.value = 56;
+                if (Valoracion2.value == "Ladrón") espionaje4.value = 3;
+
+                if (Valoracion2.value == "Paladín") fuerza4.value = 7;
+                if (Valoracion2.value == "Paladín") persuasion4.value = 124;
+                if (Valoracion2.value == "Paladín") velocidad4.value = 32;
+                if (Valoracion2.value == "Paladín") espionaje4.value = 14;
+
+
+
+
+            }
+        </script>
+        <fieldset>
+            <legend>Genera tu personaje para el juego</legend>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <br>
+            <label for="Valoracion2">Valoración</label>
+            <input type="text" name="Valoracion2" id="Valoracion2" list="valoracionesPersonajes" onchange="cambio2()">
+            <datalist id="valoracionesPersonajes">
+                <option value="Mago">
+                <option value="Ladrón">
+                <option value="Guerrero">
+                <option value="Paladín">
+            </datalist>
+            <br>
+            <label for="edad">Escoge la edad</label>
+            <input type="range" name="edad" id="edad">
+            <button type="button">Genera tu personaje</button>
+        </fieldset>
+        <fieldset>
+            <legend>Datos del personaje</legend>
+            <label for="velocidad4">Velocidad</label>
+            <meter id="velocidad4" max="100" value="0" high="60" low="30"></meter>
+            <br>
+            <label for="fuerza4">Fuerza</label>
+            <meter id="fuerza4" max="100" value="0" high="60" low="30"></meter>
+            <br>
+            <label for="persuasion4">Persuasión</label>
+            <meter id="persuasion4" max="100" value="0" high="60" low="30"></meter>
+            <br>
+            <label for="espionaje4">Espionaje</label>
+            <meter id="espionaje4" max="100" value="0" high="60" low="30"></meter>
+            <br>
+        </fieldset>
+    </form>
+
+</body>
+
+</html>

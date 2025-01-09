@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1" />
+</head>
+
+<body>
+
+    <h1>Nombre:Ruben Roman </h1>
+    <h1>Fecha: </h1>
+    <h2>Strings Ejemplos </h2>
+
+    <h1>Strings Ejecicios</h1>
+    <br><br>
+    <h2> 1.</h2> Toma una entrada con window.prompt() y muestra su tamaño
+    <script>
+        /*
+        var entrada = window.prompt("Ingresa un texto:");
+        document.write("El tamaño de la entrada es: " + entrada.length);
+        */
+    </script>
+    <br><br>
+    <h2>2</h2> Toma una entrada con window.prompt() y nos muestre el carácter que esta en la mitad con charAt()
+    <script>
+        /*
+        var entrada2 = window.prompt("Ingresa un texto:");
+        var posicionMedia = Math.floor(entrada2.length / 2);
+        document.write("El carácter en la mitad es: " + entrada2.charAt(posicionMedia));
+*/
+    </script>
+    <br><br>
+    <h2>3</h2> Modifica el anterior para que muestre también su código Unicode
+    <script>
+        /*
+        var entrada3 = window.prompt("Ingresa un texto:");
+        var posicionMedia2 = Math.floor(entrada3.length / 2);
+        var caracterMedio = entrada3.charAt(posicionMedia2);
+        document.write("El carácter en la mitad es: " + caracterMedio +
+            " y su código Unicode es: " + caracterMedio.charCodeAt(0));
+            */
+
+    </script>
+    <br><br>
+    <h2>4</h2> Toma dos entradas con window.prompt() y unelas
+    <script>
+        /*
+        var entrada4 = window.prompt("Ingresa un texto:");
+        document.write("El tamaño de la entrada es: " + entrada4.length +
+            " y el código Unicode del primer carácter es: " + entrada4.charCodeAt(0));
+            */
+
+    </script>
+    <br><br>
+    <h2>5</h2> Toma una numero (si no es un numero da error) y muestra su carácter unicode asociado. FromCharCode() .
+    <script>
+        /*
+        var entrada11 = window.prompt("Ingresa el primer texto:");
+        var entrada22 = window.prompt("Ingresa el segundo texto:");
+        var textoUnido = entrada11 + entrada22;
+        document.write("El texto unido es: " + textoUnido);
+        */
+    </script>
+    <br><br>
+    <h2>6</h2> Toma dos entradas con window.prompt() y que se busque la primera aparición de la primera entrada en la
+    <script>
+        /*
+        let numero6=prompt('Ingresa un numero')
+        document.write()
+        */
+    </script>
+    segunda
+    con indexOf() .
+    <br><br>
+    <h2>7</h2>7. Toma dos entradas con window.prompt() y que se busque la ultima aparición de la primera entrada en la
+    segunda con
+    lastIndexOf() .
+    <script>
+        /*
+       let entrada7=prompt('Primera entrada')
+       let segundaEntrada7=prompt('Segunda entrada')
+       document.write(segundaEntrada7.indexOf(entrada7))
+       */
+
+    </script>
+    <br><br>
+    <h2>8</h2>8. Ejecuta el siguiente codigo y explica que hace la variable expresion y hallado match() Busca una
+    coincidencia
+    entre una expresión regular y una cadena y devuelve las coincidencias o null si no ha encontrado nada.
+    <script>
+        /*cadena = "<br>Los temas son tema 1, tema 3, tema 5 y tema 6";
+        //expresion = /(capítulo \d+(\.\d)*)/i;
+        expresion = /(tema \d+)/i;
+        hallado = cadena.match(expresion);
+        document.write( cadena + "<br> expresion en "+hallado[1]);*/
+    </script>
+
+    <br><br>
+    <h2>9</h2>9. Toma dos entradas con window.prompt() y que se reemplace la primera en la segunda replace()
+    <script>
+        /*
+        let entrada9 = prompt('Primera entrada')
+        let segundaEntrada9 = prompt('Segunda entrada')
+        document.write(segundaEntrada7.lastIndexOf(entrada9))
+        */
+    </script>
+    <br><br>
+    <h2>10</h2>10. search() Busca una subcadena en la cadena y devuelve la posición dónde se encontró.
+    <br><br>
+    <script>
+        /*
+        cadena = "<br>Los temas son tema 1, tema 3, tema 5 y tema 6";
+        //expresion = /(capítulo \d+(\.\d)*)/i;
+        expresion = /(tema \d+)/i;
+        hallado = cadena.match(expresion);
+        document.write(cadena + "<br> expresion en " + hallado[1]);
+        */
+
+
+    </script>
+    <h2>11</h2>11. Toma una entradas con window.prompt() y Extrae (la mitad) de la cadena . slice()
+    <br><br>
+    <script>
+        /*
+         let primeraEntrada11 = window.prompt("Introduce la primera cadena (la que se va a reemplazar):");
+ 
+         let segundaEntrada11 = window.prompt("Introduce la segunda cadena (donde se hará el reemplazo):");
+ 
+         let resultado11 = segundaEntrada11.replace(primeraEntrada11, "");
+
+         document.write("El resultado es: " + resultado11);
+ 
+ */
+    </script>
+    <h2>12</h2>12. Toma una entradas con window.prompt() Divide una cadena en un array de subcadenas separados por
+    palabras.
+    split()
+    <br><br>
+    <script>
+        /*
+            let primeraEntrada12 = window.prompt("Introduce la primera cadena :");
+     
+            let segundaEntrada12 = window.prompt("Introduce la segunda cadena (la que desea buscar):");
+            let impresion12=primeraEntrada12.search(segundaEntrada12)
+            document.write(impresion12)
+    */
+    </script>
+    <h2>13</h2>13. Toma dos entradas con window.prompt() y con substr() Extrae los primeros 5 caracteres de a partir de
+    la
+    posición
+    5
+    <br><br>
+    <script>
+        /*
+        let primeraEntrada13 = window.prompt("Introduce la primera cadena :");
+
+        let mitad = Math.floor(primeraEntrada13.length / 2);
+
+        let entradaMitad = primeraEntrada13.slice(mitad,mitad+1);
+
+        document.write(entradaMitad);
+        */
+
+    </script>
+    <h2>14</h2>14. Toma dos entradas con window.prompt() y con substring() Extrae los 5 caracteres de la posicion 9 a la
+    a
+    partir
+    de la posición 5
+    <br><br>
+    <script>
+        /*
+        let primeraEntrada14 = window.prompt("Introduce la primera cadena :");
+        let entradaNueva14=primeraEntrada14.split(" ")
+        document.write(entradaNueva14.join(", "))
+*/
+    </script>
+    <h2>15</h2>15. Toma una entrada con window.prompt() y ponlo en en minúsculas Y en mayúsculas con toLowerCase()
+    toUpperCase()
+    <br><br>
+    <script>
+        /*
+        let cadena15=prompt("Introduzca la cadena del ejercicio 15")
+        let posicion15 = parseInt(prompt("Introduzca la posición desde la que desea empezar"));
+        let numero15 = parseInt(prompt("Introduzca el número de caracteres que quieres sacar"));
+        document.write(cadena15.substr(posicion15,numero15))
+        */
+
+    </script>
+    <h2>16</h2>16. Modifica el ejercicio 7 con split() para ponerlas en negrita la cadena buscada
+    ejemplo 'm' 'limon' resultado li-m-on<br>
+    <script>
+        /*
+        let cadena16=prompt("Introduzca la cadena del ejercicio 16")
+        let posicion16 = parseInt(prompt("Introduzca la posición desde la que desea empezar"));
+        let numero16 = parseInt(prompt("Introduzca hasta donde quieres sacar caracteres"));
+        document.write(cadena16.substring(posicion16,numero16))
+        */
+    </script>
+    <h2>17</h2>
+    <script>
+        let cadena17=prompt("Introduzca la cadena del ejercicio 17")
+        pequeña
+    </script>
+    <h2>18</h2>
+    <script>
+    </script>
+</body>
+
+</html>

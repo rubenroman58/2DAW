@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P 02-03</title>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <table border="1">
+        <tr>
+            <th>Operador</th>
+            <th>Nombre</th>
+            <th>Entrada</th>
+            <th>Resultado</th>
+        </tr>
+        <tr>
+            <td>==</td>
+            <td>Igualdad débil</td>
+            <td>5 == '5'</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>!=</td>
+            <td>Diferente débil</td>
+            <td>5 != '5'</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>===</td>
+            <td>Igualdad estricta</td>
+            <td>5 === '5'</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>!==</td>
+            <td>Diferente estricto</td>
+            <td>5 !== '5'</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>></td>
+            <td>Mayor que</td>
+            <td>10 > 5</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>>=</td>
+            <td>Mayor o igual que</td>
+            <td>5 >= 5</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>
+                << /td>
+            <td>Menor que</td>
+            <td>5 < 10</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>
+                <=< /td>
+            <td>Menor o igual que</td>
+            <td>5 <= 5</td>
+            <td>true</td>
+        </tr>
+    </table>
+    <h2>Ejercicio 2</h2>
+    <script>
+        var resultado1 = 30 == 30;
+        var resultado2 = 30 == 30.0; 
+        var resultado3 = 5 != 8; 
+        var resultado4 = 9 > 13; 
+        var resultado5 = 7.29 <= 7.28; 
+        var resultado6 = "Marta" == "Marta"; 
+        var resultado7 = "Marta" == "marta"; 
+        var resultado8 = "Marta" > "marta"; 
+        var resultado9 = "Mark" < "Marta"; 
+        document.write("resultado1" + resultado1 + "<br>" +
+            "resultado1" + resultado1 + "<br> " +
+            "resultado2" + resultado2 + "<br> " +
+            "resultado3" + resultado3 + "<br> " +
+            "resultado4" + resultado4 + "<br> " +
+            "resultado5" + resultado5 + "<br> " +
+            "resultado6" + resultado6 + "<br> " +
+            "resultado7" + resultado7 + "<br> " +
+            "resultado8" + resultado8 + "<br> " +
+            "resultado9" + resultado9 + "<br>");
+    </script>
+    <table border="1">
+        <tr>
+            <th>Operador</th>
+            <th>Nombre</th>
+            <th>Tipos de Operando</th>
+            <th>Resultado</th>
+        </tr>
+        <tr>
+            <td>+</td>
+            <td>Suma</td>
+            <td>5 + 3</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>Resta</td>
+            <td>9 - 4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>*</td>
+            <td>Multiplicación</td>
+            <td>6 * 3</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>/</td>
+            <td>División</td>
+            <td>10 / 2</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>%</td>
+            <td>Resto (Módulo)</td>
+            <td>10 % 3</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>++</td>
+            <td>Incremento</td>
+            <td>let a = 5; a++</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>--</td>
+            <td>Decremento</td>
+            <td>let b = 5; b--</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>+valor</td>
+            <td>Conversión a número positivo</td>
+            <td>+'3'</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>-valor</td>
+            <td>Conversión a número negativo</td>
+            <td>-5</td>
+            <td>-5</td>
+        </tr>
+    </table>
+    <h2>Ejercicio 4</h2>
+    <script>
+        var resultado1 = 30;
+        var resultado2 = 100;
+        var resultado3 = resultado1 + resultado2;
+        var resultado3 = resultado1 - resultado2;
+        var resultado4 = resultado1 * resultado2;
+        var resultado5 = resultado1 / resultado2;
+        var resultado6 = resultado1 % 2;
+        var resultado7 = resultado1++;
+        var resultado8 = resultado1--;
+        var resultado9 = -resultado1;
+        document.write("resultado1" + resultado1 + "<br>" +
+            "resultado1" + resultado1 + "<br> " +
+            "resultado2" + resultado2 + "<br> " +
+            "resultado3" + resultado3 + "<br> " +
+            "resultado4" + resultado4 + "<br> " +
+            "resultado5" + resultado5 + "<br> " +
+            "resultado6" + resultado6 + "<br> " +
+            "resultado7" + resultado7 + "<br> " +
+            "resultado8" + resultado8 + "<br> " +
+            "resultado9" + resultado9 + "<br>");
+    </script>
+</body>
+
+</html>

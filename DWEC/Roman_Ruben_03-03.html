@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="./libreria.minima.datejs/date-es-ES.js">
+    </script>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <script>
+        /*
+        var fecha = new Date()
+        document.write(fecha + '<br>')
+        document.write('Dia: ' + fecha.getDate() + '<br>')
+        document.write('Año: ' + fecha.getFullYear() + '<br>')
+        document.write('Mes: ' + fecha.getMonth() + '<br>')
+        */
+    </script>
+    <h2>Ejercicio 2</h2>
+    <script>
+        /*
+        const tiempoTranscurrido = Date.now();
+        const hoy = new Date(tiempoTranscurrido);
+        document.write(hoy);
+        */
+    </script>
+    <h2>Ejercicio 3</h2>
+    <script>
+        
+                                var fecha_nac = prompt('Introduzca tu fecha de nacimiento (formato: YYYY-MM-DD): ');
+        
+        
+                                var fechaNacimiento = new Date(fecha_nac);
+        
+        
+                                if (isNaN(fechaNacimiento.getTime())) {
+        
+                                    document.write("La fecha ingresada no es válida. Asegúrate de usar el formato correcto (YYYY-MM-DD).");
+                                } else {
+        
+                                    var fechaHoy = new Date();
+        
+        
+                                    var diferenciaMilisegundos = fechaHoy - fechaNacimiento;
+        
+        
+                                    var diasVividos = diferenciaMilisegundos / (1000 * 60 * 60 * 24); // Dividir por milisegundos, minutos, horas y días
+        
+        
+                                    document.write(`Has vivido ${Math.floor(diasVividos)} días.`);
+                                }
+                                    
+
+
+    </script>
+    <h2>Ejercicio 4</h2>
+ 
+    <script>
+        document.write('hhh')
+        var fecha_nac4 = window.prompt('Introduzca tu fecha de nacimiento (formato: YYYY-MM-DD): ');
+        var pais4 = prompt('Introduzca su país:').toLowerCase();
+        var sexo4 = prompt('Introduzca el sexo (m, f):').toLowerCase();
+
+        var fechaNacimiento4 = new Date(fecha_nac4);
+
+        if (isNaN(fechaNacimiento4.getTime())) {
+            document.write("La fecha ingresada no es válida. Asegúrate de usar el formato correcto (YYYY-MM-DD).");
+        } else {
+            var esperanzaVida;
+
+
+            switch (pais4) {
+                case 'japon':
+                    esperanzaVida = (sexo4 === 'm') ? 86 : 81;
+                    break;
+                case 'suiza':
+                    esperanzaVida = (sexo4 === 'm') ? 82 : 84;
+                    break;
+                case 'españa':
+                    esperanzaVida = (sexo4 === 'm') ? 79 : 85;
+                    break;
+                case 'italia':
+                    esperanzaVida = (sexo4 === 'm') ? 80 : 85;
+                    break;
+                case 'irak':
+                    esperanzaVida = (sexo4 === 'm') ? 70 : 74;
+                    break;
+                case 'somalia':
+                    esperanzaVida = (sexo4 === 'm') ? 54 : 59;
+                    break;
+                case 'guinea ecuatorial':
+                    esperanzaVida = (sexo4 === 'm') ? 60 : 64;
+                    break;
+                default:
+                    document.write("No tenemos datos sobre la esperanza de vida para este país.");
+                
+            }
+
+            var hoy4 = new Date();
+            var edad4 = hoy4.getFullYear() - fechaNacimiento4.getFullYear();
+            var mes4 = hoy4.getMonth() - fechaNacimiento4.getMonth();
+            if (mes4 < 0 || (mes4 === 0 && hoy4.getDate() < fechaNacimiento4.getDate())) {
+                edad4--;
+            }
+
+            var aniosRestantes = esperanzaVida - edad4;
+
+            if (aniosRestantes > 0) {
+                document.write(`Te quedan aproximadamente ${aniosRestantes} años de vida según la esperanza de vida en ${pais4}.`);
+            } else {
+                document.write(`¡Ya has superado la esperanza de vida promedio en ${pais4}!`);
+            }
+        }
+    </script>
+
+    <h2>Ejercicio 5</h2>
+    <script>
+        document.write("Fecha de hoy con hora establecida a las 00:00: " + Date.today() + "<br>");
+        document.write("Fecha del próximo viernes: " + Date.today().next().friday() + "<br>");
+        document.write("Fecha del lunes pasado: " + Date.today().last().monday() + "<br>");
+        document.write("Fecha del próximo marzo: " + new Date().next().march() + "<br>");
+        document.write("Fecha hace una semana: " + new Date().last().week() + "<br>");
+        document.write("¿Hoy es viernes?: " + Date.today().is().friday() + "<br>");
+        document.write("¿Hoy es vie (abreviado)?: " + Date.today().is().fri() + "<br>");
+        document.write("¿Hoy es noviembre?: " + Date.today().is().november() + "<br>");
+        document.write("¿Hoy es nov (abreviado)?: " + Date.today().is().nov() + "<br>");
+        document.write("¿Hoy es día de semana?: " + Date.today().is().weekday() + "<br>");
+        document.write("Fecha de mañana: " + Date.today().addDays(1) + "<br>");
+        document.write("Fecha hace tres meses: " + Date.today().addMonths(-3) + "<br>");
+        document.write("Fecha sumando un día: " + Date.today().add(1).day() + "<br>");
+        document.write("Fecha restando tres meses: " + Date.today().add(-3).months() + "<br>");
+        document.write("Un día a partir de ahora: " + (1).day().fromNow() + "<br>");
+        document.write("Tres meses atrás: " + (3).months().ago() + "<br>");
+        var n = 6;
+        document.write(n + " meses a partir de ahora: " + n.months().fromNow() + "<br>");
+        document.write("Lunes de esta semana: " + Date.monday() + "<br>");
+        document.write("Lunes (abreviado): " + Date.mon() + "<br>");
+        document.write("El primero de marzo de este año: " + Date.march() + "<br>");
+        document.write("Marzo (abreviado): " + Date.mar() + "<br>");
+        document.write("Primer jueves del mes actual: " + Date.today().first().thursday() + "<br>");
+        document.write("Segundo jueves del mes actual: " + Date.today().second().thursday() + "<br>");
+        document.write("Tercer jueves de marzo de este año: " + Date.march().third().thursday() + "<br>");
+        document.write("Cuarto domingo de octubre: " + Date.october().fourth().sunday() + "<br>");
+        document.write("Quinto domingo del mes actual: " + Date.today().fifth().sunday() + "<br>");
+        document.write("Último domingo de octubre: " + Date.october().final().sunday() + "<br>");
+        document.write("Primer lunes de este año: " + Date.january().first().monday() + "<br>");
+        document.write("Último viernes de este año: " + Date.december().final().friday() + "<br>");
+        document.write("Fecha de hoy a las 6:15 PM: " + Date.today().at("6:15pm") + "<br>");
+
+        var time = { hour: 18, minute: 15 };
+        document.write("Fecha de hoy a las 18:15 usando objeto de configuración: " + Date.today().at(time) + "<br>");
+
+        var birthDayParty = { month: 1, day: 20, hour: 20, minute: 30 };
+        document.write("Fecha y hora de la fiesta de cumpleaños: " + Date.today().set(birthDayParty) + "<br>");
+    </script>
+    <h2>Ejercicio 6</h2>
+    <h4>1</h4>
+    <script>
+        document.write("Fecha de hoy con hora establecida a las 00:00: " + Date.today() + "<br>");        </script>
+    <h4>2</h4>
+    <script>
+        document.write('Fecha del proximo lunes: ' + Date.today().next().monday() + "<br>");
+    </script>
+    <h4>3</h4>
+    <script>
+        document.write("Fecha de hoy a las 23:00 PM: " + Date.today().at("6:15pm") + "<br>");
+    </script>
+    <h4>4</h4>
+    <script>
+        document.write('Dentro de un año: ' + Date.today().next().year())
+    </script>
+    <h4>5</h4>
+    <script>
+        var cumpleaños = { month: 6, day: 5 }
+        document.write('Cumpleaños: ' + Date.today().set(cumpleaños))
+    </script>
+    <h4>6</h4>
+
+    <script>
+        document.write('Lunes mes que viene: ' + Date.today().first().next().monday())
+    </script>
+</body>
+
+</html>

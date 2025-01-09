@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Web Accesible</title>
+    <style>
+        body {
+            background-color: #9cda94; /* Fondo gris claro */
+            color: #333333; /* Texto gris oscuro */
+            font-family: Arial, sans-serif; /* Fuente de texto */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="welcome">¡Bienvenido a Nuestra Web!</h1>
+    </header>
+
+    <nav id="sidebar" role="navigation" aria-label="Menú principal">
+        <h2>Menú</h2>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content" role="main">
+        <h2>Nuestros Productos</h2>
+        <p>¡Echa un vistazo a nuestros productos increíbles!</p>
+
+        <div class="product" role="region" aria-labelledby="product1">
+            <img src="product1.jpg" height="150" alt="Descripción del producto 1" />
+            <h3 id="product1">Producto 1</h3>
+            <table width="300px" aria-label="Detalles del producto 1">
+                <tr>
+                    <td>Ejemplo 1</td>
+                    <td>Ejemplo 2</td>
+                </tr>
+            </table>
+            <p>Descripción del producto 1.</p>
+            <button aria-label="Comprar producto 1">Comprar</button>
+        </div>
+
+        <div class="product" role="region" aria-labelledby="product2">
+            <img src="product2.jpg" height="150" alt="Descripción del producto 2" />
+            <h3 id="product2">Producto 2</h3>
+            <p>Descripción del producto 2.</p>
+            <button aria-label="Comprar producto 2">Comprar</button>
+        </div>
+
+        <aside id="secondary-content" role="complementary">
+            <h3>Contenido Secundario</h3>
+            <p>Aquí puedes encontrar información adicional relevante.</p>
+        </aside>
+
+        <form method="get" aria-labelledby="satisfactionSurvey">
+            <h3 id="satisfactionSurvey">Cuestionario de Satisfacción</h3>
+            <label for="satisfactionInput">Escribe tu opinión:</label>
+            <input type="text" id="satisfactionInput" aria-required="true" placeholder="Tu opinión aquí">
+            <div role="tablist" aria-label="Pestañas">
+                <div role="tab" aria-selected="false" tabindex="0">Pestaña 1</div>
+                <div role="tab" aria-selected="true" tabindex="0">Pestaña 2</div>
+                <div role="tab" aria-selected="false" tabindex="0">Pestaña 3</div>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>Todos los derechos reservados &copy; 2023</p>
+    </footer>
+</body>
+
+</html>

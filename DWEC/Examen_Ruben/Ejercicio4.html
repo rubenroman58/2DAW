@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="./libreria.minima.datejs/date-es-ES.js">
+    </script>
+</head>
+<body>
+    <h2>Ejercicio 1</h2>
+    <script>
+     document.write("El tercer martes del mes pasado.: " + Date.october().third().tuesday() + "<br>"); 
+    </script>
+    <h2>Ejercicio 2</h2>
+    <script>
+    document.write(" el cuarto miercoles de septiembre pasado" + Date.september().fourth().wednesday() + "<br>"); 
+    </script>
+    <h2>Ejercicio 3</h2>
+    <script>
+        document.write("3. el primer lunes de año pasado. " + Date.january().first().monday().addMonths(-12) + "<br>"); 
+        </script>
+    <h2>Ejercicio 4</h2>
+    <script>
+        document.write("el segundo jueves de abril del año pasado. " + Date.april().second().thursday()+ "<br>"); 
+        </script>
+    <h2>Ejercicio 5</h2>
+    <script>
+    document.write("Fecha de ayer a las 6:15 PM: " + Date.today().at("6:15pm").addDays(-1) + "<br>");
+    </script>
+</body>
+</html>

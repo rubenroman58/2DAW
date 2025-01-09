@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="etiqueta1">Dia</label>
+        <input type="number" id="etiqueta1"> 
+        <label for="etiqueta2">Mes</label>
+        <input type="number" id="etiqueta2"> 
+        <label for="etiqueta3">Año</label>
+        <input type="number" id="etiqueta3" > 
+        <button onclick="generar()">Generar informacion</button>
+    </form>
+
+    <script>
+        function generar() {
+            dia = document.getElementById('etiqueta1').value
+            mes = document.getElementById('etiqueta2').value
+            año = document.getElementById('etiqueta3').value
+            fecha_nac = new Date(mes, dia, año)
+
+
+            var fechaNacimiento = new Date(fecha_nac);
+
+            mes2 = 1
+            dia2 = 1
+            anio2 = 2000
+
+
+            var fechaEjercicio = new Date(mes2, dia2, anio2);
+          
+
+            var diferenciaMilisegundos = fechaEjercicio - fechaNaAcimiento;
+
+
+            var diasVividos = diferenciaMilisegundos / (1000 * 60 * 60 * 24); // Dividir por milisegundos, minutos, horas y días
+
+            document.write('La fecha insertada es: ' + fechaNacimiento)
+
+            document.write('Lo dias vividos desde el 1/1/2000 ' + diasVividos)
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

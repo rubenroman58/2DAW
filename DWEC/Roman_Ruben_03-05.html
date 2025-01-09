@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <div id="elementoaCambiar"> </div>
+    <script>
+        document.getElementById("elementoaCambiar").innerHTML = "texto nuevo";
+    </script>
+
+    <h2>Ejercicio 2</h2>
+    <script>
+
+        let locationHash = location.hash;
+        let locationHost = location.host;
+        let locationHostname = location.hostname;
+        let locationHref = location.href;
+        let locationPathname = location.pathname;
+        let locationPort = location.port;
+        let locationProtocol = location.protocol;
+        let locationSearch = location.search;
+
+        document.write("<p><strong>Hash:</strong> " + locationHash + "</p>");
+        document.write("<p><strong>Host:</strong> " + locationHost + "</p>");
+        document.write("<p><strong>Hostname:</strong> " + locationHostname + "</p>");
+        document.write("<p><strong>Href:</strong> " + locationHref + "</p>");
+        document.write("<p><strong>Pathname:</strong> " + locationPathname + "</p>");
+        document.write("<p><strong>Port:</strong> " + locationPort + "</p>");
+        document.write("<p><strong>Protocol:</strong> " + locationProtocol + "</p>");
+        document.write("<p><strong>Search:</strong> " + locationSearch + "</p>");
+
+    </script>
+    <h2>Ejercicio 3</h2>
+    <button onclick="myFunction()">Carga</button>
+    <script>
+        function myFunction() {
+            location.assign("https://www.iesplayamar.es");
+        }
+
+    </script>
+    <p>Carga un nuevo documento</p>
+
+    <h2>Ejercicio 4</h2>
+    <input type="text" id="urlInput" placeholder="Ingresa una URL">
+    <button onclick="myFunction()">Load new document</button>
+
+    <script>
+
+        function myFunction() {
+            var url = document.getElementById("urlInput").value;
+
+
+            location.assign(url);
+        }
+
+    </script>
+
+
+    <h2>Ejercicio 5</h2>
+    <input type="text" id="urlInput" placeholder="Ingresa una URL">
+    <button onclick="myFunction()">Load new document</button>
+    <button onclick="recargar()">recargar</button>
+    <input type="button" value="Crear Nueva Ventana" onclick="myFunction()">
+
+    <script>
+        var subVentana = null;
+        function recargar() {
+
+            location.reload()
+
+        }
+        function myFunction() {
+            var url = document.getElementById("urlInput").value;
+
+            subVentana4 = window.open(url, "nueva", "height=800,width=600");
+
+        }
+
+    </script>
+
+    <h2>Ejercicio 6</h2>
+    <input type="text" id="urlInput" placeholder="Ingresa una URL">
+    <button onclick="myFunction()">Load new document</button>
+    <button onclick="recargar()">recargar</button>
+    <button onclick="reemplazar()">reemplazar</button>
+
+    <script>
+        function recargar() {
+
+            location.reload()
+
+        }
+        function myFunction() {
+            var url = document.getElementById("urlInput").value;
+
+
+            location.assign(url);
+        }
+        function reemplazar() {
+            var url = document.getElementById("urlInput").value;
+            window.replace(url);
+        }
+    </script>
+
+
+    <h2>Ejercicio 8</h2>
+    <script>
+
+        document.write("appCodeName: " + navigator.appCodeName + "<br>");
+        document.write("appName: " + navigator.appName + "<br>");
+        document.write("appVersion: " + navigator.appVersion + "<br>");
+        document.write("cookieEnabled: " + navigator.cookieEnabled + "<br>");
+        document.write("platform: " + navigator.platform + "<br>");
+        document.write("userAgent: " + navigator.userAgent + "<br>");
+
+    </script>
+
+    <h2>Ejercicio 9</h2>
+
+
+    <p id="demo"></p>
+
+    <script>
+        try {
+            if (navigator.geolocation.getCurrentPosition(showPosition).GeolocationPositionError != PERMISSION_DENIED)
+                navigator.geolocation.getCurrentPosition(showPosition);
+        } catch (e) {
+            document.getElementById("demo").innerHTML =
+                "Geolocation is not supported by this browser2.";
+        }
+
+        function showPosition(position) {
+            document.getElementById("demo").innerHTML =
+                "Latitude: " + position.coords.latitude + "<br>" +
+                "Longitude: " + position.coords.longitude;
+        }
+    </script>
+
+
+
+<h2>Ejercicio 10</h2>
+
+
+<p id="demo"></p>
+
+<script>
+    
+    try {
+        // Verificar si el navegador soporta la geolocalización
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            document.getElementById("demo").innerHTML = "Geolocation is not supported by this browser.";
+        }
+    } catch (e) {
+        document.getElementById("demo").innerHTML = "Error: " + e.message;
+    }
+    
+    function showPosition(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        
+        // Mostrar las coordenadas
+        document.getElementById("demo").innerHTML =
+            "Latitude: " + latitude + "<br>" +
+            "Longitude: " + longitude;
+    
+        // Redirigir a Google Maps con las coordenadas obtenidas
+        var googleMapsUrl = "https://www.google.com/maps?q=" + latitude + "," + longitude;
+        location.assign(googleMapsUrl);  // Redirigir a Google Maps con las coordenadas
+    }
+        
+    </script>
+    
+
+</body>
+
+</html>

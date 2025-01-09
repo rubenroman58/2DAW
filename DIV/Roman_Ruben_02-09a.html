@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+
+<body>
+    <h1>Ejercicio 1</h1>
+    <p>
+        Los formularios son elementos de HTML que permiten a los usuarios enviar datos a un servidor.
+        Funcionan mediante la recopilación de información a través de distintos tipos de campos, como
+        texto, selección, casillas de verificación y más. Cuando el usuario completa el formulario y lo envía,
+        los datos se transmiten al servidor para su procesamiento.
+    </p>
+    <h1>Ejercicio 2</h1>
+    <p>
+        GET y POST son métodos utilizados para enviar datos desde un formulario a un servidor.
+        GET envía los datos a través de la URL, lo que lo hace visible y adecuado para solicitudes simples
+        que no alteran el estado del servidor. Por otro lado, POST envía los datos en el cuerpo de la solicitud,
+        lo que permite transferir información más grande y sensible de manera más segura.
+        Las ventajas de GET incluyen su simplicidad y el uso en enlaces, mientras que POST ofrece mayor seguridad y
+        capacidad para manejar datos complejos.
+    </p>
+    <h1>Ejercicio 3</h1>
+    <ul>
+        <li><strong>accept-charset:</strong> Especifica el conjunto de caracteres aceptables para el formulario.</li>
+        <li><strong>autocomplete:</strong> Controla si los navegadores deben autocompletar los campos del formulario.
+        </li>
+        <li><strong>enctype:</strong> Define cómo se codifican los datos al enviarse al servidor.</li>
+        <li><strong>novalidate:</strong> Indica que el formulario no debe ser validado antes de enviarse.</li>
+        <li><strong>target:</strong> Especifica dónde abrir el resultado del formulario (por ejemplo, en una nueva
+            pestaña).</li>
+    </ul>
+
+    <h1>Ejercicio 4</h1>
+    <table border="1">
+        <tr>
+            <th>Atributo</th>
+            <th>Descripción</th>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>Tipo de campo</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>Nombre del formulario</td>
+        </tr>
+        <tr>
+            <td>size</td>
+            <td>Tamaño visible</td>
+        </tr>
+        <tr>
+            <td>maxlength</td>
+            <td>Máximo caracteres</td>
+        </tr>
+        <tr>
+            <td>value</td>
+            <td>Valor inicial</td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>ID único</td>
+        </tr>
+        <tr>
+            <td>disabled</td>
+            <td>Campo deshabilitado</td>
+        </tr>
+        <tr>
+            <td>readonly</td>
+            <td>Solo lectura</td>
+        </tr>
+        <tr>
+            <td>autocomplete</td>
+            <td>Autocompletar habilitado</td>
+        </tr>
+        <tr>
+            <td>required</td>
+            <td>Campo obligatorio</td>
+        </tr>
+        <tr>
+            <td>autofocus</td>
+            <td>Enfocar al cargar</td>
+        </tr>
+        <tr>
+            <td>pattern</td>
+            <td>Expresión regular</td>
+        </tr>
+        <tr>
+            <td>disabled</td>
+            <td>Campo deshabilitado</td>
+        </tr>
+        <tr>
+            <td>placeholder</td>
+            <td>Texto guía</td>
+        </tr>
+    </table>
+
+    <h1>Ejercicio 5</h1>
+    <form method="get">
+        <label for="nombre">Escribe algo de texto</label>
+        <input type="text" id="nombre" pattern="[A-Za-z]+" autofocus required>
+        <br>
+        <label for="apellidos">Escribe apellidos</label>
+        <input type="text" id="apellidos" pattern="[A-Za-z]+" required>
+        <br>
+        <label for="edad">Escribe tu edad</label>
+        <input type="number" id="edad" name="edad" pattern="[0-9]+" required>
+        <br>
+        <label for="contraseña">Escribe la contraseña</label>
+        <input type="password" id="contraseña" size="5">
+        <br>
+        <input type="hidden" name="control_oculto" value="edad">
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Restablecer">
+        <button type="button" onclick="alert('Boton adicional presionado')">Boton Adicional</button>
+    </form>
+    <h1>Ejercicio 6</h1>
+    <ol>
+        <li><strong>formaction</strong>: Este atributo especifica la URL a la que se enviará el formulario cuando se
+            haga clic en el botón. Si no se proporciona, el formulario se enviará a la URL del atributo `action` del
+            elemento `<form>`.</li>
+
+        <li><strong>formethod</strong>: Define el método HTTP que se utilizará al enviar el formulario. Puede ser "get"
+            o "post". Si no se establece, se usará el método definido en el elemento `<form>`.</li>
+
+        <li><strong>formenctype</strong>: Indica cómo se codificarán los datos del formulario al enviarlos. Este
+            atributo se aplica solo si el método es "post". Los valores comunes son "application/x-www-form-urlencoded",
+            "multipart/form-data" y "text/plain".</li>
+
+        <li><strong>formnovalidate</strong>: Si se incluye este atributo en un botón de tipo "submit", evita que el
+            formulario se valide antes de ser enviado. Esto permite enviar formularios incluso si hay campos requeridos
+            o con errores de validación.</li>
+
+        <li><strong>formtarget</strong>: Especifica dónde se abrirá el documento al enviar el formulario. Los valores
+            comunes incluyen "_self" (abre en la misma ventana), "_blank" (abre en una nueva ventana) y "_parent" (abre
+            en el marco padre).</li>
+    </ol>
+
+    <h1>Ejercicio 7</h1>
+    <form method="get">
+    
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br><br>
+
+        <p>Selecciona una opción:</p>
+        <label>
+            <input type="radio" name="opcion" value="opcion1" required>
+            Opción 1
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="opcion" value="opcion2" required>
+            Opción 2
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="opcion" value="opcion3" required>
+            Opción 3
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="opcion" value="opcion4" required>
+            Opción 4
+        </label>
+        <br><br>
+
+
+        <p>Selecciona tus preferencias:</p>
+        <label>
+            <input type="checkbox" name="preferencias" value="preferencias">
+            Recibir boletín informativo
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="preferencias2" value="preferencias2">
+            Recibir ofertas especiales
+        </label>
+        <br><br>
+
+       
+        <label for="archivo">Selecciona un archivo:</label>
+        <input type="file" id="archivo" name="archivo" accept=".jpg, .png, .pdf">
+        <br><br>
+
+      
+        <input type="submit" value="Enviar">
+    </form>
+    <h1>Ejercicio 8</h1>
+    <form style="width: 80%; margin-left: auto; margin-right: auto;border: red 1px solid;">
+        <label for="nombre">Escribe tu nombre:</label><br>
+        <input type="text" id="nombre" name="nombre">
+        <br>
+        <label for="apellido">Escribe tu apellido:</label><br>
+        <input type="text" id="apellido" name="apellido">
+        <p>Escriba su sexo:</p>
+        <label>
+            <input type="radio" name="opcion" value="opcion1" required>
+            Hombre
+        </label>
+
+        <label>
+            <input type="radio" name="opcion" value="opcion2" required>
+            Apellidos
+        </label>
+        <br>
+        <input type="submit" value="Enviar">
+
+    </form>
+    <h1>Ejercicio 9</h1>
+    <form method="get">
+        <label for="datos">Escriba sus datos</label><br>
+        <input type="text" id="datos" name="datos">
+        <p>Escriba el numero de personas:</p>
+        <label>
+            <input type="checkbox" name="opcion" value="opcion1">
+            1
+        </label>
+
+        <label>
+            <input type="checkbox" name="opcion" value="opcion2">
+            2
+        </label>
+        <label>
+            <input type="checkbox" name="opcion" value="opcion3">
+            3
+        </label>
+        <br>
+        <label for="telefono">Escriba su telefono</label><br>
+        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}">
+        <br>
+        <label for="email">Escriba su email</label><br>
+        <input type="email" id="email" name="email">
+        <br>
+        <label for="fecha_nac">Fecha de nacimiento</label>
+        <input type="date" name="fecha_nac" id="fecha_nac">
+        <br>
+        <label for="fecha_nac">Escriba la hora</label>
+        <input type="time" name="tiempo" id="tiempo">
+        <input type="submit" value="Enviar">
+    </form>
+    <h1>Ejercicio 10</h1>
+    <form method="get">
+        <label for="tematica">Eslija la tematica</label>
+        <input type="text" id="tematica" name="tematica">
+        <br>
+        <label for="color">Elija el color</label>
+        <input type="color" id="color" name="color">
+        <br>
+        <label for="contraste">Ajusta el contraste:</label>
+        <input type="range" id="contraste" name="contraste" min="0" max="100" value="50">
+        <br>
+        <label for="brillo">Ajusta el brillo:</label>
+        <input type="range" id="brillo" name="brillo" min="0" max="100" value="50">
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h1>Ejercicio 11</h1>
+    <form method="post">
+        <table style="width: 80%; margin-left: auto; margin-right: auto; border: red 1px solid;">
+            <tr>
+                <td style="border: green 1px solid; text-align: center;">
+                    <label for="tematica">Escoja la temática</label><br>
+                    <input type="text" id="tematica" name="tematica">
+                </td>
+                <td style="border: red 1px solid; text-align: center;">
+                    <label for="url">Web a enviar</label><br>
+                    <input type="url" id="url" name="url">
+                </td>
+                <td style="border: blue 1px solid; text-align: center;">
+                    <label for="search">Búsquedas</label><br>
+                    <input type="search" id="search" name="search">
+                </td>
+                <td style="border: red 1px solid; text-align: center;">
+                    <label for="file">Fichero</label><br>
+                    <input type="file" id="file" name="file">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: left;">
+                    <button type="submit">Enviar</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+    
+</body>
+
+</html>

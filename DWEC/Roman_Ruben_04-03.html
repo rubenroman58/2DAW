@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+
+    <script>
+
+        function gradosARadianes(grados) {
+            return grados * Math.PI / 180;
+        }
+
+
+        function Ej1Trigonometica(angulo, valor) {
+
+            let radianes = gradosARadianes(angulo);
+
+
+            if (valor === "cos") {
+                return Math.cos(radianes);
+            } else if (valor === "sen") {
+                return Math.sin(radianes);
+            } else if (valor === "tan") {
+                return Math.tan(radianes);
+            } else {
+                return "Valor incorrecto. Usa 'cos', 'sen' o 'tan'.";
+            }
+        }
+
+
+        let angulo = 45;
+        let valor = "cos";
+        let resultado = Ej1Trigonometica(angulo, valor);
+
+
+        document.write(`El ${valor} de ${angulo} grados es: ${resultado}`);
+
+    </script>
+    <h2>Ejercicio 2</h2>
+    <div id="algo"></div>
+
+    <script>
+        function Ej2JS(lista, id) {
+            let valores = lista.split(",");
+            let resultado = "<ul>";
+            for (let i = 0; i < valores.length; i++) {
+                resultado += "<li>" + valores[i].trim() + "</li>";
+            }
+            resultado += "</ul>";
+            document.getElementById(id).innerHTML = resultado;
+        }
+
+        Ej2JS("hola,adios,bien,Hasta,mañana", "algo");
+    </script>
+    <h2>Ejercicio 3</h2>
+    <div id="identificador"></div>
+
+    <script>
+        function listaen(id, ...valores) {
+            let resultado3 = "<ul>";
+            for (let valor of valores) {
+                resultado3 += "<li>" + valor + "</li>";
+            }
+            resultado3 += "</ul>";
+            document.getElementById(id).innerHTML = resultado3;
+        }
+        listaen("identificador", "Hola", "adios", "bien", "Hasta", "mañana", "algo");
+    </script>
+
+    <h2>Ejercicio 4</h2>
+    <script>
+     const triple=function(numero){
+        document.write(numero*3)
+     }
+     triple(3)
+    </script>
+    <h2>Ejercicio 5</h2>
+    <script>
+
+    </script>
+    <h2>Ejercicio 6</h2>
+    <script>
+
+    </script>
+</body>
+
+</html>

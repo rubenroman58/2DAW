@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <p>Indica que el objeto a su izquierda tiene o contiene el recurso a su derecha,<br>como por ejemplo:
+        objeto.propiedad y objeto.método()</p>
+    <h2>Ejercicio 2</h2>
+    <p>En este ejercicio, guardamos en un var la palabra rafa y lo imprimimos.
+        <br>Calculamos la longitud y la imprimimos(4).
+        <br>Calculasmos el indice de 'fa' que empieza en segunda posicion(2)
+    </p>
+    <script>
+        var s = new String('rafa'); document.write(s);
+        var longitud = s.length; document.write(longitud);
+        var pos = s.indexOf("fa"); document.write(pos);
+    </script>
+    <h2>Ejercicio 3</h2>
+    <p>Es el operador de acceso a propiedades o operador de indexación</p>
+    <h2>Ejercicio 4</h2>
+    <p>Imprimimos la segunda y tercera palabra del array</p>
+    <script>
+        var arraya = ["Santiago", "Coruña", "Lugo"];
+        var arrayb = { 'elem1': "Santiago", 'elem2': "Coruña", 'elem3': "Lugo" };
+        document.write(arraya[1] + '<br>');
+        document.write(arrayb["elem3"]);
+
+    </script>
+    <h2>Ejercicio 5</h2>
+    <p>Borra un elemento de una colecicon</p>
+    <h2>Ejercicio 6</h2>
+    <p>Borramos una posicion del array</p>
+    <script>
+        var arraya = ["Santiago", "Coruña", "Lugo"];
+        var arrayb = { 'elem1': "Santiago", 'elem2': "Coruña", 'elem3': "Lugo" };
+        document.write(arraya + '<br>');
+        delete arraya[0];
+        document.write(arraya);
+
+    </script>
+    <h2>Ejercicio 7</h2>
+    <p>Es una cadena referente a la propiedad o método<br>
+        (simplemente el nombre del método sin paréntesis); el operando a la derecha del <br>operador, es el objeto que
+        estamos inspeccionando.</p>
+    <h2>Ejercicio 8</h2>
+    <script>
+        document.write("write" in document)
+    </script>
+    <h2>Ejercicio 9</h2>
+    <p>Comprueba si un objeto es una instancia de un objeto nativo de JavaScript</p>
+    <h2>Ejercicio 10</h2>
+    <script>
+        a = new Array(1, 2, 3);
+        a instanceof Array;
+        document.write(a instanceof Array) 
+    </script>
+    <h2>Ejercicio 11</h2>
+    <p>Indica una serie de expresiones que van a ser evaluadas en secuencia, de izquierda a derecha</p>
+
+    <h2>Ejercicio 12</h2>
+    <script>
+        var nombre = "juan", direccion = "C\ pepep,1", apellidos = "lopez Abad", edad = "30";
+        document.write(nombre + "," + apellidos + "," + direccion + "," + edad);
+    </script>
+
+    <h2>Ejercicio 13</h2>
+    <p>Este operador condicional es la forma reducida de la expresión if .... else.</p>
+
+    <h2>Ejercicio 14</h2>
+    <script>
+        var a = 10;
+        var b = 15;
+        var opcion = b > a ? "B es mayor que A" : "A es mayor que B";
+        document.write("opcion " + opcion);
+
+    </script>
+    <h2>Ejercicio 15</h2>
+    <script>
+        var a = confirm("Estas de Acuerdo");
+        var opcion = a ? "Acuerdo" : "En Desacuerdo";
+        document.write("opcion " + opcion);
+    </script>
+    <h2>Ejercicio 16</h2>
+    <p>Este operador unario se usa para identificar cuando una variable o expresión es<br> de alguno de los siguientes
+        tipos: number, string, boolean, object, function o undefined.</p>
+    <h2>Ejercicio 17</h2>
+    <script>
+        var a = "hola", b = 34, c = 3.1e3, d = 34;
+        var at = typeof (a);
+        var bt = typeof (b);
+        var ct = typeof (c);
+        document.write(" tipo de " + a + " es  " + at);
+        document.write(" tipo de " + b + " es  " + bt);
+        document.write(" tipo de " + c + " es  " + ct);
+    </script>
+</body>
+
+</html>

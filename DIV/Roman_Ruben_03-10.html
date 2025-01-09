@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejercicio 2</h2>
+    <svg viewBox="0 -100 300 300" xmlns="http://www.w3.org/2000/svg" width="200" height="200"
+        style="background-color: beige;">
+        <rect x="60" y="10" width="50" height="50">
+
+            <animate attributeName="x" from="-200%" to="1000%" dur="10s"> </animate>
+
+        </rect>
+        <polyline points="150 15 175 -40 200 15" fill="blue" stroke="6">
+            <animate attributeName="points" from="150 15 175 -40 200 15" to="350 15 375 -40 400 15" dur="5s"
+                repeatCount="indefinite"></animate>
+        </polyline>
+        <circle cx="175" cy="60" r="30" fill="red" stroke="red">
+            <animate attributeName="cx" from="-200%" to="1000%" dur="5s"> </animate>
+        </circle>
+    </svg>
+
+    <h2>Ejercicio 3</h2>
+    <svg viewBox="0 -100 300 300" xmlns="http://www.w3.org/2000/svg" width="200" height="200"
+        style="background-color: beige;">
+        <defs>
+            <style>
+                #rectEjer3:hover {
+                    stroke: #565856;
+                    fill: #565856;
+                }
+
+                #polyEjer3:hover {
+                    stroke: lightblue;
+                    fill: lightblue
+                }
+
+                #circleEjer3:hover {
+                    stroke: lightcoral;
+                    fill: lightcoral
+                }
+            </style>
+        </defs>
+        <rect x="60" y="10" width="50" height="50" id="rectEjer3" />
+        <polyline points="150 15 175 -40 200 15" fill="blue" stroke="6" id="polyEjer3" />
+        <circle cx="175" cy="60" r="30" fill="red" stroke="red" id="circleEjer3" />
+    </svg>
+
+    <h2>Ejercicio 4</h2>
+
+
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="600" height="200">
+        <path id="rutaPath" fill="none" stroke="lightgrey" d="M20,50 C20,-50 180,150 180,50 C180,-50 20,150 20,50 z" />
+
+
+        <rect x="0" y="0" width="5" height="5" stroke="blue" fill="blue" stroke-width="3">
+            <animateMotion dur="10s" repeatCount="indefinite">
+                <mpath href="#rutaPath" />
+            </animateMotion>
+        </rect>
+
+        <circle cx="0" cy="0" r="5" stroke="red" fill="red" stroke-width="3">
+            <animateMotion dur="12s" repeatCount="indefinite">
+                <mpath href="#rutaPath" />
+            </animateMotion>
+        </circle>
+
+        <polygon points="5,-10
+              0,5 
+              15,5" fill="orange" stroke="orange" stroke-width="3">
+            <animateMotion dur="7s" repeatCount="indefinite"
+                path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+        </polygon>
+    </svg>
+
+    <h3>Ejercicio 5</h3>
+
+    
+    <svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+      <style>
+        .small {
+          font: italic 13px sans-serif;
+        }
+        .heavy {
+          font: bold 30px sans-serif;
+        }
+        .Rrrrr {
+          font: italic 40px serif;
+          fill: red;
+        }
+      </style>
+      <text x="20" y="35" class="small">El</text>
+      <text x="40" y="35" class="heavy">IES Playamar</text>
+      <text x="55" y="55" class="small">es</text>
+      <text x="65" y="55" class="Rrrrr">Genial!</text>
+
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="translate"
+        from="0 0"
+        to="-240 0"
+        dur="5s"
+        repeatCount="indefinite"
+      />
+    </svg>
+
+    <h3>Ejercicio 6</h3>
+    <p>Modifica el anterior ejemplo para que giren sobre un mismo punto.</p>
+
+    <svg viewBox="0 0 500 80" xmlns="http://www.w3.org/2000/svg">
+      <style>
+        .small {
+          font: italic 13px sans-serif;
+        }
+        .heavy {
+          font: bold 30px sans-serif;
+        }
+        .Rrrrr {
+          font: italic 40px serif;
+          fill: red;
+        }
+      </style>
+      <text x="20" y="35" class="small">El</text>
+      <text x="40" y="35" class="heavy">IES Playamar</text>
+      <text x="55" y="55" class="small">es</text>
+      <text x="65" y="55" class="Rrrrr">Genial!</text>
+
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 -150 -50"
+        to="360 -150 -50"
+        dur="5s"
+        repeatCount="indefinite"
+      />
+    </svg>
+
+    <h3>Ejericio 7</h3>
+    <p>Modifica el anterior ejemplo para que giren sobre si mismos.</p>
+
+    <svg viewBox="0 0 500 80" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          .small {
+            font: italic 13px sans-serif;
+          }
+          .heavy {
+            font: bold 30px sans-serif;
+          }
+          .Rrrrr {
+            font: italic 40px serif;
+            fill: red;
+          }
+        </style>
+        <text x="20" y="35" class="small">El     <animate
+            attributeName="rotate"
+            from="0"
+            to="360"
+            dur="3s"
+            repeatCount="indefinite"
+          /></text>
+        <text x="40" y="35" class="heavy">IES Playamar     <animate
+            attributeName="rotate"
+            from="0"
+            to="360"
+            dur="3s"
+            repeatCount="indefinite"
+          /></text>
+        <text x="55" y="55" class="small">es     <animate
+            attributeName="rotate"
+            from="0"
+            to="360"
+            dur="3s"
+            repeatCount="indefinite"
+          /></text>
+        <text x="65" y="55" class="Rrrrr">Genial!     <animate
+            attributeName="rotate"
+            from="0"
+            to="360"
+            dur="3s"
+            repeatCount="indefinite"
+          /></text>
+        />
+      </svg>
+
+     
+    
+        
+      
+          
+    
+</body>
+
+</html>

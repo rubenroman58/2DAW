@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+
+        <path fill="none" stroke="lightgrey" d="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+
+        <a href="https://es.wikipedia.org/wiki/Wikipedia:Portada">
+            <circle r="5" fill="red">
+                <animateMotion dur="10s" repeatCount="indefinite"
+                    path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+            </circle>
+        </a>
+    </svg>
+
+    <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" version="1.1">
+
+        <rect x="10" y="35" height="15" width="0">
+            <animate attributeType="XML" attributeName="width" id="rectangulo1" to="100" dur="8s" fill="freeze"
+                begin="2s" />
+        </rect>
+
+        <rect x="35" y="60" height="15" width="0">
+            <animate attributeType="XML" attributeName="width" id="rectangulo2" to="75" dur="6s" fill="freeze"
+                begin="rectangulo1.end" />
+        </rect>
+
+        <rect x="60" y="85" height="15" width="0">
+            <animate attributeType="XML" attributeName="width" id="rectangulo3" to="50" dur="4s" fill="freeze"
+                begin="rectangulo2.end" />
+        </rect>
+    </svg>
+
+    <svg width="270" height="290">
+        <rect x=10 y=10 width=80 height=60 fill="yellow" stroke="navy" stroke-width="3">
+            <animate id="r1" attributeType="XML" attributeName="x" values="10;170;10" dur="2s" begin="0s;r4.end+2s" />
+        </rect>
+        <rect x=10 y=80 width=80 height=60 fill="red" stroke="navy" stroke-width="3">
+            <animate id="r2" attributeType="XML" attributeName="x" values="10;170;10" dur="2s" begin="r1.end" />
+        </rect>
+        <rect x=10 y=150 width=80 height=60 fill="green" stroke="navy" stroke-width="3">
+            <animate id="r3" attributeType="XML" attributeName="x" values="10;170;10" dur="2s" begin="r2.end" />
+        </rect>
+        <rect x=10 y=220 width=80 height=60 fill="blue" stroke="navy" stroke-width="3">
+            <animate id="r4" attributeType="XML" attributeName="x" values="10;170;10" dur="2s" begin="r3.end" />
+        </rect>
+    </svg>
+
+    <h2>Ejercicio 2</h2>
+    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="100" cy="100" rx="80" ry="50" fill="blue">
+            <animate attributeName="rx" values="80;50;80" dur="2s" begin="click" />
+            <animate attributeName="ry" values="50;80;50" dur="2s" begin="click" />
+        </ellipse>
+
+    </svg>
+
+    <h2>Ejercicio 3</h2>
+    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="100" cy="100" rx="80" ry="50" fill="blue">
+            <animate attributeName="cx" values="180;-90" dur="2s" begin="mouseover" />
+        </ellipse>
+
+    </svg>
+
+    <h2>Ejercicio 4</h2>
+    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="100" cy="100" rx="80" ry="50" fill="blue">
+            <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="2s"
+                begin="click" end="mouseover" repeatCount="indefinite" />
+        </ellipse>
+
+    </svg>
+    <h2>Ejercicio 5</h2>
+    <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="20" fill="blue">
+            <animate attributeName="cx" values="100;400" dur="2s" begin="0s" />
+            <set begin="2s" attributeName="visibility" to="hidden" />
+        </circle>
+        <circle cx="50" cy="100" r="20" fill="blue">
+            <animate attributeName="cx" values="100;400" dur="2s" begin="2s" />
+            <set begin="4s" attributeName="visibility" to="hidden" />
+        </circle>
+        <circle cx="50" cy="150" r="20" fill="blue">
+            <animate attributeName="cx" values="100;400" dur="2s" begin="4s" />
+            <set begin="6s" attributeName="visibility" to="hidden" />
+        </circle>
+        <circle cx="50" cy="200" r="20" fill="blue">
+            <animate attributeName="cx" values="100;400" dur="2s" begin="6s" />
+            <set begin="8s" attributeName="visibility" to="hidden" />
+        </circle>
+    </svg>
+
+
+    <h2>Ejercicio 6</h2>
+   
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="600" width="820">
+        <script type="text/ecmascript">
+            function changerect(evt) {
+                var svgobj = evt.target;
+                svgobj.style.opacity = 0.3; // Cambiar opacidad
+                alert('Has pulsado el rectángulo'); // Mostrar alerta
+            }
+        </script>
+        <rect onclick="changerect(evt)" style="fill:blue;opacity:1" x="10" y="30" width="100" height="100" />
+    </svg>
+
+
+    <h2>Ejercicio 7</h2>
+   
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="600" width="820">
+        <defs>
+            <style>
+            text{  font: 28px Verdana, Helvetica, Arial, sans-serif; }
+            </style></defs>
+        <rect  x="10" y="10" width="160" height="50" fill="purple"/>
+        <rect  x="10" y="60" width="160" height="50" fill="green"/>
+        <text  fill="blue" x="60" y="60">Malaga! </text>
+    </svg>
+</body>
+
+</html>

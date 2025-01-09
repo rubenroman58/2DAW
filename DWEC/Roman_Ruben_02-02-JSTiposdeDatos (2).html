@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <script>
+        // Comentario de una sola línea: Este script muestra un mensaje de "Hola Mundo"
+
+        /* 
+        Comentario multilínea
+        */
+
+        // 2
+        alert('holamundo');
+
+        // 3
+        var nombre = "Juan", edad = 25, ciudad = "Madrid";
+
+        //6
+        document.write('<h1>Ejercicio 6 <br></h1>');
+        document.write("El tipo de variable es: " + typeof (nombre) + "<br>");
+        document.write("El tipo de variable es: " + typeof (edad) + "<br>");
+        document.write("El tipo de variable es: " + typeof (ciudad) + "<br>");
+
+        //7
+        document.write('<h1>Ejercicio 7 <br></h1>');
+        var a = true;
+        var b = "hola";
+        var c = 1;
+
+        document.write("<br>4 + 4 = " + 4 + 4);
+        document.write('<br>"4" + 4 = ' + "4" + 4);
+        document.write("<br>a + c: " + a + c);
+        document.write("<br>b+c: " + b + c);
+        document.write("<br> 2.9e3+1: " + 2.9e3 + 1);
+        document.write("<br> 2.9e3 + b: " + 2.9e3 + b);
+        document.write("<br> 2.9e3 + a: " + 2.9e3 + a + "<br>");
+
+        //8
+        document.write('<h1>Ejercicio 8<br></h1>');
+        document.write('ParseFloat');
+        document.write('2.9e3: ', parseFloat('2.9e3') + "<br>");
+        document.write('30.1e-3: ', parseFloat('30.1e-3') + "<br>");
+        document.write('0,000000004: ', parseFloat('0,000000004') + "<br>");
+        document.write('0,6: ', parseFloat('0,6') + "<br>");
+        document.write('3000000: ', parseFloat('3000000') + "<br>");
+        document.write('301231000: ', parseFloat('301231000') + "<br>");
+        document.write('ParseInt');
+        document.write('2.9e3: ', parseInt('2.9e3') + "<br>");
+        document.write('30.1e-3: ', parseInt('30.1e-3') + "<br>");
+        document.write('0,000000004: ', parseInt('0,000000004') + "<br>");
+        document.write('0,6: ', parseInt('0,6') + "<br>");
+        document.write('3000000: ', parseInt('3000000') + "<br>");
+        document.write('301231000: ', parseInt('301231000') + "<br>");
+        //9
+        document.write('<h1>Ejercicio 9<br></h1>');
+        var numeroLargo = "123456";
+        document.write(numeroLargo.length);
+
+        //10 
+        /*
+        document.write('<h1><br>Ejercicio 10</h1>');
+        const numero = 10;
+        const mensaje = "Hola";
+        numero = 12;
+        mensaje = "dfff";
+        alert("Cambio: " + numero);
+        alert("Cambio: " + mensaje);
+        */
+
+        //11
+        document.write('<h1><br>Ejercicio 11</h1>');
+
+        if (true) {
+            var numero2 = 10;
+            alert('Este numero si deberia salir (dentro del bloque): '+numero2);
+
+        }
+           alert('Este numero tambien deberia salir (fueradel bloque): '+numero2);
+
+        //12
+        document.write('<h1><br>Ejercicio 12</h1>');
+        if (true) {
+           let numeroLet = 10;
+            alert('Este  deberia salir(dentro del bloque(let)): '+numeroLet);
+
+        }
+           alert('Este no deberia salir'+numeroLet);
+
+
+    </script>
+    <h1>ejercicio 5</h1>
+    <table>
+        <tr>
+            <th>Tipo</th>
+            <th> alert('holamundo');</th>
+        </tr>
+        <tr>
+            <th>Numero</th>
+            <th>numero=7</th>
+        </tr>
+        <tr>
+            <th>Boolean</th>
+            <th>true</th>
+        </tr>
+        <tr>
+            <th>Null</th>
+            <th>Null</th>
+        </tr>
+        <tr>
+            <th>Object</th>
+            <th> let objeto = {
+                nombre: "Juan",
+                edad: 30
+                };</th>
+        </tr>
+        <tr>
+            <th>Arrays</th>
+            <th>let array = [1, 2, 3, 4, 5];</th>
+        </tr>
+        <tr>
+            <th>Function</th>
+            <th>function saludar() {
+                return "Hola!";
+                }</th>
+        </tr>
+    </table>
+
+</body>
+
+</html>

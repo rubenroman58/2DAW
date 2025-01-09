@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="./libreria.minima.datejs/date-es-ES.js"></script>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <script>
+        /*
+        var entrada3 = window.prompt("Ingresa un texto:");
+        var posicionMedia2 = Math.floor(entrada3.length / 2);
+        var caracterMedio = entrada3.charAt(posicionMedia2);
+        document.write("El carácter en la mitad es: " + caracterMedio +
+            " y su código Unicode es: " + caracterMedio.charCodeAt(0));
+            */
+    </script>
+    <script>
+        /*
+             var entrada4 = window.prompt("1:");
+             var entrada5 = window.prompt("2:");
+             var final2 = entrada5.lastIndexOf(entrada4)
+             document.write(" y su código Unicode es: " + final2);
+      */
+    </script>
+    <script>
+        /*
+                var entrada1 = window.prompt("Ingresa el texto que deseas reemplazar:");
+                var entrada2 = window.prompt("Ingresa el texto donde se realizará el reemplazo:");
+        
+                // Reemplazar la primera aparición de entrada1 dentro de entrada2
+                var resultado = entrada2.replace(entrada1, "REEMPLAZADO");
+        
+                // Mostrar el resultado en el documento
+                document.write("Texto original: " + entrada2 + "<br>");
+                document.write("Texto después del reemplazo: " + resultado);
+                */
+    </script>
+
+    <script>
+        /*
+                var entrada7 = window.prompt("Ingresa cadena:");
+        
+                var subentrada7 = window.prompt("subcadena:");
+                resultado = entrada7.search(subentrada7)
+        
+                // Mostrar el resultado en el documento
+                document.write("Posicion: " + resultado);
+        
+        */
+    </script>
+    <script>
+        /*
+                var entrada8 = window.prompt("Ingresa cadena:");
+        
+           
+                resultado8 = entrada8.slice(entrada8.length/2)F
+        
+                // Mostrar el resultado en el documento
+                document.write("Posicion: " + resultado8);
+        
+        */
+    </script>
+
+    <script>
+        /*
+                      var entrada9 = window.prompt("Ingresa cadena:");
+              
+                 
+                      resultado9 = entrada8.slice(entrada8.length/2)
+              
+                      // Mostrar el resultado en el documento
+                      document.write("Posicion: " + resultado8);
+              */
+
+    </script>
+    <script>
+        /*
+        var entrada = window.prompt("Ingresa una cadena de texto:");
+    
+        // Usar una expresión regular para dividir por uno o más espacios y eliminar espacios vacíos
+        var arrayDePalabras = entrada.split(/\s+/);
+    
+        document.write("Texto original: " + entrada + "<br>");
+        document.write("Array de palabras: " + JSON.stringify(arrayDePalabras));
+        */
+    </script>
+    <script>
+        /*
+     let cadena15=prompt("Introduzca la cadena del ejercicio 15")
+        let posicion15 = parseInt(prompt("Introduzca la posición desde la que desea empezar"));
+        let numero15 = parseInt(prompt("Introduzca el número de caracteres que quieres sacar"));
+        document.write(cadena15.substr(posicion15,numero15))
+       */
+
+    </script>
+    <h2>16</h2>16. Modifica el ejercicio 7 con split() para ponerlas en negrita la cadena buscada
+    ejemplo "m" "limon" resultado li-m-on<br>
+    <script>
+        /*
+        let cadena16=prompt("Introduzca la cadena del ejercicio 16")
+        let posicion16 = parseInt(prompt("Introduzca la posición desde la que desea empezar"));
+        let numero16 = parseInt(prompt("Introduzca hasta donde quieres sacar caracteres"));
+        document.write(cadena16.substring(posicion16,numero16))
+        */
+    </script>
+
+    <h2>17</h2>16. Modifica el ejercicio 7 con split() para ponerlas en negrita la cadena buscada
+    ejemplo "m" "limon" resultado li-m-on<br>
+    <script>
+        /*
+        let cadena17=prompt("Introduzca la cadena del ejercicio 16")
+        let minus=cadena17.toLowerCase()
+        let mayus=cadena17.toUpperCase()
+      
+        document.write(minus+mayus)
+        */
+    </script>
+    <h2>18</h2>16. Modifica el ejercicio 7 con split() para ponerlas en negrita la cadena buscada
+    ejemplo "m" "limon" resultado li-m-on<br>
+    <script>
+         // Tomar las dos entradas del usuario
+         let entrada7 = prompt('Primera entrada (subcadena):');
+         let segundaEntrada7 = prompt('Segunda entrada (cadena principal):');
+         
+         // Usar split() para separar la segunda cadena por la subcadena
+         let resultado = segundaEntrada7.split(entrada7);
+         
+         // Recorrer el array de fragmentos y agregar la subcadena en negrita donde aparece
+         let salida = resultado.join(`<b>-${entrada7}-</b>`);  // Insertar <b> en cada aparición de la subcadena
+         
+         // Mostrar el resultado en el documento
+         document.write(salida); 
+    </script>
+
+
+    <script>
+
+        /*
+            num_string9 = window.prompt("pon un numero");
+            num_num9 = parseFloat(num_string9);
+            if (isNaN(num_num9)) {
+                document.write('Es una cadena')
+            }
+            else {
+                let Redondeo1Decimal = Math.round(num_num9 * 10) / 10;
+                document.write('Redondeo un decimal: ' + Redondeo1Decimal)
+            
+            }
+         */
+
+    </script>
+    <!-- <script>
+    // Pedir al usuario un número máximo
+    let numeroMaximo = parseInt(prompt('Introduce un número máximo:'));
+    
+    // Generar un número aleatorio entre 0 y el número máximo usando la fórmula
+    let numeroAleatorio = Math.round(Math.random() * numeroMaximo);
+    
+    // Mostrar el número aleatorio generado
+    document.write('Número aleatorio entre 0 y ' + numeroMaximo + ': ' + numeroAleatorio + '<br>');
+
+    // Pedir al usuario un rango A y B (A < B)
+    let numeroA = parseInt(prompt('Introduce el valor A (el valor mínimo):'));
+    let numeroB = parseInt(prompt('Introduce el valor B (el valor máximo):'));
+    
+    // Generar un número aleatorio entre A y B usando la fórmula
+    let numeroAleatorioEntreAyB = Math.round(Math.random() * (numeroB - numeroA)) + numeroA;
+    
+    // Mostrar el número aleatorio generado entre A y B
+    document.write('Número aleatorio entre ' + numeroA + ' y ' + numeroB + ': ' + numeroAleatorioEntreAyB);
+</script> -->
+
+    <!-- <script>
+        
+     
+    let numero = parseFloat(prompt('Introduzca un número:'));
+
+    // 1. Mostrar en bases 2, 8 y 16
+    let binario = numero.toString(2);   // Convertir a base 2
+    let octal = numero.toString(8);     // Convertir a base 8
+    let hexadecimal = numero.toString(16);  // Convertir a base 16
+
+    // 2. Notación exponencial
+    let notacionExponencial = numero.toExponential();
+
+    // 3. Mostrar con 10 dígitos decimales
+    let conDecimales = numero.toFixed(10);
+
+    // 4. Número con longitud 8 (rellenar con ceros a la izquierda)
+    let longitud8 = numero.toFixed(8).padStart(8, '0');
+    let precision=numero.toPrecision(4)
+
+    // Mostrar los resultados
+    document.write('Número original: ' + numero + '<br>');
+    document.write('En base 2: ' + binario + '<br>');
+    document.write('En base 8: ' + octal + '<br>');
+    document.write('En base 16: ' + hexadecimal + '<br>');
+    document.write('En notación exponencial: ' + notacionExponencial + '<br>');
+    document.write('Con 10 dígitos decimales: ' + conDecimales + '<br>');
+    document.write('Con longitud 8 (relleno de ceros): ' + longitud8 + '<br>');
+    document.write('Precision: ' + precision + '<br>');
+    
+</script> -->
+
+    <!-- <script>
+
+    let cantidad13 = parseFloat(prompt("Introduzca una cantidad13 en Euros"));
+
+
+    if (isNaN(cantidad13) || cantidad13 <= 0) {
+        alert("Por favor, ingrese un número válido.");
+    } else {
+
+        let euros = cantidad13.toFixed(2);
+        document.write("Cantidad en Euros: " + euros + " €<br>");
+
+
+        let yenes = (cantidad13 * 140).toFixed(2);
+        document.write("Cantidad en Yenes: " + yenes + " ¥<br>");
+
+        // 3. Mostrar con 3 decimales mínimos (usando .toFixed() para asegurar 3 decimales)
+        let tresDecimalesMin = cantidad13.toFixed(3);
+        document.write("Cantidad con 3 decimales mínimo: " + tresDecimalesMin + " €<br>");
+
+        // 4. Mostrar con 3 decimales mínimo y máximo (sin redondear, sin el uso de .toFixed())
+        let tresDecimalesExactos = cantidad13.toPrecision(6);  // Asegura que al menos 3 decimales se muestren
+        document.write("Cantidad con 3 decimales mínimo y máximo: " + tresDecimalesExactos + " €<br>");
+    }
+</script> -->
+    <script>
+        /*
+                let fecha = new Date()
+                let fecha2 = prompt('Introduzca su fecha de nacimiento')
+                let fecha_nac = new Date(fecha2)
+                if (isNaN(fecha_nac.getTime())) {
+        
+                    document.write('mal')
+                } else {
+                    let diasVivo = (fecha - fecha_nac) / (100 * 60 * 60 * 24)
+                    document.write('LLevas vivo: ' + diasVivo.toFixed(2))
+                }
+        
+         */
+    </script>
+
+    <script>
+
+        /*   let fecha = new Date()
+          let fecha2 = prompt('Introduzca su fecha de nacimiento')
+          let fecha_nac = new Date(fecha2)
+          if (isNaN(fecha_nac.getTime())) {
+  
+              document.write('mal')
+          } else {
+              let diasVivo = (fecha - fecha_nac) / (100 * 60 * 60 * 24)
+              document.write('LLevas vivo: ' + diasVivo.toFixed(2))
+          } */
+
+
+    </script>
+
+
+    <!--     <script>
+
+        let hoy = new Date()
+        let fecha2 = prompt('Introduzca su fecha de nacimiento')
+        let pais = prompt('Introduzca su pais')
+        let sexo = prompt('Introduzca su sexo(m,f)')
+        sexoFinal = sexo.toLowerCase()
+        paisFinal = pais.toLowerCase()
+        let fecha_nac = new Date(fecha2)
+        if (isNaN(fecha_nac.getTime())) {
+
+            document.write('mal')
+        } else {
+            var esperanzaVida;
+            switch (paisFinal) {
+                case 'japon':
+                    esperanzaVida = (sexoFinal === 'm') ? 86 : 81;
+                    break;
+                case 'suiza':
+                    esperanzaVida = (sexoFinal === 'm') ? 85 : 81;
+                    break;
+                case 'españa':
+                    esperanzaVida = (sexoFinal === 'm') ? 85 : 80;
+                    break;
+
+            }
+            anios = hoy.getFullYear() - fecha_nac.getFullYear()
+            aniosVida = esperanzaVida - anios
+            document.write('Te quedan: ' + aniosVida)
+        }
+
+    </script> -->
+
+    <!--    <script>
+        document.write(Date.today() + '<br>')
+        document.write(Date.today().next().monday() + '<br>')
+        document.write(Date.today().at("6:15pm")  + '<br>')
+        document.write(Date.today().next().year() + '<br>')
+        var cumpleaños = { month: 6, day: 5 }
+        document.write('Cumpleaños: ' + Date.today().set(cumpleaños)+ '<br>')
+        document.write(Date.december().first().monday() + '<br>')
+        document.write(Date.today() + Date.today().is().sunday() + "<br>")
+        document.write("¿Fue hace un mes sep?: " + Date.today().last().month().is(8) + "<br>")
+      
+    </script> -->
+
+    <!--     <input type="button" onclick="abirventana()" value="abrir">
+    <input type="button" onclick="cerrarventana()" value="cerrar">
+    <script>
+        subVentana = null
+        function abirventana() {
+            if (subVentana === null || subVentana.closed) {
+                subVentana = window.open("nueva.html", "nueva", "height=800,width=600")
+            } else {
+                alert('La ventana esta abierta')
+            }
+        }
+
+        function cerrarventana() {
+            if (subVentana !== null && !subVentana.closed) {
+                subVentana.close()
+            } else {
+                alert('La ventana esta cerrada')
+            }
+        }
+    </script> -->
+
+    <!--   <script>
+        alert('Le estan robando en el banco')
+        deacuerdo=confirm('Eas de acuerdo')
+        if(deacuerdo){
+            alert('si')
+        }else{
+            alert('no')
+        }
+        </script> -->
+
+
+
+    <!--     <button type="button" onclick="parar()"> Parar</button>
+    <button type="button" onclick="iniciar()"> Iniciar</button>
+    <div id="horaID"> </div>
+    <script>
+
+        var driverIntervalo = null;
+        function hora() {
+            const date = new Date();
+            document.getElementById("horaID").innerHTML += date.toLocaleTimeString() + '---'
+        }
+        function iniciar() {
+            if (driverIntervalo == null)
+                driverIntervalo = setInterval(hora, 100);
+        }
+        function parar() {
+            clearInterval(driverIntervalo)
+            driverIntervalo = null;
+        }
+
+    </script> -->
+    <!-- 
+    <input type="text" id="urlInput" placeholder="Introduce la URL">
+    <button onclick="myFunction()">Load new document (assign)</button>
+
+   
+    <button onclick="reloadPage()">Reload current page</button>
+
+   
+    <button onclick="replacePage()">Replace current page (replace)</button>
+
+    <script>
+        function myFunction() {
+            // Obtiene la URL desde el campo de texto
+            const url = document.getElementById('urlInput').value;
+
+            // Si hay una URL ingresada, se realiza la redirección con assign()
+            if (url) {
+                subVentana = window.open(url, "nueva", "height=800,width=600") // Carga la nueva URL y mantiene el historial
+            } else {
+                alert('Por favor, ingresa una URL válida.');
+            }
+        }
+
+        function reloadPage() {
+            // Recarga la página actual
+            window.location.reload(); // Recarga la página
+        }
+
+        function replacePage() {
+            // Obtiene la URL desde el campo de texto
+            const url = document.getElementById('urlInput').value;
+
+            // Si hay una URL ingresada, se reemplaza la página actual con replace()
+            if (url) {
+                window.location.replace(url); // Reemplaza la página actual sin agregarla al historial
+            } else {
+                alert('Por favor, ingresa una URL válida.');
+            }
+        }
+    </script>   
+ -->
+    <!--  <p id="demo"></p>
+
+ <script>
+     try {
+         // Verificar si el navegador soporta la geolocalización
+         if (navigator.geolocation) {
+             navigator.geolocation.getCurrentPosition(showPosition);
+         } else {
+             document.getElementById("demo").innerHTML = "Geolocation is not supported by this browser.";
+         }
+     } catch (e) {
+         document.getElementById("demo").innerHTML = "Error: " + e.message;
+     }
+     
+     function showPosition(position) {
+         var latitude = position.coords.latitude;
+         var longitude = position.coords.longitude;
+         
+         // Mostrar las coordenadas
+         document.getElementById("demo").innerHTML =
+             "Latitude: " + latitude + "<br>" +
+             "Longitude: " + longitude;
+     
+         // Redirigir a Google Maps con las coordenadas obtenidas
+         var googleMapsUrl = "https://www.google.com/maps?q=" + latitude + "," + longitude;
+         location.assign(googleMapsUrl);  // Redirigir a Google Maps con las coordenadas
+     }
+     
+     </script> -->
+
+    <!--  <h1> una cabecera h1</h1>
+     <h2> una cabecera h2</h2>
+     <p> Un parrafo </p>
+     <span>Torremolinos</span>
+     
+     
+     <p id="explica"></p>
+     <h2 id="elemento"></h2>
+     <script>
+      etiqueta =prompt('Ingrese el contenido que deseas conocer (p,h1,h2,span)  que deseas seleccionar:','');
+     const collection=document.getElementsByTagName(etiqueta)
+ 
+     document.getElementById("explica").innerHTML="El contenido de la etiqueta es: "
+     document.getElementById("elemento").innerHTML=collection[0].innerHTML;
+  
+     
+     </script> -->
+
+
+    <!--  <p> etiqueta1     <input type="text" name="etiqueta1" value ="Guadalajara"> </p>
+     <p> etiqueta2     <input type="text" name="etiqueta2" value ="Toledo">  </p>
+     <p> etiqueta3     <input type="text" name="etiqueta3" value ="Cuenca">  </p>
+     <hr>
+     <p id="explica"></p>
+     <h2 id="elemento"></h2>
+
+     <script language="JavaScript">
+     numero=prompt('Ingresa el numero de la etiqueta:','');
+     document.getElementById('explica').innerHTML='La etiqueta seleccionada es: '
+     contenido=document.getElementsByName('etiqueta'+numero)[0].value
+     document.getElementById('elemento').innerHTML=contenido
+
+
+ </script> -->
+<script>
+ let primeraEntrada14 = window.prompt("Introduce la primera cadena :");
+ let entradaNueva14=primeraEntrada14.split("")
+ document.write(entradaNueva14)
+</script>
+
+</body>
+
+</html>

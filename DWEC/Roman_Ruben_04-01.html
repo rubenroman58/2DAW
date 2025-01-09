@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<h2>Ejercicio 1</h2>
+<div id="id1"></div>
+<script>
+    /*
+    let arrayAleatorio = []
+    let cadena = " "
+    let max = 0
+    let min = Number.MAX_VALUE
+    let suma = 0
+
+    // Generar 50 números aleatorios entre 0 y 100
+    for (let i = 0; i < 50; i++) arrayAleatorio[i] = Math.round(Math.random() * 100);
+
+    // Encontrar el máximo, mínimo y calcular la suma
+    for (let i = 0; i < 50; i++) {
+        if (arrayAleatorio[i] > max) max = arrayAleatorio[i];
+        if (arrayAleatorio[i] < min) min = arrayAleatorio[i];
+        suma += arrayAleatorio[i];
+    }
+
+    // Construir la cadena para mostrar los números
+    for (let i = 0; i < 50; i++) {
+        cadena += arrayAleatorio[i] + ' - ';
+        if (i % 10 === 9) {
+            cadena += '<br>';
+        }
+    }
+
+    // Mostrar el resultado de max, min, media y los números generados
+    cadena = 'Maximo: ' + max + ' - Minimo: ' + min + ' - Media: ' + (suma / 50).toFixed(2) + '<br>' + cadena;
+    document.getElementById('id1').innerHTML = cadena;
+ */
+</script>
+
+<h2>Ejercicio 2</h2>
+<div id="id2"></div>
+<script>
+    /*   arrayAleatorio2 = [];
+      cadena2 = "";
+      max = 0;
+      min = Number.MAX_VALUE;
+      suma = 0;
+  
+      // Generar 50 números aleatorios entre 0 y 10
+      for (let i = 0; i < 50; i++) {
+          arrayAleatorio2[i] = Math.round(Math.random() * 10);
+      }
+  
+      // Ordenar el array
+      arrayAleatorio2.sort(function (a, b) { return a - b; });
+  
+      // Construir la cadena para mostrar los números
+      for (let i = 0; i < 50; i++) {
+          cadena2 += arrayAleatorio2[i] + ' - ';
+          if (i % 10 === 9) cadena2 += '<br>'; // Salto de línea después de cada 10 números
+      }
+  
+      // Calcular la mediana
+      var mediana = arrayAleatorio2[25]; // Para 50 elementos, la mediana está en el índice 25
+  
+      // Calcular la moda
+      var moda = arrayAleatorio2[0];
+      var contador_moda = 1;
+      var maxmoda = 1;
+  
+      // Recorremos el array para encontrar la moda
+      for (let i = 1; i < 50; i++) {
+          if (arrayAleatorio2[i] === arrayAleatorio2[i - 1]) {
+              contador_moda += 1;
+          } else {
+              if (contador_moda > maxmoda) {
+                  maxmoda = contador_moda;
+                  moda = arrayAleatorio2[i - 1];
+              }
+              contador_moda = 1; // Reiniciar contador de moda al cambiar de número
+          }
+      }
+  
+      // Verificar la última moda después del bucle
+      if (contador_moda > maxmoda) {
+          maxmoda = contador_moda;
+          moda = arrayAleatorio2[49]; // Último número del array
+      }
+  
+      // Mostrar los resultados en el HTML
+      cadenaFinal2 = 'Mediana: ' + mediana + ' - Moda: ' + moda + '<br>' + cadena2;
+      document.getElementById('id2').innerHTML = cadenaFinal2; */
+</script>
+
+<h2>Ejercicio 3</h2>
+<br>
+<h2> Ejercicio Arrays </h2>
+<p> Array X <input type="text" size="60" name="caja1" value="X1,X2,X3,X4,X5"> </p>
+<p> <input type="button" name="button" value="Add Array" onclick="addArrays();"> </p>
+<hr>
+<p id="explica"></p>
+<h2 id="tamano"></h2>
+<br>
+<script language="JavaScript">
+    /* var arrayX = new Array();
+    var arraymix = new Array();
+    function addArrays() {
+        arrayXstr = document.getElementsByName("caja1")[0].value;
+        arrayX = arrayXstr.split(',');
+        lX = arrayX.length;
+        for (var i = 0; i < lX; i++) { arraymix.push(arrayX[i]); }
+        contenidostr = "El contenido del array es " + arraymix.join('-');
+        tamanostr = "El tamano del array es " + arraymix.length;
+        //alert(contenidostr);
+        document.getElementById("explica").innerHTML = contenidostr;
+        document.getElementById("tamano").innerHTML = tamanostr;
+    } */
+</script>
+
+<h2>Ejercicio 4</h2>
+<form id="formEjercicio4" method="GET" style="border: 1px solid blue;display: inline-block;">
+    <label for="ej4">Ejercicio Arrays<br></label>
+    <input type="text" id="ej4" />
+    <input type="button" value="añadir" onclick="addArrays4()" />
+</form>
+<div id="id4"></div>
+<div id="tamano4"></div>
+<script>
+    arrayEjercicio4 = []
+    function addArrays4() {
+
+        let valor = document.getElementById('ej4').value;
+        var cadena4 = ""
+
+        arrayEjercicio4.push(valor);
+        tamano = arrayEjercicio4.length
+
+        cadena4 = arrayEjercicio4.join('-')
+        document.getElementById('id4').innerHTML = cadena4
+        document.getElementById('tamano4').innerHTML = "El tamaño es: " + tamano
+    };
+
+</script>
+
+<h2>Ejercicio 5</h2>
+<form id="formEjercicio4" method="GET" style="border: 1px solid blue;display: inline-block;">
+    <label for="ej5">Ejercicio Arrays<br></label>
+    <input type="text" id="ej5" />
+    <input type="button" value="añadir" onclick="addArrays5()" />
+    <input type="button" value="Ordenar" onclick="ordenarArrays5()" />
+</form>
+<div id="id5"></div>
+<div id="tamano5"></div>
+<div id="ordenado5"></div>
+<script>
+    arrayEjercicio5 = []
+    function addArrays5() {
+
+        let valor5 = document.getElementById('ej5').value;
+        var cadena5 = ""
+
+        arrayEjercicio5.push(valor5);
+        tamano5 = arrayEjercicio5.length
+
+        cadena5 = arrayEjercicio5.join('-')
+        document.getElementById('id5').innerHTML = cadena5
+        document.getElementById('tamano5').innerHTML = "El tamaño es: " + tamano5
+    };
+    function ordenarArrays5() {
+         arrayEjercicio5.sort()
+         arrayOrdenado5=arrayEjercicio5.join('-')
+   
+        document.getElementById('ordenado5').innerHTML = "El array ordenado es: " + arrayOrdenado5
+    };
+
+</script>
+
+
+
+
+
+<h2>Ejercicio 7</h2>
+<form >
+    <label for="array1">Array 1</label>
+    <input type="text" name="array1" id="array1">
+    <br>
+    <label for="array2">Array 2</label>
+    <input type="text" name="array2" id="array2">
+    <input type="button" value="concatenar" onclick="concatenarArrays7()" />
+</form>
+<div id="resultado"></div>
+<script>
+ function concatenarArrays7() {
+
+   
+    var array1 = document.getElementById('array1').value.split(',');
+    var array2 = document.getElementById('array2').value.split(',');
+
+   
+    for (var i = 0; i < array1.length; i++) {
+        array1[i] = array1[i].trim();
+    }
+    for (var i = 0; i < array2.length; i++) {
+        array2[i] = array2[i].trim();
+    }
+
+
+    if (array1.length !== array2.length) {
+        alert("Los arrays deben tener la misma longitud");
+        return;
+    }
+
+    var arrayConcatenado = [];
+    for (var i = 0; i < array1.length; i++) {
+        arrayConcatenado.push(array1[i]);
+        arrayConcatenado.push(array2[i]);
+    }
+
+  o
+    document.getElementById('resultado').innerHTML = "El array concatenado es: " + arrayConcatenado.join(', ');
+}
+</script> 
+
+<h2>Ejercicio 8</h2>
+
+<form>
+    <label for="array1">Array 1</label>
+    <input type="text" name="array18" id="array18">
+    <br>
+    <label for="array2">Array 2</label>
+    <input type="text" name="array28" id="array28">
+    <br>
+    <label for="array3">Array 3</label>
+    <input type="text" name="array38" id="array38">
+    <input type="button" value="concatenar" onclick="concatenarArrays8()" />
+</form>
+<div id="resultado8"></div>
+
+<script>
+function concatenarArrays8() {
+
+    var array18 = document.getElementById('array18').value.split(',');
+    var array28 = document.getElementById('array28').value.split(',');
+    var array38 = document.getElementById('array38').value.split(',');
+
+   
+    for (var i = 0; i < array18.length; i++) {
+        array18[i] = array18[i].trim();
+    }
+    for (var i = 0; i < array28.length; i++) {
+        array28[i] = array28[i].trim();
+    }
+    for (var i = 0; i < array38.length; i++) {
+        array38[i] = array38[i].trim();
+    }
+
+
+    if (array18.length !== array28.length || array18.length !== array38.length || array28.length !== array38.length) {
+        alert("Los arrays deben tener la misma longitud");
+        return;
+    }
+
+   
+    var arrayConcatenado8 = [];
+    for (var i = 0; i < array18.length; i++) {
+        arrayConcatenado8.push(array18[i]);
+        arrayConcatenado8.push(array28[i]);
+        arrayConcatenado8.push(array38[i]);
+    }
+
+   
+    document.getElementById('resultado8').innerHTML = "El array concatenado es: " + arrayConcatenado8.join(', ');
+}
+</script>
+<h2>Ejercicio 9</h2>
+    <form>
+        <label for="id9">Identificador:</label>
+        <input type="text" name="id9" id="id9">
+        <br>
+        <label for="nombre9">Nombre:</label>
+        <input type="text" name="nombre9" id="nombre9">
+        <br>
+        <label for="apellidos9">Apellidos:</label>
+        <input type="text" name="apellidos9" id="apellidos9">
+        <br>
+        <label for="nacimiento9">Fecha de nacimiento:</label>
+        <input type="date" name="nacimiento9" id="nacimiento9">
+        <br>
+        <label for="puesto9">Puesto:</label>
+        <input type="text" name="puesto9" id="puesto9">
+        <br>
+        <input type="button" value="Enviar datos" onclick="enviarDatos9()" />
+        <input type="button" value="Mostrar todos los datos" onclick="mostrarDatos9()" />
+        <input type="button" value="Mostrar registro por ID" onclick="mostrarRegistroPorId()" />
+        <input type="button" value="Años activos hasta jubilación" onclick="añosActivosHastaJubilacion()" />
+    </form>
+
+    <div id="resultado9"></div>
+
+    <script>
+
+        var arrayDatos9 = [];
+
+
+        function enviarDatos9() {
+            var iden9 = document.getElementById('id9').value;
+            var nombre9 = document.getElementById('nombre9').value;
+            var apellidos9 = document.getElementById('apellidos9').value;
+            var nacimiento9 = document.getElementById('nacimiento9').value;
+            var puesto9 = document.getElementById('puesto9').value;
+
+           
+            var empleado = {
+                id: iden9,
+                nombre: nombre9,
+                apellidos: apellidos9,
+                nacimiento: nacimiento9,
+                puesto: puesto9
+            };
+
+            arrayDatos9.push(empleado);
+
+            document.getElementById('id9').value = '';
+            document.getElementById('nombre9').value = '';
+            document.getElementById('apellidos9').value = '';
+            document.getElementById('nacimiento9').value = '';
+            document.getElementById('puesto9').value = '';
+        }
+
+
+        function mostrarDatos9() {
+            var resultado = "<ul>";
+            for (var i = 0; i < arrayDatos9.length; i++) {
+                resultado += "<li>" + arrayDatos9[i].nombre + " " + arrayDatos9[i].apellidos + "</li>";
+            }
+            resultado += "</ul>";
+            document.getElementById('resultado9').innerHTML = resultado;
+        }
+
+
+        function mostrarRegistroPorId() {
+            var idBuscar = prompt("Ingrese el ID del empleado:");
+            var empleadoEncontrado = null;
+            for (var i = 0; i < arrayDatos9.length; i++) {
+                if (arrayDatos9[i].id === idBuscar) {
+                    empleadoEncontrado = arrayDatos9[i];
+                    break;
+                }
+            }
+
+            if (empleadoEncontrado) {
+                var resultado = `
+                    <p>ID: ${empleadoEncontrado.id}</p>
+                    <p>Nombre: ${empleadoEncontrado.nombre} ${empleadoEncontrado.apellidos}</p>
+                    <p>Fecha de nacimiento: ${empleadoEncontrado.nacimiento}</p>
+                    <p>Puesto: ${empleadoEncontrado.puesto}</p>
+                `;
+                document.getElementById('resultado9').innerHTML = resultado;
+            } else {
+                alert("Empleado no encontrado.");
+            }
+        }
+
+
+        function añosActivosHastaJubilacion() {
+            var resultado = "<ul>";
+            var fechaActual = new Date();
+            var edadJubilacion = 67;
+            for (var i = 0; i < arrayDatos9.length; i++) {
+                var fechaNacimiento = new Date(arrayDatos9[i].nacimiento);
+                var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+                var mes = fechaActual.getMonth() - fechaNacimiento.getMonth();
+                if (mes < 0 || (mes === 0 && fechaActual.getDate() < fechaNacimiento.getDate())) {
+                    edad--;
+                }
+
+                var añosRestantes = edadJubilacion - edad;
+                if (añosRestantes > 0) {
+                    resultado += "<li>" + arrayDatos9[i].nombre + " " + arrayDatos9[i].apellidos + ": " + añosRestantes + " años hasta la jubilación.</li>";
+                } else {
+                    resultado += "<li>" + arrayDatos9[i].nombre + " " + arrayDatos9[i].apellidos + ": Ya está jubilado o superó los 67 años.</li>";
+                }
+            }
+            resultado += "</ul>";
+            document.getElementById('resultado9').innerHTML = resultado;
+        }
+    </script>
+
+</html>
