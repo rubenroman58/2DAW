@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <script>
+        ventas = [100, 200, 300, 400]
+        suma = ventas.reduce((acumulador, venta) => acumulador + venta, 0)
+        document.write(suma)
+    </script>
+
+    <h2>Ejercicio 2</h2>
+    <script>
+        nombre = ['juan', 'maria', 'pedro', 'luis']
+        sumaNombre = nombre.reduceRight((acumulador, nombre) => acumulador + '-' + nombre)
+        document.write(sumaNombre)
+    </script>
+    <h2>Ejercicio 3</h2>
+    <script>
+
+        const cantidades = [5, 10, 20, 15];
+        const totalProductos = cantidades.reduce((acumulador, cantidad) => acumulador + cantidad, 0);
+        document.write(totalProductos);
+    </script>
+    <h2>Ejercicio 4</h2>
+    <script>
+        palabras = ['JavaScript', 'es', 'increíble']
+        ejer4 = palabras.join(' ')
+        document.write(ejer4)
+    </script>
+    <h2>Ejercicio 5</h2>
+    <script>
+        numeros = [1, 2, 3, 4, 5]
+        ejer5 = numeros.toString()
+        document.write(ejer5)
+    </script>
+    <h2>Ejercicio 6</h2>
+    <script>
+        const precios = [1000, 2000, 3000];
+        const preciosLocales = precios.toLocaleString("en-US", { style: "currency", currency: "USD" });
+        document.write(preciosLocales);
+    </script>
+    <h2>Ejercicio 7</h2>
+    <script>
+        numerosEjer7 = [500, 1000, 1500, 2000]
+        ejer7 = numerosEjer7.reduce((acumulador, mes) =>
+            acumulador + mes
+            , 0)
+        document.write(ejer7)
+    </script>
+    <h2>Ejercicio 8</h2>
+    <script>
+        productos = ['Manzana', 'Naranja', 'Plátano']
+        ejer8 = productos.reduceRight((acumulador, palabra) => acumulador + '-' + palabra)
+        document.write(ejer8)
+    </script>
+    <h2>Ejercicio 9</h2>
+    <script>
+        numerosEjer9 = [10, 20, 30, 40]
+        ejer9 = numerosEjer9.toString()
+        document.write(ejer9)
+    </script>
+    <h2>Ejercicio 10</h2>
+    <script>
+        const precios11 = [1000, 1500, 2000];
+        const preciosEnUSD = precios11.map(precio => precio.toLocaleString("en-US", {
+            style: "currency", currency:
+                "USD"
+        }));
+        const preciosEnEUR = precios11.map(precio => precio.toLocaleString("de-DE", {
+            style: "currency", currency:
+                "EUR"
+        }));
+        document.write(preciosEnUSD+'<br>'); 
+        document.write(preciosEnEUR);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejercicio 1 y 2</h2>
+    <script>
+        setSeñorAnillos = new Set()
+
+        setSeñorAnillos.add('Personaje 1');
+        setSeñorAnillos.add('Personaje 2');
+        setSeñorAnillos.add('Personaje 3');
+        setSeñorAnillos.add('Personaje 4');
+        setSeñorAnillos.add('Personaje 5');
+        for (let personajes of setSeñorAnillos) {
+            document.write(personajes + '<br>');
+        }
+    </script>
+    <h2>Ejercicio 3</h2>
+    <script>
+        setSeñorAnillos3 = new Set()
+
+        setSeñorAnillos3.add('Personaje 1');
+        setSeñorAnillos3.add('Personaje 2');
+        setSeñorAnillos3.add('Personaje 3');
+        setSeñorAnillos3.add('Personaje 4');
+        setSeñorAnillos3.add('Personaje 5');
+        function comprobarNombre(set, nombre) {
+            return set.has(nombre)
+        }
+        let personaje = 'Ruben';
+        let estaSet = comprobarNombre(setSeñorAnillos3, personaje);
+
+
+        if (estaSet) {
+            document.write(personaje + " esta en el set");
+        } else {
+            document.write(personaje + " no esta en el set");
+        }
+    </script>
+    <h2>Ejercicio 4</h2>
+    <script>
+        setSeñorAnillos4 = new Set()
+
+        setSeñorAnillos4.add('Personaje 1');
+        setSeñorAnillos4.add('Personaje 2');
+        setSeñorAnillos4.add('Personaje 3');
+        setSeñorAnillos4.add('Personaje 4');
+        setSeñorAnillos4.add('Personaje 5');
+        function contarPersonajes(set, nombre) {
+            return set.size
+        }
+
+        let numeroPersonajes = contarPersonajes(setSeñorAnillos4);
+
+        document.write('El numero de personajes es: ' + numeroPersonajes)
+
+    </script>
+    <h2>Ejercicio 5</h2>
+    <script>
+        setSeñorAnillos5 = new Set();
+
+        setSeñorAnillos5.add('Personaje 1');
+        setSeñorAnillos5.add('Personaje 2');
+        setSeñorAnillos5.add('Personaje 3');
+        setSeñorAnillos5.add('Personaje 4');
+        setSeñorAnillos5.add('Personaje 5');
+
+
+        function añadirPersonajes(set, nombre) {
+            if (set.has(nombre)) {
+                document.write(nombre + " ya esta en el set<br>");
+            } else {
+                set.add(nombre);
+                document.write(nombre + " ha sido añadido al set<br>");
+            }
+            return set;
+        }
+
+        añadirPersonajes(setSeñorAnillos5, 'Ruben');
+
+        document.write("Personajes en el set:<br>");
+        for (let personajes5 of setSeñorAnillos5) {
+            document.write(personajes5 + '<br>');
+        }
+    </script>
+
+    <h2>Ejercicio 6</h2>
+    <script>
+        setSeñorAnillos6 = new Set();
+
+        setSeñorAnillos6.add('Personaje 1');
+        setSeñorAnillos6.add('Personaje 2');
+        setSeñorAnillos6.add('Personaje 3');
+        setSeñorAnillos6.add('Personaje 4');
+        setSeñorAnillos6.add('Personaje 5');
+        setSeñorAnillos6.add('Ruben');
+
+
+        function eliminarPersonajes(set, nombre) {
+            if (set.has(nombre)) {
+                set.delete(nombre);
+                document.write(nombre + " ha sido eliminado del set<br>");
+            } else {
+                document.write(nombre + " no estaba en el set<br>");
+            }
+        }
+
+        document.write("Personajes antes de la eliminación:<br>");
+        for (let personajes6 of setSeñorAnillos6) {
+            document.write(personajes6 + '<br>');
+        }
+        eliminarPersonajes(setSeñorAnillos6, 'Ruben');
+
+        document.write("Personajes después de la eliminación:<br>");
+        for (let personajes6 of setSeñorAnillos6) {
+            document.write(personajes6 + '<br>');
+        }
+    </script>
+
+
+    <h2>Ejercicio 7</h2>
+    <script>
+
+        var set1 = new Set();
+        set1.add('Personjae 1');
+        set1.add('Personaje 2');
+        set1.add('Personaje 3');
+
+        var set2 = new Set();
+        set2.add('Personaje 4');
+        set2.add('Personaje 5');
+        set2.add('Personaje 6');
+
+
+        function combinarSets(setA, setB) {
+            var setCombinado = new Set(setA);
+            setB.forEach(function (personaje) {
+                setCombinado.add(personaje);
+            });
+            return setCombinado;
+        }
+
+
+        var setFinal = combinarSets(set1, set2);
+
+
+        document.write("Set combinado: <br>");
+        setFinal.forEach(function (personaje) {
+            document.write(personaje + '<br>');
+        });
+    </script>
+</body>
+
+</html>

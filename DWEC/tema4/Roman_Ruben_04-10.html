@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <div id="res1"></div>
+    <script>
+        let tienda = Array.of(1, 2, 3, 4, 5)
+        tienda.fill(7, 2, 5)
+        tienda.unshift(0, 0)
+        tienda.pop()
+        tienda = tienda.concat([10, 20, 30])
+        document.getElementById('res1').innerHTML = tienda.join(",")
+    </script>
+
+    <h2>Ejercicio 2</h2>
+    <div id="res2"></div>
+    <script>
+        let empleados = Array.from("abcdef");
+        document.write('Tercer empleado:'+empleados.at(2)+'<br>')
+        document.write('Primer empleado:'+empleados.at(-1))
+        empleados[1]='X'
+        empleados.shift()
+        empleados.push('Y')
+        empleados.push('Z')
+        document.getElementById('res2').innerHTML = empleados.join(",")
+    </script>
+       <h2>Ejercicio 3</h2>
+       <div id="res3"></div>
+       <script>
+           let calificaciones = [10, 11,12, 13, 14, 15, 16, 17, 18, 19, 20];
+           calificaciones.fill(99,3,7)
+           calificaciones.unshift(5,6,7)
+           calificaciones.pop()
+           calificaciones.shift()
+        
+           document.getElementById('res3').innerHTML = calificaciones.join(",")
+       </script>
+
+<h2>Ejercicio 4</h2>
+<div id="res4"></div>
+<script>
+    let precios = [100, 200, 300, 400]
+    precios.push(500,600)
+    precios.shift()
+    precios[2]=999
+    preciosFinal=precios.concat([700,800,900])
+    document.getElementById('res4').innerHTML = preciosFinal.join(",")
+</script>
+
+
+<h2>Ejercicio 5</h2>
+<div id="res5"></div>
+<script>
+    ejercicio5=Array.from('hello world')
+    document.write(ejercicio5.at(5))
+    ejercicio5.unshift('#')
+    ejercicio5.fill('*',6,7)
+    final=ejercicio5.concat(['!','!','!'])
+    document.getElementById('res5').innerHTML = final.join(",")
+</script>
+
+
+<h2>Ejercicio 6</h2>
+<div id="res6"></div>
+<script>
+    pedidosPendientes=[1,2,3,4,5,6]
+    document.write(pedidosPendientes.at(3))
+    pedidosPendientes[0]=0
+    pedidosPendientes.fill(8,1,4)
+    pedidosPendientes.shift()
+    pedidosPendientes.pop()
+    pedidosPendientes.push(7,8,9)
+    document.getElementById('res6').innerHTML = pedidosPendientes.join(",")
+</script>
+
+
+</body>
+
+</html>

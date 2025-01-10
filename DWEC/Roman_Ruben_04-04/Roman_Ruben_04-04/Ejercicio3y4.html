@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <script>
+        function Alumno(nombre, apellidos, id, nombreModulos, notasModulos) {
+            this.nombre = nombre;
+            this.apellidos = apellidos;
+            this.id = id;
+            this.nombreModulos = nombreModulos || [];
+            this.notasModulos = notasModulos || [];
+        }
+
+
+        Alumno.prototype.getNombre = () => this.nombre;
+        Alumno.prototype.setNombre = (nombre) => { this.nombre = nombre; };
+
+        Alumno.prototype.getApellidos = () => this.apellidos;
+        Alumno.prototype.setApellidos = (apellidos) => { this.apellidos = apellidos; };
+
+        Alumno.prototype.getId = () => this.id;
+        Alumno.prototype.setId = (id) => { this.id = id; };
+
+        Alumno.prototype.getNombreModulos = () => this.nombreModulos;
+        Alumno.prototype.setNombreModulos = (nombreModulos) => { this.nombreModulos = nombreModulos; };
+
+        Alumno.prototype.getNotasModulos = () => this.notasModulos;
+        Alumno.prototype.setNotasModulos = (notasModulos) => { this.notasModulos = notasModulos; };
+
+     
+        Alumno.prototype.toString = () => `Alumno: ${this.nombre} ${this.apellidos}, ID: ${this.id}, Modulos: ${this.nombreModulos.join(', ')}, Notas: ${this.notasModulos.join(', ')}`;
+
+        Alumno.prototype.motrarModulos = () => `Modulo: ${this.nombreModulos}`;
+        Alumno.prototype.mostrarNotasModulos = () => `Notas: ${this.notasModulos.join(', ')}`;
+
+        Alumno.prototype.mediaNotas = () => {
+            let contadorNotas = 0;
+            let sumaNotas = 0;
+            for (let i = 0; i < this.notasModulos.length; i++) {
+                contadorNotas++;
+                sumaNotas += this.notasModulos[i];
+            }
+            return sumaNotas / contadorNotas;
+        };
+
+        Alumno.prototype.suspensas = () => {
+            let suspensas = [];
+            for (let i = 0; i < this.notasModulos.length; i++) {
+                if (this.notasModulos[i] <= 5) {
+                    suspensas.push(this.notasModulos[i]);
+                }
+            }
+            document.write("Notas suspensas:", suspensas.join(', '));
+        };
+
+        Alumno.prototype.aprobadas = () => {
+            let aprobadas = [];
+            for (let i = 0; i < this.notasModulos.length; i++) {
+                if (this.notasModulos[i] >= 5) {
+                    aprobadas.push(this.notasModulos[i]);
+                }
+            }
+            document.write("Notas aprobadas:", aprobadas.join(', '));
+        };
+
+
+        let alumno = new Alumno('Ruben', 'Roman', 1, ['Desarrollo', 'Entornos'], [1, 8]);
+
+        document.write(alumno.toString());
+        document.write('<br>Los modulos del alumno son: ' + alumno.motrarModulos());
+        document.write('<br>Los notas del alumno son: ' + alumno.mostrarNotasModulos());
+        document.write('<br>La media de las notas es: ' + alumno.mediaNotas()+'<br>');
+        document.write('<br>Notas aprobadas: ' + alumno.aprobadas()+'<br>');
+        document.write('<br>Notas suspensas: ' + alumno.suspensas()+'<br>');
+    </script>
+</body>
+
+</html>

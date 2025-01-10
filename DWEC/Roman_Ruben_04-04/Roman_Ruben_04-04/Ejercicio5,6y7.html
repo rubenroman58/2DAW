@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <script>
+        instituto = {
+            nombre: 'Playamar', direccion: 'Torremolinos', id: 1,
+            cambiarnombre: function (direccion) {
+                this.direccion = direccion;
+            },
+            mostrar: function () {
+                document.write(this.id);
+            },
+            cambiarNombreFlecha: (direccion) => {
+                instituto.direccion = direccion;
+            },
+            mostrarFlecha: () => {
+                document.write(instituto.id);
+            }
+        }
+
+        let propiedades = Object.entries(instituto).filter(([key, value]) => typeof value !== 'function');
+        for (var i = 0; i < propiedades.length; i++) {
+            document.write(propiedades[i][1] + '-');
+        }
+
+
+        document.write('<br>')
+        document.write('Funciones anonima: ');
+        instituto.cambiarnombre('Nuevo nombre');
+        document.write('<br>')
+        let propiedades2 = Object.entries(instituto).filter(([key, value]) => typeof value !== 'function');
+        for (var i = 0; i < propiedades2.length; i++) {
+            document.write(propiedades2[i][1] + '-');
+        }
+        document.write('<br>')
+        instituto.mostrar();
+        document.write('<br>')
+        document.write('Funciones flecha: ');
+        document.write('<br>')
+        instituto.cambiarNombreFlecha('Nuevo nombre 2');
+        let propiedades3 = Object.entries(instituto).filter(([key, value]) => typeof value !== 'function');
+        for (var i = 0; i < propiedades3.length; i++) {
+            document.write(propiedades3[i][1] + '-');
+        }
+        document.write('<br>')
+        instituto.mostrarFlecha();
+
+    </script>
+</body>
+
+</html>

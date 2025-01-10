@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <script>
+        function Alumno(nombre, apellidos, id, nombreModulos, notasModulos) {
+            this.nombre = nombre;
+            this.apellidos = apellidos;
+            this.id = id;
+            this.nombreModulos = nombreModulos || [];
+            this.notasModulos = notasModulos || [];
+        }
+
+
+        Alumno.prototype.getNombre = function () {
+            return this.nombre;
+        };
+
+        Alumno.prototype.setNombre = function (nombre) {
+            this.nombre = nombre;
+        };
+
+
+        Alumno.prototype.getApellidos = function () {
+            return this.apellidos;
+        };
+
+        Alumno.prototype.setApellidos = function (apellidos) {
+            this.apellidos = apellidos;
+        };
+
+
+        Alumno.prototype.getId = function () {
+            return this.id;
+        };
+
+        Alumno.prototype.setId = function (id) {
+            this.id = id;
+        };
+
+
+        Alumno.prototype.getNombreModulos = function () {
+            return this.nombreModulos;
+        };
+
+        Alumno.prototype.setNombreModulos = function (nombreModulos) {
+            this.nombreModulos = nombreModulos;
+        };
+
+
+        Alumno.prototype.getNotasModulos = function () {
+            return this.notasModulos;
+        };
+
+        Alumno.prototype.setNotasModulos = function (notasModulos) {
+            this.notasModulos = notasModulos;
+        };
+
+
+        Alumno.prototype.toString = function () {
+            return `Alumno: ${this.nombre} ${this.apellidos}, ID: ${this.id}, Modulos: ${this.nombreModulos.join(', ')}, Notas: ${this.notasModulos.join(', ')}`;
+        };
+        Alumno.prototype.motrarModulos = function () {
+            return `Modulo: ${this.nombreModulos}`
+        }
+        Alumno.prototype.mostrarNotasModulos = function () {
+            return `Notas: ${this.notasModulos.join(', ')}`
+        }
+
+        Alumno.prototype.mediaNotas = function () {
+            contadorNotas = 0;
+            sumaNotas = 0;
+            for (var i = 0; i < this.notasModulos.length; i++) {
+                contadorNotas += 1;
+                sumaNotas += this.notasModulos[i];
+            }
+            return sumaNotas / contadorNotas;
+        }
+        Alumno.prototype.suspensas = function () {
+
+            let suspensas = [];
+            for (var i = 0; i < this.notasModulos.length; i++) {
+                if (this.notasModulos[i] <= 5) {
+                    suspensas.push(this.notasModulos[i]);
+                }
+            }
+
+            document.write("Notas suspensas:", suspensas.join(', '));
+        };
+
+        Alumno.prototype.aprobadas = function () {
+
+            let aprobadas = [];
+            for (var i = 0; i < this.notasModulos.length; i++) {
+                if (this.notasModulos[i] >= 5) {
+                    aprobadas.push(this.notasModulos[i]);
+                }
+            }
+
+            document.write("Notas aprobadas:", aprobadas.join(', '));
+        };
+
+
+        let alumno = new Alumno('Ruben', 'Roman', 1, ['Desarrollo', 'Entornos'], [1, 8]);
+
+
+        document.write(alumno.toString());
+        document.write('<br>Los modulos del alumno son: ' + alumno.motrarModulos())
+        document.write('<br>Los notas del alumno son: ' + alumno.mostrarNotasModulos())
+        document.write('<br>La media de las notas es: ' + alumno.mediaNotas() + '<br>')
+        document.write('<br>Notas aprobadas: ' + alumno.aprobadas() + '<br>')
+        document.write('<br>Notas suspensas: ' + alumno.suspensas() + '<br>')
+    </script>
+</body>
+
+</html>

@@ -65,15 +65,13 @@
     ];<br>
 
     <script>
-        const usuarios = [
-            { nombre: "Juan", roles: ["admin", "editor"] },
-            { nombre: "María", roles: ["usuario"] },
-            { nombre: "Pedro", roles: ["moderador", "editor"] }
-        ];
-
-        usuariosNuevo = usuarios.flatMap(usuario => usuario.roles)
-        const etiquetasUnicas = [...new Set(usuariosNuevo)];
-        document.write('<strong>Ejercicio 3: ' + etiquetasUnicas.join('--') + '</strong>')
+       const usuarios = [
+    { nombre: "Juan", roles: ["admin", "editor"] },
+    { nombre: "María", roles: ["usuario"] },
+    { nombre: "Pedro", roles: ["moderador", "editor"] }
+    ];
+     
+    usuariosNuevo=usuarios.flatMap()
     </script>
 
     <br>
@@ -82,18 +80,18 @@
     <br><b> 1. Descripción:</b> Tienes un array con las tareas pendientes [“Lavar platos”, “Comprar comida”, “Hacer
     ejercicio”]. Luego:
     <br> ◦ Usa Array.forEach() para recorrer el array y mostrar cada tarea con su índice.
-    <br><b> 2. Resultado esperado:</b><br>
-    <script>
-        document.write('<strong>Ejercicio 4:</strong><br>')
-        tareas = ['Lavar platos', 'Comprar comida', 'Hacer ejercicio']
-        numeroTarea = 1
-        tareas.forEach(el => {
-            document.write('Tarea ' + numeroTarea + ':' + el + '<br>');
-            numeroTarea++;
-        })
-    </script>
+    <br><b> 2. Resultado esperado:</b>
 
 
+    const tareas = ["Lavar platos", "Comprar comida", "Hacer ejercicio"];<br>
+    tareas.forEach((tarea, index) => {
+    console.log(`${index + 1}. ${tarea}`);<br>
+    });<br>
+    // 1. Lavar platos
+    // 2. Comprar comida
+    // 3. Hacer ejercicio
+
+    <br>
     <h3> Ejercicio 5: Generar una lista de precios con IVA aplicado </h3>
     <br><b> Contexto:</b> Tienes una lista de precios de productos y quieres generar una nueva lista en la que
     apliques el 21% de IVA (Impuesto sobre el Valor Añadido).
@@ -101,10 +99,10 @@
     <br> ◦ Usa Array.map() para crear un nuevo array en el que cada precio tenga el IVA incluido.
     <br><b> 2. Resultado esperado:</b>
 
-    <script>
-       preciosOriginales=[100, 200, 300]
-    </script>
 
+    const precios = [100, 200, 300];<br>
+    const preciosConIVA = precios.map(precio => precio * 1.21);<br>
+    console.log(preciosConIVA);<br> // [121, 242, 363], precios con IVA aplicado
 
     <br>
     <h3> Ejercicio 6: Filtrar usuarios activos en un sistema </h3>

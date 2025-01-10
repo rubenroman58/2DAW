@@ -54,7 +54,7 @@ ROOT_URLCONF = 'ejercicio1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,6 +66,9 @@ TEMPLATES = [
         },
     },
 ]
+
+'APP_DIRS': True 
+'DIRS': ['templates']
 
 WSGI_APPLICATION = 'ejercicio1.wsgi.application'
 

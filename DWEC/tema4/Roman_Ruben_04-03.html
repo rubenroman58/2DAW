@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+
+    <script>
+
+        function gradosARadianes(grados) {
+            return grados * Math.PI / 180;
+        }
+
+
+        function Ej1Trigonometica(angulo, valor) {
+
+            let radianes = gradosARadianes(angulo);
+
+
+            if (valor === "cos") {
+                return Math.cos(radianes);
+            } else if (valor === "sen") {
+                return Math.sin(radianes);
+            } else if (valor === "tan") {
+                return Math.tan(radianes);
+            } else {
+                return "Valor incorrecto. Usa 'cos', 'sen' o 'tan'.";
+            }
+        }
+
+
+        let angulo = 45;
+        let valor = "cos";
+        let resultado = Ej1Trigonometica(angulo, valor);
+
+
+        document.write(`El ${valor} de ${angulo} grados es: ${resultado}`);
+
+    </script>
+    <h2>Ejercicio 2</h2>
+    <div id="algo"></div>
+
+    <script>
+        function Ej2JS(lista, id) {
+            let valores = lista.split(",");
+            let resultado = "<ul>";
+            for (let i = 0; i < valores.length; i++) {
+                resultado += "<li>" + valores[i].trim() + "</li>";
+            }
+            resultado += "</ul>";
+            document.getElementById(id).innerHTML = resultado;
+        }
+
+        Ej2JS("hola,adios,bien,Hasta,mañana", "algo");
+    </script>
+    <h2>Ejercicio 3</h2>
+    <div id="identificador"></div>
+
+    <script>
+        function listaen(id, ...valores) {
+            let resultado3 = "<ul>";
+            for (let valor of valores) {
+                resultado3 += "<li>" + valor + "</li>";
+            }
+            resultado3 += "</ul>";
+            document.getElementById(id).innerHTML = resultado3;
+        }
+        listaen("identificador", "Hola", "adios", "bien", "Hasta", "mañana", "algo");
+    </script>
+
+    <h2>Ejercicio 4</h2>
+    <script>
+        const triple = function (numero) {
+            document.write(numero * 3)
+        }
+        triple(3)
+    </script>
+    <h2>Ejercicio 5</h2>
+    <script>
+        cuadrado = (a) => {
+            return a * a
+        }
+        document.write(cuadrado(2))
+    </script>
+    <h2>Ejercicio 6</h2>
+    <script>
+        impresion = () => {
+            return 'Hola mundo'
+        }
+        document.write(impresion())
+    </script>
+    <h2>Ejercicio 7</h2>
+    <script>
+        let a = ["hola", "adios", "amalia pide muchos detalles"];
+
+
+        let resultado7 = a.map(palabra => `<strong>${palabra}</strong>`);
+
+        document.write(resultado7);
+
+    </script>
+
+    <h2>Ejercicio 8</h2>
+    <script>
+        function generarNumeroAleatorio() {
+            return Math.floor(Math.random() * 10);
+        }
+
+        function generarTabla() {
+            let filas = 4;
+            let columnas = 5;
+            let nuevoArray = [];
+
+            for (let i = 0; i < filas; i++) {
+                nuevoArray[i] = [];
+                for (let j = 0; j < columnas; j++) {
+                    nuevoArray[i][j] = generarNumeroAleatorio();
+                }
+            }
+            let tabla = "<table border='1' style='border-collapse: collapse;'>"
+            for (let i = 0; i < filas; i++) {
+                tabla += "<tr>"
+                for (let j = 0; j < columnas; j++) {
+                    tabla += '<td>' + nuevoArray[i][j] + "</td>";
+                }
+                tabla += "</tr>";
+            }
+            tabla += '</table>'
+            return tabla;
+        }
+        document.write(generarTabla());
+    </script>
+    <h2>Ejercicio 9</h2>
+    <script>
+        function generarCuadradoMagico(i) {
+
+            const cuadrado = [
+                [i + 3, i + 8, i + 1],
+                [i + 2, i + 4, i + 6],
+                [i + 7, i, i + 5],
+            ];
+
+
+            document.write("Cuadrado magico:");
+            for (let fila of cuadrado) {
+                document.write(fila.join("\t"));
+            }
+        }
+
+        const valorInicial = 5;
+        generarCuadradoMagico(valorInicial);
+    </script>
+
+    <h2>Ejercicio 10</h2>
+
+    <p id="texto">Esto cambiara de color</p>
+
+    <label for="color">Escoge un color</label>
+    <select id="color">
+        <option value="red">Rojo</option>
+        <option value="green">Verde</option>
+        <option value="blue">Azul</option>
+        <option value="purple">Morado</option>
+        <option value="orange">Naranja</option>
+    </select>
+
+    <button onclick="cambiarColorTexto('texto')">Cambiar Color</button>
+
+    <script>
+
+        function cambiarColorTexto(id) {
+
+            let colorSeleccionado = document.getElementById("color").value;
+
+            let obj = document.getElementById(id);
+
+            obj.style.color = colorSeleccionado;
+        }
+    </script>
+
+    <h2>Ejercicio 12</h2>
+    <script>
+        function factorial(n) {
+            if (n === 0) {
+                return 1;
+            }
+            return n * factorial(n - 1);
+        }
+
+        document.write(factorial(8));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const Clase = {
+            alumnos: [],
+            matricular: function (alumno) {
+                this.alumnos.push(alumno);
+            },
+            eliminar: function (alumno) {
+               for(var i=0;i<this.alumnos.length;i++){
+                if(this.alumnos[i]===alumno){
+                    this.alumnos.splice(i,1);
+                }
+               }
+            },
+           numero: function () {
+               document.write('El numero de alumnos es: '+this.alumnos.length)
+            },
+            mostrar: function (id) {
+                for(var i=0;i<this.alumnos.length;i++){
+                if(this.alumnos[id]){
+                    document.write('El alumno en la poscion '+id+' es:'+this.alumnos[id])
+                    break;
+                }
+               }
+            },
+            mostrarAlumnos: function () {
+                document.write(this.alumnos.join(', '));
+            }
+        };
+
+        Clase.matricular('Juan Pérez');
+        Clase.matricular('Ana Gómez');
+        Clase.matricular('Ruben');
+        Clase.mostrarAlumnos();
+        document.write('<br>')
+        Clase.numero();
+        document.write('<br>')
+        Clase.eliminar('Ruben');
+        Clase.mostrarAlumnos();
+        document.write('<br>')
+        Clase.numero();
+        document.write('<br>')
+        Clase.mostrar(0);
+
+    </script>
+</body>
+
+</html>
