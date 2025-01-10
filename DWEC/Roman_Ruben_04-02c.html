@@ -20,7 +20,7 @@
         document.write(personajes.get("Marge Simpson") + "<br>");
         document.write(personajes.get("Bart Simpson") + "<br>");
         document.write(personajes.get("Ruben") + "<br>");
-        <h2>Ejercicio 3</h2>
+        document.write(' <h2>Ejercicio 3</h2>')
         function encontrarPorOcupacion(map, ocupacionBuscada) {
             let personajesConOcupacion = [];
 
@@ -37,22 +37,22 @@
         const personajesEncontrados = encontrarPorOcupacion(personajes, ocupacion);
         document.write(personajesEncontrados);
 
-        <h2>Ejercicio 4</h2>
-        function modificarOcupacion(map, nombrePersonaje, nuevaOcupacion) {
-            map.forEach((nombre, ocupacion)=> {
-                if (nombre === nombrePersonaje) {
-                    map.set(nombrePersonaje, nuevaOcupacion);
-                }else{
-                    document.write('No esta ese nombre')
-                }
-
-            });
-
+       document.write(' <h2>Ejercicio 4</h2>')
+       function modificarOcupacion(map, nombrePersonaje, nuevaOcupacion) {
+            if (map.has(nombrePersonaje)) {
+                map.set(nombrePersonaje, nuevaOcupacion);
+                return `La ocupacion de ${nombrePersonaje} ha sido modificada a: ${nuevaOcupacion}`;
+            } else {
+                return 'No esta ese nombre';
+            }
         }
        const nombre4='Ruben'
        const ocupacion4='Futbolista'
        const ejercicio4 = modificarOcupacion(personajes, nombre4,ocupacion4);
-       document.write(ejercicio4);
+       document.write(ejercicio4+ "<br>");
+       document.write(personajes.get("Ruben") + "<br>");
+       document.write(personajes.size)
+       document.write(' <h2>Ejercicio 5</h2>')
 
     </script>
 </body>
