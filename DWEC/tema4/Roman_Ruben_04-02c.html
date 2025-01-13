@@ -16,6 +16,7 @@
         personajes.set("Ruben", "Ama de casa");
 
 
+
         document.write(personajes.get("Homer Simpson") + "<br>");
         document.write(personajes.get("Marge Simpson") + "<br>");
         document.write(personajes.get("Bart Simpson") + "<br>");
@@ -37,8 +38,8 @@
         const personajesEncontrados = encontrarPorOcupacion(personajes, ocupacion);
         document.write(personajesEncontrados);
 
-       document.write(' <h2>Ejercicio 4</h2>')
-       function modificarOcupacion(map, nombrePersonaje, nuevaOcupacion) {
+        document.write(' <h2>Ejercicio 4</h2>')
+        function modificarOcupacion(map, nombrePersonaje, nuevaOcupacion) {
             if (map.has(nombrePersonaje)) {
                 map.set(nombrePersonaje, nuevaOcupacion);
                 return `La ocupacion de ${nombrePersonaje} ha sido modificada a: ${nuevaOcupacion}`;
@@ -46,15 +47,97 @@
                 return 'No esta ese nombre';
             }
         }
-       const nombre4='Ruben'
-       const ocupacion4='Futbolista'
-       const ejercicio4 = modificarOcupacion(personajes, nombre4,ocupacion4);
-       document.write(ejercicio4+ "<br>");
-       document.write(personajes.get("Ruben") + "<br>");
-       document.write(personajes.size)
-       document.write(' <h2>Ejercicio 5</h2>')
-
+        const nombre4 = 'Ruben'
+        const ocupacion4 = 'Futbolista'
+        const ejercicio4 = modificarOcupacion(personajes, nombre4, ocupacion4);
+        document.write(ejercicio4 + "<br>");
+        document.write(personajes.get("Ruben") + "<br>");
+        document.write(personajes.size)
     </script>
+    <script>
+        const personajes5 = new Map();
+        personajes5.set("Homer Simpson", "Trabajo en la planta nuclear");
+        personajes5.set("Marge Simpson", "Ama de casa");
+        personajes5.set("Bart Simpson", "Ama de casa");
+        personajes5.set("Ruben", "Ama de casa");
+        document.write(' <h2>Ejercicio 5</h2>')
+        function ocupacionesUnicas(map) {
+            let numeroOcupaciones = [];
+            var ocupacionAnterior;
+
+            for (let [clave, valor] of map.entries()) {
+
+                if (!numeroOcupaciones.includes(valor)) {
+                    numeroOcupaciones.push(valor);
+                }
+            }
+
+            return numeroOcupaciones.length;
+        }
+        document.write('El mapa tiene: ' + ocupacionesUnicas(personajes5) + ' diferentes')
+    </script>
+    <h2>Ejercicio 6</h2>
+    <script>
+       const personajes6 = new Map();
+        personajes6.set("Homer Simpson", "Trabajo en la planta nuclear");
+        personajes6.set("Marge Simpson", "Ama de casa");
+        personajes6.set("Bart Simpson", "Ama de casa");
+        personajes6.set("Ruben", "Ama de casa");
+        function eliminarPersonaje(mapa,nombrePersonaje){
+            for (var [clave,valor] of mapa.entries()){
+                if(clave===nombrePersonaje){
+                    mapa.delete(clave);
+                    document.write('El personaje ha sido eliminado<br>')
+                }
+            }
+        
+        }
+        eliminarPersonaje(personajes6,'Ruben')
+        for (let entry of personajes6){
+            document.write(entry+'<br>')
+        }
+    </script>
+
+<h2>Ejercicio 7</h2>
+<script>
+    const personajes7 = new Map();
+    personajes7.set("Homer Simpson", "Trabajo en la planta nuclear");
+    personajes7.set("Marge Simpson", "Ama de casa");
+    personajes7.set("Bart Simpson", "Ama de casa");
+    personajes7.set("Ruben", "Ama de casa");
+ 
+    const personajes8 = new Map();
+    personajes8.set("uno", "1");
+    personajes8.set("dos", "2");
+    personajes8.set("tres", "3");
+    personajes8.set("Ruben", "Futbolistas");
+ 
+    function combinarMapas(mapa1, mapa2) {
+      
+       let combinacion = new Map([...mapa1]);
+ 
+       mapa2.forEach((valor, clave) => {
+
+          if (combinacion.has(clave)) {
+             let valorExistente = combinacion.get(clave);
+             combinacion.set(clave, Array.isArray(valorExistente) ? [...valorExistente, valor] : [valorExistente, valor]);
+          } else {
+             combinacion.set(clave, valor);
+          }
+       });
+ 
+       return combinacion;
+    }
+ 
+    let mapaFinal = combinarMapas(personajes7, personajes8);
+
+    for (let [clave, valor] of mapaFinal) {
+       document.write(clave + " - " + valor + '<br>');
+    }
+ </script>
+ 
+
 </body>
+
 
 </html>

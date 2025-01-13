@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let productos = ["manzana", "naranja", "plátano"];
+
+        // Usamos Array.entries() para obtener un iterador con los pares clave-valor
+        let iterador = productos.entries();
+
+        // Recorremos el iterador con un bucle for...of
+        for (let [indice, producto] of iterador) {
+            console.log(`Índice: ${indice}, Producto: ${producto}`);
+        }
+
+    </script>
+
+    <script>
+        let productos2 = ["manzana", "naranja", "plátano"];
+
+        productos2.forEach((producto, indice) => {
+            console.log(`Índice: ${indice}, Producto: ${producto}`);
+        });
+
+
+        var ej3 = [85, 75, 95, 65, 90];
+        document.write(ej3.sort((a, b) => b - a).splice(0, 3));
+
+        arrayejer7= ['pantalla completa','sonido activado', 'modo oscuro']
+        for (let [clave7,valor7] of arrayejer7.entries()) {
+            document.write(`Clave: ${clave7}: ${valor7}`)  
+        }
+
+
+       // • map: El resultado conserva la forma del argumento de entrada, probablemente con
+       //     diferente tipo.
+       // • filter: El resultado tendrá la misma forma que el argumento de entrada, probablemente de
+       //         menor longitud.
+      //  • reduce: El resultado puede quedar totalmente transformado.
+            [1, 2, 3].map(n => n+1); // => [2, 3, 4]
+            [1, 2, 3].filter(n => n>1); // => [2, 3]
+            [1, 2, 3].reduce((acc, n) => acc + n, 0);
+            // 0 + 1 => 1
+            // 1 + 2 => 3
+            // 3 + 3 => 6
+            // => 6
+
+
+            elemento=stock.find(num=>num<10)
+          document.write(elemento)
+    </script>
+</body>
+
+</html>

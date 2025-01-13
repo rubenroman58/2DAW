@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var array1 = []
+        for (var i = 0; i < 10; i++) {
+            array1[i] = Math.round(Math.random() * 10)
+        }
+
+        array1.sort(function (b, a) { return a - b; });
+        for (var i = 0; i < array1.length; i++) {
+            document.write(array1[i] + '<br>')
+        }
+        var moda;
+        var mediana = array1[5];
+        document.write('<br>')
+        document.write('<br>')
+        document.write('<br>')
+        document.write(mediana + '<br>')
+
+        for (let i = 1; i < 50; i++) {
+            if (arrayAleatorio2[i] === arrayAleatorio2[i - 1]) {
+                contador_moda += 1;
+            } else {
+                if (contador_moda > maxmoda) {
+                    maxmoda = contador_moda;
+                    moda = arrayAleatorio2[i - 1];
+                }
+                contador_moda = 1; // Reiniciar contador de moda al cambiar de número
+            }
+        }
+    </script>
+
+
+
+    <form>
+        <label for="id9">Identificador:</label>
+        <input type="text" name="id9" id="id9">
+        <br>
+        <label for="nombre9">Nombre:</label>
+        <input type="text" name="nombre9" id="nombre9">
+        <br>
+        <label for="apellidos9">Apellidos:</label>
+        <input type="text" name="apellidos9" id="apellidos9">
+        <br>
+        <label for="nacimiento9">Fecha de nacimiento:</label>
+        <input type="date" name="nacimiento9" id="nacimiento9">
+        <br>
+        <label for="puesto9">Puesto:</label>
+        <input type="text" name="puesto9" id="puesto9">
+        <br>
+        <input type="button" value="Enviar datos" onclick="enviarDatos9()" />
+        <input type="button" value="Mostrar todos los datos" onclick="mostrarDatos9()" />
+        <input type="button" value="Mostrar registro por ID" onclick="mostrarRegistroPorId()" />
+        <input type="button" value="Años activos hasta jubilación" onclick="añosActivosHastaJubilacion()" />
+    </form>
+    <h2>Array multidimensional</h2>
+    <div id="resultado2"></div>
+
+    <script>
+        function generarNumeroAleatorio() {
+            return Math.floor(Math.random() * 10);
+        }
+        var array = [];
+        for (var i2 = 0; i2 < 4; i2++) {
+            array[i2] = [];
+            for (var j2 = 0; j2 < 5; j2++) {
+                array[i2][j2] = generarNumeroAleatorio();
+            }
+        }
+
+        var resultado2 = "<table border='1'>";
+        for (let i2 = 0; i2 < 4; i2++) {
+            resultado2 += "<tr>";
+            for (let j2 = 0; j2 < 5; j2++) {
+                resultado2 += "<td>" + array[i2][j2] + "</td>";
+
+            }
+
+            resultado2 += "</tr>";
+
+
+        }
+        resultado2 += '</table>'
+
+
+        document.getElementById("resultado2").innerHTML = resultado2;
+    </script>
+
+
+    <h1>SET</h1>
+    <script>
+        setSeñorAnillos = new Set()
+
+        setSeñorAnillos.add('Personaje 1');
+        setSeñorAnillos.add('Personaje 2');
+        setSeñorAnillos.add('Personaje 3');
+        setSeñorAnillos.add('Personaje 4');
+        setSeñorAnillos.add('Personaje 5');
+        for (let personajes of setSeñorAnillos) {
+            document.write(personajes + '<br>');
+        }
+        function existe(set, nombre) {
+            if (set.has(nombre)) {
+                document.write('si esta')
+            } else {
+                document.write('no esta')
+            }
+
+        }
+        existe(setSeñorAnillos, 'Personaje 1')
+        document.write(setSeñorAnillos.size)
+
+        function agregarPersonaje(set, nuevoPersonaje) {
+            if (set.has(nuevoPersonaje)) {
+                document.write('ya esta incluido')
+            } else {
+                set.add(nuevoPersonaje)
+                for (let per of set) {
+                    document.write(per + '<br>');
+                }
+            }
+
+
+        }
+        document.write('<br>')
+        agregarPersonaje(setSeñorAnillos, 'ruben')
+        agregarPersonaje(setSeñorAnillos, 'Personaje 1')
+
+        function eliminarPersonajes(set, nombre) {
+            if (set.has(nombre)) {
+                set.delete(nombre)
+                for (let pero of set) {
+                    document.write(pero + '<br>');
+                }
+            } else {
+                document.write('no existe')
+            }
+        }
+        document.write('<br>')
+        eliminarPersonajes(setSeñorAnillos, 'RR')
+        eliminarPersonajes(setSeñorAnillos, 'ruben')
+        document.write('<br>')
+        document.write('<br>')
+        document.write('<br>')
+
+        setSeñorAnillos1 = new Set()
+
+        setSeñorAnillos1.add('Personaje 1');
+        setSeñorAnillos1.add('Personaje 2');
+        setSeñorAnillos1.add('Personaje 3');
+
+
+        setSeñorAnillos2 = new Set()
+
+        setSeñorAnillos2.add('Per 1');
+        setSeñorAnillos2.add('Per 2');
+        setSeñorAnillos2.add('Personaje3');
+
+        function combinarset(set1, set2) {
+            setCombinado = new Set(set1)
+            for (let fv of set2) {
+                setCombinado.add(fv)
+            }
+            for (let r of setCombinado) {
+                document.write(r + '<br>');
+            }
+
+        }
+        combinarset(setSeñorAnillos1, setSeñorAnillos2)
+    </script>
+
+    <h2>Ejercicios funciones</h2>
+    <script>
+        tienda = Array.of(1, 2, 3, 4, 5);
+        tienda.fill(7, 1, 3)
+        tienda.unshift(0)
+        tienda.unshift(0)
+        tienda.pop()
+        tienda2 = [10, 20, 30]
+        tiendaFinal = tienda.concat(tienda2)
+        document.write(tiendaFinal)
+        document.write('<br>')
+        let empleados = Array.from("abcdef");
+        document.write(empleados.at(3))
+        document.write(empleados.at(-1))
+        empleados.splice(1, 1, 'X');
+        empleados.shift()
+        empleados.push('Y')
+        empleados.push('Z')
+        document.write(empleados)
+        document.write('<br>')
+        document.write('<br>')
+
+        calificaciones = [10, 11,
+            12, 13, 14, 15, 16, 17, 18, 19, 20]
+        calificaciones.fill(99, 4, 8)
+        calificaciones.unshift(5, 6, 7)
+        calificaciones.pop()
+        calificaciones.shift()
+        document.write(calificaciones)
+        document.write('<br>')
+        document.write('<br>')
+        precios = [100, 200, 300, 400]
+        precios.push(500)
+        precios.push(600)
+        precios.shift()
+        precios.splice(2, 1, 999)
+        preciosFinal = precios.concat([700, 800, 900])
+        document.write(preciosFinal)
+        document.write('<br>')
+        document.write('<br>')
+        let prueba5 = Array.from("Hello world");
+        document.write(prueba5.at(4))
+        document.write(prueba5.at(-1))
+        document.write(preciosFinal)
+        document.write('<br>')
+        prueba5.unshift('#')
+        prueba5.fill('*', 6, 7)
+        prueba5Final = prueba5.concat(['!'])
+        document.write(prueba5Final)
+
+        document.write('<br>')
+        document.write('<br>')
+
+        id = [10, 20, 30, 40, 50]
+        id.copyWithin(0, 2, 4);
+
+        sub = id.slice(0, 3)
+        document.write(id)
+        document.write('<br>')
+        document.write(sub)
+
+        document.write('<br>')
+        document.write('<br>')
+        ejer2array = ['manzana', 'naranja', 'plátano']
+
+        for (let [clave, valor] of ejer2array.entries()) {
+            document.write(`Producto ${clave}:  ${valor} <br>`)
+        }
+        document.write('<br>')
+        document.write('<segundo>')
+        let claves = [];  // Array para almacenar las claves (índices)
+
+        for (let [indice, valor] of ejer2array.entries()) {
+            claves.push(indice);  // Guardamos solo los índices en el array 'claves'
+        }
+
+        document.write(`Claves de productos: [${claves}]`);
+
+        document.write('<br>')
+        calificaciones3 = [85, 75, 95, 65, 90]
+        calificaciones3.sort().reverse()
+        subcal = calificaciones3.slice(0, 3)
+        for (let values of subcal.values()) {
+            document.write(values + '-')
+        }
+        document.write('<br>')
+        ejer4pru = [1003, 1001, 1002, 1005, 1004]
+        document.write(ejer4pru.sort().reverse().slice(0, 3))
+        document.write('<br>')
+
+        ejer5id = [300, 200, 400, 100]
+        ejer5idN = ejer5id.toSorted().toReversed().slice(0, 2)
+        document.write(ejer5idN)
+
+        destacados = [50, 30, 20, 10, 40]
+        destacados.copyWithin()
+        document.write('<br>')
+
+        arrayejer7 = ['pantalla completa', 'sonido activado', 'modo oscuro']
+        for (let [clave7, valor7] of arrayejer7.entries()) {
+            document.write(`Clave: ${clave7}: ${valor7}`)
+        }
+        document.write('<br>')
+        productos = ['manzana', 'naranja', 'plátano']
+
+        document.write(productos.includes('naranja') + '<br>')
+        document.write(productos.includes('naranja', 1) + '<br>')
+
+        const data = [1, 2, 3];
+        Array.isArray(data);
+        document.write(data)
+        document.write('<br>')
+        stock = [15, 7, 25, 5]
+        elemento = stock.find(num => num < 10)
+        document.write(elemento)
+        document.write('<br>')
+        pedid = ['baja', 'media', 'alta', 'baja']
+        elemento6 = pedid.findLast(num6 => num6 === 'alta')
+        document.write(elemento6)
+        document.write('<br>')
+        document.write('<br>')
+         usuarios10=['usuario', 'usuario', 'admin','moderador']
+         document.write(usuarios10.includes('admioon'))
+         document.write('<br>')
+         document.write('<br>')
+         document.write(usuarios10.some(rol=>rol==='adoomin'))
+    </script>
+</body>
+
+</html>
