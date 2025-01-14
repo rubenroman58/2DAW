@@ -9,6 +9,103 @@
 
 <body>
     <script>
+        //Metodos 
+        let arrayEjemplo = [1, 2, 3, 4, 5, 6];
+
+        // Usando slice()Extraer una porción de un array sin modificar el array original.
+        let subArray = arrayEjemplo.slice(2, 5);
+        console.log("slice():", subArray); // [3, 4, 5]
+
+        // Usando splice()Modificar el array original eliminando, agregando o reemplazando elementos.
+        let eliminados = arrayEjemplo.splice(2, 2, 10, 20);
+        console.log("splice():", arrayEjemplo); // [1, 2, 10, 20, 5, 6]
+        console.log("Elementos eliminados:", eliminados); // [3, 4]
+
+
+        
+
+        let numeros = [10, 20, 30, 40, 50, 60];
+
+        // Eliminar 2 elementos a partir del índice 2
+        numeros.splice(2, 2);  // Elimina los elementos en los índices 2 y 3 (30 y 40)
+
+        console.log(numeros);  // [10, 20, 50, 60]
+
+
+
+        let numeros2 = [10, 20, 30, 40, 50];
+
+        // Agregar 100 y 200 en el índice 2 sin eliminar ningún elemento
+        numeros2.splice(2, 0, 100, 200);
+
+        console.log(numeros2);  // [10, 20, 100, 200, 30, 40, 50]
+
+        let numeros3 = [10, 20, 30, 40, 50];
+
+        // Reemplazar el elemento en el índice 3 (40) por 999
+        numeros3.splice(3, 1, 999);
+
+        console.log(numeros3);  // [10, 20, 30, 999, 50]
+
+
+
+
+
+
+
+        // Usando copyWithin() Copiar una sección de un array dentro del mismo array
+        arrayEjemplo.copyWithin(3, 0, 2);
+        console.log("copyWithin():", arrayEjemplo); // [1, 2, 10, 1, 2, 6]
+
+        // Usando fill()Rellenar un array con un valor específico en un rango de índices
+        arrayEjemplo.fill(99, 1, 4);
+        console.log("fill():", arrayEjemplo); // [1, 99, 99, 99, 2, 6]
+
+        //COMBINACION DOS MAP Y DOS ARRAYS
+        function combinarMapas(mapa1, mapa2) {
+
+            let combinacion = new Map([...mapa1]);
+
+            mapa2.forEach((valor, clave) => {
+
+                if (combinacion.has(clave)) {
+                    let valorExistente = combinacion.get(clave);
+                    combinacion.set(clave, Array.isArray(valorExistente) ? [...valorExistente, valor] : [valorExistente, valor]);
+                } else {
+                    combinacion.set(clave, valor);
+                }
+            });
+
+            return combinacion;
+        }
+
+
+        function combinarSets(setA, setB) {
+            var setCombinado = new Set(setA);
+            setB.forEach(function (personaje) {
+                setCombinado.add(personaje);
+            });
+            return setCombinado;
+        }
+
+
+        //IMprimir map
+        for (let entry of personajes6) {
+            document.write(entry + '<br>')
+        }
+        //IMprimir set
+        document.write("Set combinado: <br>");
+        setFinal.forEach(function (personaje) {
+            document.write(personaje + '<br>');
+        });
+
+        // Eliminar elementos duplicados del Array
+        // Úselo para eliminar elementos duplicados del Array
+        // Array => SET => Array con [... set]
+        const numbers = [2, 3, 4, 4, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 5, 32, 3, 4, 5];
+        console.log([...new Set(numbers)]);
+        // [2, 3, 4, 5, 6, 7, 32]
+        // EN ARRAYS S EUSA INCLUDES()
         let productos = ["manzana", "naranja", "plátano"];
 
         // Usamos Array.entries() para obtener un iterador con los pares clave-valor
@@ -32,28 +129,101 @@
         var ej3 = [85, 75, 95, 65, 90];
         document.write(ej3.sort((a, b) => b - a).splice(0, 3));
 
-        arrayejer7= ['pantalla completa','sonido activado', 'modo oscuro']
-        for (let [clave7,valor7] of arrayejer7.entries()) {
-            document.write(`Clave: ${clave7}: ${valor7}`)  
+        arrayejer7 = ['pantalla completa', 'sonido activado', 'modo oscuro']
+        for (let [clave7, valor7] of arrayejer7.entries()) {
+            document.write(`Clave: ${clave7}: ${valor7}`)
         }
 
 
-       // • map: El resultado conserva la forma del argumento de entrada, probablemente con
-       //     diferente tipo.
-       // • filter: El resultado tendrá la misma forma que el argumento de entrada, probablemente de
-       //         menor longitud.
-      //  • reduce: El resultado puede quedar totalmente transformado.
-            [1, 2, 3].map(n => n+1); // => [2, 3, 4]
-            [1, 2, 3].filter(n => n>1); // => [2, 3]
-            [1, 2, 3].reduce((acc, n) => acc + n, 0);
-            // 0 + 1 => 1
-            // 1 + 2 => 3
-            // 3 + 3 => 6
-            // => 6
+        // • map: El resultado conserva la forma del argumento de entrada, probablemente con
+        //     diferente tipo.
+        // • filter: El resultado tendrá la misma forma que el argumento de entrada, probablemente de
+        //         menor longitud.
+        //  • reduce: El resultado puede quedar totalmente transformado.
+        [1, 2, 3].map(n => n + 1); // => [2, 3, 4]
+        [1, 2, 3].filter(n => n > 1); // => [2, 3]
+        [1, 2, 3].reduce((acc, n) => acc + n, 0);
+        // 0 + 1 => 1
+        // 1 + 2 => 3
+        // 3 + 3 => 6
+        // => 6
 
 
-            elemento=stock.find(num=>num<10)
-          document.write(elemento)
+        elemento = stock.find(num => num < 10)
+        document.write(elemento)
+    </script>
+
+    <script>
+        //imprimir con json objeto
+        const usuarios6 = [
+            { nombre: "Juan", activo: true },
+            { nombre: "María", activo: false },
+            { nombre: "Pedro", activo: true }
+        ];
+
+        const solucion = usuarios6.filter(usuario => usuario.activo === true);
+
+        document.write(JSON.stringify(solucion, null, 2));
+
+
+        //Imprimir un ibjeto:
+        const usuarios7 = [
+            { nombre: "Juan", activo: true },
+            { nombre: "María", activo: false },
+            { nombre: "Pedro", activo: true }]
+
+        solucion = usuarios7.filter(usuario => usuario.activo === true)
+
+        solucion.forEach(usuario => {
+            document.write("Usuario: " + usuario.nombre + ", Activo: " + usuario.activo + "<br>");
+        });
+    </script>
+
+    <script>
+        //Sintaxis funciones flecha
+
+        //Objetos
+        const obj = {
+            nombre: "Ana",
+            saludar: function () {
+                setTimeout(() => {
+                    console.log(`Hola, ${this.nombre}`);
+                }, 1000);
+            }
+        };
+
+        obj.saludar(); // Salida después de 1 segundo: Hola, Ana
+
+        const crearPersona = (nombre, edad) => ({
+            nombre: nombre,
+            edad: edad
+        });
+
+        console.log(crearPersona("Juan", 30));
+        // Salida: { nombre: 'Juan', edad: 30 }
+
+        const saludo = () => {
+            console.log("¡Hola, Mundo!");
+        };
+
+        saludo(); // Salida: ¡Hola, Mundo!
+
+        const cuadrado = x => x * x;
+
+        console.log(cuadrado(5)); // Salida: 25
+
+        //Acumulador
+        montoVentas = [100, 200, 300, 400]
+        finalmonto = montoVentas.reduce((acumulador, venta) => acumulador + venta, 0)
+        document.write(finalmonto)
+        document.write('<br>')
+        document.write('<br>')
+        empleados = ['Juan', 'María', 'Pedro', 'Luis']
+        empleadosFinal = empleados.reduceRight((acumulador, nombre) => acumulador + '-' + nombre)
+        document.write(empleadosFinal)
+        document.write('<br>')
+
+
     </script>
 </body>
 

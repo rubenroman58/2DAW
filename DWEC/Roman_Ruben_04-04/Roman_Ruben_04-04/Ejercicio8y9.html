@@ -27,6 +27,41 @@
         }
         var p = new Person2();
     </script>
+    <script>
+        // Función constructora
+        function Persona(nombre) {
+            this.nombre = nombre;
+        }
+
+        // Agregar un método al prototype de Persona
+        Persona.prototype.saludar = function () {
+            document.write("Hola, mi nombre es " + this.nombre + "<br>");
+        };
+
+        // Crear una instancia de Persona
+        var persona1 = new Persona('Juan');
+        persona1.saludar(); // Muestra: Hola, mi nombre es Juan
+
+        // Añadir un nuevo método dinámicamente a Persona usando prototype
+        Persona.prototype.despedirse = function () {
+            document.write("Adiós, soy " + this.nombre + "<br>");
+        };
+
+        // Crear otra instancia de Persona
+        var persona2 = new Persona('María');
+        persona2.saludar(); // Muestra: Hola, mi nombre es María
+        persona2.despedirse(); // Muestra: Adiós, soy María
+
+        // Agregar otro método dinámicamente
+        Persona.prototype.edad = function (edad) {
+            document.write(this.nombre + " tiene " + edad + " años.<br>");
+        };
+
+        // Llamar al nuevo método
+        persona1.edad(30); // Muestra: Juan tiene 30 años.
+        persona2.edad(25); // Muestra: María tiene 25 años.
+    </script>
+
 </body>
 
 </html>

@@ -299,11 +299,253 @@
         document.write(elemento6)
         document.write('<br>')
         document.write('<br>')
-         usuarios10=['usuario', 'usuario', 'admin','moderador']
-         document.write(usuarios10.includes('admioon'))
-         document.write('<br>')
-         document.write('<br>')
-         document.write(usuarios10.some(rol=>rol==='adoomin'))
+        usuarios10 = ['usuario', 'usuario', 'admin', 'moderador']
+        document.write(usuarios10.includes('admioon'))
+        document.write('<br>')
+        document.write('<br>')
+        document.write(usuarios10.some(rol => rol === 'adoomin'))
+        document.write('<br>')
+        document.write('<br>')
+
+
+        productosfil = [100, 45, 30, 70, 25]
+
+        document.write(productosfil.filter(num => num < 50))
+        document.write('<br>')
+        document.write('<br>')
+
+        montoVentas = [100, 200, 300, 400]
+        finalmonto = montoVentas.reduce((acumulador, venta) => acumulador + venta, 0)
+        document.write(finalmonto)
+        document.write('<br>')
+        document.write('<br>')
+        empleados = ['Juan', 'María', 'Pedro', 'Luis']
+        empleadosFinal = empleados.reduceRight((acumulador, nombre) => acumulador + '-' + nombre)
+        document.write(empleadosFinal)
+        document.write('<br>')
+        document.write('<br>')
+        document.write('<br>')
+
+        document.write('<h1>Objetos</h1>')
+
+        class Alumno {
+            constructor(nombre, apellidos, id, nombreModulos = [], notasModulos = []) {
+                this.nombre = nombre;
+                this.apellidos = apellidos;
+                this.id = id;
+                this.nombreModulos = nombreModulos;
+                this.notasModulos = notasModulos;
+            }
+            mostrarModulos() {
+                return this.nombreModulos.join('-')
+            }
+
+            mostrarNotaModulo(nombremodulo) {
+
+
+                let index = this.nombreModulos.indexOf(nombremodulo);
+                if (index !== -1) {
+                    return `La nota de ${nombremodulo} es: ${this.notasModulos[index]}`;
+                } else {
+                    return 'Modulo no encontrado';
+                }
+
+            }
+            media() {
+                var sumaNotas = 0;
+                for (var e = 0; e < this.notasModulos.length; e++) {
+                    sumaNotas += this.notasModulos[e]
+
+                }
+                document.write('La nota media es: ' + sumaNotas / this.notasModulos.length)
+            }
+            suspensas() {
+                let Suspensas = this.notasModulos.filter(notas => notas < 5)
+                return Suspensas
+            }
+            aprobadas() {
+                let Suspensas = this.notasModulos.filter(notas => notas < 5)
+                return Suspensas
+            }
+
+        }
+        ruben = new Alumno('ruben', 'roman', 1, ['DAW', 'DAM'], [3, 4])
+        document.write(ruben.mostrarModulos())
+        document.write('<br>')
+        document.write(ruben.mostrarNotaModulo('DAW'))
+        document.write('<br>')
+        ruben.media()
+        document.write('<br>')
+        document.write('Las notas suspensas son: ' + ruben.suspensas())
+        document.write('<br>')
+        document.write('<br>')
+        class Alumno2 {
+            constructor(nombre, id) {
+                this.nombre = nombre;
+                this.id = id;
+            }
+            getId() {
+                return this.id;
+            }
+
+            getNombre() {
+                return this.nombre;
+            }
+        }
+        class arrayAlumnos {
+            constructor() {
+                this.listaAlumnos = [];
+
+            }
+
+            matricular(nombre, id) {
+                let nuevoAlumno = new Alumno2(nombre, id)
+                this.listaAlumnos.push(nuevoAlumno)
+            }
+
+            eliminar(id) {
+                for (let ie = 0; ie < this.listaAlumnos.length; ie++) {
+                    if (this.listaAlumnos[ie].getId() === id)
+                        this.listaAlumnos.splice(ie, 1);
+                    document.write('Alumno con ID ' + id + ' ha sido eliminado<br>');
+                    return;
+
+                }
+
+            }
+            numeroAlumnos() {
+                document.write('El numero total de alumnos es: ' + this.listaAlumnos.length)
+            }
+
+            mostrar(id) {
+                for (let ie2 = 0; ie2 < this.listaAlumnos.length; ie2++) {
+                    if (this.listaAlumnos[ie2].getId() === id)
+                        document.write(`Nombre: ${this.listaAlumnos[ie2].getNombre()} ID:${this.listaAlumnos[ie2].getId()}`);
+                    return;
+
+                }
+            }
+        }
+        let lista = new arrayAlumnos();
+        document.write('<h2>Alumnos</h2>')
+        lista.matricular('Ruben', 1);
+        lista.matricular('Alba', 2);
+        lista.matricular('Alberto', 3);
+        lista.matricular('Belen', 4);
+        document.write('<br>')
+        lista.mostrar(1)
+        document.write('<br>')
+        lista.numeroAlumnos()
+        document.write('<br>')
+        lista.eliminar(1)
+        document.write('<br>')
+        lista.numeroAlumnos()
+
+
+        document.write('<h2>SET</h2>')
+        const personajes = new Map();
+        personajes.set("Homer Simpson", "Trabajo en la planta nuclear");
+        personajes.set("Marge Simpson", "Ama de casa");
+        personajes.set("Bart Simpson", "Estudiante");
+        personajes.set("Ruben", "Ama de casa");
+        personajes.set("Rubven", "Ama de casa");
+
+
+
+        document.write(personajes.get("Homer Simpson") + "<br>");
+        document.write(personajes.get("Marge Simpson") + "<br>");
+        document.write(personajes.get("Bart Simpson") + "<br>");
+        document.write(personajes.get("Ruben") + "<br>");
+
+
+
+        function encontrarPersonjaes(map, ocupacion) {
+            let listaP = []
+            for (let [clave7, valor7] of map.entries()) {
+                if (ocupacion === valor7) {
+                    listaP.push(clave7)
+                }
+            }
+            document.write(`Los personajes con la ocupacion ${ocupacion} son ${listaP}`)
+        }
+
+        encontrarPersonjaes(personajes, 'Ama de casa')
+        function modificarOcupacion(map, personaje, nuevaOcupacion) {
+            if (map.has(personaje)) {  // Verifica que el personaje exista en el Map
+                map.set(personaje, nuevaOcupacion);  // Cambiar la ocupación del personaje
+            } else {
+                document.write(`El personaje ${personaje} no existe en el mapa.<br>`);
+            }
+        }
+
+
+        document.write('<br>')
+        modificarOcupacion(personajes, 'Ruben', 'Estudiante')
+        document.write(personajes.get("Ruben") + "<br>");
+
+        function ocupacionesUnicas(map) {
+            let listadeocupaciones = []
+            for (let [clave8, valor8] of map.entries()) {
+                if (!listadeocupaciones.includes(valor8)) {
+                    listadeocupaciones.push(valor8)
+                }
+            }
+            document.write('El numer de ocupaciones diferentes es: ' + listadeocupaciones.length)
+        }
+        document.write('<br>')
+        ocupacionesUnicas(personajes)
+
+        function eliminarPersonaje(map, nombre) {
+
+            for (let [clave9, valor9] of map.entries()) {
+                if (clave9 === nombre) {
+                    map.delete(clave9)
+                }
+            }
+
+        }
+        document.write('<br>')
+
+        for (let entry of personajes) {
+            document.write(entry + '<br>')
+        }
+
+        const personajes70 = new Map();
+        personajes70.set("Homer Simpson", "Trabajo en la planta nuclear");
+        personajes70.set("Marge Simpson", "Ama de casa");
+        personajes70.set("Bart Simpson", "Ama de casa");
+        personajes70.set("Ruben", "Ama de casa");
+
+        const personajes80 = new Map();
+        personajes80.set("uno", "1");
+        personajes80.set("dos", "2");
+        personajes80.set("tres", "3");
+        personajes80.set("Ruben", "Futbolistas");
+
+        function mezclar(mapa1, mapa2) {
+            let combinacion = new Map([...mapa1]);
+
+            mapa2.forEach((valor, clave) => {
+
+                if (combinacion.has(clave)) {
+                    let valorExistente = combinacion.get(clave);
+                    combinacion.set(clave, Array.isArray(valorExistente) ? [...valorExistente, valor] : [valorExistente, valor]);
+                } else {
+                    combinacion.set(clave, valor);
+                }
+            });
+
+            return combinacion;
+        }
+
+        let mapaFinal = combinarMapas(personajes7, personajes8);
+
+        for (let [clave, valor] of mapaFinal) {
+            document.write(clave + " - " + valor + '<br>');
+        }
+
+
+
     </script>
 </body>
 

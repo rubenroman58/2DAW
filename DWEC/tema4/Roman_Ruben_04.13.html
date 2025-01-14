@@ -65,13 +65,15 @@
     ];<br>
 
     <script>
-       const usuarios = [
-    { nombre: "Juan", roles: ["admin", "editor"] },
-    { nombre: "María", roles: ["usuario"] },
-    { nombre: "Pedro", roles: ["moderador", "editor"] }
-    ];
-     
-    usuariosNuevo=usuarios.flatMap()
+        const usuarios = [
+            { nombre: "Juan", roles: ["admin", "editor"] },
+            { nombre: "María", roles: ["usuario"] },
+            { nombre: "Pedro", roles: ["moderador", "editor"] }
+        ];
+
+        const etiquetas = usuarios.flatMap(usuario => usuario.roles);
+
+        document.write('<strong>' + etiquetas + '</strong>');
     </script>
 
     <br>
@@ -81,15 +83,16 @@
     ejercicio”]. Luego:
     <br> ◦ Usa Array.forEach() para recorrer el array y mostrar cada tarea con su índice.
     <br><b> 2. Resultado esperado:</b>
+    <br>
+    <br>
+    <script>
+        tareasPendientes = ['Lavar platos', 'Comprar comida', 'Hacer ejercicio']
+        tareasPendientes.forEach((tarea, indice) => (
+            document.write(`Indice: ${indice + 1} Tarea: ${tarea}<br>`)
+        )
+        );
 
-
-    const tareas = ["Lavar platos", "Comprar comida", "Hacer ejercicio"];<br>
-    tareas.forEach((tarea, index) => {
-    console.log(`${index + 1}. ${tarea}`);<br>
-    });<br>
-    // 1. Lavar platos
-    // 2. Comprar comida
-    // 3. Hacer ejercicio
+    </script>
 
     <br>
     <h3> Ejercicio 5: Generar una lista de precios con IVA aplicado </h3>
@@ -98,11 +101,16 @@
     <br><b> 1. Descripción:</b> Tienes un array con los precios originales [100, 200, 300]. Luego:
     <br> ◦ Usa Array.map() para crear un nuevo array en el que cada precio tenga el IVA incluido.
     <br><b> 2. Resultado esperado:</b>
+    <br>
+    <br>
 
+    <script>
+        preciosOriginales = [100, 200, 300]
+        ivaPrecio = preciosOriginales.map(precio5 => precio5 * 1.21)
+        document.write(ivaPrecio)
 
-    const precios = [100, 200, 300];<br>
-    const preciosConIVA = precios.map(precio => precio * 1.21);<br>
-    console.log(preciosConIVA);<br> // [121, 242, 363], precios con IVA aplicado
+    </script>
+
 
     <br>
     <h3> Ejercicio 6: Filtrar usuarios activos en un sistema </h3>
@@ -112,16 +120,21 @@
     <br> ◦ Usa Array.filter() para obtener una lista con solo los usuarios activos.
     <br><b> 2. Resultado esperado:</b>
 
+    <br>
+    <br>
+    <script>
+        const usuarios6 = [
+            { nombre: "Juan", activo: true },
+            { nombre: "María", activo: false },
+            { nombre: "Pedro", activo: true }]
 
-    const usuarios = [
-    { nombre: "Juan", activo: true },
-    { nombre: "María", activo: false },
-    { nombre: "Pedro", activo: true }
-    ];<br>
-    const usuariosActivos = usuarios.filter(usuario => usuario.activo);<br>
-    console.log(usuariosActivos);<br>
-    // [{ nombre: "Juan", activo: true }, { nombre: "Pedro", activo: true }]
+        solucion = usuarios6.filter(usuario => usuario.activo === true)
+        
+        solucion.forEach(usuario => {
+            document.write("Usuario: " + usuario.nombre + ", Activo: " + usuario.activo + "<br>");
+        });
 
+    </script>
     <br>
     <h3> Ejercicio 7: Simplificación de listas de categorías de productos </h3>
     <br><b> Contexto:</b> Tienes una lista con categorías de productos, algunas de las cuales están anidadas, y
@@ -130,12 +143,14 @@
     “Computadoras”], “Ropa”]. Luego:
     <br> ◦ Usa Array.flat() para descomponer las categorías anidadas en una lista plana.
     <br><b> 2. Resultado esperado:</b>
+    <br>
+    <br>
+    <script>
+        categorias=['Electrónica', ['Teléfonos','Computadoras'], 'Ropa']
+        categoriaFinal=categorias.flat()
+        document.write(categoriaFinal.join('-'))
+    </script>
 
-
-    const categorias = ["Electrónica", ["Teléfonos", "Computadoras"], "Ropa"];<br>
-    const categoriasPlanas = categorias.flat();<br>
-    console.log(categoriasPlanas);<br>
-    // ["Electrónica", "Teléfonos", "Computadoras", "Ropa"]
 
     <br>
     <h3> Ejercicio 8: Crear una lista de nombres en mayúsculas </h3>
@@ -144,11 +159,12 @@
     <br><b> 1. Descripción:</b> Tienes un array con los nombres [“juan”, “maría”, “pedro”]. Luego:
     <br> ◦ Usa Array.map() para crear un nuevo array con todos los nombres en mayúsculas.
     <br><b> 2. Resultado esperado:</b>
-
-
-    const nombres = ["juan", "maría", "pedro"];<br>
-    const nombresMayus = nombres.map(nombre => nombre.toUpperCase());<br>
-    console.log(nombresMayus);<br> // ["JUAN", "MARÍA", "PEDRO"]
+    <br>
+    <script>
+        nombres=['juan', 'maría', 'pedro']
+        nuevoNombres=nombres.map(nombre=>nombre.toUpperCase())
+        document.write(nuevoNombres.join('-'))
+    </script>
 
     <br>
     <h3> Ejercicio 9: Imprimir las cantidades de productos vendidos </h3>
@@ -157,17 +173,16 @@
     <br><b> 1. Descripción:</b> Tienes un array con las cantidades [10, 20, 30, 40]. Luego:
     <br> ◦ Usa Array.forEach() para recorrer el array y mostrar cada cantidad junto con un mensaje.
     <br><b> 2. Resultado esperado:</b>
+    <br>
+    <script>
+        cantidades=[10, 20, 30, 40]
+        cantidades.forEach(cantidad=>
+            document.write(`Se vendieron ${cantidad} productos<br>`)
+        )
+    </script>
 
-
-    const cantidades = [10, 20, 30, 40];<br>
-    cantidades.forEach(cantidad => {
-    console.log(`Se vendieron ${cantidad} productos.`);<br>
-    });<br>
-    // Se vendieron 10 productos.
-    // Se vendieron 20 productos.
-    // Se vendieron 30 productos.
-    // Se vendieron 40 productos.
-
+    <br>
+   
     <br>
     <h3> Ejercicio 10: Calcular el precio total de productos con descuento </h3>
     <br><b> Contexto:</b> Tienes una lista de precios de productos y necesitas calcular el precio con un descuento
@@ -175,11 +190,12 @@
     <br><b> 1. Descripción:</b> Tienes un array con los precios [50, 100, 150]. Luego:
     <br> ◦ Usa Array.map() para crear un nuevo array donde cada precio tenga aplicado el descuento del 10%.
     <br><b> 2. Resultado esperado:</b>
-
-
-    const precios = [50, 100, 150];<br>
-    const preciosConDescuento = precios.map(precio => precio * 0.9);<br>
-    console.log(preciosConDescuento);<br> // [45, 90, 135], precios con descuento aplicado
+    <br>
+    <script>
+        precios=[50, 100, 150]
+        ejercicio10=precios.map(precio=> precio*0.9)
+        document.write(ejercicio10.join('-'))
+    </script>
 
 
 </body>
