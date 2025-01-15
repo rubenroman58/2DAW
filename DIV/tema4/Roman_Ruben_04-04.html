@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gray {
+            background-color: gray;
+        }
+
+        .hexadecimal-blue {
+            background-color: #0000FF;
+        }
+
+        .short-hexadecimal {
+            background-color: #00F;
+        }
+
+        .rgb {
+            background-color: rgb(0, 200, 255);
+        }
+
+        .rgba {
+            background-color: rgba(0, 0, 255, 0.5);
+        }
+
+        .lch {
+            background-color: lch(50% 40 270);
+        }
+
+        .hsl {
+            background-color: hsl(240, 100%, 50%);
+        }
+
+        .lab {
+            background-color: lab(50% 80 70);
+        }
+
+        .oklab {
+            background-color: oklab(0.5 0.5 0.5);
+        }
+
+        .hwb {
+            background-color: hwb(240deg 0% 0%);
+        }
+
+        .ejercicio3 {
+            background-image: url(gifnike.gif);
+        }
+
+        .ejercicio4 {
+
+            background-image: url(playa.png);
+            background-repeat:repeat-x;
+            background-color: #f0f0f0;
+            background-position: top left;
+            background-size: auto;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .position-left-bottom {
+            background-image: url('playa.png');
+            background-repeat: no-repeat;
+            background-position: left bottom;
+            background-color: #f0f0f0;
+            height: 200px;
+        }
+
+        .position-left-top {
+            background-image: url('playa.png');
+            background-repeat: no-repeat;
+            background-position: left top;
+            background-color: #f0f0f0;
+            height: 200px;
+        }
+
+        .position-right-center {
+            background-image: url('playa.png');
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-color: #f0f0f0;
+            height: 200px;
+        }
+
+        .position-right-bottom {
+            background-image: url('playa.png');
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-color: #f0f0f0;
+            height: 200px;
+        }
+
+        .position-bottom-center {
+            background-image: url('playa.png');
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            background-color: #f0f0f0;
+            height: 200px;
+        }
+
+        .position-25-10 {
+            background-image: url('playa.png');
+            background-repeat: no-repeat;
+            background-position: 25% 10%;
+            background-color: #f0f0f0;
+            height: 200px;
+        }
+
+        .position-100px-500px {
+            background-image: url('playa.png');
+            background-repeat: no-repeat;
+            background-position: 100px 500px;
+            background-color: #f0f0f0;
+            height: 200px;
+        }
+
+        .ejercicio8a {
+            filter: alpha(opacity=50);
+            -moz-opacity: 0.5;
+            opacity: 0.5;
+        }
+
+        .ejercicio8b {
+            filter: alpha(opacity=25);
+            -moz-opacity: 0.25;
+            opacity: 0.25;
+        }
+
+        .ejercicio8c {
+            filter: alpha(opacity=75);
+            -moz-opacity: 0.75;
+            opacity: 0.75;
+        }
+
+        .ejercicio9 {
+            width: 300px;
+            height: 300px;
+            background-image: url('playa.png');
+
+
+        }
+
+        .ejercicio9:hover {
+
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h2> Ejercicio 1. Crear un javascript para generar todos los colores de esa misma con un bucle y estos arrays </h2>
+    <script>
+        var coloresCss1 = new Array("aqua", "black", "blue", "fuchsia", "gray", "green", "lime", "maroon", "navy",
+            "olive", "purple", "red", "silver", "teal", "white", "yellow");
+
+        for (i = 0; i < coloresCss1.length; i++) {
+            document.write(coloresCss1[i] + '-')
+
+        }
+
+        var coloresCss2 = new Array("orange", "aliceblue", "antiquewhite", "aquamarine", "azure", "beige", "bisque",
+            "blanchedalmond", "blueviolet", "brown", "burlywood", "cadetblue", "chartreuse", "chocolate", "coral",
+            "cornflowerblue", "cornsilk", "crimson", "darkblue", "darkcyan", "darkgoldenrod", "darkgray", "darkgreen",
+            "darkgrey", "darkkhaki", "darkmagenta", "darkolivegreen", "darkorange", "darkorchid", "darkred", "darksalmon",
+            "darkseagreen", "darkslateblue", "darkslategray", "darkslategrey", "darkturquoise", "darkviolet", "deeppink",
+            "deepskyblue", "dimgray", "dimgrey", "dodgerblue", "firebrick", "floralwhite", "forestgreen", "gainsboro",
+            "ghostwhite", "gold", "goldenrod", "greenyellow", "grey", "honeydew", "hotpink", "indianred", "indigo", "ivory",
+            "khaki", "lavender", "lavenderblush", "lawngreen", "lemonchiffon", "lightblue", "lightcoral", "lightcyan",
+            "lightgoldenrodyellow");
+        document.write('<br>')
+        document.write('<br>')
+        for (i = 0; i < coloresCss2.length; i++) {
+            document.write(coloresCss2[i] + '-')
+
+        }
+
+        var coloresCss3 = new Array("lightgray", "lightgreen", "lightgrey", "lightpink", "lightsalmon",
+            "lightseagreen", "lightskyblue", "lightslategray", "lightslategrey", "lightsteelblue", "lightyellow", "limegreen",
+            "linen", "mediumaquamarine", "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen", "mediumslateblue",
+            "mediumspringgreen", "mediumturquoise", "mediumvioletred", "midnightblue", "mintcream", "mistyrose", "moccasin",
+            "navajowhite", "oldlace", "olivedrab", "orangered", "orchid", "palegoldenrod", "palegreen", "paleturquoise",
+            "palevioletred", "papayawhip", "peachpuff", "peru", "pink", "plum", "powderblue", "rosybrown", "royalblue",
+            "saddlebrown", "salmon", "sandybrown", "seagreen", "seashell", "sienna", "skyblue", "slateblue", "slategray",
+            "slategrey", "snow", "springgreen", "steelblue", "tan", "thistle", "tomato", "turquoise", "violet", "wheat",
+            "whitesmoke", "yellowgreen");
+        document.write('<br>')
+        document.write('<br>')
+        for (i = 0; i < coloresCss3.length; i++) {
+            document.write(coloresCss3[i] + '-')
+
+        }
+    </script>
+
+    <h2> Ejercicio 2. Crea reglas CSS para mostrar divs con las diferentes maneras de expresar los colores con
+        background-color ( gray , #0000FF, #00F , rgb , rgba , lch, hsl, lab, oklab, hwb) </h2>
+    <div class="color-div gray">Gray</div>
+    <div class="color-div hexadecimal-blue">#0000FF</div>
+    <div class="color-div short-hexadecimal">#00F</div>
+    <div class="color-div rgb">rgb(0, 0, 255)</div>
+    <div class="color-div rgba">rgba(0, 0, 255, 0.5)</div>
+    <div class="color-div lch">lch(50% 40 270)</div>
+    <div class="color-div hsl">hsl(240, 100%, 50%)</div>
+    <div class="color-div lab">lab(50% 80 70)</div>
+    <div class="color-div oklab">oklab(0.5 0.5 0.5)</div>
+    <div class="color-div hwb">hwb(240deg 0% 0%)</div>
+
+    <h2> Ejercicio 3. Crea documento con una imagen de fondo con un gif animado </h2>
+    <div class="ejercicio3">
+        <h2 style="color: aliceblue;">Ejercicio 3</h2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <h2> Ejercicio 4. Crea documento con imagen de fondo con un png con transparencias y un background-color que se
+        repita hacia la izquierda </h2>
+    <div class="ejercicio4">
+        <h2>Ejercicio 4</h2>
+    </div>
+
+
+    <h2> Ejercicio 5. Crea documento con una imagen de fondo con un jpg fijo que no se repita </h2>
+    <h2> Ejercicio 6. Crea documento con una imagen de fondo que no se repita con las configuraciones
+        background-position </h2>
+
+    <div class="position-left-bottom">
+        <h1>Fondo en la posición "left bottom"</h1>
+
+    </div>
+
+    <div class="position-left-top">
+        <h1>Fondo en la posición "left top"</h1>
+
+    </div>
+
+    <div class="position-right-center">
+        <h1>Fondo en la posición "right center"</h1>
+
+    </div>
+
+    <div class="position-right-bottom">
+        <h1>Fondo en la posición "right bottom"</h1>
+
+    </div>
+
+    <div class="position-bottom-center">
+        <h1>Fondo en la posición "bottom center"</h1>
+
+    </div>
+
+    <div class="position-25-10">
+        <h1>Fondo en la posición "25% 10%"</h1>
+
+    </div>
+
+    <div class="position-100px-500px">
+        <h1>Fondo en la posición "100px 500px"</h1>
+
+    </div>
+
+    <h2> Ejercicio 7. Prueba el siguiente Código de ejemplo </h2>
+    <code> <pre> 
+        &lt;html&gt; &lt;head&gt; &lt;style type="text/css"&gt;
+        body {background: #00f; color: black}
+        #saludo { background: white; width: 200px; height: 200px; filter: alpha(opacity=50); -moz-opacity: 0.5; opacity: 0.5; }
+        #frase { background: white; width: 200px; height: 200px; filter: alpha(opacity=100); -moz-opacity: 1; opacity: 1; }
+        #despedida { background: white; width: 200px; height: 200px; filter: alpha(opacity=0); -moz-opacity: 0; opacity: 0; }
+    &lt;/style&gt; &lt;/head&gt; &lt;body&gt;
+        &lt;div id="saludo"&gt;&lt;h1&gt;¡Hola!&lt;/h1&gt;&lt;/div&gt;
+        &lt;div id="frase"&gt;Este es un ejemplo de opacidad&lt;/div&gt;
+        &lt;div id="despedida"&gt;&lt;h2&gt;¡Adiós!&gt;&lt;/h2&gt;&lt;/div&gt;
+    &lt;/body&gt;	&lt;/html&gt;
+</pre></code>
+
+    <h2> Ejercicio 8. Inserta una imagen con estas opacidades </h2>
+    <br> a) filter: alpha(opacity=50); -moz-opacity: 0.5; opacity: 0.5;
+    <br> b) filter: alpha(opacity=25); -moz-opacity: 0.25; opacity: 0.25;
+    <br> c) filter: alpha(opacity=75); -moz-opacity: 0.75; opacity: 0.75;
+
+    <img src='playa.png' alt="Imagen con opacidad 50%" class="ejercicio8a">
+    <br>
+
+
+    <img src='playa.png' alt="Imagen con opacidad 25%" class="ejercicio8b">
+    <br>
+
+ 
+    <img src='playa.png' alt="Imagen con opacidad 75%" class="ejercicio8c">
+
+    <h2> Ejercicio 9. Inserta una imagen que se haga transparente al 50% cuando se pase el raton con :hover. </h2>
+    <div class="ejercicio9">
+
+    </div>
+
+</body>
+
+</html>

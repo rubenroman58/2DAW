@@ -10,6 +10,88 @@
             font-variant: small-caps;
         }
 
+        * {
+            font-family: georgia;
+        }
+
+        .ejercicio2a p {
+
+            font-size: 2em;
+        }
+
+        .ejercicio2b p {
+
+            font-size: 10%;
+        }
+
+        .ejercicio2c p {
+
+            font-size: 10px;
+        }
+
+        .ejercicio2d p {
+
+            font-size: 10mm;
+        }
+
+        .ejercicio3a p {
+            font-weight: bold;
+        }
+
+        .ejercicio3b p {
+            font-weight: 500;
+        }
+
+        .ejercicio4italic p {
+            font-style: italic;
+        }
+
+        .ejercicio4oblique {
+            font-style: oblique;
+        }
+
+        .ejercicio5normal {
+            font-variant: normal;
+        }
+
+        .ejercicio5caps {
+            font-variant: small-caps;
+        }
+
+        .ejercicio6sub {
+            text-decoration: underline
+        }
+
+        .ejercicio6over {
+            text-decoration: overline;
+        }
+
+        .ejercicio7 {
+            text-transform: capitalize;
+        }
+
+        .ejercicio8 {
+            line-height: 200%;
+        }
+
+        .ejercicio9 {
+            text-indent: 20%;
+        }
+
+        .ejercicio10 {
+            letter-spacing: 20px;
+        }
+
+        .ejercicio11a {
+            white-space: pre;
+        }
+
+        .ejercicio11b {
+            white-space: pre;
+        }
+
+
+
         .obl {
             font-style: oblique
         }
@@ -51,19 +133,21 @@
     <h2> Ejercicio 1. Crea una regla CSS para que todos los elementos textuales tengan fuente Georgia (selector * )
     </h2>
     en general
-    <style> {
-        font-family: Georgia, serif;
-    }
-    </style>
     <h2> Ejercicio 2. Crea tres reglas CSS para que los elementos dentro de una p con </h2>
-    <br> • todos los elementos con la clase ejercicio2a tengan fuente tamaño 10em
+    <br>
+    <div class="ejercicio2a">
+        <p> todos los elementos con la clase ejercicio2a tengan fuente tamaño 10em</p>
+    </div>
     <br> • todos los elementos con la clase ejercicio2b tengan fuente tamaño 10%
     <br> • todos los elementos con la clase ejercicio2c tengan fuente tamaño 10 px
     <br> • todos los elementos con la clase ejercicio2d tengan fuente tamaño 10 mm
     Puedes ver más sobre las medidas en https://desarrolloweb.com/articulos/unidades-medida-css-relativas-
     absolutas.html
     <h2> Ejercicio 3. Crea 13 reglas CSS con la clave font-weight para que los elementos dentro de una p con </h2>
-    <br> • todos los elementos con la clase ejercicio3normal tengan espesor clave= normal
+    <br>
+    <div class="ejercicio3a">
+        <p>todos los elementos con la clase ejercicio3normal tengan espesor clave= normal</p>
+    </div>
     <br> • todos los elementos con la clase ejercicio3bold tengan espesor clave= bold
     <br> • todos los elementos con la clase ejercicio3bolder tengan espesor clave= bolder,
     <br> • todos los elementos con la clase ejercicio3lighter tengan espesor clave= lighter
@@ -71,23 +155,43 @@
     <br> • todos los elementos con la clase ejercicio3200 tengan espesor clave= 200
     <br> • todos los elementos con la clase ejercicio3300 tengan espesor clave= 300
     <br> • todos los elementos con la clase ejercicio3400 tengan espesor clave= 400
-    <br> • todos los elementos con la clase ejercicio3500 tengan espesor clave= 500
+    <div class="ejercicio3b">
+        <p>todos los elementos con la clase ejercicio3500 tengan espesor clave= 500</p>
+    </div>
     <br> • todos los elementos con la clase ejercicio3600 tengan espesor clave= 600
     <br> • todos los elementos con la clase ejercicio3700 tengan espesor clave= 700
     <br> • todos los elementos con la clase ejercicio3800 tengan espesor clave= 800
     <br> • todos los elementos con la clase ejercicio3900 tengan espesor clave= 900
     <h2> Ejercicio 4. Crea tres reglas CSS con la clave font-style para que los elementos dentro de una p con </h2>
-    <br> • todos los elementos con la clase ejercicio4 italic tengan style= italic
-    <br> • todos los elementos con la clase ejercicio4oblique tengan style= oblique
+    <div class="ejercicio4italic">
+        <p>• todos los elementos con la clase ejercicio4 italic tengan style= italic</p>
+    </div>
+    <br>
+    <div class="ejercicio4oblique ">
+        • todos los elementos con la clase ejercicio4oblique tengan style= oblique
+    </div>
+    <br>
     <h2> Ejercicio 5. Crea tres reglas CSS con la clave font-variant para que los elementos dentro de una p con </h2>
-    <br> • todos los elementos con la clase ejercicio5normal tengan font-variant= normal
-    <br> • todos los elementos con la clase ejercicio5caps tengan font-variant= small-caps
+    <br>
+    <div class="ejercicio5normal">
+        • todos los elementos con la clase ejercicio5normal tengan font-variant= normal
+    </div>
+    <br>
+    <div class="ejercicio5caps ">
+        • todos los elementos con la clase ejercicio5caps tengan font-variant= small-caps
+    </div>
     <h2> Ejercicio 6. Crea reglas CSS con la clavetext-decoration para que los elementos dentro de una p con diferentes
     </h2>
     clases (pon ejercicio6 y el codigo tengan decorarciones como las siguientes) :
     <br> • none (ninguno)
-    <br> • underline (subrayado)
-    <br> • overline (con una línea por encima)
+    <br>
+    <div class="ejercicio6sub">
+        • underline (subrayado)
+    </div>
+    <br>
+    <div class="ejercicio6over">
+        • overline (con una línea por encima)
+    </div>
     <br> • linethrough(tachado)
     <br> • blink (parpadeante)
     <br> • inherit (heredado) .
@@ -95,7 +199,10 @@
     </h2>
     clases (pon ejercicio7 y el codigo tengan transformaciones como las siguientes) :
     <br> • none (texto normal, con mayúsculas y minúsculas)
-    <br> • capitalize (cada palabra comienza con mayúsculas)
+    <div class="ejercicio7">
+        • capitalize (cada palabra comienza con mayúsculas)
+    </div>
+    <br>
     <br> • uppercase (todo el texto aparece en mayúsculas)
     <br> • lowercase (todo el texto aparece en minúsculas).
     <h2> Ejercicio 8. Crea reglas CSS con la clave line-height para que los elementos dentro de una p con diferentes
@@ -103,33 +210,38 @@
     clases (pon ejercicio8 y el codigo) tenga una separacion entre lineas
     <br> • del triple del tamaño de la fuente
     <br> • 10 puntos
-    <br> • un 150 % del tamaño de la fuente
+    <div class="ejercicio8">
+        • un 150 % del tamaño de la fuente
+    </div>
+    <br>
     <h2> Ejercicio 9. Crea reglas CSS con la clave text-indent para que para que los elementos dentro de una p </h2>
     con diferentes clases (pon ejercicio9 y el codigo) Sangra la primera línea de texto de un párrafo.
     <br> • un sangrado positivo de 10px
-    <br> • un sangrado negativo de 20px
+    <div class="ejercicio9">
+        • un sangrado negativo de 20px
+    </div>
+    <br>
     <br> • un sangrado positivo del 20% del padre
     <h2> Ejercicio 10. Crea reglas CSS con la clave letter-spacing para que el espacio que hay entre los caracteres
     </h2>
     dentro de una p con diferentes clases (pon ejercicio10 y el codigo) sea de
     <br> • Regla 1: Separación de 5px
-    <br> • Regla 2: Separación de 10px
+    <div class="ejercicio10">
+        • Regla 2: Separación de 10px
+    </div>
+    <br>
     <br> • Regla 3: contracción de 1px
     <br> • Regla 4: contracción de 0,5px
     <h2> Ejercicio 11. Crea reglas CSS con la clave white-space para que los espacios dentro de una p con diferentes
     </h2>
-    clases (pon ejercicio11 y el código) tengan estos comportamientos
-    <br> • Regla-ejercicio11-1: normal
-    <br> • Regla-ejercicio11-2: pre
-    <br> • Regla-ejercicio11-3: nowrap
-    Aplicalo sobre el código
+
 
     <pre>
-<div class="Regla-ejercicio11-1"> ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11
+<div class="ejercicio11a"> ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11
 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11
 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11
 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 <div>
-<div class="Regla-ejercicio11-2"><pre> ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11
+<div class="ejercicio11b"><pre> ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11
 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 </pre>
     ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11
     ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11 ejercicio11

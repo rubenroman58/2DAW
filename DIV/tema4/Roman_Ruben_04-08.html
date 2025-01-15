@@ -1,0 +1,145 @@
+<html>
+
+<head>
+    <style type="text/css">
+        h {
+            font-family: Georgia;
+            font-size: 50px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .text1 {
+            text-align: center;
+            text-shadow: 25px 5px 1px #ccc;
+            line-height: 1.5em;
+        }
+
+        .text2 {
+            text-align: center;
+            text-shadow: -20px 10px 1px rgb(70, 68, 68);
+            line-height: 2em;
+        }
+
+        .text3 {
+            text-align: center;
+            text-shadow: #f00 0px 10px 0px;
+        }
+
+        .text4 {
+            text-align: center;
+            text-shadow: #f00 0px -10px 0px;
+        }
+
+        .text5 {
+            text-align: center;
+            text-shadow: rgb(95, 227, 48) 5px 10px 4px;
+        }
+
+        .text6 {
+            text-align: center;
+            text-shadow: rgb(218, 51, 218) 5px 15px 4px;
+        }
+
+        .text7 {
+            text-align: center;
+            text-shadow: rgb(67, 38, 229) -15px -15px 2px, rgb(237, 27, 27) 5px 10px 2px;
+        }
+
+        .cajasombra {
+            box-shadow: 5px 5px 2px 5px #333;
+            border: solid 1px;
+            background-color: #dddddd;
+            width: 100px;
+            height: 100px;
+        }
+
+        .cajasombra2 {
+            box-shadow: 5px 5px 2px 0px #dd0c0c;
+            border: solid 1px;
+            background-color: #dddddd;
+            width: 100px;
+            height: 100px;
+        }
+
+        .cajasombrainterior {
+            box-shadow: 5px 5px 2px 0px #333 inset;
+            border: solid 1px;
+            background-color: #dddddd;
+        }
+
+        .cajasombraHover {
+            box-shadow: 5px 5px 10px 5px rgb(178, 243, 16);
+            border: solid 1px;
+            background-color: #dddddd;
+            width: 100px;
+            height: 100px;
+        }
+
+        .cajasombra2Hover {
+            box-shadow: 5px 5px 10px 0px yellow;
+            border: solid 1px;
+            background-color: #dddddd;
+            width: 100px;
+            height: 100px;
+        }
+
+        .cajasombrainteriorHover {
+            box-shadow: 5px 5px 10px 0px yellow inset;
+            border: solid 1px;
+            background-color: #dddddd;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Ejercicio 2 y 3</h2>
+    <br><br><br>
+    <h1 class="text1">!!! Sombra ¡¡¡ </h1>
+    <h1 class="text2">!!! Sombra negativa ¡¡¡ </h1>
+    <h1 class="text3">!!! Sombra Roja ¡¡¡ </h1>
+    <h1 class="text4">!!! Sombra Roja negativa ¡¡¡ </h1>
+    <h1 class="text5">!!! Verde con blur ¡¡¡ </h1>
+    <h1 class="text6">!!! Purpura con blur ¡¡¡ </h1>
+    <h1 class="text7">!!! Azul y rojo ¡¡¡ </h1>
+
+    <h1 onmouseleave="cambioclase('text5')" onmouseenter="cambiorojo('text6')" class="text5" id="cambio">!!! Azul y rojo con hover¡¡¡ </h1>
+
+    <h2>Ejercicio 5 y 6</h2>
+    <br><br><br>
+    
+  
+    <div class="cajasombra" id="caja1" onmouseenter="cambiorojo('caja1')" onmouseleave="cambioclase('caja1')"> cajasombra </div><br><br>
+    <div class="cajasombra2" id="caja2" onmouseenter="cambiorojo('caja2')" onmouseleave="cambioclase('caja2')"> cajasombra 2 </div><br><br><br>
+    <div class="cajasombrainterior" id="caja3" onmouseenter="cambiorojo('caja3')" onmouseleave="cambioclase('caja3')"> cajasombraInterior </div>
+
+    <script>
+       
+        function cambioclase(id) {
+            var element = document.getElementById(id);
+            if (id === 'caja1') {
+                element.className = 'cajasombra';
+            } else if (id === 'caja2') {
+                element.className = 'cajasombra2';
+            } else if (id === 'caja3') {
+                element.className = 'cajasombrainterior'; 
+            }
+        }
+
+   
+        function cambiorojo(id) {
+            var element = document.getElementById(id);
+            if (id === 'caja1') {
+                element.className = 'cajasombraHover'; 
+            } else if (id === 'caja2') {
+                element.className = 'cajasombra2Hover'; 
+            } else if (id === 'caja3') {
+                element.className = 'cajasombrainteriorHover'; 
+            }
+        }
+    </script>
+</body>
+
+</html>

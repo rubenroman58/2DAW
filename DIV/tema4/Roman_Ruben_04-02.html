@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        /*  * {
+            color: gray;
+        } */
+
+        /*  p {
+            color: green;
+            font-family: georgia;
+        } */
+
+
+        table * {
+            border: 2px solid red;
+
+        }
+
+        table td {
+            border-color: yellow;
+
+        }
+
+        table th {
+            border-color: yellow;
+
+        }
+
+        /*    p>* {
+            color: blue;
+
+            font-family: Arial;
+
+        } */
+        li strong {
+            color: blue;
+
+        }
+
+        /*  div * {
+            color: magenta;
+        }
+ */
+        div>a:first-child {
+            text-decoration: none
+        }
+
+        h1>strong {
+            text-decoration: underline
+        }
+
+        h3+p {
+            color: red;
+        }
+
+        #ejercicio11 {
+            color: red;
+        }
+
+        .ejercicio12 {
+            color: rgb(29, 53, 238);
+        }
+
+        .ejercicio13 {
+            color: blue;
+        }
+
+        .ejercicio13 h2 {
+            color: green;
+        }
+
+        .ejercicio13 h3 {
+            color: yellow;
+        }
+
+        /* Enlaces con clase ejercicio13 */
+        .ejercicio14 a:link {
+            color: green;
+            /* Verde si no ha sido visitado */
+        }
+
+        .ejercicio14 a:visited {
+            color: olive;
+            /* Verde oliva si ha sido visitado */
+        }
+
+        .ejercicio14 a:hover {
+            color: red;
+            /* Rojo cuando el ratón pasa por encima */
+        }
+
+        .ejercicio14 a:active {
+            color: blue;
+            /* Azul cuando se pulsa el ratón */
+        }
+
+        .ejercicio15 p {
+            color: rgb(44, 164, 72);
+
+        }
+
+        p {
+            color: blue !important;
+        }
+
+        /* Regla 1: La primera línea de todos los p con la clase ejercicio16 será azul */
+        p.ejercicio17::first-line {
+            color: blue;
+        }
+
+        /* Regla 2: La primera letra de todos los p con la clase ejercicio16 será roja y de tamaño 15px */
+        p.ejercicio17::first-letter {
+            color: red;
+            font-size: 15px;
+        }
+
+        /* Regla 3: Los elementos que siguen al texto "hola" dentro de un p con la clase ejercicio16 serán verdes */
+        p.ejercicio17::after {
+            content: "Hola";
+            /* Creamos un espacio para seleccionar los elementos después de "hola" */
+            color: green;
+            display: inline;
+        }
+
+        /* Regla 4: Los elementos que siguen al texto "adios" dentro de un p con la clase ejercicio16 serán amarillos */
+        p.ejercicio17::before {
+            content: "adios";
+            /* Creamos un espacio para seleccionar los elementos después de "adios" */
+            color: yellow;
+            display: inline;
+        }
+
+        input:focus {
+            background-color: yellow;
+        }
+
+        ul li:first-child {
+            font-weight: bold;
+        }
+
+        html p:lang(en) {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Ejercicio 2. Crea una regla CSS para
+        que todos los elementos sean de color gris (selector * ) </p>
+
+    <p> Ejercicio 3. Crea una regla para que los elementos que estén dentro de un p sean de color verde y
+        fuente Georgia. (con descendientes )</p>
+    <p>Ejercicio 4. Crea una regla para que todos los elementos que estén dentro de una tabla tengan bordes
+        rojos y amarillos (con descendientes )
+    <table>
+        <tr>
+            <td>Celda 1</td>
+            <td>Celda 2</td>
+        </tr>
+        <tr>
+            <td>Celda 3</td>
+            <td>Celda 4</td>
+        </tr>
+    </table>
+    </p>
+    <p><strong>Ejercicio 6. Crea una regla para que todos los elementos que estén inmediatamente dentro de un p sean
+            de color azul y fuente Arial. (con hijo > )
+            <ul>
+                <li>Este es un elemento de lista con <strong>texto fuerte</strong> dentro.</li>
+                <li>Otro elemento de lista con <strong>texto fuerte</strong>.</li>
+            </ul>
+        </strong></p>
+
+    Ejercicio 7.- Crea una regla para que todos enlaces dentro de un div y de una etiqueta debe tener color magenta (con
+    descendiente + selector * )<br>
+    <div> hola, no magenta </div>
+
+    <div>
+        <p> hola, si magenta </p>
+    </div>
+    <div>
+        <strong> hola, si magenta </strong>
+    </div>
+    Ejercicio 8 Crea una regla para que todos enlaces que se hallan empezando un div no tengan subrayado (con
+    descendiente hijo + selector * )
+
+    <div> <a href=""> NO </a> </div>
+    <div>
+        <p> hola</p> <a href=""> SI </a>
+    </div>
+    Ejercicio 9:Crea una regla para que todos strong que se hallan justo dentro un h1 tengan subrayado (con descendiente
+    hijo )
+    <h1>
+        <div> <strong> no es nada </strong>
+            <div>
+    </h1>
+    <h1> <strong> no es nada </strong> </h1>
+
+    Ejercicio 10:Crea una regla para que todos p que van junto con un h3 sean rojos
+    <h3>Ejercicio 10</h3>
+    <p>Deberia ser rojo</p>
+    <p> no Deberia ser rojo</p>
+
+    <div id="ejercicio11">Ejercicio 11. Crea una regla para que el elemento con el identificador ejercicio10 sean rojos
+        (#ejercicio10)</div>
+
+    <div class="ejercicio12"> Ejercicio 12. Crea una regla para que los elementos con la clase ejercicio11 sean Azul
+        (.ejercicio11)</div>
+    <div class="ejercicio13">
+        <p>Este parrafo es azul</p>
+        <h2>Este encabezado h2 es verde</h2>
+        <h3>Este encabezado h3 es amarillo</h3>
+        <p>Este parrafo también es azul</p>
+    </div>
+
+
+    Ejercicio 14-Crea una regla de pseudoclase para que los enlaces con clase ejercicio14 tengan estos colores
+    <div class="ejercicio14">
+        <a href="#">Enlace No Visitado</a><br>
+    </div>
+    <div class="ejercicio14">
+        <a href="#">Enlace Visitado</a><br>
+    </div>
+    <div class="ejercicio14">
+        <a href="#">Enlace Hover</a><br>
+    </div>
+    <div class="ejercicio14">
+        <a href="#">Enlace Active</a><br>
+    </div>
+
+    Ejercicio 15. Crea dos regla para que los elementos con la clase ejercicio15
+    <div class="ejercicio15">
+        <p>Este párrafo es verde porque está dentro de un contenedor con la clase ejercicio15 </p>
+    </div>
+
+    <div class="ejercicio15">
+        <p>Otro párrafo verde dentro de ejercicio14.</p>
+    </div>
+
+    Ejercicio 16. Crea dos regla para que los elementos con la clase ejercicio15
+    <p style="color: black;">Este parrafo deberia ser negro</p>
+
+    Ejercicio 17. Crea cuatro reglas para que los elementos p con la clase ejercicio17
+    <p class="ejercicio17">Hola, este es un parrafo de ejemplo. Adios, fin del ejemplo.</p>
+    <p class="ejercicio17">Hola, otro párrafo con más texto. Adios y hasta luego.</p>
+
+
+    <h2>Ejercicio 18</h2>
+    <form>
+        <label for="input1">Campo 1:</label>
+        <input type="text" id="input1" name="input1">
+        <br>
+        <label for="input2">Campo 2:</label>
+        <input type="text" id="input2" name="input2">
+        <br>
+        <label for="input3">Campo 3:</label>
+        <input type="text" id="input3" name="input3">
+        <br>
+        <label for="input4">Campo 4:</label>
+        <input type="text" id="input4" name="input4">
+        <br>
+        <label for="input5">Campo 5:</label>
+        <input type="text" id="input5" name="input5">
+    </form>
+
+    <h2>Ejercicio 19</h2>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+    </ul>
+
+
+    <h2>Ejercicio 20</h2>
+    <p lang="es">Este parrafo está en español.</p>
+    <p lang="en">This paragraph is in English.</p>
+    <p lang="fr">Ce paragraphe est en français.</p>
+    <p lang="de">Dieser Absatz ist auf Deutsch.</p>
+    <p lang="en">Another paragraph in English.</p>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    //hsl
+    Ahora, expliquemos los parámetros de la función hsl():
+ El valor h es el matiz de color, con un valor de 0deg a 360deg. En caso de omitir la unidad como , se
+asumen deg.
+ La cifra s es el porcentaje de saturación, de 0% a 100%.
+ La cifra l es el porcentaje de luminosidad, de 0% a 100%.
+
+//hsla
+Notación funcional: hsl(H S L[ / A])
+ h: Un <número>, un <ángulo> o la palabra clave ninguno, que representa el ángulo de tono. Se pueden
+encontrar más detalles sobre este tipo en la referencia de <hue>.
+ S: Un <porcentaje> o la palabra clave ninguno, que representa saturación. Aquí el 100% está
+completamente saturado, mientras que el 0% está completamente insaturado (gris).
+ L: Un <porcentaje> o la palabra clave ninguno, que representa ligereza. Aquí el 100% es blanco, el 0% es
+negro y el 50% es "normal".
+ Un <valor alfa> o la palabra clave none, donde el número 1 corresponde al 100% (opacidad total).
+
+    //hwb
+    Ahora, expliquemos los parámetros de la función hwb():
+El valor h es el matiz de color, con un valor de 0deg a 360deg. Se puede omitir la unidad como .
+La cifra w es el porcentaje de claridad, de 0% a 100%.
+La cifra b es el porcentaje de oscuridad, de 0% a 100%.
+
+
+//lch
+Notación funcional: lch(L C H[ / A])
+l
+ L – luminosidad: Un <número> entre 0 y 100, un <porcentaje> entre 0% y 100%, o la palabra
+clave ninguno, que especifica la luminosidad CIE. Aquí el número 0 corresponde al 0% (negro) y
+el número 100 corresponde al 100% (blanco).
+ C- croma : Un <número>, un <porcentaje> o la palabra clave ninguno, donde 0% es 0 y 100% es
+el número 150. Es una medida del croma (que representa aproximadamente la "cantidad de
+color"). Su valor mínimo útil es 0, mientras que su máximo es teóricamente ilimitado (pero en la
+práctica no supera 230).
+ h tono-hue : Un <número>, un <ángulo> o la palabra clave ninguno, que representa el ángulo
+de tono. Se pueden encontrar más detalles sobre este tipo en la referencia de <hue>.
+
+    //lab
+    Sintaxis
+ lab(29% 39 20);
+ lab(52% 40 59);
+ lab(52% 40 59/.5);
+
+
+// oklab
+Mientras que los parámetros A y B de lab() se mueven entre valores -125 y 125, los parámetros A
+y B de oklab() se mueven entre valores -0.4 y 0.4.
+
+</body>
+</html>
