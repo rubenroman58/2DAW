@@ -22,7 +22,7 @@
         console.log("Elementos eliminados:", eliminados); // [3, 4]
 
 
-        
+
 
         let numeros = [10, 20, 30, 40, 50, 60];
 
@@ -222,6 +222,60 @@
         empleadosFinal = empleados.reduceRight((acumulador, nombre) => acumulador + '-' + nombre)
         document.write(empleadosFinal)
         document.write('<br>')
+
+        // unir dos arrays eliminando los duplicados:
+        let array1 = [1, 2, 3, 4];
+        let array2 = [3, 4, 5, 6];
+
+        // Unir los dos arreglos y eliminar duplicados
+        let resultado = [...new Set(array1.concat(array2))];
+
+        console.log(resultado);  // [1, 2, 3, 4, 5, 6]
+
+
+        //mix in
+
+        // Definimos los mix-ins
+        const puedeHablar = {
+            hablar() {
+                console.log('Hola, ¿cómo estás?');
+            }
+        };
+
+        const puedeCaminar = {
+            caminar() {
+                console.log('Estoy caminando...');
+            }
+        };
+
+        // Clase Persona que usa ambos mix-ins
+        class Persona {
+            constructor(nombre) {
+                this.nombre = nombre;
+            }
+        }
+
+        // Usamos Object.assign() para mezclar los mix-ins en la clase Persona
+        Object.assign(Persona.prototype, puedeHablar, puedeCaminar);
+
+        // Crear una instancia de la clase Persona
+        const persona1 = new Persona('Juan');
+        persona1.hablar();  // Output: Hola, ¿cómo estás?
+        persona1.caminar();  // Output: Estoy caminando...
+
+        // Clase Animal que usa solo el mix-in puedeCaminar
+        class Animal {
+            constructor(especie) {
+                this.especie = especie;
+            }
+        }
+
+        // Usamos Object.assign() para mezclar solo el mix-in puedeCaminar
+        Object.assign(Animal.prototype, puedeCaminar);
+
+        // Crear una instancia de la clase Animal
+        const perro = new Animal('Perro');
+        perro.caminar();  // Output: Estoy caminando...
 
 
     </script>

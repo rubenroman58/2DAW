@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+
+    <style>
+        @font-face {
+            font-family: 'Lobster';
+            font-style: normal;
+            font-weight: 400;
+            src: url(lobster.woff2) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        .cajabonita {
+            font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+            color: #006;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            background: #ccccff;
+            overflow: hidden;
+            padding: 20px;
+            width: 500px;
+            margin: 40px auto;
+            border-radius: 35px 0px 35px 0px;
+            -moz-border-radius: 35px 0px 35px 0px;
+            -webkit-border-radius: 35px 0px 35px 0px;
+            border: 2px solid #0000ff;
+        }
+
+        .bolitas {
+            text-align: left;
+        }
+
+        h1,
+        h2 {
+            color: #0000DD;
+            font-family: 'Georgia';
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        /*
+         _____    ________             ____
+        / ___/   (___  ___)           /   /
+       ( (__         ) )             / /) )
+        ) __)       ( (             /_/( ( 
+       ( (       __  ) )                ) )
+        \ \___  ( (_/ /      __        ( ( 
+         \____\  \___/      (__)       /__\
+           */ </script>
+
+    <div class="cajabonita">
+        <h1> Nombre: </h1>
+    </div>
+    <div class="cajabonita">
+        <h2>Ejercicio 1 Arrays</h2>
+        <h3>Ejercicio 1.1 Arrays</h3>
+        Dados 2 Arrays de tamaño distintos crea una funcion function ej1Mezclar(array1, array2 ) mezcladlos y mostrados
+        por pantalla <br>
+        let array1 = [1,2,4,5]<br>
+        let array2 = [6,7,1]<br>
+        ej1Mezclar( array1, array2) // [1,6,2,7,4,1,5]<br><br>
+        <div id="ej11"><strong> Mostrar aqui resultado </strong></div>
+        <h3>Ejercicio 1.2 Arrays</h3>
+        2. Arrays . Modifica el anterios para que tenga por entrada 4 arrays Arrays de tamaño distinto mezcladlos y
+        mostrados por pantalla con los elementos mezclados. <br><br>
+
+        ej2Mezclar(array1, array2, array3, array4)<br>
+        let array1 = [1,2,4,5,3]<br>
+        let array2 = [6]<br>
+        let array3 = [10,11]<br>
+        let array4 = [26,27,28]<br>
+        ej12Mezclar (array1, array2,array3 ,array4 ) // [1,6,10,26,2,11,27,4,28, 5,3]<br>
+
+        <script>
+            function mezclarArrays(...arrays) {
+                let longitudMaxima = Math.max(...arrays.map(arr => arr.length));
+                let arrayUnido = [];
+
+                for (let i = 0; i < longitudMaxima; i++) {
+                    arrays.forEach(array => {
+                        if (array[i] !== undefined) {
+                            arrayUnido.push(array[i]);
+                        }
+                    });
+                }
+
+                document.write(arrayUnido.join(', '));
+            }
+
+
+            let array1 = [18, 23, 44, 56];
+            let array2 = [66, 77, 11];
+            let array3 = [100];
+
+
+            document.write('RESULTADO<br>')
+            mezclarArrays(array1, array2);
+            document.write('<br>')
+            mezclarArrays(array1, array2, array3);
+
+        </script>
+
+        <script>
+            /*
+  _____    ________             ______  
+ / ___/   (___  ___)           (____  \ 
+( (__         ) )                   ) / 
+ ) __)       ( (               __  / /  
+( (       __  ) )             /  \/ / __
+ \ \___  ( (_/ /      __     ( () \__/ /
+  \____\  \___/      (__)     \__\____( 
+               */
+        </script>
+
+    </div>
+    <div class="cajabonita">
+        <h2>Ejercicio 2 Funciones</h2>
+        <label>Año</label>
+        <input type="text" id="year"><br>
+        <label>Mes</label>
+        <input type="text" id="mes"><br>
+        <label>Dia</label>
+        <input type="text" id="dia"><br><br>
+        Debe devolver años*365+mes*30+dia
+        <button onclick="calcularDias()">Escribe la fecha Funcion Tradicional</button>
+        <p id="fechaIntroducida">Fecha: </p>
+        <button onclick="calcularDiasAnonima()">Escribe la fecha Funcion Anonima</button>
+        <p id="fechaIntroducidaanonima">Fecha: </p>
+        <button onclick="calcularDiasLambda()">Escribe la fecha funcion flechas</button>
+        <p id="fechaIntroducidaflechas">Fecha: </p>
+        <button onclick="auto()">Autoejecutable</button>
+        <p id="auto">Fecha: </p>
+        <button onclick="calcularDiasLambdaparametrosColor('#444')">Escribe funcion flechas parametros </button>
+        <p id="fechaIntroducidaflechasColor">Fecha:</p>
+
+
+
+        <script>
+
+            function calcularDias() {
+
+                var anio = document.getElementById('year').value;
+                var dia = document.getElementById('mes').value;
+                var mes = document.getElementById('dia').value;
+                var resultado2 = (anio * 365) + (mes * 30) + dia
+
+                document.getElementById('fechaIntroducida').innerHTML = resultado2;
+            }
+            const calcularDiasAnonima = function () {
+                var anio = document.getElementById('year').value;
+                var dia = document.getElementById('mes').value;
+                var mes = document.getElementById('dia').value;
+                let resultado3 = (anio * 365) + (mes * 30) + dia
+
+                document.getElementById('fechaIntroducidaanonima').innerHTML = resultado3;
+            };
+            auto(function () {
+                var anio = document.getElementById('year').value;
+                var dia = document.getElementById('mes').value;
+                var mes = document.getElementById('dia').value;
+                let resultado4 = (anio * 365) + (mes * 30) + dia
+
+                document.getElementById('auto').innerHTML = resultado4;
+            })();
+            const calcularDiasLambda = () => {
+                var anio = document.getElementById('year').value;
+                var dia = document.getElementById('mes').value;
+                var mes = document.getElementById('dia').value;
+                let resultado5 = (anio * 365) + (mes * 30) + dia
+
+                return document.getElementById('fechaIntroducidaflechas').innerHTML = resultado5;
+            };
+
+            const flechaParametros = (a, b) => a + b;
+            document.write(flechaConParametros(7, 8));
+        </script>
+
+        <h4> Muestra los datos aqui </h4>
+        <div id="info2"></div>
+    </div>
+
+    <script>
+        /*
+  _____    ________          _____  
+ / ___/   (___  ___)         )__  \ 
+( (__         ) )             __) / 
+ ) __)       ( (             (__ (  
+( (       __  ) )               \ \ 
+ \ \___  ( (_/ /      __     ___/  )
+  \____\  \___/      (__)    )____/ 
+           */
+    </script>
+
+
+    <div class="cajabonita">
+        <div class="bolitas">
+            <h2>Ejercicio 3 Objetos</h2>
+            Crea un objeto BecarioDaw con los siguientes valores metodos y propiedades <br>
+            1. Propiedades: Nombre, Apellidos, id, lenguajes, HoraEntrada (Array de 7 numeros) HoraSalida ( array de 7
+            numeros ), fecha incorporación, Nota<br>
+            2. Metodos: <br>
+            a) Constructor que debe ser polimorfico (los valores se toman por orden de entrada)<br>
+            ejemplo <br>
+            pepe =new
+            BecarioDaw('Pepe','Lopez',1,'c,javascript,java',[9,7,8,9,11,0,0],[15,15,13,16,15,0,0],'01/01/2022',8)<br><br>
+            b) Antiguedad() : Devuelve el numero de dias en la empresa <br> <br>
+            c) MostrarHorario(): Devuelve un string con el horario <br> <br>
+            d) Salida(Dia) : muestra la hora de entrada de ese dia de la semana<br> <br>
+            e) MejorDia(): te devuelve el dia que menos trabaja. <br> <br>
+            f) ImprimirSemana()<br>
+            Debes devolver un string con un grafico del horario por ejemplo para el anterior <br>
+            [9, 7, 8, 11, 12, 0, 9]<br>
+            [15, 15, 13, 16, 15, 0, 11]<br>
+            <br>
+            ****************************************************<br>
+            - L M X J V S D<br>
+            7 - * - - - - -<br>
+            8 - * * - - - -<br>
+            9 * * * - - - *<br>
+            10 * * * - - - *<br>
+            11 * * * * - - *<br>
+            12 * * * * * - -<br>
+            13 * * * * * - -<br>
+            14 * * - * * - -<br>
+            15 * * - * * - -<br>
+            16 - -- - * - - -<br>
+            *****************************************************<br>
+            <br>
+        </div>
+        <br><br>
+        <h4> Muestra los datos aqui </h4>
+        <script>
+            function BecarioDaw(nombre, apellidos, id, lenguajes, horaEntrada, horaSalida, fechaIncorporacion, nota) {
+                this.nombre = nombre;
+                this.apellidos = apellidos;
+                this.id = id;
+                this.lenguajes = lenguajes;
+                this.horaEntrada = horaEntrada;
+                this.horaSalida = horaSalida;
+                this.fechaIncorporacion = new Date(fechaIncorporacion);
+                this.nota = nota;
+            }
+            BecarioDaw.prototype.Antiguedad = function () {
+                const hoy = new Date();
+                return Math.floor((hoy - this.fechaIncorporacion) / (1000 * 60 * 60 * 24));
+            };
+
+            BecarioDaw.prototype.MostrarHorario = function () {
+                return this.horaEntrada.map((j, i) => `${j} - ${this.horaSalida[i]}`).join(", ");
+            };
+
+            BecarioDaw.prototype.Salida = function (dia) {
+                return `Dia ${dia}: Entrada: ${this.horaEntrada[dia]}, Salida: ${this.horaSalida[dia]}`;
+            };
+
+            BecarioDaw.prototype.MejorDia = function () {
+                const horasTrabajadas = this.horaSalida.map((sali, i) => sali - this.horaEntrada[i]);
+                const minimo = Math.min(...horasTrabajadas);
+                return horasTrabajadas.indexOf(minimo);
+            };
+
+            BecarioDaw.prototype.ImprimirSemana = function () {
+                let grafico = [];
+                let dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
+                for (let h = 0; h <= 16; h++) {
+                    let linea = dias.map((_, i) => (this.horaEntrada[i] <= h && this.horaSalida[i] > h ? "*" : "-")).join("");
+                    grafico.push(`${h} ${linea}`);
+                }
+                return grafico.join("\n");
+            };
+
+
+            const pepe = new BecarioDaw("Pepe", "Lopez", 1, ["C++", "CSS", "Java"], [9, 7, 8, 9, 11, 0, 0], [15, 15, 13, 16, 15, 0, 0], "06/07/2001", 8);
+            dodocument.write('Pepe tiene una antiguedad de: ' + pepe.Antiguedad());
+            dodocument.write('El horraio d epepe es: ' + pepe.MostrarHorario());
+            dodocument.write('La salida de pepe es:' + pepe.Salida());
+            dodocument.write('El mejor dia de pepe es: ' + pepe.MejorDia());
+            dodocument.write('La semana de pepe es: ' + pepe.ImprimirSemana());
+
+
+
+        </script>
+
+    </div>
+
+    <script>
+        /*
+  _____    ________            _   _    
+ / ___/   (___  ___)          / / / \   
+( (__         ) )            ( (__) (___
+ ) __)       ( (              \___   __(
+( (       __  ) )                 ) (   
+ \ \___  ( (_/ /      __          ) (   
+  \____\  \___/      (__)        /___\  
+
+           */
+    </script>
+
+    <div class="cajabonita">
+        <h2>Ejercicio 4 Objetos ECMA2015</h2>
+        4. Toma el documento Ejercicio4.html Usando el modelo de javascript ECMA2015 y Realiza el mismo ejemplo que el
+        anterior (sin las funciones) pero añadele los siguientes valores <br>
+        <br>
+        1. al Objeto BecarioDaw añade los set y get de las propiedades.<br>
+        2. Una clase hija llamada BecarioDawContratado que tenga una metodo y una propiedad adicional <br>
+        a) Propiedad: SalarioSemanal<br>
+        b) metodos: <br>
+        1. MediaSalarioHoras.<br> Que suponiendo que el salario es semanal . con los datos de los arrays anteriores
+        saque la Media Salario Por Horas por ejemplo para el anterior <br>
+        Entradas = [9, 7, 8, 11, 12, 0, 9]<br>
+        Salidas = [15, 15, 13, 16, 15, 0, 11]<br>
+        Horas = 6 +8 +5 +4 +3 +0 +2 = 28h<br>
+        Si es sueldo = 500€ <br>
+        MediaSalarioHoras = 500/28 = 17,85 €/hora<br>
+
+        <script>
+
+            class BecarioDaw {
+                constructor(nombre, apellidos, id, lenguajes, horaEntrada, horaSalida, fechaIncorporacion, nota) {
+                    this.nombre = nombre;
+                    this.apellidos = apellidos;
+                    this.id = id;
+                    this.lenguajes = lenguajes;
+                    this.horaEntrada = horaEntrada;
+                    this.horaSalida = horaSalida;
+                    this.fechaIncorporacion = new Date(fechaIncorporacion);
+                    this.nota = nota;
+                }
+
+                getNombre() {
+                    return this.nombre;
+                }
+
+                setNombre(nombre) {
+                    this.nombre = nombre;
+                }
+
+                getApellidos() {
+                    return this.apellidos;
+                }
+
+                setApellidos(apellidos) {
+                    this.apellidos = apellidos;
+                }
+
+                getId() {
+                    return this.id;
+                }
+
+                setId(id) {
+                    this.id = id;
+                }
+
+                getAntiguedad() {
+                    const hoy = new Date();
+                    return Math.floor((hoy - this.fechaIncorporacion) / (1000 * 60 * 60 * 24));
+                }
+
+                setLenguajes(lista) {
+                    this.lenguajes = lista.split(",");
+                }
+
+                mostrarHorario() {
+                    return this.horaEntrada.map((h, i) => `${h} - ${this.horaSalida[i]}`).join(", ");
+                }
+            }
+
+            class BecarioDawContratado extends BecarioDaw {
+                constructor(nombre, apellidos, id, lenguajes, horaEntrada, horaSalida, fechaIncorporacion, nota, salarioSemanal) {
+                    super(nombre, apellidos, id, lenguajes, horaEntrada, horaSalida, fechaIncorporacion, nota);
+                    this.salarioSemanal = salarioSemanal;
+                }
+                setsalarioSemanal(salarioSemanal) {
+                    this.salarioSemanal = salarioSemanal;
+                }
+                getsalarioSemanal() {
+                    return this.salarioSemanal = salarioSemanal;
+                }
+
+                getSalarioPorHora() {
+                    let horasTotales = this.horaSalida.reduce((acumulador, salida, i) => acumulador + (salida - this.horaEntrada[i]), 0);
+                    return (this.salarioSemanal / horasTotales);
+                }
+            }
+            document.write('Datos ejercicio 5');
+            const ruben2 = new BecarioDawContratado("Luis", "Garcia", 2, "Java", 9, 13, "21/11/2007", 9, 500);
+            document.write('Datos ejercicio 5');
+            document.write(ruben2.getNombre());
+
+        </script>
+        <h4> Muestra los datos aqui </h4>
+
+
+    </div>
+
+
+
+    <script>
+        /*
+  _____    ________           ______ 
+ / ___/   (___  ___)         |  ___( 
+( (__         ) )            | |__   
+ ) __)       ( (             |___ \  
+( (       __  ) )                \ \ 
+ \ \___  ( (_/ /      __     _____) )
+  \____\  \___/      (__)    )_____/ 
+  
+           */
+    </script>
+
+
+
+    <div class="cajabonita">
+        <h2>Ejercicio 5 Conjuntos</h2>
+        <br> 1. Crea una función crearConjunto que dado un numero indeterminado de parametros, nos devuelva un array que
+        con
+        solo los que NO estan repetidos.
+        <br> CrearConjunto(7,2,3,4,555,5,5,5,5,5,5,5,5,5,3,3,3,1,1,1) debe devolver [7,2,3,4,5,1]
+
+        <br> 2. Añade una funcion unirConjuntos(c1,c2) que una ambos conjuntos eliminando los repetidos
+        <br> unirConjuntos( [7,2,3,6,5,1] ,[7,2,3,4,5,1,10,9] ) debe devolver [7,2,3,4,5,1]
+
+        <br> 3. Añade una funcion disjuntosConjuntos(c1,c2) que una ambos conjuntos eliminando los que estan en ambos
+        <br> disjuntosConjuntos( [7,2,3,6,5,1] ,[7,2,3,4,5,1,10,9] ) debe devolver [6,10,9]
+
+        <br> 4. Añade una funcion MostrarConjunto() muestre como un string el array
+        <br> Se valorara el uso de las funciones propias de los conjuntos
+        <h4> Muestra los datos aqui </h4>
+
+        <div id="info5"></div>
+        <script>
+            function crearConjunto(...valores) {
+                return [...new Set(valores)];
+            }
+
+            function unirConjuntos(conjunto1, conjunto2) {
+                return [...new Set([...conjunto1, ...conjunto2])];
+            }
+
+            function disjuntosConjuntos(conjunto1, conjunto2) {
+                return [...new Set([...conjunto1.filter(x => !conjunto2.includes(x)), ...conjunto2.filter(x => !conjunto1.includes(x))])];
+            }
+
+            let a = crearConjunto(1, 4, 1, 4, 1, 2, 1, 7, 7, 7, 9, 21);
+            let b = crearConjunto(1, 4, 24, 12, 17, 1, 7, 9, 21);
+            let c = crearConjunto(1, 4, 5, 3, 4, 1);
+            let d = disjuntosConjuntos(a, b)
+            let u = unirConjuntos(a, b)
+
+            document.write('Crear conjunto: ' + a + '<br>')
+            document.write('Unir conjunto: ' + u + '<br>')
+            document.write('Disjustos vonjuntos: ' + a)
+
+
+
+        </script>
+    </div>
+
+
+    <script>
+        /*
+  _____    ________             ______ 
+ / ___/   (___  ___)           / ____( 
+( (__         ) )             / /      
+ ) __)       ( (             ( (_____  
+( (       __  ) )            (   ___ \ 
+ \ \___  ( (_/ /      __      \ (___) )
+  \____\  \___/      (__)      \_____/ 
+  
+           */
+    </script>
+
+    <div class="cajabonita">
+        <h2>Ejercicio 6. Objeto Map </h2>
+
+        <script>
+            let alumnos = new Map([
+                [["kiko", "veneno"], [5, 5, 5, 4, 3]],
+                [["pedro", "perez"], [9, 1, 2, 3, 3]],
+                [["lola", "gomez"], [5, 9, 1, 4, 3]],
+                [["juan", "saiz"], [1, 9, 9, 1, 3]],
+                [["paco", "saiz"], [5, 1, 1, 9, 3]]
+            ]);
+
+            function eliminarAlumno([nombre, apellido]) {
+                alumnos.delete([nombre, apellido]);
+
+            }
+
+            function mejorExpediente() {
+                let mejor = null;
+                let mejorMedia = 0;
+                for (let [clave, valor] of alumnos.entries()) {
+                    let media = valor.reduce((acc, val) => acc + val, 0) / valor.length;
+                    if (media > mejorMedia) {
+                        mejor = clave;
+                        mejorMedia = media;
+                    }
+                }
+
+                return mejor;
+            }
+            document.write(' <h4> Muestra los datos aqui </h4>')
+            for (let entry of alumnos) {
+                document.write(entry + '<br>')
+            }
+            document.write('El mejor expediente es: ' + alumnos.mejorExpediente())
+            document.write('El alumno ha sido eliminado: ' + alumnos.eliminarAlumno("paco", "sainz"))
+
+
+        </script>
+
+
+
+    </div>
+
+
+    <script>
+        /*
+  _____    ________          _________
+ / ___/   (___  ___)         )____   /
+( (__         ) )              ___) / 
+ ) __)       ( (               )__ (  
+( (       __  ) )                 ) ) 
+ \ \___  ( (_/ /      __         ( (  
+  \____\  \___/      (__)        /__\ 
+  
+           */
+    </script>
+
+
+    <div class="cajabonita">
+        <h2>Ejercicio 7. Funcion Map</h2>
+        . los ejercicio de esto punto deben hacerse con metodos funcionales si no no vale<br>
+        ◦ Crea una función quitarInicioFin(array) que recorra un array de cadenas y nos devuelva la palabras que
+        aparecen sin la primera y la ultimas <br>
+        quitarInicioFin(['Pepe','Lopez','c','javascript','java']) // 'ep','ope','','avascrip','av',<br>
+
+        ◦ Crea una función multiplicarSumarIndices que nos devuelva el resultado de multiplicar cada numero por su
+        posicion y sumarlos por ejemplo <br>
+        multiplicarSumarIndices([1,3,4,6,1]) // [0*1+1*3+2*4+6*3+1*5] = 3+8+18+5 =34<br>
+
+        ◦ Crea una función ordenTamaño que tenga por entrada un array de strings y nos lo devuelva ordenados por su
+        tamaño y si son iguales por el orden alfabetico de la ultima letra<br>
+        ordenTamaño (["hola", "zv", "adios", "az" , " b"]) => [" b", "zv", "az" , "hola","adios" ]<br>
+
+        ◦ Crea una función sumasArraysLetras que sume todos los elementos de un array de arrays . Puede haber letras con
+        los valores Hexadecimales A = 10 B=11 … F= 15 … si sale algo mas que F suma 0 <br>
+        sumasArraysLetras ([ 1,2], ["B",1, 1], [1,3,"A"] ]) => 1+2+11+1+1+1+3+10 = 30
+        <script>
+            // aqui debe ir el codigo del objeto
+
+            function quitarInicioFin(array) {
+                nuevoArray = array.map(palabra => palabra.slice(1, -1))
+                return nuevoArray
+            }
+            function multiplicarSumarIndices(array) {
+                nuevoArray = array.map(numero => numero * array.indexOf(numero))
+                suma = nuevoArray.reduce((acumulador, valor) => acumulador + valor, 0)
+
+                return suma
+
+            }
+            function ordenTamaño(array) {
+                nuevoArray = array.sort((a, b) => b - a)
+                document.write(nuevoArray)
+
+            }
+            function sumasArraysLetras(array) {
+                nuevoArray=array.flatMap((acumulador, valor) => acumulador + valor, 0)
+             }
+
+            let quitarInicioFin_st = quitarInicioFin(['Pepe', 'Lopez', 'c', 'javascript', 'java']);
+            let multiplicarSumarIndices_st = multiplicarSumarIndices([1, 3, 4, 6, 1])
+            let ordenTamaño_st = ordenTamaño(["hola", "zv", "adios", "az", " b"])
+            let sumasArraysLetras_st = sumasArraysLetras([1, 2], ["B", 1, 1], [1, 3, "A"])
+            document.write('<h4> Muestra los datos aqui </h4>')
+            document.write('El nuevo array es: ' + quitarInicioFin_st)
+            document.write('<br>')
+            document.write('La suma total es: ' + multiplicarSumarIndices_st)
+            document.write('<br>')
+            document.write(ordenTamaño_st)
+            document.write('<br>')
+            document.write(sumasArraysLetras_st)
+
+        </script>
+
+
+
+    </div>
+
+
+    <script>
+        /*
+  _____    ________            _____  
+ / ___/   (___  ___)          /  _  \ 
+( (__         ) )            (  (_)  )
+ ) __)       ( (              \  _  / 
+( (       __  ) )             / / \ \ 
+ \ \___  ( (_/ /      __     ( (___) )
+  \____\  \___/      (__)     \_____/   
+  
+           */
+    </script>
+
+
+
+    <div class="cajabonita">
+        <h2>Ejercicio 8. Arrays Multidimensional</h2>
+        <br>Dado un valor num haz un array del triangulo de pascal y muestralo por pantalla Para hacer el triangulo solo
+        debes
+        ver que <br><br>
+        <strong> triangulo[i][1] = (triangulo[i][0] + triangulo[i-1][0]) </strong><br><br>
+        si el valor esta definido en ese parametro si no 0. Por ejemplo para n=6
+        <br> <img src="./pascal.png.jpg" width="500" />
+        <script>
+            function Ejercicio8pascal(num) {
+
+
+                let triangulo = [];
+                for (let i = 0; i <= num; i++) {
+                    triangulo[i] = [];
+                    for (let j = 0; j <= i; j++) {
+                        if (j === 0 || j === i) {
+                            triangulo[i][j] = 1;
+                        } else {
+                            triangulo[i][j] = triangulo[i - 1][j - 1] + triangulo[i - 1][j];
+                        }
+                    }
+                }
+
+                return triangulo
+            }
+
+            document.write('Triangulo de pascal: ' + Ejercicio8pascal(6));
+        </script>
+       
+
+        <div id="info8"></div>
+    </div>
+
+    <script>
+        /*
+  _____    ________            _____   
+ / ___/   (___  ___)          / __  \  
+( (__         ) )            ( (__)  \ 
+ ) __)       ( (              \_____  )
+( (       __  ) )                   ) )
+ \ \___  ( (_/ /      __       ____/ / 
+  \____\  \___/      (__)     )_____/   
+  
+           */
+    </script>
+
+
+    <div class="cajabonita">
+        <h2>Ejercicio 9. Arrays Multidimensional</h2>
+        9. Calcula un termino de la secuencia de fibonaci usando el triangulo de pascal sabiendo que se calcula con las
+        diagonales de este triangulo
+
+        fib(n) = triangulo[n][0] +triangulo[n-1][1] + … + triangulo[0][n]
+        <img src="./fibopascal.jpg" width="500" />
+        <script>
+            function Ejercicio9fib(num) {
+
+                let triangulo = [];
+                for (let i = 0; i <= num; i++) {
+                    triangulo[i] = [];
+                    for (let j = 0; j <= i; j++) {
+                        if (j === 0 || j === i) {
+                            triangulo[i][j] = 1;
+                        } else {
+                            triangulo[i][j] = triangulo[i - 1][j - 1] + triangulo[i - 1][j];
+                        }
+                    }
+                }
+
+
+                let fibonacci = 0;
+                for (let i = 0; i <= num; i++) {
+                    fibonacci += triangulo[i][i];
+                }
+                return fibonacci
+
+            }
+
+
+            document.write('Resultado de la secuencia de fibonaci: ' + Ejercicio9fib(9));
+        </script>
+
+       
+
+        <div id="info9"></div>
+
+
+</body>
+
+</html>
