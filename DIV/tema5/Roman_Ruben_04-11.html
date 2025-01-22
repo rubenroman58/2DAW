@@ -1,10 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 3fr;
+            gap: 40px 40px;
+            grid-template-areas:
+                ". . . "
+                ". . ."
+                ". . .";
+            width: 100%;
+            height: 400px;
+            background-color: azure;
+        }
+
+        .container > div {
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Color para las celdas impares (odd) */
+        .container > div:nth-child(odd) {
+            background-color: green/* Verde */
+        }
+
+        /* Color para las celdas pares (even) */
+        .container > div:nth-child(even) {
+            background-color: rgb(243, 5, 5); /* Rojo */
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>Ejercicio 1</h2>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+    </div>
+    <h2>Ejercicio 2</h2>
 </body>
+
 </html>
