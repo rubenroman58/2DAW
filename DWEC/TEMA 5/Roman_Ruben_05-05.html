@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejercicio 2</h2>
+    <p>Una expresión regular es un patrón de búsqueda que se utiliza para encontrar, verificar o manipular cadenas de
+        texto que siguen un formato específico. </p>
+    <h2>Ejercicio 3</h2>
+    <p>Su funcion es la busqueda de algo especifico, validacion,reemplazo extraccion... </p>
+    <h2>Ejercicio 4</h2>
+    <p>Una expresión regular con literales es aquella en la que escribimos directamente el patrón entre las barras / sin
+        necesidad de usar el constructor RegExp </p>
+    <script> let re = /b+ca/;
+        let result = re.exec('acbbbcabaabbbceee');
+        document.write(result) </script>
+
+    <h2>Ejercicio 5</h2>
+    <script> let re2 = /ab+c/;
+        let result2 = re2.exec('ababaabbbceee');
+        document.write(result2) </script>
+
+    <h2>Ejercicio 7</h2>
+    <p>Literales: Se escriben con barras /patrón/ y son más sencillas.
+        Constructor: Se escriben con new RegExp('patrón'), útil cuando el patrón es dinámico.</p>
+    <h2>Ejercicio 8</h2>
+    <p>Son expresiones regulares que buscan coincidencias exactas, sin usar metacaracteres.</p>
+    <h2>Ejercicio 9 y 10</h2>
+    <p>Son símbolos con significado especial en regex, como *, +, .. Ejemplo: . coincide con cualquier carácter.</p>
+    <h2>Ejercicio 11</h2>
+    <p>-Patrones compuestos: Combinan varios elementos, como grupos y cuantificadores.
+        -Aserciones: Verifican una condición sin consumir caracteres.
+        -Grupos y rango: Agrupan partes de un patrón y definen opciones (ej. [a-z]).
+        -Cuantificadores: Definen cuántas veces debe repetirse un patrón (ej. *).
+        -Escape de propiedades Unicode: Usan \u para representar caracteres Unicode.</p>
+    <h2>Ejercicio 12</h2>
+    <p>Son caracteres precedidos por \ para representar caracteres especiales. Ejemplo: \d (dígitos), \. (punto
+        literal).</p>
+    <h2>Ejercicio 14</h2>
+    <p>-Usando el método exec()
+        -Usando el método test()
+    </p>
+    <h2>Ejercicio 15</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Método</th>
+                <th>Devuelve</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>RegExp.exec(String)</td>
+                <td>Array o null</td>
+                <td>Devuelve un array con la coincidencia o null si no se encuentra.</td>
+            </tr>
+            <tr>
+                <td>RegExp.test(String)</td>
+                <td>Booleano (true o false)</td>
+                <td>Devuelve true si hay coincidencia, false si no la hay.</td>
+            </tr>
+            <tr>
+                <td>String.match(RegExp)</td>
+                <td>Array o null</td>
+                <td>Devuelve un array con todas las coincidencias o null si no hay coincidencias.</td>
+            </tr>
+            <tr>
+                <td>String.matchAll(RegExp)</td>
+                <td>Iterador</td>
+                <td>Devuelve un iterador con todas las coincidencias y grupos de captura.</td>
+            </tr>
+            <tr>
+                <td>String.search(RegExp)</td>
+                <td>Índice (número)</td>
+                <td>Devuelve el índice de la primera coincidencia o -1 si no la encuentra.</td>
+            </tr>
+            <tr>
+                <td>String.replace(RegExp)</td>
+                <td>Cadena</td>
+                <td>Devuelve una nueva cadena con las coincidencias reemplazadas por una nueva subcadena.</td>
+            </tr>
+            <tr>
+                <td>String.replaceAll(RegExp)</td>
+                <td>Cadena</td>
+                <td>Devuelve una nueva cadena reemplazando todas las coincidencias.</td>
+            </tr>
+            <tr>
+                <td>String.split(RegExp)</td>
+                <td>Array</td>
+                <td>Devuelve un array dividiendo la cadena en partes según el patrón de la expresión regular.</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Ejercicio 16</h2>
+    <script>
+        const regexp = /t(e)(st(\d?))/g; const str = 'test1test2';
+        const array = [...str.matchAll(regexp)];
+        document.write(array[0]); // expected output: Array ["test1", "e", "st1", "1"]
+        document.write(array[1]); // expected output: Array ["test2", "e", "st2", "2"]
+    </script>
+
+    <h2>Ejercicio 17</h2>
+    <script>
+        const paragraph = 'The quick brown fox jumps over the lazy dog. It barked.';
+        const regex = /[A-Z]/g;
+
+        const found = paragraph.match(regex);
+        document.write(found); // expected output: Array ["T", "I"]
+        const regex2 = /[A-Z]/;
+        const found2 = paragraph.match(regex2);
+        document.write(found2); // expected output: Array ["T"]
+    </script>
+
+    <h2>Ejercicio 18</h2>
+    <p>
+        Ingresa tu número de teléfono (con el código de área) y luego haz clic en "Comprobar".
+        <br>
+        El formato esperado es como ###-###-####.
+    </p>
+    <form action="#">
+        <input id="phone">
+        <button onclick="testInfo(document.getElementById('phone'));">Comprobar</button>
+    </form>
+    <script>
+        var re3 = /(?:\d{3}|\(\d{3}\))([-\/\.])\d{3}\1\d{4}/;
+        function testInfo(phoneInput) {
+            var OK = re3.exec(phoneInput.value);
+            if (!OK) {
+                document.write(phoneInput.value + ' isn\'t a phone number with area code!');
+            } else {
+                document.write('Gracias, tu número de teléfono es ' + OK[0]);
+            }
+        }
+    </script>
+    <h2>Ejercicio 19</h2>
+    <p>Las banderas en una expresión regular indican características especiales del comportamiento de la búsqueda</p>
+    <h2>Ejercicio 20</h2>
+    <p>Las banderas se colocan al final de la expresión regular, fuera de las barras (/), justo después del patrón</p>
+    <h2>Ejercicio 21</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Bandera</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>d</td>
+                <td>Permite hacer una búsqueda en el texto de forma que se respeten los saltos de línea, buscando más
+                    allá de las fronteras de la línea.</td>
+            </tr>
+            <tr>
+                <td>g</td>
+                <td>Realiza una búsqueda global, es decir, encuentra todas las coincidencias dentro del texto, no solo
+                    la primera.</td>
+            </tr>
+            <tr>
+                <td>i</td>
+                <td>Hace que la búsqueda no sea sensible a mayúsculas o minúsculas (es decir, que "a" y "A" se
+                    consideren iguales).</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+
+</html>
