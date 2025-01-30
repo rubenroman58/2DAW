@@ -5,5 +5,9 @@ from django.shortcuts import render#Necesario para poder responder al cliente
 def index (request): # El request captura las peticiones de los clientes
  return HttpResponse ("<h1>hola mundo</h1>")
 
-def home (request): # Pinta una página con render, también hay que darlo de alta en urls.py
- return render(request,'UnoDjango/index.html') 
+#def home (request): # Pinta una página con render, también hay que darlo de alta en urls.py
+ #return render(request,'UnoDjango/index.html') 
+
+
+
+
