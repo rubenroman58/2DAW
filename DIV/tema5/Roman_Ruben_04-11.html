@@ -33,17 +33,7 @@
             /* Espaciado interno del contenedor */
         }
 
-        .grid-containerEjer5 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            /* Tres columnas de igual ancho */
-            gap: 1px;
-            /* Espaciado entre las celdas */
-            background-color: #ccc;
-            /* Color del fondo del contenedor */
-            padding: 10px;
-            /* Espaciado interno del contenedor */
-        }
+      
 
         .grid-item {
             background-color: #666;
@@ -104,6 +94,19 @@
 
         }
 
+        .grid-containerEjer5 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            grid-template-rows: auto auto auto auto;
+            grid-template-areas:
+                "header header header celda2"
+                "celda3 celda4 celda5 celda2"
+            ;
+            gap: 1px;
+            background-color: #ccc;
+        }
+
         .header {
             grid-area: header;
             background-color: #7f8c8d;
@@ -120,13 +123,7 @@
             padding: 20px;
         }
            
-        .celda2Ejer5 {
-            grid-area: celda2;
-            background-color: #95a5a6;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+     
 
         .celda3 {
             grid-area: celda3;
@@ -232,11 +229,11 @@
 
     <h2>Ejercicio 5</h2>
     <div class="grid-containerEjer5">
-        <div >Usando grid-areas</div>
-        <div >celda 2</div>
-        <div >celda 3</div>
-        <div >celda 4</div>
-        <div >celda 5</div>
+        <div class="grid-header">Usando grid-areas</div>
+        <div class="celda2">celda 2</div>
+        <div class="celda3">celda 3</div>
+        <div class="celda4">celda 4</div>
+        <div class="celda5">celda 5</div>
       
     </div>
 
