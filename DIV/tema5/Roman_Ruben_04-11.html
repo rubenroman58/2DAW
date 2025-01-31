@@ -94,6 +94,19 @@
 
         }
 
+        .grid-template-areasEjer10 {
+            display: grid;
+            grid-template-columns: auto auto ;
+            grid-template-rows: auto auto ;
+            grid-template-areas:
+                "header header "
+                "celda2 celda3 "
+                "celda4 celda5 ";
+            gap: 1px;
+            background-color: #ccc;
+
+        }
+
         .grid-containerEjer5 {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -138,6 +151,51 @@
             background-color: white#ccc;
             /* Fondo del contenedor */
         }
+
+        .grid-containerEjer8 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto auto;
+            grid-template-areas:
+                "celda2 celda3 celda4"
+                "celda5 celda6 celda1";
+
+            gap: 1px;
+            background-color: white#ccc;
+
+        }
+
+        .grid-containerEjer9 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-template-areas:
+                "celda1 celda4"
+                "celda2 celda5"
+                "celda3 celda6";
+
+            gap: 1px;
+            background-color: white#ccc;
+
+        }
+
+        .grid-containerEjer10 {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: auto auto;
+            grid-template-areas:
+                "celda1 celda2"
+                "celda3 grid-template-areasEjer10 "
+                "celda5 grid-template-areasEjer10 ";
+
+            gap: 1px;
+            background-color: white#ccc;
+
+        }
+
+
+    
+
 
         .header {
             grid-area: header;
@@ -187,7 +245,10 @@
             color: white;
             text-align: center;
             padding: 20px;
+
+
         }
+
 
         .celda5 {
             grid-area: celda5;
@@ -195,6 +256,7 @@
             color: white;
             text-align: center;
             padding: 20px;
+
         }
 
         .celda6 {
@@ -306,16 +368,42 @@
 
 
     <h2>Ejercicio 8</h2>
-    <div class="grid-containerEjer7">
-        <div class="celda1Ejer7">celda 1</div>
+    <div class="grid-containerEjer8">
+        <div class="celda1">celda 1</div>
         <div class="celda2">celda 2</div>
-        <div class="celda3">celda 3: contenido que marca el alto de la parte central de la página</div>
+        <div class="celda3">celda 3</div>
         <div class="celda4">celda 4</div>
+        <div class="celda5">celda 5</div>
+        <div class="celda6">celda 6</div>
     </div>
 
 
+    <h2>Ejercicio 9</h2>
+    <div class="grid-containerEjer9">
+        <div class="celda1">celda 1</div>
+        <div class="celda2">celda 2</div>
+        <div class="celda3">celda 3</div>
+        <div class="celda4">celda 4</div>
+        <div class="celda5">celda 5</div>
+        <div class="celda6">celda 6</div>
+    </div>
 
 
+    <h2>Ejercicio 10</h2>
+    <div class="grid-containerEjer10">
+        <div class="celda1">celda 1</div>
+        <div class="celda2">celda 2</div>
+        <div class="celda3">celda 3</div>
+        <div class="grid-template-areasEjer10 ">
+            <div class="header">Grid anidado</div>
+            <div class="celda2">Lista 2</div>
+            <div class="celda3">Lista 3</div>
+            <div class="celda4">Lista 4</div>
+            <div class="celda5">Lista 5</div>
+        </div>
+        <div class="celda5">celda 5</div>
+    </div>
+    
 </body>
 
 </html>
