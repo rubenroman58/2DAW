@@ -94,8 +94,45 @@
           background-color: gray;
           margin: 5px;
         }
+     
+        .ejercicio4 {
+            display: flex;
+            margin: 10px;
+            gap: 10px;
+            height: 300px;
+            border: 2px solid black;
+            padding: 10px;
+            align-items: center;
+        }
 
-        /* Estilo específico para el item1 */
+        .flexbox-item {
+            background-color: lightblue;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            border: 1px solid #000;
+        }
+
+       
+        .opcion-1 {
+            flex-flow: row-reverse nowrap;
+        }
+
+        .opcion-2 {
+            flex-flow: column wrap-reverse;
+        }
+      
+        .opcion-3 {
+            flex-flow: row wrap;
+        }
+    
+        .opcion-4 {
+            flex-flow: column-reverse wrap;
+        }
+   
         .item1 {
             background-color: gray;
             padding: 10px;
@@ -237,6 +274,62 @@
             7
         </div>
     </div>
+
+<h2>Ejercicio 4</h2>
+<div class="ejercicio4 opcion-1">
+    <div class="flexbox-item">1</div>
+    <div class="flexbox-item">2</div>
+    <div class="flexbox-item">3</div>
+    <div class="flexbox-item">4</div>
+    <div class="flexbox-item">5</div>
+    <div class="flexbox-item">6</div>
+    <div class="flexbox-item">7</div>
+    <div class="flexbox-item">8</div>
+    <div class="flexbox-item">9</div>
+    <div class="flexbox-item">10</div>
+</div>
+
+
+<div class="ejercicio4 opcion-2">
+    <div class="flexbox-item">1</div>
+    <div class="flexbox-item">2</div>
+    <div class="flexbox-item">3</div>
+    <div class="flexbox-item">4</div>
+    <div class="flexbox-item">5</div>
+    <div class="flexbox-item">6</div>
+    <div class="flexbox-item">7</div>
+    <div class="flexbox-item">8</div>
+    <div class="flexbox-item">9</div>
+    <div class="flexbox-item">10</div>
+</div>
+
+
+<div class="ejercicio4 opcion-3">
+    <div class="flexbox-item">1</div>
+    <div class="flexbox-item">2</div>
+    <div class="flexbox-item">3</div>
+    <div class="flexbox-item">4</div>
+    <div class="flexbox-item">5</div>
+    <div class="flexbox-item">6</div>
+    <div class="flexbox-item">7</div>
+    <div class="flexbox-item">8</div>
+    <div class="flexbox-item">9</div>
+    <div class="flexbox-item">10</div>
+</div>
+
+
+<div class="ejercicio4 opcion-4">
+    <div class="flexbox-item">1</div>
+    <div class="flexbox-item">2</div>
+    <div class="flexbox-item">3</div>
+    <div class="flexbox-item">4</div>
+    <div class="flexbox-item">5</div>
+    <div class="flexbox-item">6</div>
+    <div class="flexbox-item">7</div>
+    <div class="flexbox-item">8</div>
+    <div class="flexbox-item">9</div>
+    <div class="flexbox-item">10</div>
+</div>
 
 
 </body>
