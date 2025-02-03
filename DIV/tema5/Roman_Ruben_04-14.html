@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .cajaHor {
+            display: flex;
+            border: 1px solid blue;
+        }
+
+        .cajaVer {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid blue;
+            height: 400px;
+        }
+
+        .cajaHor div {
+            background-color: aqua;
+            flex-basis: 25%;
+
+            margin: 2px;
+        }
+
+        .cajaVer div {
+            background-color: aqua;
+            flex-basis: 70%;
+            margin: 2px;
+        }
+
+        #flexbox1 {
+            display: flex;
+            border: 1px solid blue;
+            height: auto;
+        }
+
+        #flexbox1 div {
+            height: 20%;
+            background-color: lightblue;
+            margin: 5px;
+        }
+
+        #flexbox1 .item1 {
+            flex-basis: 40%;
+        }
+
+        #flexbox1 .item2 {
+            flex-basis: 20%;
+        }
+
+        #flexbox1 .item3 {
+            flex-basis: 20%;
+        }
+
+        #flexbox1 .item4 {
+            flex-basis: 40%;
+        }
+
+
+        #flexbox2 {
+            display: flex;
+            border: 1px solid green;
+            height: 30px;
+            margin-top: 20px;
+        }
+
+        #flexbox2 div {
+            height: 70%;
+            background-color: lightcoral;
+            margin: 5px;
+        }
+
+        #flexbox2 .item1 {
+            flex-basis: 5%;
+        }
+
+        #flexbox2 .item2 {
+            flex-basis: 20%;
+        }
+
+        #flexbox2 .item3 {
+            flex-basis: 20%;
+        }
+
+        #flexbox2 .item4 {
+            flex-basis: 20%;
+        }
+
+
+
+
+
+        #flexbox3 {
+            display: flex;
+            border: 1px solid green;
+            height: 50px;
+            margin-top: 20px;
+        }
+
+        #flexbox3 div {
+            background-color: lightcoral;
+            margin: 5px;
+            height: 70%;
+        }
+
+
+        #flexbox3 .item1 {
+            flex: 10;
+            flex-shrink: 10;
+        }
+
+        #flexbox3 .item2 {
+            flex: 1;
+            flex-shrink: 1;
+        }
+
+        #flexbox3 .item3 {
+            flex: 1;
+            flex-shrink: 1;
+        }
+
+        #flexbox3 .item4 {
+            flex: 10;
+            flex-shrink: 10;
+        }
+
+
+
+        #flexbox4 {
+            display: flex;
+            border: 1px solid green;
+            height: 30px;
+            margin-top: 20px;
+        }
+
+        #flexbox4 div {
+            height: 70%;
+            background-color: lightcoral;
+            margin: 5px;
+        }
+
+        #flexbox4 .item1 {
+            flex-grow: 25;
+        }
+
+        #flexbox4 .item2 {
+            flex-grow: 1;
+        }
+
+        #flexbox4 .item3 {
+            flex-grow: 1;
+        }
+
+        #flexbox4 .item4 {
+            flex-grow: 1;
+        }
+
+        .flexboxejer4 {
+            display: flex;
+            border: 1px solid green;
+            height: 300px;
+            margin-top: 20px;
+
+        }
+
+        .flexboxejer4 div {
+     
+            background-color: lightcoral;
+            margin: 5px;
+
+        }
+
+        .flexboxejer4 .item1 {
+            align-self:flex-start ;
+        }
+
+        .flexboxejer4 .item2 {
+            align-self:flex-end ;
+        }
+
+        .flexboxejer4 .item3 {
+            align-self:center ;
+        }
+
+        .flexboxejer4 .item4 {
+            align-self:baseline ;
+        }
+
+        .flexboxejer4 .item5 {
+            align-self:stretch ;
+        }
+
+
+        .ejercicio5 {
+            display: flex;
+            border: 1px solid green;
+            height: 150px;
+            margin-top: 20px;
+        }
+
+        .ejercicio5 div {
+            height: 70%;
+            background-color: lightcoral;
+            margin: 5px;
+        }
+        .ejercicio5 .item1 {
+            order: 5;
+        }
+
+        .ejercicio5 .item2 {
+            order: 6;
+        }
+
+        .ejercicio5 .item3 {
+            order: 4;
+        }
+
+        .ejercicio5 .item4 {
+            order: 7;
+        }
+
+        .ejercicio5 .item5 {
+            order: 3;
+        }
+
+        .ejercicio5 .item6 {
+            order: 8;
+        }
+
+        .ejercicio5 .item7 {
+            order: 2;
+        }
+
+        .ejercicio5 .item8 {
+            order: 9;
+        }
+
+        .ejercicio5 .item9 {
+            order: 1;
+        }
+     
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio1: Ejemplos </h1>
+
+    <p>Bloques dispuestos en filas</p>
+    <div class="cajaHor">
+        <div style="flex-grow: 1;"> flex-grow: 1 <br> hola que tal
+
+        </div>
+        <div style="flex-grow: 3;"> flex-grow: 3</div>
+    </div>
+    <p>Bloques dispuestos en filas</p>
+    <div class="cajaHor">
+        <div> Hijo 1 <br> hola que tal
+
+        </div>
+        <div> Hijo 2 </div>
+    </div>
+
+    <p>Bloques dispuestos en columnas</p>
+    <div class="cajaVer">
+        <div> Hijo 1 </div>
+        <div> Hijo 2 </div>
+    </div>
+
+    <br>
+    <p>Bloques dispuestos en columnas con flex-shrink</p>
+
+    <script>
+        function cambiar() {
+            let valor = document.getElementById('input1').value;
+            document.getElementById('flex1').style.flexShrink = valor;
+            document.getElementById('flex1').innerHTML += "<br> flexShrink: " + valor;
+
+        }
+
+    </script>
+    <input id="input1" type="number" onchange="cambiar()" value="3"><br>
+    <div class="cajaVer">
+        <div style="flex-shrink: 1;">flex-shrink: 1 </div>
+        <div id="flex1" style="flex-shrink: 3;">flex-shrink:3 </div>
+    </div>
+
+    <p>Bloques dispuestos en columnas con alignself</p>
+
+    <div class="cajaVer">
+        <div style="align-self: flex-start;">align-self: flex-start </div>
+        <div style="align-self: center;">align-self: flex-center </div>
+        <div id="flex1" style="align-self: flex-end;">align-self: flex-end </div>
+    </div>
+
+    <p>Bloques dispuestos en columnas con alignself</p>
+
+    <div class="cajaVer">
+        <div style="align-self: flex-start;order:2">align-self: flex-start 1 </div>
+        <div style="align-self: center;order:3">align-self: flex-center 2</div>
+        <div id="flex1" style="align-self: flex-end;order:1">align-self: flex-end 3 </div>
+    </div>
+
+    <h1>Ejercicio 2</h1>
+    <h3>Flexbox 1</h3>
+    <div id="flexbox1">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+        <div class="item4">Item 4</div>
+    </div>
+
+
+    <h3>Flexbox 2</h3>
+    <div id="flexbox2">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+        <div class="item4">Item 4</div>
+    </div>
+
+    <h2>Ejercicio 3</h2>
+    <h3>Flex-shrink</h3>
+    <div id="flexbox3">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+        <div class="item4">Item 4</div>
+    </div>
+
+
+    <h3>Flex-grow</h3>
+    <div id="flexbox4">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+        <div class="item4">Item 4</div>
+    </div>
+
+    <h2>Ejercicio 4</h2>
+    <div class="flexboxejer4">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+        <div class="item4">Item 4</div>
+        <div class="item5">Item 5</div>
+    </div>
+    <h1>Ejercicio 5</h1>
+    <div class="ejercicio5">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+        <div class="item4">Item 4</div>
+        <div class="item5">Item 5</div>
+        <div class="item6">Item 6</div>
+        <div class="item7">Item 7</div>
+        <div class="item8">Item 8</div>
+        <div class="item9">Item 9</div>
+    </div>
+</body>
+
+</html>

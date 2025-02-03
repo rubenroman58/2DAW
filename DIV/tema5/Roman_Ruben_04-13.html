@@ -1,10 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .contenedor-flex {
+            display: flex;
+            align-items: center;
+            border: 1px solid blue;
+            height: 300px;
+            justify-content: space-evenly;
+        }
+
+        .contenedor-flex>div {
+            width: 75px;
+            padding: 10px;
+            margin: 10px;
+            background-color: aqua;
+        }
+
+        #caja-flex {
+            display: flex;
+            justify-content: center;
+            width: 400px;
+            height: 300px;
+            border: 1px solid blue;
+        }
+
+        #caja-flex div {
+            margin-top: 16px;
+            width: 70px;
+            height: 70px;
+            border: 2px solid black;
+        }
+
+        #contenedor {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 260px;
+            height: 150px;
+            border: 1px solid black;
+        }
+
+        #contenedor div {
+            width: 50px;
+            height: 50px;
+            border: 1px solid red;
+        }
+
+        #ejercicio21 {
+            display: flex;
+            align-items: center;
+            border: 1px solid blue;
+            height: 200px;
+            align-items: flex-start;
+        }
+
+        #ejercicio22 {
+            display: flex;
+            align-items: center;
+            border: 1px solid blue;
+            height: 200px;
+            align-items: flex-end;
+        }
+
+        #ejercicio23 {
+            display: flex;
+            align-items: center;
+            border: 1px solid blue;
+            height: 200px;
+            align-items: center;
+        }
+
+        #ejercicio24 {
+            display: flex;
+            align-items: center;
+            border: 1px solid blue;
+            height: 200px;
+            align-items: stretch;
+        }
+
+        #ejercicio25 {
+            display: flex;
+            align-items: center;
+            border: 1px solid blue;
+            height: 200px;
+            align-items: baseline;
+        }
+
+        #ejercicio26 {
+            display: flex;
+            align-items: center;
+            border: 1px solid blue;
+            height: 200px;
+
+        }
+
+        #ejercicio31 {
+            display: flex;
+            align-items: center;
+            border: 1px solid green;
+            height: 200px;
+            justify-content: flex-start;
+        }
+
+        #ejercicio32 {
+            display: flex;
+            align-items: center;
+            border: 1px solid green;
+            height: 200px;
+            justify-content: flex-end;
+        }
+
+        #ejercicio33 {
+            display: flex;
+            align-items: center;
+            border: 1px solid green;
+            height: 200px;
+            justify-content: center;
+        }
+
+        #ejercicio34 {
+            display: flex;
+            align-items: center;
+            border: 1px solid green;
+            height: 200px;
+            justify-content: space-between;
+        }
+
+        #ejercicio35 {
+            display: flex;
+            align-items: center;
+            border: 1px solid green;
+            height: 200px;
+            justify-content: space-around;
+        }
+
+        #ejercicio36 {
+            display: flex;
+            align-items: center;
+            border: 1px solid green;
+            height: 200px;
+            justify-content: space-evenly;
+
+        }
+
+
+        #ejercicio41 {
+            display: flex;
+            align-items: center;
+            border: 1px solid rgb(156, 3, 44);
+            height: 200px;
+            align-content: flex-start;
+            flex-wrap: wrap;
+
+        }
+
+        #ejercicio42 {
+            display: flex;
+            align-items: center;
+            border: 1px solid rgb(156, 3, 44);
+            height: 200px;
+            align-content: flex-end;
+            flex-wrap: wrap;
+           
+        }
+
+        #ejercicio43 {
+            display: flex;
+            align-items: center;
+            border: 1px solid rgb(156, 3, 44);
+            height: 200px;
+            align-content: center;
+            flex-wrap: wrap;
+       
+        }
+
+        #ejercicio44 {
+            display: flex;
+            align-items: center;
+            border: 1px solid rgb(156, 3, 44);
+            height: 200px;
+            align-content: space-between;
+            flex-wrap: wrap;
+          
+        }
+
+        #ejercicio45 {
+            display: flex;
+            align-items: center;
+            border: 1px solid rgb(156, 3, 44);
+            height: 200px;
+            align-content: flex-around;
+            flex-wrap: wrap;
+           
+        }
+
+        #ejercicio46 {
+            display: flex;
+            align-items: center;
+            border: 1px solid rgb(156, 3, 44);
+            height: 200px;
+            align-content: stretch;
+            flex-wrap: wrap;
+           
+        }
+
+        #divEjer2 {
+            width: 75px;
+            padding: 10px;
+            margin: 10px;
+            background-color: aqua;
+        }
+
+
+        #flexbox7 {
+            display: flex;
+            flex-flow: row wrap;
+            /* flex-direction: row, flex-wrap: wrap */
+            align-items: center;
+            /* Centrar verticalmente */
+            justify-content: space-between;
+            /* Distribuir con espacio entre los elementos */
+            height: 200px;
+            border: 1px solid blue;
+        }
+
+        #flexbox7 div {
+            width: 70px;
+            height: 70px;
+            background-color: aqua;
+            margin: 5px;
+        }
+
+
+        #flexbox8 {
+            display: flex;
+            flex-flow: column wrap;
+            /* flex-direction: column, flex-wrap: wrap */
+            align-items: flex-start;
+            /* Alinear al inicio (arriba) en eje transversal */
+            justify-content: center;
+            /* Centrar los elementos en el eje principal */
+            height: 200px;
+            border: 1px solid green;
+        }
+
+        #flexbox8 div {
+            width: 70px;
+            height: 70px;
+            background-color: orange;
+            margin: 5px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>Ejercicio 1</h2>
+    <p>Alineando los items</p>
+    <div class="contenedor-flex">
+        <div> Hijo 1 </div>
+        <div> Hijo 2 </div>
+        <div> Hijo 3 </div>
+    </div>
+
+    <h1>Propiedad justify-content </h1>
+    <div id="caja-flex">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <h3>Ejercicio 3 ejemplo</h3>
+    <div id="contenedor">
+        <div>item A</div>
+        <div>item B</div>
+        <div>item C</div>
+        <div>item D</div>
+        <div>item E</div>
+        <div>item F</div>
+    </div>
+
+    <h3>Ejercicio 2</h3>
+    <p>flex-start</p>
+    <div id="ejercicio21">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+    <p>flex-end</p>
+    <div id="ejercicio22">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+    <p>center</p>
+    <div id="ejercicio23">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+    <p>strech</p>
+    <div id="ejercicio24">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+
+    <p>baseline</p>
+    <div id="ejercicio25">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+    <p>sindefinir</p>
+    <div id="ejercicio26">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+
+
+
+    <h3>Ejercicio 3</h3>
+    <p>flex-start</p>
+    <div id="ejercicio31">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+    <p>flex-end</p>
+    <div id="ejercicio32">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+    <p>center</p>
+    <div id="ejercicio33">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+    <p>space-between</p>
+    <div id="ejercicio34">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+
+    <p>space-around</p>
+    <div id="ejercicio35">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+    <p>space-evenly</p>
+    <div id="ejercicio36">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+
+
+    <h3>Ejercicio 4</h3>
+    <p>flex-start</p>
+    <div id="ejercicio41">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+    <p>flex-end</p>
+    <div id="ejercicio42">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+    <p>center</p>
+    <div id="ejercicio43">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+    <p>space-between</p>
+    <div id="ejercicio44">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+
+    <p>space-around</p>
+    <div id="ejercicio45">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+    <p>stretch</p>
+    <div id="ejercicio46">
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+        <div id="divEjer2"> Hijo 1 </div>
+        <div id="divEjer2"> Hijo 2 </div>
+        <div id="divEjer2"> Hijo 3 </div>
+    </div>
+
+    <h1>Ejercicio 5</h1>
+    <h2>Flexbox7</h2>
+    <div id="flexbox7">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+    </div>
+
+    <h2>Flexbox8</h2>
+    <div id="flexbox8">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+    </div>
+
+
 </body>
+
 </html>
