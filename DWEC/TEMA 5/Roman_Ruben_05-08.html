@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h2>Ejercicio1</h2>
+    <p id="info"></p>
+    <button id="boton">ver cookie</button>
+    <button id="botonf">Añadir cookie</button>
+    Clave <input type="text" id="clave">
+    Valor <input type="text" id="valor">
+    <script>
+        document.cookie = "color-rojo";
+
+        document.getElementById('boton').addEventListener('click', () => {
+            document.getElementById('info').innerHTML = document.cookie;
+        })
+
+        document.getElementById('botonf').addEventListener('click', () => {
+            let valor = document.getElementById('valor').value;
+            let clave = document.getElementById('clave').value;
+            document.cookie = clave + '=' + valor;
+        })
+    </script>
+
+
+
+
+
+
+    <script>
+        document.cookie = "color-verde=verde";
+
+        document.getElementById('boton').addEventListener('click', () => {
+            let cookies = document.cookie.split(';');
+            let cookieList = '<ul>';
+
+            cookies.forEach(cookie => {
+                cookieList += `<li>${cookie.trim()}</li>`;
+            });
+
+            cookieList += '</ul>';
+            document.getElementById('info').innerHTML = cookieList;
+        });
+
+        document.getElementById('botonf').addEventListener('click', () => {
+            let clave = document.getElementById('clave').value;
+            let valor = document.getElementById('valor').value;
+            if (clave && valor) {
+                document.cookie = `${clave}=${valor}`;
+                alert("Cookie establecida correctamente!");
+            } else {
+                alert("Por favor, ingresa una clave y un valor.");
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
