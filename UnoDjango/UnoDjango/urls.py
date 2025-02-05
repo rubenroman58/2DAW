@@ -16,11 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import home
-from . import views 
+#from core.views import home
+from core.views import home,autor_list,libro_list
+#from . import views 
 urlpatterns = [
 #path('hola/', views.index),
-#path('otramas/', views.home),
-path('', home),
-path('admin/', admin.site.urls),
-]
+
+
+
+    path('', home), #quí no habría que meter la carpeta
+    #path('otramas/', views.home),
+    path('admin/', admin.site.urls),
+    path('autor/',autor_list),
+    path('libro/',libro_list),
+    path('', home, name='index'),
+ ]

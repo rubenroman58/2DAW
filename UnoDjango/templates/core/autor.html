@@ -1,0 +1,12 @@
+{% extends 'core/index.html' %}
+
+{% block title %} Blog de autores {% endblock %}
+
+{% block content %}
+    <h1>Listado de autores</h1>
+    <ul>
+        {% for aut in authors %}
+            <li>{{ aut.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

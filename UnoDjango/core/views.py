@@ -8,7 +8,13 @@ from core.models import Book
  #   return render(request,'core/index.html',{'authors':autor}) 
 def home (request):
 
-    book=Book.objects.all()
     #return render(request,'index.html',{'authors':autor}) 
+    return render(request,'core/index.html',{'books':Book})
 
-    return render(request,'core/index.html',{'books':book})
+
+def autor_list (request):
+    autor=Author.objects.all()
+    return render(request,'core/autor.html',{'authors':autor})
+def libro_list (request):
+    libro=Book.objects.all()
+    return render(request,'core/libro.html',{'books':libro})

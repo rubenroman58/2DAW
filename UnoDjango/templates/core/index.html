@@ -4,34 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{% block title %} Blog de autores y libros {% endblock %}</title>
+  <style>
+    body{background-color: aqua;}
+  </style>
 </head>
 
 <body>
-
-
-    <h1>Listado de libros</h1>
-    <table border="2">
-        <thead>
-            <th>Titulo</th>
-            <th>Codigo</th>
-            <th>Autor</th>
-        </thead>
-        <tbody>
-            {% for bo in books %}
-            <tr>
-                <td>{{ bo.title }} </td>
-                <td>{{ bo.cod }}</td>
-                <td>{% for au in bo.author.all %}
-                    {{au}}
-                    {% endfor %}
-                </td>
-            </tr>
-            {% endfor %}
-
-        </tbody>
-    </table>
-
+    {%block menu%}
+    <ul>
+        <li><a href="/autor/">Autores</a></li>
+        <li><a href="/libro/">Libros</a></li>
+    </ul>
+   
+    {%endblock menu%}
+    {%block content%}
+   {%endblock content%}
 </body>
 
 </html>
