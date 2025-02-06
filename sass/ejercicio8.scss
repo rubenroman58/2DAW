@@ -1,0 +1,30 @@
+$bordes: 10px;
+
+div> {
+
+    .clase1,
+    .clase2,
+    .clase3 {
+        $borderColorLocal: red;
+        border-width: $bordes; // variable global
+        border-color: $borderColorLocal; // variable local
+    }
+
+    .clase4,
+    .clase5 {
+        $borderColorLocal: red;
+        border-width: $bordes; // variable global
+        border-color: $borderColorLocal; // variable local
+    }
+
+
+}
+
+body>{
+    .clase6,
+    .clase7,
+    .clase8 
+        $borderColorLocal: red;
+        border-width: $bordes; // variable global
+        border-color: $borderColorLocal; // variable local
+}
