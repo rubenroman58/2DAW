@@ -1,0 +1,23 @@
+.content a {
+  color: #165BFF;
+  text-decoration: none;
+}
+.content a:hover {
+  color: rgb(124, 162.7939914163, 255);
+}
+
+.redondeado {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.redondeado {
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+/*# sourceMappingURL=ejemplosmix.css.map */

@@ -1,0 +1,11 @@
+$posicion_borde: left;
+
+@mixin coche($marca, $color) {
+    .coche.#{$marca} {
+        border-#{$posicion_borde}: 2px;
+        background-color: $color;
+        background-image: url('images/#{$marca}-#{$color}.jpg')
+    }
+}
+
+@include coche('audi', 'green');

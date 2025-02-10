@@ -1,0 +1,37 @@
+$azulado: #165BFF;
+
+@mixin link_chulo {
+    color: $azulado;
+    text-decoration: none;
+
+    &:hover {
+        color: lighten($azulado, 20);
+    }
+}
+
+.content {
+    a {
+        @include link_chulo;
+    }
+}
+
+@mixin borde_redondeado_5px{
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    }
+    .redondeado {
+    @include borde_redondeado_5px;
+    }
+
+
+    @mixin borde_redondeado($size: 5px){
+        border-radius: $size;
+        -moz-border-radius: $size;
+        -webkit-border-radius: $size;
+        -o-border-radius: $size;
+        }
+        .redondeado{
+        @include borde_redondeado(10px);
+        }

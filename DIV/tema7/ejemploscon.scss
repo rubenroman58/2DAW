@@ -1,0 +1,14 @@
+@mixin apply-to-ie6-only {
+    * html {
+    @content;
+    width: 100px;
+    border-width: 2px;
+    }
+    }
+    @include apply-to-ie6-only {
+    #logo {
+    background-image: url(/logo.gif);
+    width: 150px;
+    border-width: 4px;
+    }
+    }

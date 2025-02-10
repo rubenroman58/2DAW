@@ -1,0 +1,11 @@
+* html {
+  width: 100px;
+  border-width: 2px;
+}
+* html #logo {
+  background-image: url(/logo.gif);
+  width: 150px;
+  border-width: 4px;
+}
+
+/*# sourceMappingURL=ejemplosContent.css.map */
