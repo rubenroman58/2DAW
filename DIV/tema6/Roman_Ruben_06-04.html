@@ -10,58 +10,118 @@
   <style>
     .bg-danger {
       height: 100%;
-      min-height: 200px;
-    }
-
-    .bg-warning {
-      height: 150px;
-    }
-
-    .bg-primary {
-      height: 100px;
+      min-height: 325px;
     }
   </style>
 </head>
 
 <body>
   <h2>Ejercicio 1</h2>
- 
+  <div class="container">
+    <!-- Fila superior -->
     <div class="row">
-      <div class="col-12" style="background-color: lightgreen; min-height: 50px;">
+      <div class="col-12" style="background-color: lightgreen; min-height: 50px;"></div>
+    </div>
 
+    <!-- Contenido principal -->
+    <div class="row mt-2">
+      <!-- Columna roja (solo visible en md y superiores) -->
+      <div class="col-12 col-md-2 bg-danger d-none d-md-block"></div>
 
-      </div>
-
-      <div class="row">
-        <!-- Columna roja -->
-        <div class="col-12 col-md-2 bg-danger d-none d-md-block">
-          <!-- Contenido opcional -->
+      <!-- Contenido central -->
+      <div class="col-12 col-md-10">
+        <!-- Fila rosa -->
+        <div class="row mb-2 g-2">
+          <div class="col-12" style="background-color:pink; min-height: 50px;"></div>
         </div>
 
+        <!-- Fila naranja -->
+        <div class="row mb-2 g-2">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6" style="background-color:orange; min-height: 150px;"></div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6" style="background-color:rgb(230, 178, 83); min-height: 150px;"></div>
+        </div>
 
-        <div class="col-12 col-md-10">
-      
-          <div class="row">
-            <div class="col-6 bg-warning"></div>
-            <div class="col-6 bg-warning"></div>
-          </div>
+        <!-- Fila azul 1 -->
+        <div class="row mb-2 g-2">
+          <div class="col-6 col-sm-2" style="background-color:rgb(131, 133, 245); min-height: 50px;"></div>
+          <div class="col-6 col-sm-2" style="background-color:rgb(66, 86, 231); min-height: 50px;"></div>
+          <div class="col-12 col-sm-4" style="background-color:rgb(31, 31, 115); min-height: 50px;"></div>
+          <div class="col-6 col-sm-2" style="background-color:rgb(14, 35, 218); min-height: 50px;"></div>
+          <div class="col-6 col-sm-2" style="background-color:rgb(35, 15, 151); min-height: 50px;"></div>
+        </div>
 
-         
-          <div class="row mt-2">
-            <div class="col-4 bg-primary"></div>
-            <div class="col-4 bg-primary"></div>
-            <div class="col-4 bg-primary"></div>
-            <div class="col-12" style="background-color: lightgreen; min-height: 25px;">
-          </div>
-          
-      
+        <!-- Fila azul 2 -->
+        <div class="row g-2">
+          <div class="col-6 col-sm-2" style="background-color:rgb(131, 133, 245); min-height: 50px;"></div>
+          <div class="col-6 col-sm-2" style="background-color:rgb(66, 86, 231); min-height: 50px;"></div>
+          <div class="col-12 col-sm-4" style="background-color:rgb(31, 31, 115); min-height: 50px;"></div>
+          <div class="col-6 col-sm-2" style="background-color:rgb(14, 35, 218); min-height: 50px;"></div>
+          <div class="col-6 col-sm-2" style="background-color:rgb(35, 15, 151); min-height: 50px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fila inferior -->
+    <div class="row mt-2">
+      <div class="col-12" style="background-color: lightgreen; min-height: 50px;"></div>
+    </div>
+  </div>
 
 
+  <h2>Ejercicio 2</h2>
+  <div class="container">
+    <!-- Fila superior -->
+    <div class="row">
+      <div class="col-12" style="background-color: rgb(72, 224, 72); min-height: 50px;"><Header></Header></div>
+    </div>
 
+    <!-- Contenido principal -->
+    <div class="row mt-2">
+      <!-- Columna roja (solo visible en md y superiores) -->
+      <div class="col-12 col-md-2 bg-danger d-none d-md-block"></div>
 
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+      <!-- Contenido central -->
+      <div class="col-12 col-md-10">
+        <!-- Fila rosa -->
+        <div class="row mb-2 g-2">
+          <div class="col-12" style="background-color:pink; min-height: 50px;"></div>
+        </div>
+
+        <!-- Fila naranja -->
+        <div class="row mb-2 g-2">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6" style="background-color:orange; min-height: 150px;"></div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6" style="background-color:rgb(230, 178, 83); min-height: 150px;"></div>
+        </div>
+
+        <!-- Fila azul 1 -->
+        <div class="row mb-2 g-2">
+          <div class="col-6 col-sm-2" style="background-color:rgb(131, 133, 245); min-height: 50px;"></div>
+          <div class="col-6 col-sm-2" style="background-color:rgb(66, 86, 231); min-height: 50px;"></div>
+          <div class="col-12 col-sm-4" style="background-color:rgb(31, 31, 115); min-height: 50px;"></div>
+          <div class="col-6 col-sm-2" style="background-color:rgb(14, 35, 218); min-height: 50px;"></div>
+          <div class="col-6 col-sm-2" style="background-color:rgb(35, 15, 151); min-height: 50px;"></div>
+        </div>
+
+        <!-- Fila azul 2 -->
+        <div class="row g-2">
+          <div class="col-6 col-sm-2" style="background-color:rgb(131, 133, 245); min-height: 50px;"></div>
+          <div class="col-6 col-sm-2" style="background-color:rgb(66, 86, 231); min-height: 50px;"></div>
+          <div class="col-12 col-sm-4" style="background-color:rgb(31, 31, 115); min-height: 50px;"></div>
+          <div class="col-6 col-sm-2" style="background-color:rgb(14, 35, 218); min-height: 50px;"></div>
+          <div class="col-6 col-sm-2" style="background-color:rgb(35, 15, 151); min-height: 50px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fila inferior -->
+    <div class="row mt-2">
+      <div class="col-12" style="background-color: lightgreen; min-height: 50px;"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
