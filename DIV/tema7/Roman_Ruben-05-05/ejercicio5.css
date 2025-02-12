@@ -1,0 +1,11 @@
+.alerta, .alertaCritica {
+  background: orange;
+  display: block;
+  font-weight: bold;
+}
+
+.alertaCritica {
+  background: red;
+}
+
+/*# sourceMappingURL=ejercicio5.css.map */

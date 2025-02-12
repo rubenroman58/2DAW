@@ -1,0 +1,10 @@
+.alerta {
+    background: orange;
+    display: block;
+    font-weight: bold;
+}
+
+.alertaCritica {
+    @extend.alerta;
+    background: red;
+}

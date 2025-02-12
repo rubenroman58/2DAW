@@ -1,0 +1,6 @@
+@for $i from 1 to 3 {
+    .todos-#{$i} { width: 2em * $i; }
+    }
+    @for $i from 1 through 3 {
+    .casitodos-#{$i} { width: 2em * $i; }
+    }
