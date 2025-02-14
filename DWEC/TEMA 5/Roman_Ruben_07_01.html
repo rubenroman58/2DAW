@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <div id="json"> </div>
+    <script>
+        const JSONCadena =
+            '{"nombre": "Pepito", "Amiguitos": ["Manolo", "Juanito", "Kiko", "Pedrito"], "ciudad": "Torremolinos"}';
+        try {
+            const JSONObjeto = JSON.parse(JSONCadena);
+            const JSONDisplay = document.getElementById("json");
+            JSONDisplay.innerHTML = JSONObjeto.nombre + ", [" + JSONObjeto.Amiguitos + "], " + JSONObjeto.ciudad;
+        } catch (error) {
+            console.log("Error json")
+        }
+    </script>
+    <h2>Ejercicio 2</h2>
+    <div id="json2"> </div>
+    <script>
+        const JSONCadena2 =
+            '{"nombre": "Pepito", "Amiguitos": ["Manolo", "Juanito", "Kiko", "Pedrito"], "ciudad": "Torremolinos"}';
+        try {
+            const JSONObjeto = JSON.parse(JSONCadena2);
+            const JSONDisplay = document.getElementById("json2");
+
+
+            const amiguitos = JSONObjeto.Amiguitos;
+            cadena = '<ul>'
+
+            for (let i = 0; i < amiguitos.length; i++) {
+                cadena += '<li>' + amiguitos[i] + '</li>'
+
+            }
+            cadena += '</ul>'
+
+            JSONDisplay.innerHTML = 'Nombre: ' + JSONObjeto.nombre + '<br>' + 'Amigos: <br>' + cadena + '<br>' + 'Ciudad: ' + JSONObjeto.ciudad;
+
+        } catch (error) {
+            console.log("Error json")
+        }
+    </script>
+
+    <h2>Ejercicio 3</h2>
+    <div id="json3"> </div>
+    <script>
+        const JSONData = ` {
+        "Alumno1":{"name": "Pepito", "favFriends": ["Manolo", "Juanito", "Kiko", "Pedrito"], "from": "Torrem"},
+        "Alumno2":{"name": "Juanito", "favFriends": ["Loli", "Kiko", "Pepito", "Pedrito"], "from": "Malaga"},  
+        "Alumno3":{"name": "Kiko", "favFriends": ["Loli", "Juanito", "Inma", "Maria"], "from": "Churriana"},   
+        "Alumno4":{"name": "Loli", "favFriends": ["Kiko", "Juanito", "Inma", "Maria"], "from": "Torrem"},
+        "Alumno5":{"name": "Maria", "favFriends": ["Loli", "Juanito", "Inma", "Kiko"], "from": "Churriana"}          }`;
+        try {
+            const JSONObjeto = JSON.parse(JSONData);
+            const JSONDisplay = document.getElementById("json3");
+            for (alumnos in JSONObjeto) {
+                const alumnoData = JSONObjeto[alumnos];
+                JSONDisplay.innerHTML += `${alumnoData.name} es de ${alumnoData.from} y tiene por amigos a ${alumnoData.favFriends.join(', ')}<br>`;
+
+            }
+        } catch (error) {
+            console.log("Error json")
+        }
+    </script>
+
+    <h2>Ejercicio 4</h2>
+
+    <div id="json4"> </div>
+
+
+    <script>
+        const alumno =
+        {
+            1: {
+                Alumno: "Paco", DWEC: 9, DIW: 9, DWES: 9, HLC: 9,
+                notas: function () { return "Pedazo notas"; }
+            },
+            2: {
+                Alumno: "pepe", DWEC: 8, DIW: 8, DWES: 8, HLC: 8,
+                notas: function () { return "Pedazo notas"; }
+            }
+        };
+
+        JSONString = JSON.stringify(alumno);
+        const JSONDisplay = document.getElementById("json4").innerHTML = JSONString;
+    </script>
+</body>
+
+</html>
