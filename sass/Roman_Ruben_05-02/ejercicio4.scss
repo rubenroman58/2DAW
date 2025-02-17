@@ -1,0 +1,12 @@
+.clase2 {
+    > div {
+      border: 1px solid green;
+    }
+  
+    > .clase21 {
+      > .clase211 {
+        color: red;
+      }
+    }
+  }
+  

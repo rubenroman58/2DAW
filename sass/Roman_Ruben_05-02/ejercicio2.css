@@ -1,0 +1,23 @@
+div {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+div p {
+  color: #333;
+  font-size: 16px;
+  margin: 10px 0;
+}
+div p h1 {
+  color: #007bff;
+  font-size: 24px;
+}
+div p h1 b {
+  font-weight: bold;
+  color: #d9534f;
+}
+div p h1 b span {
+  font-size: 14px;
+  color: #5bc0de;
+}
+
+/*# sourceMappingURL=ejercicio2.css.map */

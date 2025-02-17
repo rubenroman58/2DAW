@@ -1,0 +1,16 @@
+$azulado: #165BFF;
+
+@mixin link_chulo {
+    color: $azulado;
+    text-decoration: none;
+
+    &:hover {
+        color: lighten($azulado, 20);
+    }
+}
+
+.content {
+    a {
+        @include link_chulo;
+    }
+}

@@ -1,0 +1,9 @@
+$color_link: blue;
+$default_border: 1px solid black;
+$std_margin: 5px;
+
+a {
+    color: $color_link;
+    border: $default_border;
+    margin: $std_margin 0px $std_margin 0px;
+}

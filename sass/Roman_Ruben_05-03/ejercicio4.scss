@@ -1,0 +1,38 @@
+$cadena: 'asb';
+$subcadena: 's';
+$insert: 'INSERTADO';
+$index: 2;
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .str-length {
+    background-color: lightgreen;
+    padding: 10px;
+
+    &:before {
+      content: "Longitud de la cadena: #{str-length($cadena)}"; /* Mostrar longitud */
+    }
+  }
+
+  .str-insert {
+    background-color: lightcoral;
+    padding: 10px;
+
+    &:before {
+      content: "Cadena con insertado: #{str-insert($cadena, $insert, $index)}"; /* Mostrar cadena con insertado */
+    }
+  }
+
+  .index {
+    background-color: lightblue;
+    padding: 10px;
+
+    &:before {
+      content: "Índice de subcadena: #{str-index($cadena, $subcadena)}"; /* Mostrar índice de subcadena */
+    }
+  }
+}

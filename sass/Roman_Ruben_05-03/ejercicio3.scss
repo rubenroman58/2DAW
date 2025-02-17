@@ -1,1 +1,78 @@
-$color:red;
+$base-color: #3498db; 
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  
+  .lighten {
+    background-color: lighten($base-color, 20%); 
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .darken {
+    background-color: darken($base-color, 20%); 
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .saturate {
+    background-color: saturate($base-color, 30%); 
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .desaturate {
+    background-color: desaturate($base-color, 30%); 
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .grayscale {
+    background-color: grayscale($base-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .complement {
+    background-color: complement($base-color); 
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .invert {
+    background-color: invert($base-color); 
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .rgba {
+    background-color: rgba($base-color, 0.5); 
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .fade-in {
+    background-color: fade-in($base-color, 50%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .fade-out {
+    background-color: fade-out($base-color, 50%); 
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,46 @@
+@charset "UTF-8";
+body {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.rojos.rojo-claro {
+  background-color: #ffcccc;
+}
+.rojos.rojo-medio {
+  background-color: #ff6666;
+}
+.rojos.rojo {
+  background-color: #ff0000;
+}
+.rojos.rojo-intenso {
+  background-color: #cc0000;
+}
+.rojos.rojo-oscurito {
+  background-color: #990000;
+}
+.rojos.rojo-vivo {
+  background-color: #ff3333;
+}
+.rojos.rojo-oscuro {
+  background-color: #660000;
+}
+.rojos.rojo-carmín {
+  background-color: #b20000;
+}
+.rojos.rojo-amarillo {
+  background-color: #ff6600;
+}
+.rojos.rojo-palo {
+  background-color: #cc3333;
+}
+
+/*# sourceMappingURL=estilosEjer5.css.map */

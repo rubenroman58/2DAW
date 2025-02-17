@@ -1,0 +1,30 @@
+@charset "UTF-8";
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.flex-container .str-length {
+  background-color: lightgreen;
+  padding: 10px;
+}
+.flex-container .str-length:before {
+  content: "Longitud de la cadena: 3"; /* Mostrar longitud */
+}
+.flex-container .str-insert {
+  background-color: lightcoral;
+  padding: 10px;
+}
+.flex-container .str-insert:before {
+  content: "Cadena con insertado: aINSERTADOsb"; /* Mostrar cadena con insertado */
+}
+.flex-container .index {
+  background-color: lightblue;
+  padding: 10px;
+}
+.flex-container .index:before {
+  content: "Índice de subcadena: 2"; /* Mostrar índice de subcadena */
+}
+
+/*# sourceMappingURL=ejercicio4.css.map */

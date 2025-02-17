@@ -1,0 +1,10 @@
+* html {
+  width: 100px;
+  border-width: 2px;
+}
+* html #logo {
+  background-image: url(/foto.png);
+  width: 150px;
+  border-width: 4px;
+}
+/*# sourceMappingURL=ejercicio3.css.map */

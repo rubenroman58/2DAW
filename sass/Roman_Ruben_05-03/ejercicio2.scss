@@ -1,0 +1,21 @@
+$width: 100px;
+$suma:10px;
+.clase1 {
+  width: $width; 
+}
+
+.clase2 {
+  width: $width+$suma; 
+}
+
+.clase3 {
+  width:$width+$suma; 
+}
+
+.clase4 {
+  width: $width+$suma;
+}
+
+.clase5 {
+  width:$width+$suma; 
+}

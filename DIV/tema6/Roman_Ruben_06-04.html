@@ -12,10 +12,97 @@
       height: 100%;
       min-height: 325px;
     }
-    div{
+
+    div {
       text-align: center;
     }
+
+    /* Estilos generales */
+    .header {
+      background-color: rgb(72, 224, 72);
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .content-box {
+      background-color: rgb(226, 28, 28);
+      min-height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .footer {
+      background-color: rgb(186, 197, 36);
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 576px) {
+      .header {
+        background-color: rgb(232, 201, 42) !important;
+      }
+    }
+
+    @media (min-width: 576px) and (max-width: 767px) {
+      .header {
+        background-color: blue !important;
+      }
+    }
+
+
+    /* Media query para pantallas pequeñas */
+    @media (max-width: 767px) {
+      .header {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .content-box {
+        min-height: 100px;
+      }
+
+      .footer-container {
+        flex-direction: column;
+      }
+
+      .footer {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+
+
+    @media (min-width: 576px) and (max-width: 767px) {
+      .num-box {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .num-box .col-sm-6 {
+        flex: 1;
+    
+      }
+
+      .num-box-3 {
+        background-color: green !important;
+      }
+      
+    }
   </style>
+
 </head>
 
 <body>
@@ -98,60 +185,60 @@
       </div>
     </div>
 
-      <div class="w-100 ">
-        <!-- Entre la dos y tres -->
-        <!-- Fila 3-4 -->
-        <div class="row  d-flex justify-content-between ">
-          <div class="col-md-6 col-md-12 mt-2 d-none d-md-block" style="background-color:rgb(68, 136, 224); 
+    <div class="w-100 ">
+      <!-- Entre la dos y tres -->
+      <!-- Fila 3-4 -->
+      <div class="row  d-flex justify-content-between ">
+        <div class="col-md-6 col-md-12 mt-2 d-none d-md-block" style="background-color:rgb(68, 136, 224); 
           min-height: 50px; max-width: 80px;">3</div>
-          <div class="col-md-6  mt-2 d-none d-md-block"
-            style="background-color:rgb(68, 136, 224); min-height: 50px; max-width: 80px;">4</div>
-        </div>
-
-
-        <div class="row mt-2">
-          <div class="col-6 col-sm-3 col-md-6 bg-primary p-2  d-sm-block d-md-none ">1</div>
-          <div class="col-6 col-sm-3 col-md-6 bg-primary p-2  d-sm-block d-md-none">2</div>
-          <div class="col-6 col-sm-3 col-md-6 bg-primary p-2  d-sm-block d-md-none">3</div>
-          <div class="col-6 col-sm-3 col-md-6 bg-primary p-2  d-sm-block d-md-none">4</div>
-        </div>
-
-
-
-        
-        <div class="row mt-2">
-          <div class="col-12 d-none d-sm-block d-md-none" style="background-color:rgb(58, 211, 238); min-height: 50px;">
-             Tablet
-          </div>
+        <div class="col-md-6  mt-2 d-none d-md-block"
+          style="background-color:rgb(68, 136, 224); min-height: 50px; max-width: 80px;">4</div>
       </div>
 
 
-    
-      
-        
-
-        <!-- Fila azul 1abcd -->
-        <div class="row">
-          <div class="col-md-3 col-sm-3 col-6 mt-2 " style="background-color:gray; min-height: 50px; ">d</div>
-          <div class="col-md-3 col-sm-3 col-6 mt-2" style="background-color:gray; min-height: 50px; ">c</div>
-          <div class="col-md-3 col-sm-3 col-6 mt-2" style="background-color:gray; min-height: 50px; ">b</div>
-          <div class="col-md-3 col-sm-3 col-6 mt-2" style="background-color:gray; min-height: 50px; ">a</div>
-        </div>
-
-
-        <div class="row mt-2">
-          <div class="col-12 d-block d-sm-none" style="background-color:rgb(58, 211, 238); min-height: 50px;">
-             Mobile
-          </div>
+      <div class="row mt-2">
+        <div class="col-6 col-sm-3 col-md-6 bg-primary p-2  d-sm-block d-md-none ">1</div>
+        <div class="col-6 col-sm-3 col-md-6 bg-primary p-2  d-sm-block d-md-none">2</div>
+        <div class="col-6 col-sm-3 col-md-6 bg-primary p-2  d-sm-block d-md-none">3</div>
+        <div class="col-6 col-sm-3 col-md-6 bg-primary p-2  d-sm-block d-md-none">4</div>
       </div>
 
-        <!-- Fila azul 2 -->
-        <div class="row mt-2">
-          <div class="col-md-12 d-none d-md-block" style="background-color:rgb(58, 211, 238); min-height: 50px;">
-            Desktop
-          </div>
+
+
+
+      <div class="row mt-2">
+        <div class="col-12 d-none d-sm-block d-md-none" style="background-color:rgb(58, 211, 238); min-height: 50px;">
+          Tablet
         </div>
-        
+      </div>
+
+
+
+
+
+
+      <!-- Fila azul 1abcd -->
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-6 mt-2 " style="background-color:gray; min-height: 50px; ">d</div>
+        <div class="col-md-3 col-sm-3 col-6 mt-2" style="background-color:gray; min-height: 50px; ">c</div>
+        <div class="col-md-3 col-sm-3 col-6 mt-2" style="background-color:gray; min-height: 50px; ">b</div>
+        <div class="col-md-3 col-sm-3 col-6 mt-2" style="background-color:gray; min-height: 50px; ">a</div>
+      </div>
+
+
+      <div class="row mt-2">
+        <div class="col-12 d-block d-sm-none" style="background-color:rgb(58, 211, 238); min-height: 50px;">
+          Mobile
+        </div>
+      </div>
+
+      <!-- Fila azul 2 -->
+      <div class="row mt-2">
+        <div class="col-md-12 d-none d-md-block" style="background-color:rgb(58, 211, 238); min-height: 50px;">
+          Desktop
+        </div>
+      </div>
+
 
 
 
@@ -159,16 +246,18 @@
       <div class="row">
         <div class="col-md-6 offset-5 mt-2 me-3 d-none d-md-block"
           style="background-color:rgb(227, 166, 52); min-height: 50px; max-width: 80px;">:(</div>
-        <div class="col-md-6 mt-2 d-none d-md-block" style="background-color:rgb(227, 166, 52); min-height: 50px; max-width: 80px;">:D</div>
-        
-        <div class="col-6 d-none d-sm-block d-md-none "
-          style="background-color:rgb(227, 166, 52); min-height: 50px; ">:(</div>
-        <div class="col-6 d-none d-sm-block d-md-none" style="background-color:rgb(227, 166, 52); min-height: 50px;">:D</div>
-        
-        
+        <div class="col-md-6 mt-2 d-none d-md-block"
+          style="background-color:rgb(227, 166, 52); min-height: 50px; max-width: 80px;">:D</div>
+
+        <div class="col-6 d-none d-sm-block d-md-none " style="background-color:rgb(227, 166, 52); min-height: 50px; ">
+          :(</div>
+        <div class="col-6 d-none d-sm-block d-md-none" style="background-color:rgb(227, 166, 52); min-height: 50px;">:D
+        </div>
+
+
         <div class="col-12 d-block d-sm-none" style="background-color:rgb(190, 143, 13); min-height: 50px;">
-        :D
-       </div>
+          :D
+        </div>
       </div>
 
 
@@ -179,32 +268,59 @@
 
       <!-- Fila inferior -->
       <div class="row mt-2">
-        <div class="col-md-12 d-sm-block d-none" style="background-color: rgb(72, 224, 72); min-height: 50px;">Footer</div>
+        <div class="col-md-12 d-sm-block d-none" style="background-color: rgb(72, 224, 72); min-height: 50px;">Footer
+        </div>
       </div>
     </div>
   </div>
 
 
 
+
+
   <h2>Ejercicio 3</h2>
-  <div class="container">
+  <div class="container text-center">
     <!-- Fila superior -->
     <div class="row">
-      <div class="col-md-12" style="background-color: rgb(72, 224, 72); min-height: 50px;">Header</div>
+      <div class="col-12 header">Header</div>
     </div>
 
-    <div class="row">
-      <div class="col-md-4 mt-2" style="background-color: rgb(226, 28, 28); min-height: 500px;">1</div>
-      <div class="col-md-4 mt-2" style="background-color: rgb(226, 28, 28); min-height: 500px;">2</div>
-      <div class="col-md-4 mt-2" style="background-color: rgb(226, 28, 28); min-height: 500px;">3</div>
-    </div>
-
-
-
-
+    <!-- Segunda fila -->
     <div class="row mt-2">
-      <div class="col-md-6 d-sm-block d-none me-2" style="background-color: rgb(186, 197, 36);max-width: 49%; min-height: 50px;">Footer 1</div>
-      <div class="col-md-6 d-sm-block d-none  md-3 " style="background-color: rgb(201, 204, 46);max-width: 51% min-height:50px;">Footer 2</div>
+      <div class="col-md-4 col-sm-12 content-box d-md-block d-none">1</div>
+      <div class="col-md-4 col-sm-12 content-box d-md-block d-none">2</div>
+      <div class="col-md-4 col-sm-12 content-box d-md-block d-none">3</div>
+    </div>
+
+
+
+    <div class="row mt-2 num-box">
+      <!-- Número 1 y 2 (uno al lado del otro en sm) -->
+      <div class="col-6  p-2 d-none d-sm-block d-md-none" style="background-color:red;
+      text-align:left">1</div>
+      <div class="col-6  p-2 d-none d-sm-block d-md-none" style="background-color:red;
+       text-align:right">2</div>
+    </div>
+    
+    <!-- Número 3 (color verde en sm) -->
+    <div class="row mt-2">
+      <div class="col-12 p-2 num-box-3 d-none d-sm-block d-md-none">3</div>
+    </div>
+    
+
+    <div class="row mt-2 ">
+      <div class="col-md-6  d-sm-none" style="background-color: rgb(242, 34, 34);"> 1</div>
+      <div class="col-md-6   d-sm-none" style="background-color: rgb(64, 209, 214);"> 2</div>
+      <div class="col-md-6 d-sm-none" style="background-color: rgb(242, 34, 34);"> 3</div>
+    </div>
+
+
+
+
+    <!-- Tercera fila - Footer -->
+    <div class="row mt-2 footer-container d-flex">
+      <div class="col-md-6 col-sm-12 footer">Footer 1</div>
+      <div class="col-md-6 col-sm-12 footer" style="background-color: rgb(201, 204, 46);">Footer 2</div>
     </div>
   </div>
 

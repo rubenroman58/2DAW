@@ -1,0 +1,10 @@
+$imagen: 'foto.jpg';
+
+@mixin imagen($imagen) {
+  .foto {
+    background-image: url('#{$imagen}');
+  }
+}
+
+// Llamada al mixin con la variable imagen
+@include imagen($imagen);

@@ -1,0 +1,13 @@
+@mixin bordes {
+    border-radius: 15px;
+    background-color: green;
+}
+
+.content {
+    div {
+        @include bordes;
+        width: 100px;
+        height: 100px;
+        
+    }
+}

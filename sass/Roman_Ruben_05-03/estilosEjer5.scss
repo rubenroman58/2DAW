@@ -1,0 +1,56 @@
+@import 'colores-rojo';
+
+body {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.rojos {
+  &.rojo-claro {
+    background-color: $rojo-claro;
+  }
+
+  &.rojo-medio {
+    background-color: $rojo-medio;
+  }
+
+  &.rojo {
+    background-color: $rojo;
+  }
+
+  &.rojo-intenso {
+    background-color: $rojo-intenso;
+  }
+
+  &.rojo-oscurito {
+    background-color: $rojo-oscurito;
+  }
+
+  &.rojo-vivo {
+    background-color: $rojo-vivo;
+  }
+
+  &.rojo-oscuro {
+    background-color: $rojo-oscuro;
+  }
+
+  &.rojo-carmín {
+    background-color: $rojo-carmín;
+  }
+
+  &.rojo-amarillo {
+    background-color: $rojo-amarillo;
+  }
+
+  &.rojo-palo {
+    background-color: $rojo-palo;
+  }
+}

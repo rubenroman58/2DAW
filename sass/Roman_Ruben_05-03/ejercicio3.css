@@ -1,0 +1,17 @@
+/* Error: $amount: Expected 50% to be within 0 and 1.
+ *    ,
+ * 66 |     background-color: fade-in($base-color, 50%);
+ *    |                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   ejercicio3.scss 66:23  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: $amount: Expected 50% to be within 0 and 1.\a    \2577 \a 66 \2502      background-color: fade-in($base-color, 50%);\d\a    \2502                        ^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   ejercicio3.scss 66:23  root stylesheet";
+}

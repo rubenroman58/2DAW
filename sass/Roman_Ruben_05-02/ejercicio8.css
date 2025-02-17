@@ -1,0 +1,15 @@
+div > .clase1, div .clase2, div .clase3 {
+  border-width: 10px;
+  border-color: #fea;
+}
+div > .clase4, div .clase5 {
+  border-width: 10px;
+  border-color: #aef;
+}
+
+body > .clase6, body .clase7, body .clase8 {
+  border-width: 10px;
+  border-color: #efa;
+}
+
+/*# sourceMappingURL=ejercicio8.css.map */
