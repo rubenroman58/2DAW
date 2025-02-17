@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto Flotante</title>
+    <style>
+        /* Pega aquí la clase CSS */
+
+        .caja {       
+       
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+        .floating-text-up {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+ 
+        }
+        .floating-text-down {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            
+            z-index: 1000;
+ 
+        }
+
+        .floating-text-left {
+            position: fixed;
+            top: 50%;
+            left: 0px;
+            transform: translateY(-50%);
+            z-index: 1000;
+ 
+        }
+
+
+        .floating-text-right {
+            position: fixed;
+            top: 50%;
+            right: 0px;
+            transform: translateY(-50%);
+            z-index: 1000;
+ 
+        }
+
+        .floating-text-AD {
+            position: fixed;
+            top: 0%;
+            right: 0px;
+            transform: translate(-0%);
+            z-index: 1000;
+ 
+        }
+        .floating-text-AI {
+            position: fixed;
+            top: 0%;
+            left: 0px;
+            transform: translate(-0%);
+            z-index: 1000;
+ 
+        }
+        .floating-text-DI {
+            position: fixed;
+            top: 100%;
+            left: 0px;
+            transform: translateY(-100%);
+            z-index: 1000;
+ 
+        }
+        .floating-text-DD {
+            position: fixed;
+            top: 100%;
+            right: 0px;
+            transform: translateY(-100%);
+            z-index: 1000;
+ 
+        }
+    
+
+        /* Ejemplo de estilo adicional para la página */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            padding: 0;
+            height: 300vh;
+            /* Para simular una página larga y poder hacer scroll */
+            background: linear-gradient(to bottom, #74ebd5, #9face6);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="caja floating-text-up">Este es un texto flotante Arriba</div>
+    <div class="caja floating-text-down">Este es un texto flotante Abajo</div>
+    <div class="caja floating-text-left">Este es un texto flotante left</div>
+    <div class="caja floating-text-right">Este es un texto flotante right</div>
+    <div class="caja floating-text-AD">Esquina</div>
+    <div class="caja floating-text-AI">Esquina</div>
+    <div class="caja floating-text-DD">Esquina</div>
+    <div class="caja floating-text-DI">Esquina</div>
+    <br> <br> <br>
+    <p style="margin-top: 100px; text-align: center;">Haz scroll para ver cómo el texto se mantiene en la parte
+        superior.</p>
+    <p>
+        El texto con la clase floating-text se mostrará en la parte superior de la página, siempre centrado.<br> <br>
+        <br> <br> <br> <br>
+        Tendrá un fondo semitransparente, color blanco y un diseño limpio.<br> <br> <br> <br> <br> <br>
+        Se mantendrá fijo en la parte superior incluso si haces scroll en la página.<br> <br> <br> <br> <br> <br>
+    </p>
+</body>
+
+</html>

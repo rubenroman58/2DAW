@@ -1,0 +1,134 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VanillaScroll</title>
+    <style>
+        body {
+            /* Configuración básica del cuerpo */
+            margin: 0;
+            height: 100vh;
+            /* Altura completa de la ventana */
+            font-size: 5em;
+            /* Tamaño de fuente grande */
+            font-family: 'Montserrat';
+            /* Fuente elegante */
+            font-weight: bold;
+            /* Texto en negrita */
+        }
+
+        /* Secciones que ocupan toda la pantalla */
+        section {
+            height: 100%;
+        }
+
+
+        /* Altura completa */
+        ul {
+            /* Lista con diseño en cuadrícula */
+            list-style-type: none;
+            /* Elimina viñetas */
+            padding: 0;
+            /* Sin espacio interno */
+            margin: 0;
+            /* Sin margen externo */
+            display: grid;
+            /* Diseño en cuadrícula */
+            grid-template-columns: repeat(5, auto);
+            /* 5 columnas iguales */
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: middle;
+            /* Centra verticalmente */
+            place-items: center;
+            /* Centra ambos ejes */
+            height: 100vh;
+            /* Ocupa toda la altura */
+        }
+
+        span {
+            /* Configuración del círculo animado */
+            width: 110px;
+            /* Anchura del círculo */
+            height: 110px;
+            /* Altura del círculo */
+            position: absolute;
+            /* Posiciona relativo a la ventana */
+            bottom: 0;
+            /* Posicionado abajo */
+            left: 0;
+            /* Posicionado a la izquierda */
+            background: red;
+            /* Fondo negro */
+            border-radius: 50%;
+            /* Forma circular */
+        }
+
+
+        .pelotaVerde {
+            /* Configuración del círculo animado */
+            width: 110px;
+            /* Anchura del círculo */
+            height: 110px;
+            /* Altura del círculo */
+            position: absolute;
+            /* Posiciona relativo a la ventana */
+            top: 0;
+            /* Posicionado abajo */
+            left: 0;
+            /* Posicionado a la izquierda */
+            background: green;
+            /* Fondo negro */
+            border-radius: 50%;
+            /* Forma circular */
+        }
+    </style>
+
+    <script>
+        const colores = ['red', 'green', 'blue', 'orange','yellow','pink','purple'];
+        let contador = 0;
+        // Escuchador para el evento de desplazamiento (scroll)
+        window.addEventListener('scroll', function (e) {
+            // Selecciona todos los elementos con la clase 'scroll'
+            const target = document.querySelectorAll('.scroll');
+            contador = (contador + 1) % (colores.length);
+            // Itera sobre cada elemento 'scroll'
+            for (let index = 0; index < target.length; index++) {
+                // Calcula la nueva posición basado en la propiedad data-rate
+                var pos = window.pageYOffset * target[index].dataset.rate;
+                target[index].style.color=colores[contador];
+                // Comprueba si el desplazamiento es vertical
+                if (target[index].dataset.direction === 'vertical') {
+                    // Ajusta la posición en el eje Y usando transform
+                    target[index].style.transform = 'translate3d(0px,' + pos + 'px, 0px)';
+                } else {
+                    // Ajusta posiciones en ambos ejes X e Y si es horizontal
+                    var posX = window.pageYOffset * target[index].dataset.ratex;
+                    var posY = window.pageYOffset * target[index].dataset.ratey;
+                    target[index].style.transform = 'translate3d(' + posX + 'px, ' + posY + 'px, 0px)';
+                }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <section>
+        <ul>
+            <!-- Elementos con diferentes valores en data-rate para variar su velocidad -->
+            <li class="scroll" data-rate="-0.5" data-direction="vertical"> ruben </li>
+            <li class="scroll" data-rate="0.5" data-direction="vertical"> IES </li>
+            <li class="scroll" data-rate="1" data-direction="vertical"> Playamar </li>
+            <li class="scroll" data-rate="1.5" data-direction="vertical"> DAW </li>
+            <li class="scroll" data-rate="2" data-direction="vertical"> roman </li>
+        </ul>
+        <!-- Círculo que se mueve horizontalmente con el scroll -->
+        <span class="scroll pelotaVerde" data-rateY="1" data-rateX="1" data-direction="horizontal"></span>
+        <span class="scroll " data-rateY="1" data-rateX="1" data-direction="horizontal"></span>
+    </section>
+    <section></section>
+</body>
+
+</html>
