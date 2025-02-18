@@ -1,0 +1,20 @@
+// Definición del mapa de colores
+$colores: (
+  primary: #007bff,
+  secondary: #6c757d,
+  success: #28a745
+);
+
+// Función para obtener un color del mapa
+@function obtener-color($nombre) {
+  @if map-has-key($colores, $nombre) {
+    @return map-get($colores, $nombre);
+  } @else {
+    @error "El color #{$nombre} no está definido en el mapa de colores.";
+  }
+}
+
+// Uso de la función para asignar un color
+.btn {
+  background-color: obtener-color(primary);
+}
