@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 3fr;
+            gap: 40px 40px;
+            grid-template-areas:
+                ". . . "
+                ". . ."
+                ". . .";
+            width: 100%;
+            height: 400px;
+            background-color: azure;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* Tres columnas de igual ancho */
+            gap: 3px;
+            /* Espaciado entre las celdas */
+            background-color: #ccc;
+            /* Color del fondo del contenedor */
+            padding: 10px;
+            /* Espaciado interno del contenedor */
+        }
+
+
+
+        .grid-item {
+            background-color: #666;
+            /* Color de fondo de cada celda */
+            color: white;
+            /* Color del texto */
+            text-align: center;
+            /* Alineación centrada del texto */
+            padding: 20px;
+            /* Espaciado interno de cada celda */
+            border: 1px solid #ccc;
+            /* Borde de cada celda */
+        }
+
+
+        .container>div {
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Color para las celdas impares (odd) */
+        .container>div:nth-child(odd) {
+            background-color: green
+        }
+
+        /* Color para las celdas pares (even) */
+        .container>div:nth-child(even) {
+            background-color: rgb(243, 5, 5);
+
+        }
+
+        .grid-header {
+            grid-column: span 3;
+            background-color: #666;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .grid-columna {
+            grid-row: span 2;
+            background-color: #666;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .grid-template-areas {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto auto;
+            grid-template-areas:
+                "header header header"
+                "celda2 celda3 celda4"
+                "celda2 celda5 celda6";
+            gap: 1px;
+            background-color: #ccc;
+
+        }
+
+        .grid-template-areasEjer10 {
+            display: grid;
+            grid-row: span 2;
+            grid-template-columns: auto auto ;
+            grid-template-rows: auto auto ;
+            grid-template-areas:
+                "header header "
+                "celda2 celda3 "
+                "celda4 celda5 ";
+            gap: 1px;
+            background-color: #ccc;
+
+        }
+
+        .grid-containerEjer5 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            grid-template-rows: auto auto auto auto;
+            grid-template-areas:
+                "header header header celda2"
+                "celda3 celda4 celda5 celda2"
+            ;
+            gap: 1px;
+            background-color: #ccc;
+        }
+
+        .grid-containerEjer6 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+
+            grid-template-rows: auto auto auto auto;
+            grid-template-areas:
+                "celda1 celda1  celda2 celda2 "
+                "celda3 celda4  celda4 celda4 "
+                "celda5 celda5  celda5 celda5 "
+            ;
+            gap: 1px;
+            background-color: #ccc;
+        }
+
+        .grid-containerEjer7 {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            /* La segunda columna es más grande */
+            grid-template-rows: auto auto auto;
+            /* Tres filas de altura automática */
+            grid-template-areas:
+                ".      celda1"
+                /* Esquina superior izquierda vacía */
+                "celda2 celda3"
+                /* Celda 2 a la izquierda, celda 3 a la derecha */
+                "celda4 celda4";
+            /* Celda 4 ocupa toda la fila */
+            gap: 1px;
+            background-color: white#ccc;
+            /* Fondo del contenedor */
+        }
+
+        .grid-containerEjer8 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto auto;
+            grid-template-areas:
+                "celda2 celda3 celda4"
+                "celda5 celda6 celda1";
+
+            gap: 1px;
+            background-color: white#ccc;
+
+        }
+
+        .grid-containerEjer9 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-template-areas:
+                "celda1 celda4"
+                "celda2 celda5"
+                "celda3 celda6";
+
+            gap: 1px;
+            background-color: white#ccc;
+
+        }
+
+        .grid-containerEjer10 {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: auto auto;
+            grid-template-areas:
+                "celda1 celda2"
+                "celda3 grid-template-areasEjer10 "
+                "celda5 grid-template-areasEjer10 ";
+
+            gap: 1px;
+            background-color: white#ccc;
+
+        }
+
+
+    
+
+
+        .header {
+            grid-area: header;
+            background-color: #7f8c8d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .celda1 {
+            grid-area: celda1;
+            background-color: #95a5a6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .celda1Ejer7 {
+            grid-area: celda1;
+            background-color: #da7d13;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .celda2 {
+            grid-area: celda2;
+            background-color: #95a5a6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+
+
+        .celda3 {
+            grid-area: celda3;
+            background-color: #95a5a6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .celda4 {
+            grid-area: celda4;
+            background-color: #95a5a6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+
+
+        }
+
+
+        .celda5 {
+            grid-area: celda5;
+            background-color: #95a5a6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+
+        }
+
+        .celda6 {
+            grid-area: celda6;
+            background-color: #95a5a6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+
+    </style>
+    
+</head>
+<body>
+
+    <div class="grid-containerEjer1">
+        <div class="celda1">Celda 1</div>
+        <div class="celda2">Celda 2</div>
+        <div class="celda3">Celda 3</div>
+        <div class="grid-template-areasEjer1">
+            <div class="header">Encabezado</div>
+            <div class="celda4">Celda 4</div>
+            <div class="celda5">Celda 5</div>
+            <div class="celda6">Celda 6</div>
+        </div>
+        <div class="celda7">Celda 7</div>
+    </div>
+
+    
+    <div class="grid-containerEjer2">
+        <div class="celda1">Celda 1</div>
+        <div class="celda2">Celda 2</div>
+        <div class="grid-template-areasEjer2">
+            <div class="header">Encabezado Anidado</div>
+            <div class="celda3">Celda 3</div>
+            <div class="celda4">Celda 4</div>
+        </div>
+        <div class="celda5">Celda 5</div>
+    </div>
+
+    
+
+    <div class="grid-containerEjer3">
+        <div class="celda1">Celda 1</div>
+        <div class="grid-template-areasEjer3">
+            <div class="header">Encabezado Principal</div>
+            <div class="celda2">Celda 2</div>
+            <div class="celda3">Celda 3</div>
+            <div class="celda4">Celda 4</div>
+        </div>
+        <div class="celda5">Celda 5</div>
+    </div>
+
+    
+
+    <div class="grid-containerEjer4">
+        <div class="celda1">Celda 1</div>
+        <div class="grid-template-areasEjer4">
+            <div class="header">Encabezado Anidado con Filas</div>
+            <div class="celda2">Celda 2</div>
+            <div class="celda3">Celda 3</div>
+            <div class="celda4">Celda 4</div>
+            <div class="celda5">Celda 5</div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

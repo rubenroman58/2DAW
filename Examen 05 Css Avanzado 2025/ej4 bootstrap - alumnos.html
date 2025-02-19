@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejercicio Bootstrap</title>
+    <link href="img/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos para el Carousel */
+        .cajaCarousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1900px;
+            height: 300px;
+        }
+
+        a {
+
+            color: red;
+            text-decoration: none;
+
+        }
+
+        a:hover {
+            color: Blue;
+            background-color: white;
+        }
+
+        .cajaImg1 {
+            background: url('img/e4malaga1.jpg');
+        }
+
+        .cajaImg2 {
+            background: url('img/e4malaga2.jpg');
+        }
+
+        .cajaImg3 {
+            background: url('img/e4malaga3.jpg');
+        }
+
+        .cajaImg4 {
+            background: url('img/e4malaga4.jpg');
+        }
+
+
+        .footer {
+            color: darkblue;
+            text-align: center;
+            padding: 5px 5px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* @media querys para el footer  */
+        @media (min-width: 1000px) {}
+
+        /* Imagen de fondo para móviles */
+        @media (max-width: 1000px) {}
+    </style>
+</head>
+
+<body>
+    <h2>Ejericico AQUIIII</h2>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+            </div>
+        </nav>
+
+        <!-- Carrusel -->
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            Malaga
+        </div>
+
+        <!-- Contenedor responsive con Para los botones y los cards -->
+        <div class="container ">
+            <div class="row">
+
+                <!-- Contenedores para los botones y los cards -->
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 examen DAW DIW | Todos los derechos reservados</p>
+            </div>
+        </footer>
+
+        <h1> Ejercicio 4 </h1>
+        Crea una página web con Bootstrap que contenga:
+        <ol>
+            <li>EjUn navbar con una cabecera y al menos tres enlaces
+            </li>
+            <li>Un carrusel en la cabecera con al menos cuatro imágenes.
+            </li>
+            <li>Un grid de 6 contenedores con la siguiente distribución responsive :
+            </li>
+            <ol>
+                <li>Escritorio (lg en adelante): 6 columnas por fila (6)
+                </li>
+                <li>Tableta (md): 3 columnas por fila (3-3)
+                </li>
+                <li>Móvil (sm y xs): 2 columnas por fila (2-2-2)
+                </li>
+            </ol>
+            <li> Dentro de cada contenedor,
+                Debes agregar un elemento card con su secciones <ol>
+                    <li> card-body</li>
+                    <li> card-title </li>
+                    <li> card-text </li>
+                </ol>
+                y un boton predeterminado de bootstrap (primary, info ... etc)
+            </li>
+            <li> Configurar las medias query del footer para que cambie de color cuando la pantalla tenga menos de
+                1000px
+
+            </li>
+        </ol>
+        <p> muestra de como deberia quedar </p>
+        <p> Pantalla completa</p>
+        <img src="img/ejercicio3muestra1.jpg"><br>
+        <p> Pantalla tablet</p>
+        <img src="img/ejercicio3muestra2.jpg"><br>
+        <p> Pantalla movil</p>
+        <img src="img/ejercicio3muestra3.jpg"><br>
+    </div>
+
+
+
+
+
+
+
+    <h2>Ejercicio 2</h2>
+    <div class="container">
+        <!-- Fila superior -->
+        <div class="row">
+            <div class="col-md-12  " style="background-color: rgb(5, 5, 5); min-height: 50px;">Malaga daw</div>
+        </div>
+
+        <!-- Contenido central -->
+        <div class="col-md-12 ">
+            <!-- Fila 1-2 -->
+            <div class="row">
+                <div class="col-md-12  mt-2 me-3 d-sm-none d-md-none" style="min-height: 50px; max-width: 30px;"> <img
+                        src="e4malaga1.jpg"><br></div>
+
+            </div>
+        </div>
+        <div class="col-md-12 ">
+            <!-- Fila 1-2 -->
+            <div class="row">
+                <div class="col-12  mt-2 me-3 d-none d-md-block" style="min-height: 50px; max-width: 30px;"> <img
+                        src="e4malaga3.jpg"><br></div>
+
+            </div>
+        </div>
+        <div class="w-100 ">
+            <!-- Entre la dos y tres -->
+            <!-- Fila 3-4 -->
+
+            <div class="row mt-2">
+                <div class="col-12 d-none d-sm-block d-md-none">
+                    <img src="e4malaga2.jpg">
+                </div>
+
+            </div>
+
+
+            <div class="row mt-2">
+                <div class="col-6 col-sm-3 col-md-2 bg-primary p-2  d-md-block d-none">Tarjeta 1</div>
+                <div class="col-6 col-sm-3 col-md-2 bg-primary p-2  d-md-block d-none">Tarjeta 2</div>
+                <div class="col-6 col-sm-3 col-md-2 bg-primary p-2  d-md-block d-none ">Tarjeta 3</div>
+                <div class="col-6 col-sm-3 col-md-2 bg-primary p-2  d-md-block d-none">Tarjeta 4</div>
+                <div class="col-6 col-sm-3 col-md-2 bg-primary p-2  d-md-block d-none">Tarjeta 5</div>
+                <div class="col-6 col-sm-3 col-md-2 bg-primary p-2  d-md-block d-none">Tarjeta 6</div>
+            </div>
+
+
+            <div class="row mt-2">
+                <div class="col-6 col-sm-4 col-md-2 bg-primary p-2  d-md-none">Tarjeta 1</div>
+                <div class="col-6 col-sm-4  bg-primary p-2  d-md-none">Tarjeta 2</div>
+                <div class="col-6 col-sm-4  bg-primary p-2  d-md-none ">Tarjeta 3</div>
+                <div class="col-6 col-sm-4 bg-primary p-2  d-md-none">Tarjeta 4</div>
+                <div class="col-6 col-sm-4  bg-primary p-2  d-md-none">Tarjeta 5</div>
+                <div class="col-6 col-sm-4  bg-primary p-2  d-md-none">Tarjeta 6</div>
+            </div>
+
+
+
+
+            <div class="row mt-2">
+
+                <div class="col-12 d-none d-sm-block d-md-none"
+                    style="background-color:rgb(49, 226, 182); min-height: 50px;">
+                    Examen Ruben azul
+                </div>
+            </div>
+
+            <!-- Fila azul 1abcd -->
+
+
+
+
+
+
+
+            <!-- Fila inferior -->
+            <div class="row mt-2">
+                <div class="col-md-12 d-md-block d-none" style="background-color: rgb(213, 245, 30); min-height: 50px;">
+                    ExamenRuben
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="img/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

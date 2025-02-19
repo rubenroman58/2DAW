@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Flexbox</title>
+    <style>
+        .imgeje {
+            display: flex;
+            margin: auto;
+        }
+
+        .container {
+            margin: auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            height: 30vh;
+            width: 70vw;
+        }
+
+        .box {
+            width: 100px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            font-size: 40px;
+        }
+
+        .box1 {
+            background-color: red;
+        }
+
+        .box2 {
+            background-color: blue;
+        }
+
+        .box3 {
+            background-color: green;
+        }
+
+        .box4 {
+            background-color: orange;
+        }
+
+        /* Ejercicio 1a*/
+        .container_ej1a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row-reverse;
+        
+        }
+
+        .box_ej1a {
+            height: 100px;
+     
+        }
+
+        /* Ejercicio 1b*/
+        .container_ej1b {
+            height: 70vh;
+            width: 30vw;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            flex-direction: column-reverse;
+
+   
+        }
+
+        .box_ej1b {
+            height: 100px;
+  
+        }
+
+        /* Ejercicio 2a*/
+        .container_ej2a {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+            flex-direction: row;
+
+            height: 50vh;
+        }
+
+        .box1_ej2a {
+         align-self: stretch;
+        
+
+        }
+
+        .box2_ej2a {
+            height: 100px;
+        
+        }
+
+        .box3_ej2a {
+            align-self: flex-end;
+            height: 100px;
+           
+      
+        }
+
+        .box4_ej2a {
+            height: 100px;
+            align-self: center;
+  
+        }
+
+        /* Ejercicio 2b*/
+        .container_ej2b {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 70vh;
+            width: 30vw;
+           
+            height: 50vh;
+        }
+
+        .box1_ej2b {
+            height: 100px;
+            order: 3;
+            min-width:30%;
+           
+       
+        }
+
+        .box2_ej2b {
+            display: flex;
+            height: 100px;
+            order: 1;
+            justify-content: center;
+            min-width:50%;
+         
+        }
+
+        .box3_ej2b {          
+            height: 100px;
+            order: 4;
+            align-self:flex-end;
+             width :400px;
+        
+        }
+
+        .box4_ej2b {         
+            height: 100px;
+            order: 1;
+            align-self: center;
+         
+        }
+
+        /* Ejercicio 3a */
+
+        .container_ej3a {
+            display: grid;
+            width: 50vw;
+            height: 50vh;
+            background-color: #ddd;
+            padding: 10px;
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows:2fr 1fr 3fr;
+            gap: 15px;
+           
+        }
+
+        .item_ej3a {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .item_ej3a:nth-child(1) {
+            background-color: red;
+        }
+
+        .item_ej3a:nth-child(2) {
+            background-color: blue;
+        }
+
+        .item_ej3a:nth-child(3) {
+            background-color: green;
+        }
+
+        .item_ej3a:nth-child(4) {
+            background-color: purple;
+        }
+
+        .item_ej3a:nth-child(5) {
+            background-color: orange;
+        }
+
+        .item_ej3a:nth-child(6) {
+            background-color: pink;
+        }
+
+        .item_ej3a:nth-child(7) {
+            background-color: cyan;
+        }
+
+        .item_ej3a:nth-child(8) {
+            background-color: lime;
+        }
+
+        .item_ej3a:nth-child(9) {
+            background-color: brown;
+        }
+
+
+        /* Ejercicio 3b */
+             .container_ej3b {
+            display: grid;      
+            width: 40vw;          
+            height: 40vh;       
+            margin: auto;
+            grid-template-columns: auto auto auto auto;
+            grid-template-rows: auto auto auto auto;
+            grid-template-areas:
+                "nav1 header header header"
+                "nav1 main main nav2"
+                "nav1 main main nav2"
+                "nav1 main main nav2"
+                "footer footer footer nav2";
+            gap: 1px;
+        }
+
+        .container_ej3b>header {     
+            grid-area:header;       
+            background-color: #8ca0ff;
+        }
+
+        .container_ej3b>.nav1 {  
+            grid-area:nav1;      
+            background-color: #ffa08c;
+        }
+
+        .container_ej3b>.nav2 { 
+            grid-area:nav2;        
+            background-color: #ffa08c;
+        }
+
+        .container_ej3b>main {    
+            grid-area:main;       
+            background-color: #ffff64;
+        }
+
+        .container_ej3b>footer { 
+            grid-area:footer;           
+            background-color: #8cffa0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Ejercicio Flex 1a</h1>
+    <p> Ajusta las propiedades display, justify-content, align-items y flex-direction de las clases ej1a para conseguir
+        este resultado </p>
+    <img src="img/ej1a.jpg" class="imgeje">
+    <div class="container container_ej1a">
+        <div class="box box1 box_ej1a">1</div>
+        <div class="box box2 box_ej1a">2</div>
+        <div class="box box3 box_ej1a ">3</div>
+        <div class="box box4 box_ej1a">4</div>
+    </div>
+    <h1> Ejercicio Flex 1b</h1>
+    <p> Ajusta las propiedades display, justify-content, align-items y flex-direction de las clases ej1b del container y
+        del box para conseguir este resultado </p>
+    <img src="img/ej1b.jpg" class="imgeje">
+    <div class="container container_ej1b">
+        <div class="box box1 box_ej1b">1</div>
+        <div class="box box2 box_ej1b">2</div>
+        <div class="box box3 box_ej1b ">3</div>
+        <div class="box box4 box_ej1b">4</div>
+    </div>
+
+    <h1> Ejercicio Flex 2a</h1>
+
+    <p> Ajusta las propiedades display, justify-content, align-items y flex-direction del container <br>
+        y align-self, justify-content y align-items de los box <br>
+        de las clases ej2a para conseguir este resultado </p>
+    <img src="img/ej2a.jpg" class="imgeje">
+    <div class="container container_ej2a">
+        <div class="box box1 box1_ej2a">1</div>
+        <div class="box box2 box2_ej2a">2</div>
+        <div class="box box3 box3_ej2a ">3</div>
+        <div class="box box4 box4_ej2a">4</div>
+    </div>
+
+    <h1> Ejercicio Flex 2b</h1>
+    <p> Ajusta las propiedades display, justify-content, align-items y flex-direction del container <br>
+        y align-self, justify-content y align-items, order y width (valores posibles 100, 200, 300 y 400 px) de los box
+        <br>
+        de las clases ej2a para conseguir este resultado
+    </p>
+    <img src="img/ej2b.jpg" class="imgeje">
+    <div class="container container_ej2b">
+        <div class="box box1 box1_ej2b">1</div>
+        <div class="box box2 box2_ej2b">2</div>
+        <div class="box box3 box3_ej2b">3</div>
+        <div class="box box4 box4_ej2b">4</div>
+    </div>
+
+    <h1> Ejercicio grid 3a</h1>
+    <p> Ajusta las propiedades display, grid-template-columns: grid-template-rows: y gap margin del container_ej3a <br>
+        <br> para conseguir este resultado
+    </p>
+
+    <img src="img/ej3a.jpg" class="imgeje">
+    <div class=" container_ej3a">
+        <div class="item_ej3a">1</div>
+        <div class="item_ej3a">2</div>
+        <div class="item_ej3a">3</div>
+        <div class="item_ej3a">4</div>
+        <div class="item_ej3a">5</div>
+        <div class="item_ej3a">6</div>
+        <div class="item_ej3a">7</div>
+        <div class="item_ej3a">8</div>
+        <div class="item_ej3a">9</div>
+    </div>
+
+    <h1> Ejercicio grid 3b</h1>
+    <p> Ajusta las propiedades display, grid-template-columns: grid-template-rows, grid-template-areas y, gap y margin
+        del container_ej3b <br>
+        <br> asi como la propiedad grid-area de los items interioes para conseguir este resultado
+    </p>
+
+    <img src="img/ej3b.jpg" class="imgeje">
+    <div class="container_ej3b">
+        <header>Header</header>
+        <nav class="nav1">Navigation</nav>
+        <main>Main area</main>
+        <nav class="nav2">Navigation</nav>
+        <footer>Footer</footer>
+    </div>
+
+
+   
+
+</body>
+
+</html>

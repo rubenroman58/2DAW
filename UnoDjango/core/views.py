@@ -28,13 +28,18 @@ def libro_list(request):
 def autor_create(request):
     if request.method == 'GET':
         return render(request, 'core/create_autor.html', {'autor_form': AutorForm})
-    
+
     if request.method == 'POST':
-        form=AutorForm(data=request.POST)
+        form = AutorForm(data=request.POST)
     if form.is_valid:
-        form.save() 
+        form.save()
         print('tttttt')
-        return redirect ('/autor/')
+        return redirect('/autor/')
     else:
-        form=AutorForm(data=request.POST)
-        return render (request, 'core/create_autor.html',{'autor_form': AutorForm})
+        form = AutorForm(data=request.POST)
+        return render(request, 'core/create_autor.html', {'autor_form': AutorForm})
+
+
+def autor_update(request, pk=None):
+    autor = Author.objects.get(pk=pk)
+    return render(request, 'update_autor.html', {'author': autor})

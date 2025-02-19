@@ -1,0 +1,39 @@
+/*
+para la llamada del mixin
+@include Ejercicio6b(100)
+deberia salir  
+.ejercicio6a-1 {   width: 100 px; }
+.ejercicio6a-2 {   width: 200 px; }
+.ejercicio6a-3 {   width: 300 px; }
+.ejercicio6a-4 {   width: 400 px; }
+.ejercicio6a-5 {   width: 500 px; }
+
+
+para la llamada del mixin
+@include Ejercicio6b(200)
+deberia salir 
+
+.ejercicio6a-1 {   width: 200 px; }
+.ejercicio6a-2 {   width: 400 px; }
+.ejercicio6a-3 {   width: 600 px; }
+.ejercicio6a-4 {   width: 800 px; }
+.ejercicio6a-5 {   width: 1000 px; }
+
+
+*/
+
+ @include bucle($widthentrada,$numeroEjercicios);
+
+ $widthentrada: 100; 
+ $numeroEjercicios: 5;  
+ 
+ @mixin Ejercicio6b($widthentrada, $numeroEjercicios) {
+   @for $i from 1 through $numeroEjercicios {
+     .ejercicio6b-#{$i} {
+       width: $widthentrada * $i + px; 
+     }
+   }
+ }
+ 
+ @include Ejercicio6b($widthentrada, $numeroEjercicios); 
+ 

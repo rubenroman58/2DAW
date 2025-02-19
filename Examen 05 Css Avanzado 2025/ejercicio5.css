@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/*
+    • Las clases deben estar dentro de un div  y de un a
+    • El codigo debe dotar de un color definido
+     por una variable $colorin el contenido de la clase
+    • Se debe usar el codigo & para cambiar el color por 
+    el de las variables $colorinPseudoHover $colorinPseudoActive  en los estados hover y en  active 
+    • Se debe usar el codigo  & para añadir el texto 
+    "antes" y "despues" en las pseudo clases correspondientes. 
+    • Se debe hacer exactamente lo mismo 
+    que la anterior pero para una clase ejercicio5b 
+    pero con los colores inveritidos usando 
+    una funcion que invierta la variable. 
+
+div a ejercicio5 {   color: #00ff00; }
+div a ejercicio5:hover {   color: #ff0000; }
+div a ejercicio5:active {   color: #ff0000; }
+div a ejercicio5::before {   content: " Antes "; }
+div a ejercicio5::after {    content: " Despues "; }
+div a ejercicio5b {   color: fuchsia; }
+div a ejercicio5b:hover {   color: aqua; }
+div a ejercicio5b:active {   color: aqua; }
+div a ejercicio5b::before {   content: " Antes "; }
+div a ejercicio5b::after {   content: " Despues "; }
+*/
+div,
+a {
+  color: yellow;
+}
+div:hover,
+a:hover {
+  color: blue;
+}
+div:hover::before,
+a:hover::before {
+  content: "antes ";
+}
+div:hover::after,
+a:hover::after {
+  content: " despues";
+}
+div:active,
+a:active {
+  color: red;
+}
+div:active::before,
+a:active::before {
+  content: "antes ";
+}
+div:active::after,
+a:active::after {
+  content: " despues";
+}
+
+/*# sourceMappingURL=ejercicio5.css.map */

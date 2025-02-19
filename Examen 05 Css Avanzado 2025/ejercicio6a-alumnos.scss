@@ -1,0 +1,26 @@
+/* deberia salir algo parecido a esto 
+con una directiva @each 
+
+.Ejercicio6pato {   display: block;   width: 200px;   height: 200px;
+  background-image: url("/images/pato.png");  }
+
+.Ejercicio6burro {   display: block;   width: 200px;   height: 200px;
+  background-image: url("/images/burro.png");  }
+
+.Ejercicio6perro {   display: block;   width: 200px;    height: 200px;
+  background-image: url("/images/perro.png"); }
+
+.Ejercicio6vaca {   display: block;   width: 200px;   height: 200px;
+  background-image: url("/images/vaca.png");  }
+
+*/
+
+
+/* SCSS */ 
+@each $animal in pato, burro, perro, vaca { 
+  .Ejercicio6#{$animal} { 
+  display: block;   
+  width: 200px;   height: 200px;
+   background-image: url("/images/#{$animal}.png"); 
+  } 
+  }
