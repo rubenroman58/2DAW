@@ -1,17 +1,68 @@
-/* Error: $amount: Expected 50% to be within 0 and 1.
- *    ,
- * 66 |     background-color: fade-in($base-color, 50%);
- *    |                       ^^^^^^^^^^^^^^^^^^^^^^^^^
- *    '
- *   ejercicio3.scss 66:23  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: $amount: Expected 50% to be within 0 and 1.\a    \2577 \a 66 \2502      background-color: fade-in($base-color, 50%);\d\a    \2502                        ^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   ejercicio3.scss 66:23  root stylesheet";
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
+.flex-container .lighten {
+  background-color: rgb(138.6359832636, 195.9581589958, 234.3640167364);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.flex-container .darken {
+  background-color: rgb(25.4560669456, 96.1673640167, 143.5439330544);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.flex-container .saturate {
+  background-color: rgb(16.15, 159.0841317365, 254.85);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.flex-container .desaturate {
+  background-color: rgb(87.85, 144.9158682635, 183.15);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.flex-container .grayscale {
+  background-color: rgb(135.5, 135.5, 135.5);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.flex-container .complement {
+  background-color: #db7734;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.flex-container .invert {
+  background-color: #cb6724;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.flex-container .rgba {
+  background-color: rgba(52, 152, 219, 0.5);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.flex-container .fade-in {
+  background-color: rgba(52, 152, 219, 0.5);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.flex-container .fade-out {
+  background-color: rgba(52, 152, 219, 0.2);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=ejercicio3.css.map */

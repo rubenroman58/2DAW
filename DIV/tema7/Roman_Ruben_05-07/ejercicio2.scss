@@ -1,0 +1,19 @@
+$colores: (
+  primary: #3498db,
+  secondary: #2ecc71,
+  danger: #e74c3c,
+  warning: #f1c40f
+);
+@function obtener-color($nombre) {
+    @if map-has-key($colores, $nombre) {
+        @return map-get($colores, $nombre);
+    }
+
+    @else {
+        @error "El color #{$nombre} no está definido en el mapa de colores.";
+    }
+}
+
+.btn {
+    background-color: obtener-color(primary);
+}

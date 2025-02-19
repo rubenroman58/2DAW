@@ -63,14 +63,16 @@ $base-color: #3498db;
   }
 
   .fade-in {
-    background-color: fade-in($base-color, 50%);
+    // Usamos rgba para darle un valor de opacidad
+    background-color: rgba($base-color, 0.5); // 50% de opacidad
     color: white;
     padding: 20px;
     text-align: center;
   }
 
   .fade-out {
-    background-color: fade-out($base-color, 50%); 
+    // De nuevo, ajustamos la opacidad con rgba
+    background-color: rgba($base-color, 0.2); // 20% de opacidad
     color: white;
     padding: 20px;
     text-align: center;

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* Tres columnas de igual ancho */
+            gap: 3px;
+            /* Espaciado entre las celdas */
+            background-color: #ccc;
+            /* Color del fondo del contenedor */
+            padding: 10px;
+            /* Espaciado interno del contenedor */
+        }
+        .grid-area{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* Tres columnas de igual ancho */
+            gap: 3px;
+            /* Espaciado entre las celdas */
+            background-color: #ccc;
+            /* Color del fondo del contenedor */
+            padding: 10px;
+            grid-template-areas: 
+            "celda1 celda1 celda1 celda2"
+            "celda3 celda4 celda5 celda2"
+            ;
+        }
+
+        .celda1{
+            grid-area: celda1;
+            background-color: #95a5a6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .celda2{
+            grid-area: celda2;
+            background-color: #95a5a6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .celda3{
+            grid-area: celda3;
+            background-color: #95a5a6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .celda4{
+            grid-area: celda4;
+            background-color: #95a5a6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .celda5{
+            grid-area: celda5;
+            background-color: #95a5a6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        </style>
+</head>
+<body>
+
+    <div class="grid-area">
+        <div class="celda1">celda1</div>
+        <div class="celda2">celda2</div>
+        <div class="celda3">celda3</div>
+        <div class="celda4">celda4</div>
+        <div class="celda5">celda5</div>
+
+        </div>
+</body>
+</html>

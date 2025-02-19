@@ -1,0 +1,42 @@
+// Mapa de colores inicial
+$colores: (
+  primary: #3498db,
+  secondary: #2ecc71,
+  danger: #e74c3c,
+  warning: #f1c40f
+);
+
+// Nuevos colores a añadir
+$new-colors: (
+  success: #27ae60,
+  info: #2980b9
+);
+
+// Extender el mapa de colores sin modificar la declaración original
+$colores: map-merge($colores, $new-colors);
+
+// Función para obtener el color desde el mapa
+@function obtener-color($nombre) {
+  @if map-has-key($colores, $nombre) {
+    @return map-get($colores, $nombre);
+  } @else {
+    @error "El color #{$nombre} no está definido en el mapa de colores.";
+  }
+}
+
+// Ejemplo de uso
+.btn-success {
+  background-color: obtener-color(success);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-info {
+  background-color: obtener-color(info);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
