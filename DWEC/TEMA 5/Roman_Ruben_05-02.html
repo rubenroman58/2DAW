@@ -1,14 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio 1</title>
 </head>
+
 <body>
-    <h2>Ejercicio 10<h2>
-        <script>
+
+    <form id="formularioBusquedaId" action="" name="formularioBusquedaName">
+        <p>
+            <input type="text" id="entradaId" name="entradaName">
+            <input type="button" id="enviar" name="enviar" value="Mostrar Valor" onclick="mostrarValor()">
+        </p>
+    </form>
+
+    <div id="Ejercicio1"></div>
+    <script>
+        function mostrarValor() {
+            var valor = document.getElementById("entradaId").value;
+            var mensaje = "<b>Forma 1:</b> " + valor + "<br>";
+
+            valor = document.formularioBusquedaName.entradaName.value;
+            mensaje += "<b>Forma 2:</b> " + valor + "<br>";
+
+            valor = document.formularioBusquedaName.elements[0].value;
+            mensaje += "<b>Forma 3:</b> " + valor + "<br>";
+            valor = document.forms["formularioBusquedaName"].elements["entradaName"].value;
+            mensaje += "<b>Forma 4:</b> " + valor + "<br>";
+
+            valor = document.forms["formularioBusquedaName"].entradaName.value;
+            mensaje += "<b>Forma 5:</b> " + valor + "<br>";
+
+            document.getElementById("Ejercicio1").innerHTML = mensaje;
+        }
+    </script>
+
+
+
+    <script type="text/javascript">
+        function convertirMinusculas() {
+            document.getElementById("nombre").value = document.getElementById("nombre").value.toLowerCase();
+        } 
+    </script>
+
+    <h2>Propiedad VALUE de un objeto INPUT de tipo TEXT </h2>
+    <form id="formulario" action="">
+        <p> <label for="nombre">Nombre y Apellidos:<br> </label>
+            <input type="text" id="nombre" name="nombre" value="defeeecto" size="30" onblur="convertirMinusculas()"><br>
+            Introduce tu Nombre y Apellidos y haz click fuera del campo.
+        </p>
+        <input type="checkbox" id="aprobar" name="aprobarn" value="Si" />¿Te gustaria Aprobar?<br>
+        <input type="radio" name="actores" id="actor-1" value="James1962">
+        <input type="radio" name="actores" id="actor-2" value="James ">
+        <input type="radio" name="actores" id="actor-3" value="James ">
+        <input type="radio" name="actores" id="actor-4" value="James ">
+        <input type="radio" name="actores" id="actor-5" value="James ">
+
+    </form>
+    <button onclick="ejercicio3()">ejercicio3</button>
+
+
+    <script>
+        function ejercicio3() {
+            var nombreInput = document.getElementById("nombre");
+
+            // Obtener los valores de las propiedades mencionadas
+            var defaultValue = nombreInput.defaultValue;
+            var maxLength = nombreInput.maxLength;
+            var name = nombreInput.name;
+            var readOnly = nombreInput.readOnly;
+            var size = nombreInput.size;
+            var type = nombreInput.type;
+            var value = nombreInput.value;
+
+            // Crear una lista con la información
+            var mensaje = "<h2>Valores del campo de texto:</h2>";
+            mensaje += "<ul>";
+            mensaje += "<li><b>defaultValue:</b> " + defaultValue + "</li>";
+            mensaje += "<li><b>maxLength:</b> " + maxLength + "</li>";
+            mensaje += "<li><b>name:</b> " + name + "</li>";
+            mensaje += "<li><b>readOnly:</b> " + (readOnly ? "Sí" : "No") + "</li>";
+            mensaje += "<li><b>size:</b> " + size + "</li>";
+            mensaje += "<li><b>type:</b> " + type + "</li>";
+            mensaje += "<li><b>value:</b> " + value + "</li>";
+            mensaje += "</ul>";
+
+            // Mostrar los resultados en el div con id "ej3"
+            document.getElementById("ej3").innerHTML = mensaje;
+        }
+
+    </script>
+    <button onclick="ejercicio4()">ejercicio4</button>
+
+
+    <script>
+        function ejercicio4() {
+            var nombreInput = document.getElementById("nombre");
+            nombres = ['ruben', 'paula', 'alberto'];
+            var nombreAleatorio = nombres[Math.floor(Math.random() * nombres.length)];
+
+            //
+            document.getElementById("nombre").value = nombreAleatorio;
+            document.getElementById("ej4").innerHTML = "<h3>El nombre aleatorio es: " + nombreAleatorio + "</h3>";
+        }
+
+    </script>
+    <button onclick="ejercicio5()">ejercicio5</button>
+
+    <script>
+        function ejercicio5() {
+            var checkbox = document.getElementById("aprobar");
+
+            checkbox.checked = !checkbox.checked;
+
+        }
+
+    </script>
+    <button onclick="ejercicio6()">ejercicio6</button>
+
+
+    <script>
+        var currentIndex = 0;
+
+        function ejercicio6() {
+            var radios = document.getElementsByName("actores");
+
+
+            for (var i = 0; i < radios.length; i++) {
+                radios[i].checked = false;
+            }
+
+            radios[currentIndex].checked = true;
+
+            currentIndex = (currentIndex + 1) % radios.length;
+            document.getElementById("ej6").innerHTML = "<h3>El radio button seleccionado es: " + radios[currentIndex].value + "</h3>";
+        }
+    </script>
+
+    <form id="formulario" action="">
+        <p>
+            <label for="alternativas">Selecciona una alternativa:</label>
+            <select id="alternativas" name="alternativas">
+                <option value="opcion1">Opción 1</option>
+                <option value="opcion2">Opción 2</option>
+                <option value="opcion3">Opción 3</option>
+                <option value="opcion4">Opción 4</option>
+                <option value="opcion5">Opción 5</option>
+                <option value="opcion6">Opción 6</option>
+            </select>
+        </p>
+
+    </form>
+    <button type="button" onclick="ejercicio7()">Ejercicio 7</button>
+    <div id="ej7"></div>
+
+    <script>
+        function ejercicio7() {
+            var select = document.getElementById("alternativas");
+            var opciones = select.options;
+
+            var mensaje = "<h3>Alternativas:</h3><ul>";
+
+
+            for (var i = 0; i < opciones.length; i++) {
+
+                if (opciones[i].selected) {
+                    mensaje += "<li><b>" + opciones[i].text + "</b> (Valor: " +
+                        opciones[i].value + ")</li>";
+                } else {
+                    mensaje += "<li>" + opciones[i].text + " (Valor: " +
+                        opciones[i].value + ")</li>";
+                }
+            }
+
+            mensaje += "</ul>";
+            document.getElementById("ej7").innerHTML = mensaje;
+        }
+    </script>
+    <button onclick="ejercicio8()">ejercicio8</button>
+
+    <script>
+        function ejercicio8() {
+            // Obtener el valor del campo de texto
+            var opcionnueva = document.getElementById("nombre").value;
+
+            // Verificar si el campo no está vacío
+            if (opcionnueva.trim() !== "") {
+                // Obtener el select donde vamos a agregar la nueva opción
+                var select = document.getElementById("alternativas");
+
+                // Crear un nuevo elemento option
+                var option = document.createElement("option");
+
+                // Establecer el texto y el value de la nueva opción
+                option.text = opcionnueva;
+                option.value = opcionnueva;
+
+                // Agregar la nueva opción al select
+                select.add(option);
+
+                // Limpiar el campo de texto después de agregar la opción
+                document.getElementById("nombre").value = "";
+
+                // Mostrar mensaje de éxito
+                document.getElementById("ej8").innerHTML = "<h3>Se ha añadido la opción: " + opcionnueva + "</h3>";
+            } else {
+                document.getElementById("ej8").innerHTML = "<h3>Por favor, ingrese un valor en el campo de texto.</h3>";
+            }
+        }
+    </script>
+    <div id="ej3"> </div>
+    <div id="ej4"> </div>
+    <div id="ej5"> </div>
+    <div id="ej6"> </div>
+    <br>
+    <br>
+    <br>
+    <h2>Ejercicio10</h2>
+
+    <select name="paises" id="paises" onchange="cambiarImagen(this)">
+        <option value="spain.jpg">España</option>
+        <option value="reinounido.jpg">Reino Unido</option>
+        <option value="francia.jpg">Francia</option>
+        <option value="italia.jpg">Italia</option>
+    </select>
+
+    <img class="image2" src="spain.jpg" alt="imagen del país" id="imagen">
+    <script>
+        function cambiarImagen(selectElement) {
+
+            var nuevaImagen = selectElement.value;
+
+            var image = document.getElementById("imagen");
+
+            image.src = nuevaImagen;
+        }
+    </script>
+
+    <h2>Ejercicio11</h2>
+        <button onclick="eliminarSelect()">Eliminar select</button>
+
+    <script>
+        function eliminarSelect() {
             
-        </script>
-</body>
+            var selectElement = document.getElementById("paises");
+
+            selectElement.parentNode.removeChild(selectElement);
+        }
+    </script>
+
 </html>

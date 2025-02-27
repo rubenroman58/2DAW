@@ -8,13 +8,16 @@
 </head>
 
 <body>
-    <form action="" method="post">
+    <form action="" method="post" id="form6">
         <div>
             <fieldset>
                 <legend> Datos Personales </legend>
-                <p> Nombre: <input type="text" name="name_control" autofocus required /> </p>
-                <p> Contraseña: <input type="password" name="pass_control" required /></p>
-                <p> Correo Electrónico: <input type="email" name="email_control" required /></p>
+                <p> Nombre: <input type="text" name="name_control" id="nombreid" autofocus required value="ruben" />
+                </p>
+                <p> Contraseña: <input id="contraseñaid" type="password" name="pass_control" value="rubencontraseña"
+                        required /></p>
+                <p> Correo Electrónico: <input id="correoid" type="email" name="email_control" value="rubencorreo"
+                        required /></p>
                 <br />
             </fieldset>
             <fieldset>
@@ -31,41 +34,128 @@
                 <p> Color Favorito: <input type="color" name="color_control" /></p>
                 <br /><br />
             </fieldset>
-            <fieldset>
-                <legend> Informatica </legend>
-                <br />
-                <p> Sistema operativo:
-                    <select name="sistema_control">
-                        <option value="windows">Windows</option>
-                        <option value="linux">Linux</option>
-                        <option value="macos">Macos</option>
-                    </select>
-                </p>
-                <p> Que lenguaje de programación web conoces? </p>
-                <input name="lenguaje_control" type="checkbox" value="html5" checked /> Html5
-                <input name="lenguaje_control" type="checkbox" value="ccs3" checked /> Css3
-                <input name="lenguaje_control" type="checkbox" value="javascript" /> JavaScript
-                <input name="lenguaje_control" type="checkbox" value="php" /> Php
-                <input name="lenguaje_control" type="checkbox" value="python" /> Python </p>
-                <p> Sabes utilizar Python? </p>
-                <p> <input name="python_control" type="radio" value="si" checked /> Si <input name="python_control"
-                        type="radio" value="no" /> No </p>
-                <p> Comentarios: </p>
-                <p> <textarea name="comentario_control" rows="4" cols="50"></textarea> </p>
-                <p>
-                    <br /><br />
-                    <input type="submit" value="Submit!" />
-            </fieldset>
+
         </div>
     </form>
 
-    <h2> Ejercicio2 </h2><div id="Ejercicio2"> </div>
+
+    <form action="" method="post">
+        <div>
+            <fieldset>
+                <legend> Gustos </legend>
+                <br />
+                <p> URL: <input type="url" name="url_control" placeholder="Escripe la URL de tu página web personal" />
+                </p>
+                <p> Fecha: <input type="date" name="date_control" /> </p>
+                <p> Tiempo: <input type="time" name="time_control" /> </p>
+                <p> Número (min -10, max 10): <input type="number" name="number_control" min="-10" max="10" value="0" />
+                </p>
+                <p> Teléfono: <input type="tel" name="tel_control" /></p>
+                <p> Término de búsqueda: <input type="search" name="search_control" /></p>
+                <p> Color Favorito: <input type="color" name="color_control" /></p>
+                <br /><br />
+            </fieldset>
+
+        </div>
+    </form>
+
+
+    <h2> Ejercicio2 </h2>
+    <div id="Ejercicio2"> </div>
+    <input type="button" value="Ver Contenido" onclick="verEj1FormularioMetodo3()" />
     <script>
-     
 
-     
+        function verEj1FormularioMetodo3() {
+            var formularios = document.forms;
+            var miformulario = formularios[0];
+            var cadena = "";
+            for (var i = 0; i < miformulario.length; i++) {
+                cadena += "<b>" + miformulario[i].name + ":</b> ";
+                cadena += miformulario[i].value + "<br>";
+            }
+            document.getElementById("Ejercicio2").innerHTML = cadena;
+        }
+    </script>
 
-        </script>
+    <h2>Ejercicio 3</h2>
+    <div id="Ejercicio3"> </div>
+    <input type="button" value="Ver Contenido" onclick="verEj3FormularioMetodo2()" />
+    <script>
+
+        function verEj3FormularioMetodo2() {
+            var formulario = document.getElementsByTagName('form');
+            var miformulario = formulario[0];
+            var cadena = "";
+            for (var i = 0; i < miformulario.length; i++) {
+                cadena += "<b>" + miformulario[i].name + ":</b> ";
+                cadena += miformulario[i].value + "<br>";
+            }
+            document.getElementById("Ejercicio3").innerHTML = cadena;
+        }
+    </script>
+
+
+    <h2>Ejercicio 4</h2>
+    <div id="Ejercicio4"> </div>
+    <input type="button" value="Ver Contenido" onclick="verEj4FormularioMetodo1()" />
+    <script>
+
+        function verEj4FormularioMetodo1() {
+
+            cadena = "";
+            cadena += document.getElementById('nombreid').value + "<br>";
+            cadena += document.getElementById('contraseñaid').value + "<br>";
+            cadena += document.getElementById('correoid').value + "<br>";
+            document.getElementById("Ejercicio4").innerHTML = cadena;
+        }
+    </script>
+
+
+    <h2>Ejercicio 5</h2>
+    <div id="Ejercicio5"> </div>
+    <input type="button" value="Rellenar contenido(comprobar con el ejer 4)" onclick="verEj5Rellenar()" />
+    <script>
+
+
+        function verEj5Rellenar() {
+
+
+            document.getElementById('nombreid').value = "Pepe pepillo";
+            document.getElementById('contraseñaid').value = "Pepe pepillo";
+            document.getElementById('correoid').value = "Pepe@pepillo.com";
+
+
+        }
+    </script>
+
+
+
+    <h2>Ejercicio 6</h2>
+    <div id="Ejercicio6"> </div>
+    <input type="button" value="Comprobar espacios en blanco" onclick="comprobarCampos()" />
+    <script>
+        function comprobarCampos() {
+            var objFormulario = document.getElementById('form6');  
+            var mensaje = "";  // Mensaje que mostraremos al final
+            var campoVacio = true;  // Variable para saber si hay algún campo vacío
+
+            // Recorremos todos los elementos del formulario
+            for (var i = 0; i < objFormulario.elements.length; i++) {
+                // Si el campo está vacío
+                if (objFormulario.elements[i].value == "") {
+                    campoVacio = false;  // Hay al menos un campo vacío
+                    mensaje += "El campo '" + objFormulario.elements[i].name + "' esta vacio <br>";
+                }
+            }
+            if (!campoVacio) {
+                document.getElementById("Ejercicio6").innerHTML = "Existen campos vacíos:<br>" + mensaje;
+            } else {
+                document.getElementById("Ejercicio6").innerHTML = "Todos los campos están completos.";
+            }
+        }
+    </script>
+
+
 </body>
 
 </html>

@@ -5,33 +5,240 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 
 <body>
-    <h2>Ejercicio 6</h2>
-    <label>Numero 1</label> <input type="number" id="idej6num1" ></input>
-    <label>Numero 2</label> <input type="number" id="idej6num2" ></input>
-    <input type="button" id="sumar" value="sumar">
-    <input type="button" id="restar" value="restar">
-    <input type="button" id="multiplicar" value="multiplicar">
-    <input type="button" id="division" value="division">
-    <div id="resultado"></div>
-    <script>
-        function Operar(tipo) {
-            let numero1 = parseInt(document.getElementById('idej6num1').value)
-            let numero2 = parseInt(document.getElementById('idej6num2').value)
-            let operacion = (this.value == "sumar") ? numero1 + numero2 :
-                (this.id == "restar") ? numero1 - numero2 :
-                    (this.id == "multiplicar") ? numero1 * numero2 :
-                        (this.id == "division") ? numero1 / numero2 : null
-                            document.getElementById('resultado').innerHTML += '<h2>' + operacion + '</h2>'
+    <h2>Ejercicio 1</h2>
 
-        }
-        document.getElementById('sumar').onclick = Operar
-        document.getElementById('restar').onclick = Operar
-        document.getElementById('multiplicar').onclick = Operar
-        document.getElementById('division').onclick = Operar
-    </script>
-</body>
+    <h3>1 Modelo de eventos tradicional</h3>
+    <p>
+        En este modelo, se utiliza el atributo <code>onClick</code>, <code>onChange</code>, entre otros, directamente en
+        el HTML.
+        Este modelo vincula los eventos con los elementos HTML de manera declarativa. Es simple pero puede generar
+        problemas de
+        mantenimiento cuando se tiene un código más complejo.
+    </p>
+
+    <h3>2 Modelo de eventos moderno (addEventListener)</h3>
+    <p>
+        Este modelo permite asignar múltiples controladores a un solo evento de un elemento, usando el método
+        <code>addEventListener</code>.
+        Este modelo es más flexible y permite mayor control sobre los eventos, ya que también permite especificar si el
+        evento se debe
+        manejar en fase de captura o burbujeo.
+    </p>
+
+    <h3>3 Modelo de eventos en fase de captura</h3>
+    <p>
+        En la fase de captura, el evento se propaga desde el elemento raíz (documento) hasta el elemento objetivo (el
+        que disparó el evento).
+        Esta fase ocurre antes que la fase de burbujeo, donde el evento se propaga hacia arriba desde el objetivo.
+        Es útil cuando se necesitan capturar eventos antes de que lleguen al objetivo.
+    </p>
+
+
+    <h2>Ejercicio 2</h2>
+
+    Es un proceso en el cual un evento que se activa en un elemento HTML
+    se propaga hacia arriba por la jerarquía del DOM (Documento Objeto Modelo)
+
+
+
+    <h2>Ejercicio 3</h2>
+
+    <A href="pagina.html" onClick="alertar(); return false">Pulsa aqui</a>
+
+
+    <h2>Ejercicio 4</h2>
+
+    <body onload="colorPagina()">
+        <script>
+            function colorPagina() {
+                let numeroColor1 = Math.floor(Math.random() * 256);
+                let numeroColor2 = Math.floor(Math.random() * 256);
+                let numeroColor3 = Math.floor(Math.random() * 256);
+                document.body.style.backgroundColor = `rgb(${numeroColor1}, ${numeroColor2}, ${numeroColor3})`;
+            }
+        </script>
+        <h2>Ejercicio 5</h2>
+        <input type="text" id="ejercicio5" onchange="pongrande(this)">
+        <div id="resultado"></div>
+        <script>
+            function pongrande(elemento) {
+                document.getElementById('resultado').innerHTML = `<h1>${this.ejercicio5.value}</h1>`
+            }
+        </script>
+
+
+
+
+        <h2>Ejercicio 6</h2>
+        <label>Numero 1</label> <input type="number" id="idej6num1"></input>
+        <label>Numero 2</label> <input type="number" id="idej6num2"></input>
+        <input type="button" id="sumar" value="sumar">
+        <input type="button" id="restar" value="restar">
+        <input type="button" id="multiplicar" value="multiplicar">
+        <input type="button" id="division" value="division">
+        <div id="resultado"></div>
+        <script>
+            function Operar(tipo) {
+                let numero1 = parseInt(document.getElementById('idej6num1').value)
+                let numero2 = parseInt(document.getElementById('idej6num2').value)
+                let operacion = (this.value == "sumar") ? numero1 + numero2 :
+                    (this.id == "restar") ? numero1 - numero2 :
+                        (this.id == "multiplicar") ? numero1 * numero2 :
+                            (this.id == "division") ? numero1 / numero2 : null
+                document.getElementById('resultado').innerHTML += '<h2>' + operacion + '</h2>'
+
+            }
+            document.getElementById('sumar').onclick = Operar
+            document.getElementById('restar').onclick = Operar
+            document.getElementById('multiplicar').onclick = Operar
+            document.getElementById('division').onclick = Operar
+        </script>
+
+        <h2>Ejercicio 7</h2>
+
+        <label>Numero 1</label> <input type="number" id="idej7num1">
+        <label>Numero 2</label> <input type="number" id="idej7num2">
+        <input type="button" id="sumar2" value="sumar2">
+        <input type="button" id="restar2" value="restar2">
+        <input type="button" id="multiplicar2" value="multiplicar2">
+        <input type="button" id="division2" value="division2">
+        <div id="resultado77"></div>
+
+        <script>
+            function Operar(event) {
+                var num1 = parseInt(document.getElementById('idej7num1').value);
+                var num2 = parseInt(document.getElementById('idej7num2').value);
+                var resultado;
+
+                // Usamos event.target.value para obtener el valor del botón presionado
+                if (event.target.value == 'sumar2') {
+                    resultado = num1 + num2;
+                }
+                else if (event.target.value == 'restar2') {
+                    resultado = num1 - num2;
+                } else if (event.target.value == 'multiplicar2') {
+                    resultado = num1 * num2;
+                } else {
+                    resultado = num1 / num2;
+                }
+
+                document.getElementById('resultado77').innerHTML = `<h3>El resultado es: ${resultado}</h3>`;
+            }
+
+            document.getElementById('sumar2').addEventListener('click', Operar);
+            document.getElementById('restar2').addEventListener('click', Operar);
+            document.getElementById('multiplicar2').addEventListener('click', Operar);
+            document.getElementById('division2').addEventListener('click', Operar);
+        </script>
+
+        <h2>Ejercicio 8</h2>
+
+        <label>Numero 1</label> <input type="number" id="idej8num1">
+        <label>Numero 2</label> <input type="number" id="idej8num2">
+        <input type="button" id="sumar3" value="sumar3">
+        <input type="button" id="restar3" value="restar3">
+        <input type="button" id="multiplicar3" value="multiplicar3">
+        <input type="button" id="division3" value="division3">
+        <input type="button" id="inhabilitar" value="Inhabilitar">
+        <div id="resultado8"></div>
+
+        <script>
+            function Operar(event) {
+                var num1 = parseInt(document.getElementById('idej8num1').value);
+                var num2 = parseInt(document.getElementById('idej8num2').value);
+                var resultado;
+
+
+                if (event.target.value == 'sumar3') {
+                    resultado = num1 + num2;
+                }
+                else if (event.target.value == 'restar3') {
+                    resultado = num1 - num2;
+                } else if (event.target.value == 'multiplicar3') {
+                    resultado = num1 * num2;
+                } else {
+                    resultado = num1 / num2;
+                }
+
+                document.getElementById('resultado8').innerHTML = `<h3>El resultado es: ${resultado}</h3>`;
+            }
+
+            function agregarEventos() {
+                document.getElementById('sumar3').addEventListener('click', Operar);
+                document.getElementById('restar3').addEventListener('click', Operar);
+                document.getElementById('multiplicar3').addEventListener('click', Operar);
+                document.getElementById('division3').addEventListener('click', Operar);
+            }
+
+
+
+            function deshabilitarEventos() {
+                document.getElementById('sumar3').removeEventListener('click', Operar);
+                document.getElementById('restar3').removeEventListener('click', Operar);
+                document.getElementById('multiplicar3').removeEventListener('click', Operar);
+                document.getElementById('division3').removeEventListener('click', Operar);
+            }
+
+
+            agregarEventos();
+
+            document.getElementById('inhabilitar').addEventListener('click', deshabilitarEventos);
+
+        </script>
+
+        <h2>Ejercicioc 9</h2>
+        <button id="b1"> cambia de color</button>
+        <script>
+            document.getElementById("b1").addEventListener('click', () => {
+                r = Math.random() * 256;
+                g = Math.random() * 256;
+                b = Math.random() * 256;
+                color = "rgb(" + r + "," + g + "," + b + ")";
+                document.body.style.backgroundColor = color;
+            }, true);
+        </script>
+
+
+        <h2>Ejercicioc 10</h2>
+        <button id="b2"> cambia de rojo-verde azul</button>
+        <script>
+            arrayColores = ['red', 'green', 'blue']
+            var indice = 0;
+            document.getElementById("b2").addEventListener('click', () => {
+                document.body.style.backgroundColor = arrayColores[indice];
+                indice = (indice + 1) % arrayColores.length
+
+            }, true);
+        </script>
+
+
+        <h2>Ejercicio 11</h2>
+
+        <input type="text" id="ejercicio66">
+        <div id="resultado444"></div>
+
+        <script>
+            // Esta es la función que se ejecutará cuando el evento ocurra
+            function pongrande() {
+                // Usamos event.srcElement para obtener el elemento que disparó el evento (esto es específico de IE)
+                var inputValue = event.srcElement.value;
+                document.getElementById('resultado444').innerHTML = `<h1>${inputValue}</h1>`;
+            }
+            // Esperamos a que el DOM esté completamente cargado
+            window.onload = function () {
+                // Asignamos el evento 'onchange' usando attachEvent para IE antiguos
+                var inputElement = document.getElementById('ejercicio66');
+
+                inputElement.attachEvent('onchange', pongrande);
+            };
+        </script>
+
+
+
+    </body>
 
 </html>

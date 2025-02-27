@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <div id="abuelo">
+        <ul id="padre">
+            <li id="hijo1"> Hola </li>
+            <li id="hijo2"> Crack </li>
+            <li id="hijo3"> de </li>
+            <li id="hijo4"> la </li>
+            <li id="hijo5"> Programación </li>
+        </ul>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+
+        var elementoAbuelo = document.getElementById("abuelo");
+        var elementoPadre = document.getElementById("padre");
+        var hijo1 = document.getElementById("hijo1");
+        var hijo2 = document.getElementById("hijo2");
+        var hijo3 = document.getElementById("hijo3");
+        var hijo4 = document.getElementById("hijo4");
+        var hijo5 = document.getElementById("hijo5");
+
+
+        function mostrarMensaje(mensaje) {
+            var resultado = document.getElementById('resultado');
+            resultado.innerHTML += mensaje + "<br>";
+        }
+
+
+        elementoAbuelo.addEventListener('click', () => {
+            mostrarMensaje('Se hizo clic en abuelo');
+        });
+
+
+        elementoPadre.addEventListener('click', () => {
+            mostrarMensaje('Se hizo clic en padre');
+        });
+
+
+        hijo1.addEventListener('click', () => {
+            mostrarMensaje('Se hizo clic en hijo1');
+        });
+        hijo2.addEventListener('click', () => {
+            mostrarMensaje('Se hizo clic en hijo2');
+        });
+        hijo3.addEventListener('click', () => {
+            mostrarMensaje('Se hizo clic en hijo3');
+        });
+        hijo4.addEventListener('click', () => {
+            mostrarMensaje('Se hizo clic en hijo4');
+        });
+        hijo5.addEventListener('click', () => {
+            mostrarMensaje('Se hizo clic en hijo5');
+        });
+    </script>
+
+
+    <h2>Ejercicio 2 y 3</h2>
+    <input type="text" id="miCampo" onblur="mostrarAlerta()" onfocus="alert('Esta en foco')">
+
+
+    <script>
+        function mostrarAlerta() {
+            alert("El campo ha perdido el foco.");
+        }
+    </script>
+
+    <h2>Ejercicio 4</h2>
+    <img src="italia.jpg" onload="alert('La imagen se ha cargado bien')">
+
+    <h2>Ejercicio 5</h2>
+    <input type="button" onclick="crearImagen()" value="Crear imagen">
+    <input type="button" ondblclick="agrandarImagen()" value="Aumentar tamaño">
+    <div id="contenedor"></div>
+
+    <script>
+        function crearImagen() {
+            var img = document.createElement('img');
+
+            img.src = "italia.jpg";
+
+            img.style.width = "85%";
+
+            document.getElementById('contenedor').appendChild(img);
+        }
+        function agrandarImagen() {
+            img = document.getElementById('contenedor')
+            imgNueva = img.style.width = "115%";
+
+            document.getElementById('contenedor').appendChild(imgNueva);
+        }
+    </script>
+
+    <!--EJEMPLO PARRAFO <div id="contenedor"></div>
+
+<script>
+    // Crear un nuevo elemento de párrafo
+    var parrafo = document.createElement("p");
+    parrafo.textContent = "Este es un nuevo párrafo.";
+
+    // Obtener el contenedor en el que vamos a agregar el párrafo
+    var contenedor = document.getElementById("contenedor");
+
+    // Usar appendChild() para agregar el párrafo dentro del contenedor
+    contenedor.appendChild(parrafo);
+</script>
+ -->
+
+
+
+    <h2>Ejercicio 7</h2>
+    <img src="imagen-incorrecta.jpg" id="miImagen">
+    <script>
+        document.getElementById('miImagen').addEventListener('error', function () {
+            alert('La imagen no existe');
+        })
+
+    </script>
+
+    <h2>Ejercicio 8</h2>
+    <input type="text" id="texto8" onchange="contenido()">
+    <div id="resultado8"></div>
+    <script>
+        function contenido() {
+            var contenido = document.getElementById('texto8').value
+            document.getElementById('resultado8').innerHTML = `<h3>${contenido}</h3>`
+        }
+    </script>
+    <h2>Ejercicio 9-1</h2>
+    <input type="text" id="texto9">
+    <div id="resultado9"></div>
+    <script>
+        document.getElementById('texto9').addEventListener('keydown', function () {
+            var contenido = document.getElementById('texto9').value
+            document.getElementById('resultado9').innerHTML = `<h3>${contenido}</h3>`
+        })
+    </script>
+    <h2>Ejercicio 9-2</h2>
+    <input type="text" id="texto92">
+    <div id="resultado92"></div>
+    <script>
+        document.getElementById('texto92').addEventListener('keyup', function () {
+            var contenido = document.getElementById('texto92').value
+            document.getElementById('resultado92').innerHTML = `<h3>${contenido}</h3>`
+        })
+    </script>
+    <h2>Ejercicio 9-3</h2>
+    <input type="text" id="texto93">
+    <div id="resultado93"></div>
+    <script>
+        document.getElementById('texto93').addEventListener('keypress', function () {
+            var contenido = document.getElementById('texto93').value
+            document.getElementById('resultado93').innerHTML = `<h3>${contenido}</h3>`
+        })
+    </script>
+
+    <h2>Ejercicio 10</h2>
+    <input type="text" id="texto10">
+    <div id="resultado10"></div>
+    <script>
+        document.getElementById('texto10').addEventListener('select', function () {
+            var contenido = document.getElementById('texto10').value
+            var textoSeleccionado = contenido.substring(this.selectionStart, this.selectionEnd);
+            document.getElementById('resultado10').innerHTML = `<h3>${textoSeleccionado}</h3>`
+        })
+    </script>
+
+    <h2>Ejercicio 11</h2>
+
+
+    <img id="imagen" src="italia.jpg" width="300" onmouseup="vueltaImagen()" onmouseout="masPequeña()"
+        onmouseover="masMayor()">
+
+    <script>
+
+        var imagen = document.getElementById('imagen');
+
+
+        imagen.addEventListener('mousedown', function () {
+
+            imagen.src = 'reinounido.jpg';
+        });
+
+        imagen.addEventListener('mousemove', function () {
+
+            imagen.src = 'spain.jpg';
+        });
+        function vueltaImagen() {
+            document.getElementById('imagen').src = 'italia.jpg'
+
+        }
+        function masPequeña() {
+            document.getElementById('imagen').width = '200'
+
+        }
+        function masMayor() {
+            document.getElementById('imagen').width = '400'
+
+        }
+
+    </script>
+
+    <h2>Ejercicio 12</h2>
+    <script>
+        window.addEventListener('resize', function () {
+            alert('La ventana ha cambiado de tamaño');
+        });
+
+
+        window.addEventListener('unload', function () {
+            alert('La página está a punto de descargarse');
+        });
+    </script>
+
+
+
+</body>
+
+</html>
