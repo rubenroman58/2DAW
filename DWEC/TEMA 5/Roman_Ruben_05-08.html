@@ -4,15 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 </head>
 
 <body>
-    <h2>Ejercicio1</h2>
+    <h2>Ejercicio 1 , 2 , 3 , 4 , 5, 6</h2>
     <p id="info"></p>
-    <button id="boton">ver cookie</button>
-    <button id="botonf">Añadir cookie</button>
+    <button id="boton">ver cookie</button><br>
+    <button id="botonf">Añadir cookie</button><br>
+    <button onclick="borrarSelect()">Borrar select</button><br>
+    <button onclick="borrar()">Borrar todas cookie</button><br>
+    <button onclick="borrarUltima()">Borrar ultima cookie</button><br>
+
+
+
     Clave <input type="text" id="clave">
     Valor <input type="text" id="valor">
+
+
+
+    <label for="selectElementId">Lista cookies:</label>
+    <select id="selectElementId" name="selectElementId" id="selectId">
+
+    </select>
     <script>
         document.cookie = "color-rojo";
 
@@ -26,12 +40,6 @@
             document.cookie = clave + '=' + valor;
         })
     </script>
-
-
-
-
-
-
     <script>
         document.cookie = "color-verde=verde";
 
@@ -59,6 +67,210 @@
         });
     </script>
 
+    <script>
+        function updateSelect() {
+            let select = document.getElementById('selectElementId');
+            select.innerHTML = ''; // Limpiar las opciones existentes
+
+            let cookies = document.cookie.split(';');
+            cookies.forEach(cookie => {
+                let option = document.createElement('option');
+                option.value = cookie.trim();
+                option.innerHTML = cookie.trim();
+                select.appendChild(option);
+            });
+        }
+
+        // Inicializar las opciones del select con las cookies al cargar la página
+        window.onload = updateSelect;
+    </script>
+
+    <script>
+        function borrar() {
+            var lista = document.cookie.split(";");
+            for (i in lista) {
+                var igual = lista[i].indexOf("=");
+                var nombre = lista[i].substring(0, igual);
+                lista[i] = nombre + "=" + "" + ";expires=1 Dec 2000 00:00:00 GMT"
+                document.cookie = lista[i]
+            }
+        }
+        /* 
+                function borrarUltima() { Falla
+                    var fechaCookieOld = "expires=Thu, 01 Jan 1970 00:00:00 GMT";
+                    arraycookies = document.cookie.split(';');
+                    cookie = arraycookies[arraycookies.length - 1];
+                    document.cookie = cookie + ";" + fechaCookieOld + ";"
+                } */
+
+        function borrarUltima() {
+            var fechaCookieOld = "expires=Thu, 01 Jan 1970 00:00:00 GMT"; // Fecha en el pasado para borrar la cookie
+            var arraycookies = document.cookie.split(';'); // Separamos las cookies por el carácter ";"
+
+            if (arraycookies.length > 0) {
+                // Obtenemos la última cookie
+                var cookie = arraycookies[arraycookies.length - 1].trim();
+
+                // Buscamos el índice de "=" para separar el nombre y el valor de la cookie
+                var igual = cookie.indexOf("=");
+
+                // Extraemos el nombre de la cookie (todo lo que está antes del "=")
+                var nombreCookie = cookie.substring(0, igual);
+
+                // Establecemos la cookie con una fecha de expiración pasada para eliminarla
+                document.cookie = nombreCookie + "=; " + fechaCookieOld + "; path=/";
+
+                alert("Última cookie eliminada: " + nombreCookie); // Alerta para indicar que la cookie fue eliminada
+            } else {
+                alert("No hay cookies para eliminar.");
+            }
+        }
+    </script>
+
+    <script>
+        document.cookie = "cookie Ejer 5=se va; expires=Thu, 05 Mar 2025 00:00:00 GMT; path=/";
+
+        /* function addCookieConExpiracion() { ASI SERIA CON FUNCION
+                 let clave = "cookie-expiracion";  // Nombre de la cookie
+                 let valor = "valor_con_expiracion";  // Valor de la cookie
+     
+                 // Calcular la fecha de expiración en un mes
+                 let fecha = new Date();
+                 fecha.setMonth(fecha.getMonth() + 1);  // Aumentar el mes actual en 1
+     
+                 // Formatear la fecha para que sea compatible con la cookie
+                 let fechaExpiracion = "expires=" + fecha.toUTCString();
+     
+                 // Establecer la cookie con fecha de expiración de un mes
+                 document.cookie = `${clave}=${valor};${fechaExpiracion};path=/`;
+     
+                 alert(`Cookie '${clave}' añadida con expiración de un mes.`);
+                 updateSelect();  // Actualizar el select después de añadir la cookie
+             }
+      */
+    </script>
+
+    <script>
+        function borrarSelect() {
+            var select = document.getElementById("selectElementId");
+            var selectedOption = select.options[select.selectedIndex]; // Obtiene la opción seleccionada
+
+            if (selectedOption) {
+                var cookieName = selectedOption.value; // El valor es el nombre de la cookie
+                var fechaCookieOld = "expires=Thu, 01 Jan 1970 00:00:00 GMT"; // Fecha en el pasado para borrar la cookie
+                document.cookie = cookieName + "=; " + fechaCookieOld + "; path=/"; // Borrar la cookie
+
+                select.remove(select.selectedIndex); // Eliminar la opción seleccionada del select
+                alert("Cookie eliminada: " + cookieName); // Alerta para indicar que la cookie fue eliminada
+            } else {
+                alert("Por favor, selecciona una cookie para borrar.");
+            }
+        }
+    </script>
+
+    <h2>Ejercicio 7</h2>
+    <button onclick="mostrarCookies()">Mostrar Cookies ejer 7</button>
+    <div id="cookieList"></div>
+
+    <script>
+        function mostrarCookies() {
+            // Obtener las cookies almacenadas
+            const cookies = document.cookie.split(';');
+
+            // Obtener la fecha y hora actual para comprobar las fechas de expiración
+            const ahora = new Date();
+
+            // Mostrar las cookies en formato de lista
+            let cookieListHTML = '<ul>';
+
+            cookies.forEach(cookie => {
+                // Limpiar los espacios extra antes y después de la cookie
+                let cookieTrimmed = cookie.trim();
+
+                // Separar el nombre y el valor de la cookie
+                let [cookieName, cookieValue] = cookieTrimmed.split('=');
+
+                // Verificar si la cookie tiene un atributo "expires" o "max-age"
+                // Aquí no podemos acceder directamente a la fecha de expiración, pero podemos mostrar un mensaje
+                // informativo sobre la cookie si tiene esos atributos
+                let expiraEn = 'No disponible'; // Valor por defecto si no tiene fecha de expiración
+
+                // Asegurarse de que las cookies que contienen fecha de expiración explícita sean procesadas
+                if (cookieTrimmed.includes('expires') || cookieTrimmed.includes('max-age')) {
+                    let expiresMatch = cookieTrimmed.match(/expires=(.*?)(?=;|$)/);
+                    if (expiresMatch && expiresMatch[1]) {
+                        let expiresDate = new Date(expiresMatch[1]);
+                        expiraEn = expiresDate > ahora ? 'Expira el ' + expiresDate.toLocaleString() : 'Ya expiró';
+                    }
+                }
+
+                // Construir la lista de cookies con su nombre, valor y posible fecha de expiración
+                cookieListHTML += `
+                        <li>
+                            <strong>${cookieName}</strong>: ${cookieValue} 
+                            <br><i>Expiración: ${expiraEn}</i>
+                        </li>
+                    `;
+            });
+
+            cookieListHTML += '</ul>';
+            // Insertar la lista generada en el contenedor del DOM
+            document.getElementById('cookieList').innerHTML = cookieListHTML;
+        }
+    </script>
+    <h2>Ejercicio 8</h2>
+    <button onclick="establecerCookie()">Establecer Cookie js</button><br>
+    <button onclick="mostrarCookies()">Mostrar Cookiesjs</button><br>
+    <button onclick="borrarCookie()">Borrar Cookiejs</button><br><br>
+
+    <div id="cookiesList"></div>
+
+    <script>
+        // Función para establecer una cookie
+        function establecerCookie() {
+            var clave = document.getElementById('clave').value;
+            var valor = document.getElementById('valor').value;
+
+            if (clave && valor) {
+                // Establecer la cookie con una expiración de 1 mes
+                Cookies.set(clave, valor, { expires: 30, path: '' });
+                alert(`Cookie '${clave}' establecida.`);
+            } else {
+                alert('Por favor, ingresa tanto la clave como el valor.');
+            }
+        }
+
+        // Función para mostrar las cookies
+        function mostrarCookies() {
+            var cookies = Cookies.get();  // Obtiene todas las cookies
+            var cookiesListHTML = "<h3>Lista de Cookies:</h3>";
+
+            if (Object.keys(cookies).length > 0) {
+                cookiesListHTML += "<ul>";
+                for (var cookie in cookies) {
+                    cookiesListHTML += `<li><strong>${cookie}:</strong> ${cookies[cookie]}</li>`;
+                }
+                cookiesListHTML += "</ul>";
+            } else {
+                cookiesListHTML = "No hay cookies almacenadas.";
+            }
+
+            document.getElementById('cookiesList').innerHTML = cookiesListHTML;
+        }
+
+    
+        function borrarCookie() {
+            var clave = document.getElementById('clave').value;
+
+            if (clave) {
+                Cookies.remove(clave); 
+                alert(`Cookie '${clave}' eliminada.`);
+                mostrarCookies();  // Actualiza la lista de cookies
+            } else {
+                alert('Por favor, ingresa el nombre de la cookie a eliminar.');
+            }
+        }
+    </script>
 
 </body>
 

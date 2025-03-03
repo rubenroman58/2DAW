@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejercicio 0</h2>
+    <button id="b0"> Ejercicio1 add LocalStorage</button>
+    <p id="ejercicio2id"> </p>
+    <script>
+        document.getElementById('b0').addEventListener('click', ejercicio0);
+        function ejercicio0() {
+            localStorage.setItem('Nombre', 'Miguel Antonio')
+            localStorage.Apellido = ' '
+        }
+    </script>
+
+
+    <h2>Ejercicio 1</h2>
+    <button id="b1">Comprobar navegador </button>
+    <p id="ejercicio1"> </p>
+    <script>
+        document.getElementById('b1').addEventListener('click', ejercicio1);
+        function ejercicio1() {
+            if (typeof (Storage) !== 'undefined') {
+                document.getElementById('ejercicio1').innerHTML = 'Compatible'
+            } else {
+                document.getElementById('ejercicio1').innerHTML = 'No compatible'
+            }
+        }
+    </script>
+
+
+    <h2>Ejercicio 2 </h2>
+    <input type="text" id="ejer2">
+    <button id="b2">Guardar </button>
+    <p id="ejercicio2"> </p>
+
+    <script>
+        document.getElementById('b2').addEventListener('click', function () {
+            let texto2 = document.getElementById('ejer2').value;
+            if (texto2.trim() !== '') {
+                localStorage.setItem('textoGuardado', texto2);
+                document.getElementById('ejercicio2').innerHTML = 'Texto guardado correctamente';
+            } else {
+                document.getElementById('ejercicio2').innerHTML = 'Por favor ingresa un texto';
+            }
+        });
+        document.write(localStorage.getItem('textoGuardado'))
+
+    </script>
+
+
+    <h2>Ejercicio 3</h2>
+    <input type="text" id="ejer3">
+    <button id="b3">Guardar texto en LocalStorage</button>
+    <p id="ejercicio3"></p>
+
+    <label for="selectElementId">Selección de datos guardados:</label>
+    <select id="selectElementId"></select>
+    <script>
+        document.getElementById('b3').addEventListener('click', function () {
+            // Obtener el valor del campo de texto
+            let texto2 = document.getElementById('ejer3').value;
+
+            // Verificar que el campo no esté vacío
+            if (texto2.trim() !== '') {
+                // Guardar el valor en localStorage con una clave única (para este ejemplo la clave es 'textoGuardado')
+                let datosGuardados = JSON.parse(localStorage.getItem('datosGuardados')) || [];
+                datosGuardados.push(texto2);
+                localStorage.setItem('datosGuardados', JSON.stringify(datosGuardados));
+
+                // Mostrar un mensaje en la página
+                document.getElementById('ejercicio3').innerHTML = 'Texto guardado correctamente';
+
+                // Añadir el texto al select
+                let select = document.getElementById('selectElementId');
+                var opt = document.createElement('option');
+                opt.value = texto2;  // Usamos el valor ingresado como valor de la opción
+                opt.innerHTML = texto2; // Usamos el mismo valor para el texto visible de la opción
+                select.appendChild(opt);
+
+                // Limpiar el campo de texto
+                document.getElementById('ejer3').value = '';
+            } else {
+                document.getElementById('ejercicio3').innerHTML = 'Por favor ingresa un texto';
+            }
+        });
+
+        // Al cargar la página, llenar el select con los datos guardados en localStorage
+        window.onload = function () {
+            let datosGuardados = JSON.parse(localStorage.getItem('datosGuardados')) || [];
+            let select = document.getElementById('selectElementId');
+
+            // Llenar el select con las opciones almacenadas en localStorage
+            datosGuardados.forEach(function (dato) {
+                var opt = document.createElement('option');
+                opt.value = dato;
+                opt.innerHTML = dato;
+                select.appendChild(opt);
+            });
+        }
+    </script>
+
+
+    <h2>Ejercicio 4 </h2>
+    <button id="mostrarDatos">Mostrar LocalStorage</button>
+
+    <ul id="listaLocalStorage"></ul>
+
+    <script>
+        document.getElementById('mostrarDatos').addEventListener('click', function () {
+            let lista = document.getElementById('listaLocalStorage');
+            lista.innerHTML = '';
+
+            // Recorrer todas las claves almacenadas en localStorage
+            for (let i = 0; i < localStorage.length; i++) {
+                let clave = localStorage.key(i); // Obtener la clave
+                let valor = localStorage.getItem(clave); // Obtener el valor de la clave
+
+                // Crear un elemento <li> para mostrar la clave y el valor
+                let item = document.createElement('li');
+                item.textContent = `${clave}: ${valor}`;
+
+                // Agregar el <li> a la lista
+                lista.appendChild(item);
+            }
+        });
+    </script>
+    <h2>Ejercicio 5</h2>
+    <button id="borrarSelect">Eliminar Selección</button>
+    <p id="ejercicio5"></p>
+    <script>
+        document.getElementById('borrarSelect').addEventListener('click', function () {
+            let select = document.getElementById('selectElementId');
+            let selectedOption = select.options[select.selectedIndex]; 
+            
+            if (selectedOption) {
+                let selectedValue = selectedOption.value; 
+                // Obtener el valor de la opción seleccionada
+
+                // Eliminar la opción seleccionada del select
+                select.remove(select.selectedIndex);
+
+                // Eliminar el valor de localStorage correspondiente
+                localStorage.removeItem(selectedValue);
+
+                document.getElementById('ejercicio5').innerHTML = `Se elimino: ${selectedValue}`;
+            } else {
+                document.getElementById('ejercicio5').innerHTML = 'Por favor, selecciona una opción para eliminar.';
+            }
+        });
+
+    </script>
+
+
+
+    <h2>Ejercicio 6</h2>
+    <button id="eliminarDatos">Eliminar LocalStorage</button>
+    <script>
+        document.getElementById('eliminarDatos').addEventListener('click', function () {
+            localStorage.clear()
+        });
+    </script>
+
+</body>
+
+</html>

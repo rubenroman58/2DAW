@@ -50,3 +50,5 @@ test('no hay I en Team', () => {
 test('hay "stop" en Christoph', () => {
     expect('Christoph').toMatch(/stop/);
 });
+
+//para ejecutar npx jest suma.test.js

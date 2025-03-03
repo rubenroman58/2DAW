@@ -112,35 +112,57 @@
         function ej22() {
             // Los parrafos cuyo class="importante" se modifica por class="resaltado"
             // y el resto de parrafos por class="normal"
+            var enlaces = document.getElementsByTagName('a');
             for (let i = 0; i < enlaces.length; i++) {
                 let href = enlaces[i].getAttribute('href');
 
                 if (href && href.startsWith("http://")) {
-                    // Cambiar 'http' por 'https'
+
                     let nuevoHref = href.replace("http://", "https://");
-                    // Actualizar el atributo 'href' con el nuevo valor
+
                     enlaces[i].setAttribute('href', nuevoHref);
                 }
             }
-            alert("Todos los enlaces con 'http://' han sido cambiados a 'https://'"); 
+            alert("Todos los enlaces con 'http://' han sido cambiados a 'https://'");
 
 
         }
 
         function ej23() {
-            // Enlaces les anade el atributo "id" con un valor
-            // autogenerado que sea igual a enlace+i, donde i empieza en 0
+            // Obtener todos los enlaces de la página
+            var enlaces = document.getElementsByTagName('a');
 
+            // Recorrer todos los enlaces
+            for (let i = 0; i < enlaces.length; i++) {
+                // Asignar un id único a cada enlace en la forma 'enlace' + i
+                enlaces[i].setAttribute('id', 'enlace' + i);
 
+                // Asignar el mismo valor al atributo 'value'
+                enlaces[i].setAttribute('value', 'enlace' + i);
+
+                // Usar console.log para verificar los cambios
+                console.log(`Enlace ${i}: id = ${enlaces[i].id}, value = ${enlaces[i].getAttribute('value')}`);
+            }
+
+            alert("Se ha añadido el 'id' y 'value' a todos los enlaces.");
         }
 
 
+
+
         function ej24() {
-            /*
-            <br>Pista: Igual que el Ejercicio 2 pero seleccionando los input 
-          <br> y comprobando que los inputs son de tipo texto inputs[i].getAttribute('type')=="text")
-          <br>y con inputs[i].setAttribute('value', 'importante'+j);
-            */
+            var inputs = document.getElementsByTagName('input');
+
+            for (let i = 0; i < inputs.length; i++) {
+                if (inputs[i].getAttribute('type') == "text") {
+
+                    inputs[i].setAttribute('value', 'importante' + i);
+
+                    console.log(`Input ${i}: value = ${inputs[i].value}`);
+                }
+            }
+            alert("Todos los input han sido cambiados a tipo text");
+
 
         }
 

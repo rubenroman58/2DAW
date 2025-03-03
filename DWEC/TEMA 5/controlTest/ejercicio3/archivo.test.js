@@ -7,4 +7,6 @@ test('convertir a mayúsculas', () => {
 test('convertir a minúsculas', () => {
     const resultado = convertirMinusculas('HOLA');
     expect(resultado).toBe('hola');
+
+    // para ejecutar este codigo:npx jest archivo.test.js
 });

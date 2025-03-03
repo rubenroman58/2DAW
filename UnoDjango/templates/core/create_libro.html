@@ -1,0 +1,10 @@
+{% extends 'core/index.html' %}
+{%block title%} Registrar nuevo libro {%endblock title%}
+{%block content%}
+
+    <form action="" method="POST">
+    {%csrf_token%}
+    {{book_form}}
+    <button type="submit">Guardar</button>
+    </form>
+{%endblock content%}

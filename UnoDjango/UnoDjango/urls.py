@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 #from core.views import home
-from core.views import home,autor_list,libro_list,autor_create,autor_update
+from core.views import home,autor_list,book_create,libro_list,autor_create,autor_update,autor_delete
 #from . import views 
 urlpatterns = [
 #path('hola/', views.index),
@@ -31,5 +31,7 @@ urlpatterns = [
     path('libro/',libro_list),
     path('', home, name='index'),
     path ('new-autor/',autor_create), 
-    path ('update-autor/<int:pk>',autor_update) 
+    path ('update-autor/<int:pk>',autor_update),
+    path ('delete-autor/<int:pk>',autor_delete),
+    path ('new-libro/',book_create)  
  ]

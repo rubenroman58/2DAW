@@ -27,10 +27,11 @@
             </button> <button id="b5"> Ejercicio5 </button> <button id="b6"> Ejercicio6 </button> <button id="b7">
                 Ejercicio7 </button> <button id="b8"> Ejercicio8 </button>
             <button id="b9"> Ejercicio9 </button> <button id="b10"> Ejercicio10 </button> <button id="b11"> Ejercicio11
-            </button><button id="b12"> Ejercicio12 </button> <button id="b13"> Ejercicio13 </button> <button id="b14"> Ejercicio14 </button> 
+            </button><button id="b12"> Ejercicio12 </button> <button id="b13"> Ejercicio13 </button> <button id="b14">
+                Ejercicio14 </button>
         </fieldset>
     </div>
-    <h2> Ejercicios Salida </h2>
+    <h2> Ejercicios Salida prueba </h2>
     <p id="ejercicioid"> </p>
     <script>
 
@@ -46,7 +47,7 @@ Está situada en el extremo oeste del "mar" Mediterráneo y en el sur de la pen�
 (https://es.wikipedia.org/wiki/Gibraltar#Lugares). Su término municipal ocupa una extensión de 398,25 km2 que se extienden sobre los montes de Málaga y el valle
 del Guadalhorce.
 
-Se emplaza en el centro de (una) bahía rodeada de sistemas montañosos: la Sierra de Mijas y los Montes de Málaga. La atraviesan los ríos Guadalmedina y
+Se emplaza en el centro de una bahía rodeada de sistemas montañosos: la Sierra de Mijas y los Montes de Málaga. La atraviesan los ríos Guadalmedina y
 Guadalhorce. hola@hola.com
 
 Teléfonos importantes 952433421, 952433422, 951433422 si no puedes 951 123 123 llamar a sevilla 954433422 o a Madrid 912433422
@@ -85,7 +86,7 @@ centro de entretenimiento, económico, cultural y nodo de comunicaciones en el l
             document.getElementById('ejercicioid').innerHTML = cadenatmp;
         }
 
-         function ejercicio2() {
+        function ejercicio2() {
             var textocompleto = document.getElementsByName('textogrande')[0].value;
             let yearRegExp = new RegExp('\\b[aeiou][a-zñ]{3}\\b', 'gi');
             let yearRegExp2 = /\b[aeiou][a-zñ]{3}\b/gi;
@@ -97,7 +98,7 @@ centro de entretenimiento, económico, cultural y nodo de comunicaciones en el l
         }
 
 
-     function ejercicio3() {
+        function ejercicio3() {
             var textocompleto = document.getElementsByName('textogrande')[0].value;
 
             let RegExpEj3 = new RegExp('^\\w+', 'gm');
@@ -121,11 +122,12 @@ centro de entretenimiento, económico, cultural y nodo de comunicaciones en el l
 
             document.getElementById('ejercicioid').innerHTML = cadenatmp;
         }
- 
+
 
         function ejercicio5() {
             var textocompleto = document.getElementsByName('textogrande')[0].value;
-            let RegExpEjlit = /".+"/gm;  // Esta es la expresión regular correcta
+            let RegExpEjlit = /"[a-záéíóúñ]+"/gi;
+            // Esta es la expresión regular correcta
             let arrayEjercicio = textocompleto.matchAll(RegExpEjlit);  // Usar la variable correcta
             let cadenatmp = "<ol>";
             for (const elemento of arrayEjercicio) {
@@ -138,65 +140,38 @@ centro de entretenimiento, económico, cultural y nodo de comunicaciones en el l
 
         function ejercicio6() {
             var textocompleto = document.getElementsByName('textogrande')[0].value;
-            let RegExpEjlit = /a|o/gm;
-            let textoModificadoo = textocompleto.replaceAll(RegExpEjlit, '@');
-            document.getElementById('ejercicioid').innerHTML = textoModificadoo;
+            let RegExpEjlit = /a|o/g;
+            // Esta es la expresión regular correcta
+            let textoNuevo = textocompleto.replace(RegExpEjlit, '@')
+
+            document.getElementById('ejercicioid').innerHTML = textoNuevo;
         }
 
-
-        
         function ejercicio7() {
             var textocompleto = document.getElementsByName('textogrande')[0].value;
-            let RegExpEjlit = /(952|951)\s?\d{3}\s?\d{3}/gm;  // Esta es la expresión regular correcta
+            let RegExpEjlit = /(952|951)\s?\d{3}\s?\d{3}/gm;
+
             let arrayEjercicio = textocompleto.match(RegExpEjlit);  // Usar la variable correcta
             let cadenatmp = "<ol>";
             for (const elemento of arrayEjercicio) {
                 cadenatmp += "<li>" + elemento + "</li>";
             }
             cadenatmp += "</ol>";
-
             document.getElementById('ejercicioid').innerHTML = cadenatmp;
         }
- 
-        function ejercicio8() {
-            var textocompleto = document.getElementsByName('textogrande')[0].value;
-            let RegExpEjlit = /[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}/gm;  
-            let arrayEjercicio = textocompleto.match(RegExpEjlit); 
-            let cadenatmp = "<ol>";
-            for (const elemento of arrayEjercicio) {
-                cadenatmp += "<li>" + elemento + "</li>";
-            }
-            cadenatmp += "</ol>";
 
-            document.getElementById('ejercicioid').innerHTML = cadenatmp;
-        }
-        
-        function ejercicio9() {
-            var textocompleto = document.getElementsByName('textogrande')[0].value;
-            let RegExpEjlit = /https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?./gm;
-            let arrayEjercicio = textocompleto.match(RegExpEjlit); 
-            let cadenatmp = "<ol>";
-            for (const elemento of arrayEjercicio) {
-                cadenatmp += "<li>" + elemento + "</li>";
-            }
-            cadenatmp += "</ol>";
-
-            document.getElementById('ejercicioid').innerHTML = cadenatmp;
-        }
 
         function ejercicio10() {
             var textocompleto = document.getElementsByName('textogrande')[0].value;
-            let textoSinSaltos = textocompleto.replace(/[\r\n]+/g, '<i>saltolinea</i>');
-
-       
+            // Reemplazamos los saltos de línea (\r y \n) por un espacio en el texto sin modificar el textarea original
+            let textoSinSaltos = textocompleto.replace(/\n+/g, 'RUBEN ');
             document.getElementById('ejercicioid').innerHTML = textoSinSaltos;
         }
 
-
-        function ejercicio11() {
+        function ejercicio13() {
             var textocompleto = document.getElementsByName('textogrande')[0].value;
-            let RegExpEjlit = /\b[a-záéíóúñ]+\b/g;
-            let arrayEjercicio = textocompleto.match(RegExpEjlit); 
+            let RegExpEjlit = /\b(la|el|las|los)\b\s\b[a-záéíóúñ]{3}+\b/gm;
+            let arrayEjercicio = textocompleto.match(RegExpEjlit);
             let cadenatmp = "<ol>";
             for (const elemento of arrayEjercicio) {
                 cadenatmp += "<li>" + elemento + "</li>";
@@ -205,49 +180,118 @@ centro de entretenimiento, económico, cultural y nodo de comunicaciones en el l
 
             document.getElementById('ejercicioid').innerHTML = cadenatmp;
         }
+        // Ejemplo con un objeto
+        const persona = {
+            nombre: "Juan",
+            edad: 30,
+            ciudad: "Madrid"
+        };
 
-        function ejercicio12() {
-            var textocompleto = document.getElementsByName('textogrande')[0].value;
-            let RegExpEjlit = /(\b[a-záéíóúñ]{3,}\b)|(\d+)/gm;
-            let arrayEjercicio = textocompleto.match(RegExpEjlit); 
-            let cadenatmp = "<ol>";
-            for (const elemento of arrayEjercicio) {
-                cadenatmp += "<li>" + elemento + "</li>";
+        for (let clave in persona) {
+            console.log(clave + ": " + persona[clave]);
+        }
+        // Resultado:
+        // nombre: Juan
+        // edad: 30
+        // ciudad: Madrid
+
+
+        // Ejemplo con un array
+        const frutas = ["manzana", "banana", "cereza"];
+
+        for (let fruta of frutas) {
+            console.log(fruta);
+        }
+        // Resultado:
+        // manzana
+        // banana
+        // cereza
+
+
+
+        // Objeto complejo con varias personas
+        const personas = {
+            juan: {
+                edad: 30,
+                ciudad: "Madrid",
+                trabajos: ["ingeniero", "profesor"]
+            },
+            maria: {
+                edad: 25,
+                ciudad: "Barcelona",
+                trabajos: ["diseñadora", "fotógrafa"]
+            },
+            pedro: {
+                edad: 40,
+                ciudad: "Sevilla",
+                trabajos: ["médico"]
             }
-            cadenatmp += "</ol>";
+        };
 
-            document.getElementById('ejercicioid').innerHTML = cadenatmp;
+        // Recorriendo las propiedades de personas
+        for (let persona in personas) {
+            console.log("Información de " + persona + ":");
+
+            // Recorriendo las propiedades de cada persona (como edad, ciudad, trabajos)
+            for (let propiedad in personas[persona]) {
+                if (propiedad === "trabajos") {
+                    console.log(propiedad + ": " + personas[persona][propiedad].join(", "));
+                } else {
+                    console.log(propiedad + ": " + personas[persona][propiedad]);
+                }
+            }
+            console.log("------------");
         }
 
-   
-            function ejercicio13() {
-            var textocompleto = document.getElementsByName('textogrande')[0].value;
-            let RegExpEjlit = /\b(la|el|las|los)\b\s\b[a-záéíóúñ]{3,}\b/gm;
-            let arrayEjercicio = textocompleto.match(RegExpEjlit); 
-            let cadenatmp = "<ol>";
-            for (const elemento of arrayEjercicio) {
-                cadenatmp += "<li>" + elemento + "</li>";
+        // Resultado:
+        // Información de juan:
+        // edad: 30
+        // ciudad: Madrid
+        // trabajos: ingeniero, profesor
+        // ------------
+
+
+
+        // Array de arrays (matriz)
+        const matriz = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+
+        // Recorriendo cada fila de la matriz
+        for (let fila of matriz) {
+            console.log("Nueva fila:");
+
+            // Recorriendo los elementos dentro de cada fila
+            for (let num of fila) {
+                console.log(num);
             }
-            cadenatmp += "</ol>";
-
-            document.getElementById('ejercicioid').innerHTML = cadenatmp;
-        }  
-
-      function ejercicio14() {
-            var textocompleto = document.getElementsByName('textogrande')[0].value;
-            let RegExpEjlit = /\(([^)]+)\)/gmi;           
-            let arrayEjercicio = textocompleto.match(RegExpEjlit); 
-            let cadenatmp = "<ol>";
-            for (const elemento of arrayEjercicio) {
-                cadenatmp += "<li>" + elemento + "</li>";
-            }
-            cadenatmp += "</ol>";
-
-            document.getElementById('ejercicioid').innerHTML = cadenatmp;
+            console.log("------------");
         }
 
+        // Resultado:
+        // Nueva fila:
+        // 1
+        // 2
+        // 3
+        // ------------
+        // Nueva fila:
+        // 4
+        // 5
+        // 6
+        // ------------
+        // Nueva fila:
+        // 7
+        // 8
+        // 9
+        // ------------
 
-      
+
+
+
+
+
     </script>
 
 </body>

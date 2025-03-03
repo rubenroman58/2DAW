@@ -7,8 +7,13 @@
     <ul>
         {% for aut in authors %}
             <li>{{ aut.name }}</li>
+            <li><a class="btn btn-secondary" href="/update-autor/{{aut.id}}">Editar</a></li>
+            <li><a class="btn btn-danger" href="/delete-autor/{{aut.id}}">Eliminar</a></li>
         {% endfor %}
     </ul>
 <div><a href="/new-autor/">Registrar nuevo autor</a></div> 
-<li><a href="/update-autor/{{aut.id}}">Editar</a></li>
+
+
+
+
 {% endblock content %}

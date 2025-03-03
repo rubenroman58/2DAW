@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparación de Números</title>
+    <style>
+        .contenedor {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .caja {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div id="caja1" class="caja"></div>
+        <div id="caja2" class="caja"></div>
+    </div>
+    <button id="botonGenera">Genera</button>
+    <button id="botonComparar">Comparar</button>
+    <div id="resultado" class="caja" style="margin-top: 20px;"></div>
+
+    <script>
+ 
+        function generarNumeros() {
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+
+            const caja1 = document.getElementById('caja1');
+            const caja2 = document.getElementById('caja2');
+
+  
+            const p1 = document.createElement('p');
+            p1.textContent = num1;
+            const p2 = document.createElement('p');
+            p2.textContent = num2;
+
+            
+            caja1.replaceChildren(p1);
+            caja2.replaceChildren(p2);
+        }
+
+      
+        function compararNumeros() {
+            const num1 = parseInt(document.getElementById('caja1').textContent);
+            const num2 = parseInt(document.getElementById('caja2').textContent);
+
+            const resultado = document.getElementById('resultado');
+            const p = document.createElement('p');
+
+            if (!isNaN(num1) && !isNaN(num2)) {
+                p.textContent = num1 > num2 ? num1 : num2;
+            } else {
+                p.textContent = 'Genera los números primero';
+            }
+
+            resultado.replaceChildren(p);
+        }
+
+        
+        document.getElementById('botonGenera').addEventListener('click', generarNumeros);
+        document.getElementById('botonComparar').addEventListener('click', compararNumeros);
+    </script>
+</body>
+</html>

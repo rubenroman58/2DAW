@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from core.models import Author
 from core.models import Book
 from core.forms import AutorForm
+from core.forms import BookForm
+from django.contrib import messages
 
 
 # def home (request):
@@ -40,6 +42,44 @@ def autor_create(request):
         return render(request, 'core/create_autor.html', {'autor_form': AutorForm})
 
 
-def autor_update(request, pk=None):
-    autor = Author.objects.get(pk=pk)
-    return render(request, 'update_autor.html', {'author': autor})
+def autor_update (request, pk=None):
+    autor=Author.objects.get(pk=pk) 
+    if request.method == 'GET':
+        author_form=AutorForm(instance=autor) 
+        return render (request,'core/update_autor.html',{'author':autor,'author_form':author_form}) 
+
+    if request.method == 'POST':
+        author_form=AutorForm(data=request.POST, instance=autor) 
+
+
+    if author_form.is_valid():
+        author_form.save()
+        return redirect ('/autor/')
+    else: 
+        author_form=AutorForm(data=request.POST, instance=autor)
+        return render (request,'core/update_autor.html',{'author':autor,'author_form':author_form})
+    
+def autor_delete (request, pk=None):
+
+    Author.objects.filter(pk=pk).delete()
+    messages.success(request, 'El autor ha sido eliminado')
+
+    return redirect ('/autor/')
+
+def book_create(request):
+    if request.method == 'POST':
+        # Creamos el formulario con los datos POST
+        book_form = BookForm(request.POST)
+        if book_form.is_valid():
+            # Guardamos el formulario si es válido
+            book_form.save()
+            messages.success(request, 'El libro ha sido registrado exitosamente.')
+            return redirect('/libro/')  # Redirigir a la lista de libros
+        else:
+            # Si el formulario no es válido, lo mostramos con los errores
+            messages.error(request, 'Hay un error en el formulario. Intenta nuevamente.')
+    else:
+        # Si es un GET, mostramos el formulario vacío
+        book_form = BookForm()
+
+    return render(request, 'core/create_libro.html', {'book_form': book_form})

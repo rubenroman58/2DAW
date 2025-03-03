@@ -22,5 +22,5 @@ describe("Nombre del grupo de pruebas", function () {
     it("Caso de prueba 2", function () {
         expect("Hola").to.be.a("string"); // Verificamos el tipo de dato
     });
-
+   // ejecucion: npx mocha test/math.test.js
 });
