@@ -1,0 +1,19 @@
+<!-- templates/library/author_detail.html -->
+{% extends 'index.html' %}
+
+{% block title %}Detalles del Autor{% endblock %}
+
+{% block content %}
+  <h1>Detalles del autor</h1>
+
+  <!-- Mostrar el nombre y apellido del autor -->
+  <h2>{{ autor.first_name }} {{ autor.last_name }}</h2>
+  <p><strong>Fecha de nacimiento:</strong> {{ autor.birth_date }}</p>
+
+  <!-- Botones para editar o eliminar el autor -->
+  <div>
+    <a href="/update_autor/{{autor.id}}"  class="btn btn-danger">Editar Autor</a> |
+    <a href="/delete-autor/{{autor.id}}"  class="btn btn-danger">Eliminar Autor</a>
+  </div>
+
+{% endblock %}

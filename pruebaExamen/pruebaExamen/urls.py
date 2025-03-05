@@ -1,5 +1,5 @@
 """
-URL configuration for LibrarySystem project.
+URL configuration for pruebaExamen project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -16,15 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from library.views import autor_list,home,autor_create,autor_datos,autor_delete,autor_update
-
+from prueba.views import home
 
 urlpatterns = [
-    path('',home),
     path('admin/', admin.site.urls),
-    path('autores/', autor_list),
-    path('new-autor/',autor_create ),
-    path('authors/<int:pk>/',autor_datos, name='autor_detail'),
-    path ('delete-autor/<int:pk>',autor_delete),
-    path ('update_autor/<int:pk>',autor_update)
+    path('',home)
 ]

@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block title %} Blog de autores {% endblock %}
+
+{% block content %}
+<h1>Listado de autores</h1>
+<ul>
+    {% for aut in authors %}
+    <li>{{ aut.first_name }} {{ aut.last_name }} - {{ aut.birth_date }}</li>
+    <a href="{% url 'autor_detail' pk=aut.pk %}">Detalles autor</a>
+
+    {% endfor %}
+</ul>
+
+<div><a href="/new-autor/">Registrar nuevo autor</a></div>
+
+{% endblock content %}
