@@ -30,7 +30,7 @@ def autor_create(request):
 def autor_datos(request, pk):
    
     autor = get_object_or_404(Author, pk=pk)
-   
+    
     return render(request, 'author_detail.html', {'autor': autor})
 
 def autor_delete (request, pk=None):

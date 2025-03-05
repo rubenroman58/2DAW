@@ -1,0 +1,8 @@
+{% extends 'index.html' %}
+{%block title%} Registrar nuevo estudiante {%endblock title%} {%block content%}
+<form action="" method="POST">
+    {%csrf_token%}
+    {{autor_form}}
+    <button type="submit"  class="btn btn-secondary">Guardar</button>
+</form>
+{%endblock content%}

@@ -33,7 +33,7 @@ test('cero', () => {
 
 
 test('dos mas dos', () => {
-    const value = 2 + 2;
+    const value =a*x*x + b*x + c; 
     expect(value).toBeGreaterThan(3);
     expect(value).toBeGreaterThanOrEqual(3.5);
     expect(value).toBeLessThan(5);

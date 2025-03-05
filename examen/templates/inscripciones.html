@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block title %} Inscripciones{% endblock %}
+
+{% block content %}
+    <h1>Listado de Inscripciones</h1>
+    <ul>
+        {% for aut in authors %}
+            <li>{{ aut.Estudiante }} </li>
+            <li>{{ aut.Curso }} </li>
+           
+        {% endfor %}
+        {% for aut in authors %}
+        <li>{{ aut.Estudiante }} </li>
+        <li>{{ aut.Curso }} </li>
+       
+    {% endfor %}
+    </ul>
+{% endblock content %}

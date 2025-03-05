@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% block title %} BLista estudiantes{% endblock %}
+
+{% block content %}
+    <h1>Listado de estudiantes</h1>
+    <ul>
+        {% for aut in authors %}
+            <li>{{ aut.nombre }} </li>
+            <li>{{ aut.email }} </li>
+            <li><a class="btn btn-secondary" href="/editar_estudiante/{{aut.id}}">Editar</a></li>
+            <li><a class="btn btn-danger" href="/eliminar_estudiante/{{aut.id}}">Eliminar</a></li>
+        {% endfor %}
+    </ul>
+<div><a href="/new-estudiante/">Registrar nuevo estudiante</a></div> 
+
+
+
+
+{% endblock content %}
